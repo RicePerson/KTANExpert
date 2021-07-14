@@ -1005,6 +1005,7 @@ def memory():
 #Morse Code
 def morse():
 	print("Nothing yet")
+	print("Still Nothing")
 	return
 
 #PROGRAM
