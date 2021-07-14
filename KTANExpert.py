@@ -1068,7 +1068,7 @@ def morse():
 		return
 	elif all(elem in sting for elem in alphaList):
 		print("Word was: Sting")
-		print("Input 3.505 MHz")
+		print("Input 3.592 MHz")
 		return
 	elif all(elem in vector for elem in alphaList):
 		print("Word was: Vector")
