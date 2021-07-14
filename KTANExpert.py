@@ -1005,8 +1005,14 @@ def memory():
 
 #Morse Code
 def morse():
-	userMorseUnsplit = "EMPTY"
-	userMorse = "EMPTY"
+	userMorseUnsplit = input("What is your Morse Code (see README.md for instructions)?: ")
+	userMorse = userMorseUnsplit.split()
+	print("Inputed Morse: " + str(userMorse))
+	alphaList = []
+	for i in userMorse:
+		alphaElement = morseToAlpha(i)
+		alphaList.append(alphaElement)
+	print("Alpha List: " + str(alphaList))
 
 #PROGRAM
 #Intro
