@@ -1009,7 +1009,7 @@ def memory():
 if skip == "y":
 	print("Gotch ya")
 else:
-	print("Welcome to Keep Talking and Nobody Explodes")
+	print("Welcome to Keep Talking and Nobody Explodes, now on GitHub")
 	time.sleep(1)
 	print(
 	    "Currently, the only modules supported are Wires, Button, Keypad, Simon Says, Who's on First, and Memory")
