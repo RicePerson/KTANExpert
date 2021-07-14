@@ -1002,6 +1002,10 @@ def memory():
 	print("Pos: " + str(positions))
 	print(" ")
 
+#Morse Code
+def morse():
+	print("Nothing yet")
+	return
 
 #PROGRAM
 #Intro
