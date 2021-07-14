@@ -2,6 +2,7 @@
 import time
 import math
 from who2lists import *
+from morse import *
 
 
 #variables
@@ -1004,7 +1005,8 @@ def memory():
 
 #Morse Code
 def morse():
-	return
+	userMorseUnsplit = "EMPTY"
+	userMorse = "EMPTY"
 
 #PROGRAM
 #Intro
@@ -1040,6 +1042,8 @@ while isDoing == True:
 		whofirst()
 	elif module == "m":
 		memory()
+	elif module == "mO":
+		morse()
 	elif module == "stop":
 		print("Bomb Complete. Congrats Defuser")
 		isDoing = False
