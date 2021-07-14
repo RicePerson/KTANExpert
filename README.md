@@ -7,6 +7,7 @@ It's not done yet. As of right now, it only does:
 * Simon Says
 * Who's On First
 * Memory
+* Morse-Code
 
 (For more information on modules, visit bombmanual.com)
 
