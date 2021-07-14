@@ -1004,7 +1004,7 @@ def memory():
 
 #Morse Code
 def morse():
-
+	return
 
 
 #PROGRAM
