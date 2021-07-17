@@ -1003,7 +1003,7 @@ def memory():
 	print("Pos: " + str(positions))
 	print(" ")
 
-#Morse Code
+#Morse Code (input -> output)
 def morse():
 	userMorseUnsplit = input("What is your Morse Code (see README.md for instructions)?: ")
 	userMorse = userMorseUnsplit.split()
@@ -1081,6 +1081,10 @@ def morse():
 	else:
 		print("You did something wrong. Try again.")
 		return
+
+#Complicated Wires
+def compWires():
+	return
 
 
 
