@@ -1086,6 +1086,19 @@ def morse():
 def compWires():
 	return
 
+colRed = input("Does the wire have red coloring?:");
+colBlu = input("Does the wire have Blu coloring?:");
+hasStar = input("Does the wire have a star symbol?:");
+statusLED = input("Is the LED On?:");
+
+#Just a test print:
+print(colRed);
+print(colBlue);
+print(hasStar);
+print(statusLED);
+return
+
+
 
 
 #PROGRAM
