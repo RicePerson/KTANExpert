@@ -1191,7 +1191,7 @@ else:
 	print("Welcome to Keep Talking and Nobody Explodes")
 	time.sleep(1)
 	print(
-	    "Currently, the only modules supported are Wires, Button, Keypad, Simon Says, Who's on First, and Memory")
+	    "Currently, the only modules supported are Wires, Button, Keypad, Simon Says, Who's on First, Memory, and Complicated Wires")
 	time.sleep(2)
 	print("NOtA = None of the Above")
 	time.sleep(1)
