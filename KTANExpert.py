@@ -1144,12 +1144,12 @@ def compWires():
 					if hasStar:
 						print("Do not cut")
 					else:
-						print("Last serial even")
+						print("If Serial even, cut")
 				else:
 					if hasStar:
 						print("If Parallel Port, cut")
 					else:
-						print("Last serial even")
+						print("If Serial even, cut")
 			else:
 				if wireLED:
 					print("If Parallel Port, cut")
@@ -1157,20 +1157,20 @@ def compWires():
 					if hasStar:
 						print("Do not Cut")
 					else:
-						print("If serial even, cut")
+						print("If Serial even, cut")
 		elif colRed:
 			if wireLED:
-				print("If 2 battery, cut")
+				print("If 2 Battery, cut")
 			else:
 				if hasStar:
 					print("Cut")
 				else:
-					print("If serial even, cut")
+					print("If Serial even, cut")
 		elif wireLED:
 			if hasStar:
-				print("If 2 battery, cut")
+				print("If 2 Battery, cut")
 			else:
-				print("Don't cut")
+				print("Do not cut")
 		elif hasStar:
 			print("Cut")
 		else:
