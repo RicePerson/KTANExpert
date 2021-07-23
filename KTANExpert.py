@@ -1095,8 +1095,8 @@ def compWires():
 	doing = True
 	while doing:
 		#Def Vars
-		colRed = input("Does the wire have Red coloring? (y/n): ")
 		colBlu = input("Does the wire have Blue coloring? (y/n): ")
+		colRed = input("Does the wire have Red coloring? (y/n): ")
 		hasStar = input("Does the wire have a star symbol? (y/n): ")
 		wireLED = input("Is the LED on? (y/n): ")
 		
