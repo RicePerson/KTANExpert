@@ -1179,7 +1179,7 @@ def compWires():
 
 		#Breaking Loop
 		done = input("Are there more wires to process? (y/n): ")
-		if done == "y":
+		if done == "n":
 			return
 		else:
 			pass
