@@ -1,11 +1,13 @@
-#imports
+#Imports
 import time
 import math
+
+#External Def Vars
 from who2lists import *
 from morse import *
 
 
-#variables
+#Def Vars
 isDoing = True
 explode = False
 skip = input("Skip intro? y/n: ")
@@ -16,10 +18,11 @@ module = "EMPTY"
 
 #Wires (inputx7(8) -> output)
 def wires():
-	#variables
+	#Def Vars
 	number = input("Number of Wires? (3/4/5/6): ")
 	wirelist = []
-	#if number of wires is 3
+
+	#Logic - 3 Wires
 	if number == "3":
 		for i in range(3):
 			wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
@@ -54,7 +57,7 @@ def wires():
 			print("Cut last wire")
 			return
 
-	#if number of wires is 4
+	#Logic - 4 Wires
 	if number == "4":
 		for i in range(4):
 			wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
@@ -91,7 +94,7 @@ def wires():
 			print("Cut the Second Wire")
 			return
 
-	#if number of wires is 5
+	#Logic - 5 Wires
 	if number == "5":
 		for i in range(5):
 			wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
@@ -128,7 +131,7 @@ def wires():
 			print("Cut the First Wire")
 			return
 
-	#if number of wires is 6
+	#Logic - 6 Wires
 	if number == "6":
 		for i in range(6):
 			wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
@@ -165,7 +168,7 @@ def wires():
 			print("Cut the Fourth Wire")
 			return
 
-	#else
+	#If Not: 
 	return
 
 #Button (lots of input -> output)
@@ -185,12 +188,13 @@ def button():
 		else:
 			print("You did something wrong at somepoint")
 
-	#variables
+	#Def Vars
 	color = input("Color? (blu/w/y/r/NOtA): ")
 	text = input("Text? (abort/detonate/hold/NOtA): ")
 	batteries = int(input("Batteries? (1/2/3/4/more): "))
 	indicator = input("Indicator? (CAR/FRK/other): ")
 
+	#Logic
 	if ((color == "blu") and (text == "abort")):
 		hold()
 		return
@@ -215,7 +219,7 @@ def button():
 
 #Keypad (specific inputx4 -> output)
 def keypad():
-	#list defines
+	#Def Vars - keyLists
 	keys = [
 	    "lolli", "at", "lambda", "light", "staff", "h", "backC", "mouth",
 	    "slap", "starW", "?", "copy", "butt", "kk", "stroke", "6", "para",
@@ -229,7 +233,7 @@ def keypad():
 	c5 = ["trident", "smile", "bT", "forwardC", "para", "shrek3", "starB"]
 	c6 = ["6", "mouth", "stitch", "ae", "trident", "headN", "omega"]
 
-	#settings the userKeys list
+	#Def Vars - userLists
 	global userKeys
 	userKeys = []
 	print(keys)
@@ -249,7 +253,7 @@ def keypad():
 	print("Your keys are " + str(userKeys))
 	print(" ")
 
-	#checking collums
+	#Logic
 	global answerKeys
 	answerKeys = []
 	if all(elem in c1 for elem in userKeys):
@@ -273,7 +277,7 @@ def keypad():
 	else:
 		print("No collum has all of the inputed keys")
 
-	#printing the final answer
+	#Final print()
 	finalList = [x for x in answerKeys if x in userKeys]
 	print(" ")
 	print("Final: " + str(finalList))
@@ -415,7 +419,8 @@ def simonOld():
 
 #New Simon Says (inputx? -> output x#)
 def simon():
-	#simonSimple is the streamlined but DEFINITELY more complicated version...hence the name
+	#simon() is the streamlined but DEFINITELY more complicated version...hence the name
+	#Def Vars / Logic (It's a loop)
 	global userInputing
 	global finalSimon
 	vowel = input("Vowel in Serial? (y/n): ")
@@ -697,12 +702,12 @@ def simon():
 def whofirst():
 	whoWorking = True
 	while whoWorking:
-		#variables
+		#Def Vars: Step 1
 		step1 = "EMPTY"
 		spot = "EMPTY"
 		step1Work = True
 	
-		#Step 1
+		#Logic: Step 1
 		while step1Work:
 			while spot == "EMPTY":
 				step1 = input("STEP 1 - What does the display read? (lowercase): ")
@@ -723,11 +728,12 @@ def whofirst():
 					print("Please input a valid Display Word")
 					step1Work = True
 
-		#Step 2
+		#Def Vars: Step 2
 		step2 = "EMPTY"
 		readList = "EMPTY"
 		answer = "EMPTY"
 	
+		#Logic: Step 2
 		while readList == "EMPTY":
 			step2 = input("STEP 2 - What word is in the " + str(spot) + " position? (DO NOT CLICK IT YET, Lowercase): ")
 			if step2 == "ready":
@@ -812,7 +818,7 @@ def whofirst():
 		
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
 def memory():
-	#variables
+	#Def Vars
 	stage1un = "EMPTY"
 	stage1 = "EMPTY"
 	stage2un = "EMPTY"
@@ -826,7 +832,7 @@ def memory():
 	positions = []
 	numbers = []
 	print("Input the numbers starting with Display, and then left to right, seperated by spaces")
-	#Stage 1 - Settings Lists
+	#Def Vars: Stage 1 - Settings Lists
 	stage1un = input("Stage1 - What are the numbers given?: ")
 	stage1 = stage1un.split()
 	for i in range(len(stage1)):
@@ -838,7 +844,7 @@ def memory():
 			return
 	print("Inputed numbers: " + str(stage1))
 
-	#Stage 1 - Programming
+	#Logic: Stage 1
 	if stage1[0] == 1:
 		print("Press the button labeled  " + str(stage1[2]))
 		positions.append(2)
@@ -860,7 +866,7 @@ def memory():
 	print(" ")
 		
 
-	#Stage2 - Settings Lists
+	#Def Vars: Stage2 - Settings Lists
 	stage2un = input("Stage2 - What are the numbers given?: ")
 	stage2 = stage2un.split()
 	for i in range(len(stage2)):
@@ -872,7 +878,7 @@ def memory():
 			return
 	print("Inputed numbers: " + str(stage2))
 
-	#Stage2 - Programming
+	#Logic Stage2
 	if stage2[0] == 1:
 		print("Press the button labeled  4")
 		index = stage2.index(4, 1, 5)
@@ -895,7 +901,7 @@ def memory():
 	print(" ")
 
 
-	#Stage 3 - Settings Lists
+	#Def Vars: Stage 3 - Settings Lists
 	stage3un = input("Stage3 - What are the numbers given?: ")
 	stage3 = stage3un.split()
 	for i in range(len(stage3)):
@@ -907,7 +913,7 @@ def memory():
 			return
 	print("Inputed numbers: " + str(stage3))
 
-	#Stage 3 - Programming
+	#Logic: Stage 3
 	if stage3[0] == 1:
 		print("Press the button labeled  " + str(numbers[1]))
 		index = stage3.index(numbers[1])
@@ -932,7 +938,7 @@ def memory():
 	print(" ")
 
 
-	#Stage 4 - Settings Lists
+	#Def Vars: Stage 4 - Settings Lists
 	stage4un = input("Stage4 - What are the numbers given?: ")
 	stage4 = stage4un.split()
 	for i in range(len(stage4)):
@@ -944,7 +950,7 @@ def memory():
 			return
 	print("Inputed numbers: " + str(stage4))
 
-	#Stage 4 - Programming
+	#Logic: Stage 4
 	if stage4[0] == 1:
 		print("Press the button labeled " + str(stage4[positions[0]]))
 		positions.append(positions[0])
@@ -966,7 +972,7 @@ def memory():
 	print(" ")
 
 
-	#Stage 5 - Settings Lists
+	#Def Vars: Stage 5 - Settings Lists
 	stage5un = input("Stage5 - What are the numbers given?: ")
 	stage5 = stage5un.split()
 	for i in range(len(stage5)):
@@ -978,7 +984,7 @@ def memory():
 			return
 	print("Inputed numbers: " + str(stage5))
 
-	#Stage 5 - Programming
+	#Logic: Stage 5
 	if stage5[0] == 1:
 		print("Press the button labeled  " + str(numbers[0]))
 		index = stage5.index(numbers[0])
@@ -1003,8 +1009,9 @@ def memory():
 	print("Pos: " + str(positions))
 	print(" ")
 
-#Morse Code
+#Morse Code (input -> output)
 def morse():
+	#Def Vars
 	userMorseUnsplit = input("What is your Morse Code (see README.md for instructions)?: ")
 	userMorse = userMorseUnsplit.split()
 	print("Inputed Morse: " + str(userMorse))
@@ -1014,6 +1021,7 @@ def morse():
 		alphaList.append(alphaElement)
 	print("Alpha List: " + str(alphaList))
 
+	#Logic
 	if all(elem in shell for elem in alphaList):
 		print("Word was: Shell")
 		print("Input 3.505 MHz")
@@ -1082,9 +1090,107 @@ def morse():
 		print("You did something wrong. Try again.")
 		return
 
+#Complicated Wires
+def compWires():
+	while True:
+		#Def Vars
+		colBlu = input("Does the wire have Blue coloring? (y/n): ")
+		colRed = input("Does the wire have Red coloring? (y/n): ")
+		wireLED = input("Is the LED on? (y/n): ")
+		hasStar = input("Does the wire have a star symbol? (y/n): ")
+		
+		if colRed == "y":
+			colRed = True
+		elif colRed == "n":
+			colRed = False
+		else:
+			print("You did something wrong")
+			return
+
+		if colBlu== "y":
+			colBlu = True
+		elif colBlu == "n":
+			colBlu = False
+		else:
+			print("You did something wrong")
+			return
+
+		if hasStar == "y":
+			hasStar = True
+		elif hasStar == "n":
+			hasStar = False
+		else:
+			print("You did something wrong")
+			return
+
+		if wireLED == "y":
+			wireLED = True
+		elif wireLED == "n":
+			wireLED = False
+		else:
+			print("You did something wrong")
+			return
+
+		print("Blue: " + str(colBlu))
+		print("Red: " + str(colRed))
+		print("Star: " + str(hasStar))
+		print("LED: " + str(wireLED))
+		print(" ")
+
+		#Logic
+		if colBlu:
+			if colRed:
+				if wireLED:
+					if hasStar:
+						print("Do not cut")
+					else:
+						print("If Serial even, cut")
+				else:
+					if hasStar:
+						print("If Parallel Port, cut")
+					else:
+						print("If Serial even, cut")
+			else:
+				if wireLED:
+					print("If Parallel Port, cut")
+				else:
+					if hasStar:
+						print("Do not Cut")
+					else:
+						print("If Serial even, cut")
+		elif colRed:
+			if wireLED:
+				print("If 2 Battery, cut")
+			else:
+				if hasStar:
+					print("Cut")
+				else:
+					print("If Serial even, cut")
+		elif wireLED:
+			if hasStar:
+				print("If 2 Battery, cut")
+			else:
+				print("Do not cut")
+		elif hasStar:
+			print("Cut")
+		else:
+			print("Cut")
+		print(" ")
+
+		#Breaking Loop
+		done = input("Are there more wires to process? (y/n): ")
+		if done == "y":
+			return
+		else:
+			pass
+
+			
 
 
-#PROGRAM
+
+
+
+#Logic
 #Intro
 if skip == "y":
 	print("Gotch ya")
@@ -1092,7 +1198,7 @@ else:
 	print("Welcome to Keep Talking and Nobody Explodes")
 	time.sleep(1)
 	print(
-	    "Currently, the only modules supported are Wires, Button, Keypad, Simon Says, Who's on First, and Memory")
+	    "Currently, the only modules supported are Wires, Button, Keypad, Simon Says, Who's on First, Memory, and Complicated Wires")
 	time.sleep(2)
 	print("NOtA = None of the Above")
 	time.sleep(1)
@@ -1105,7 +1211,7 @@ else:
 while isDoing == True:
 	#checking which module you are currently working on
 	print(" ")
-	module = input("Module? (w/b/k/s/who/m/mO): ")
+	module = input("Module? (w/b/k/s/who/m/mO/cW): ")
 	if module == "w":
 		wires()
 	elif module == "b":
@@ -1120,6 +1226,8 @@ while isDoing == True:
 		memory()
 	elif module == "mO":
 		morse()
+	elif module == "cW":
+		compWires()
 	elif module == "stop":
 		print("Bomb Complete. Congrats Defuser")
 		isDoing = False
