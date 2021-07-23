@@ -1090,7 +1090,7 @@ def morse():
 		print("You did something wrong. Try again.")
 		return
 
-#Complicated Wires
+#Complicated Wires (input x4 -> output, loop until complete)
 def compWires():
 	while True:
 		#Def Vars
@@ -1184,7 +1184,7 @@ def compWires():
 		else:
 			pass
 
-#Wire Sequences
+#Wire Sequences (input x2 -> output, loop until complete)
 def wireSeq():
 	redOcc = 0
 	bluOcc = 0
