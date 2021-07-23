@@ -7,7 +7,7 @@ Main is the code that functions properly. When a module is completed and fully w
 2. Create a Draft PR for that Module that uses the **MODULE-add** branch
 3. When working on that module, commit the change to **MODULE-add**
 4. Once the module is finished, go over the commits in the PR
-5. If looking good, merge with **main**. 
+5. If looking good, merge with **master**. 
 6. Do approiate things in the Manual Project
 7. Create the next module's Draft PR.
 
