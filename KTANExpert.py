@@ -1191,9 +1191,178 @@ def wireSeq():
 	blkOcc = 0
 	while True:
 		#Def Vars
+		print(" ")
+		wire = []
 		wireUn = input("What is the wire color letter?: ")
 		wire = wireUn.split()
-		print(wire)
+		print("Wire: " + str(wire))
+
+		#Logic - Occurences
+		if wire[0] == "Red":
+			redOcc += 1
+			print("Occur: " + str(redOcc))
+		elif wire[0] == "Blue":
+			bluOcc += 1
+			print("Occur: " + str(bluOcc))
+		elif wire[0] == "Black":
+			blkOcc += 1
+			print("Occur: " + str(blkOcc))
+		else:
+			print("Try Again")
+			pass
+
+		#Logic - Processing
+		#Red Wire
+		if wire[0] == "Red":
+			if redOcc == 1:
+				if wire[1] == "C":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 2:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 3:
+				if wire[1] == "A":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 4:
+				if wire[1] in ["A", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 5:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 6:
+				if wire[1] in ["A", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 7:
+				if wire[1] in ["A", "B", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 8:
+				if wire[1] in ["A", "B"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif redOcc == 9:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+
+		#Blue Wire
+		elif wire[0] == "Blue":
+			if bluOcc == 1:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 2:
+				if wire[1] in ["A", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 3:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 4:
+				if wire[1] == "A":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 5:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 6:
+				if wire[1] in ["B", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 7:
+				if wire[1] == "C":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 8:
+				if wire[1] in ["A", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif bluOcc == 9:
+				if wire[1] == "A":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+
+		#Black Wire			
+		elif wire[0] == "Black":
+			if blkOcc == 1:
+				if wire[1] in ["A", "B", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 2:
+				if wire[1] in ["A", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 3:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 4:
+				if wire[1] in ["A", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 5:
+				if wire[1] == "B":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 6:
+				if wire[1] in ["B", "C"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 7:
+				if wire[1] in ["A", "B"]:
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 8:
+				if wire[1] == "C":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+			elif blkOcc == 9:
+				if wire[1] == "C":
+					print("Cut that wire")
+				else:
+					print("Don't cut that wire")
+
+		#Exit
+		elif wire[0] == "Exit":
+			return
+
+		#If nothing else
+		else:
+			print("Something Happened, try again")
 
 
 #Logic
