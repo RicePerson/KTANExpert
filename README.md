@@ -42,6 +42,8 @@ Once you have input the details, the Expert will give you a command. Use the fol
 | If Parallel port, cut | If there is a long parallel port on the bom, cut that wire |
 | If Serial even, cut | If the last digit of the serial number is even, cut that wire |
 
+Once you have recieved a command, the Expert will ask if the wires are done. If not, answer **n**, and continue the module. If you are done, answer **y**, and you will be put back to the Module Selector. 
+
 ### Example:
 1. KTANE gives you a red and blue twisted wire with an LED and no Star.
 2. You enter **y** for Blue? Red? and LED?

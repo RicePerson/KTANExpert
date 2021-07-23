@@ -1209,7 +1209,7 @@ else:
 
 #Module Loop
 while isDoing == True:
-	#checkin;g which module you are currently working on
+	#checking which module you are currently working on
 	print(" ")
 	module = input("Module? (w/b/k/s/who/m/mO/cW): ")
 	if module == "w":
