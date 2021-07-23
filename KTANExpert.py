@@ -1184,7 +1184,6 @@ def compWires():
 		else:
 			pass
 
-			
 #Logic
 #Intro
 if skip == "y":
