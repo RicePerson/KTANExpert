@@ -1084,19 +1084,49 @@ def morse():
 
 #Complicated Wires
 def compWires():
-	colRed = input("Does the wire have red coloring?: ")
-	colBlue = input("Does the wire have Blu coloring?: ")
-	hasStar = input("Does the wire have a star symbol?: ")
-	statusLED = input("Is the LED On?: ")
+	doing = True
+	while doing:
+		colRed = input("Does the wire have Red coloring? (y/n): ")
+		colBlu = input("Does the wire have Blue coloring? (y/n): ")
+		hasStar = input("Does the wire have a star symbol? (y/n): ")
+		wireLED = input("Is the LED on? (y/n): ")
+		
+		if colRed == "y":
+			colRed = True
+		elif colRed == "n":
+			colRed = False
+		else:
+			print("You did something wrong")
+			return
 
-	# Just a test print:
-	print(colRed)
-	print(colBlue)
-	print(hasStar)
-	print(statusLED)
-	return
+		if colBlu== "y":
+			colBlu = True
+		elif colBlu == "n":
+			colBlu = False
+		else:
+			print("You did something wrong")
+			return
 
+		if hasStar == "y":
+			hasStar = True
+		elif hasStar == "n":
+			hasStar = False
+		else:
+			print("You did something wrong")
+			return
 
+		if wireLED == "y":
+			wireLED = True
+		elif wireLED == "n":
+			wireLED = False
+		else:
+			print("You did something wrong")
+			return
+
+		print("Blue: " + str(colBlu))
+		print("Red: " + str(colRed))
+		print("Star: " + str(hasStar))
+		print("LED: " + str(wireLED))
 
 
 #PROGRAM
@@ -1120,7 +1150,7 @@ else:
 while isDoing == True:
 	#checking which module you are currently working on
 	print(" ")
-	module = input("Module? (w/b/k/s/who/m/mO): ")
+	module = input("Module? (w/b/k/s/who/m/mO/cW): ")
 	if module == "w":
 		wires()
 	elif module == "b":
@@ -1135,6 +1165,8 @@ while isDoing == True:
 		memory()
 	elif module == "mO":
 		morse()
+	elif module == "cW":
+		compWires()
 	elif module == "stop":
 		print("Bomb Complete. Congrats Defuser")
 		isDoing = False
