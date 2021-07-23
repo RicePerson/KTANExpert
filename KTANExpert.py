@@ -1184,7 +1184,7 @@ def compWires():
 		else:
 			pass
 		
-#Wire Sequences
+#Wire Sequences (Change from RicePerson)
 def wireSeq():
 	return
 
