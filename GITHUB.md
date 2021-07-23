@@ -28,6 +28,3 @@ A version is marked by a Module addition as of right now.
 * Use the Classic v0.#.##
 * A new module marks v0.#+1.0
 * A change to a module marks v.0.#.#+1
-
-
-hi
