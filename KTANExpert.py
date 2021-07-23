@@ -1183,11 +1183,10 @@ def compWires():
 			return
 		else:
 			pass
-
-			
-
-
-
+		
+#Wire Sequences
+def wireSeq():
+	return
 
 
 #Logic
