@@ -1186,7 +1186,14 @@ def compWires():
 
 #Wire Sequences
 def wireSeq():
-	return
+	redOcc = 0
+	bluOcc = 0
+	blkOcc = 0
+	while True:
+		#Def Vars
+		wireUn = input("What is the wire color letter?: ")
+		wire = wireUn.split()
+		print(wire)
 
 
 #Logic
@@ -1210,7 +1217,7 @@ else:
 while isDoing == True:
 	#checking which module you are currently working on
 	print(" ")
-	module = input("Module? (w/b/k/s/who/m/mO/cW): ")
+	module = input("Module? (w/b/k/s/who/m/mO/cW/wS): ")
 	if module == "w":
 		wires()
 	elif module == "b":
@@ -1227,6 +1234,8 @@ while isDoing == True:
 		morse()
 	elif module == "cW":
 		compWires()
+	elif module == "wS":
+		wireSeq()
 	elif module == "stop":
 		print("Bomb Complete. Congrats Defuser")
 		isDoing = False
