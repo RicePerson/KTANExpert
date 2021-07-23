@@ -1092,8 +1092,7 @@ def morse():
 
 #Complicated Wires
 def compWires():
-	doing = True
-	while doing:
+	while True:
 		#Def Vars
 		colBlu = input("Does the wire have Blue coloring? (y/n): ")
 		colRed = input("Does the wire have Red coloring? (y/n): ")
@@ -1136,6 +1135,7 @@ def compWires():
 		print("Red: " + str(colRed))
 		print("Star: " + str(hasStar))
 		print("LED: " + str(wireLED))
+		print(" ")
 
 		#Logic
 		if colBlu:
@@ -1175,7 +1175,14 @@ def compWires():
 			print("Cut")
 		else:
 			print("Cut")
+		print(" ")
 
+		#Breaking Loop
+		done = input("Are there more wires to process? (y/n): ")
+		if done == "y":
+			return
+		else:
+			pass
 
 			
 
