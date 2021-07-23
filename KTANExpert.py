@@ -1098,14 +1098,6 @@ def compWires():
 		colRed = input("Does the wire have Red coloring? (y/n): ")
 		wireLED = input("Is the LED on? (y/n): ")
 		hasStar = input("Does the wire have a star symbol? (y/n): ")
-		
-		if colRed == "y":
-			colRed = True
-		elif colRed == "n":
-			colRed = False
-		else:
-			print("You did something wrong")
-			return
 
 		if colBlu== "y":
 			colBlu = True
@@ -1114,11 +1106,11 @@ def compWires():
 		else:
 			print("You did something wrong")
 			return
-
-		if hasStar == "y":
-			hasStar = True
-		elif hasStar == "n":
-			hasStar = False
+			
+		if colRed == "y":
+			colRed = True
+		elif colRed == "n":
+			colRed = False
 		else:
 			print("You did something wrong")
 			return
@@ -1127,6 +1119,14 @@ def compWires():
 			wireLED = True
 		elif wireLED == "n":
 			wireLED = False
+		else:
+			print("You did something wrong")
+			return
+
+		if hasStar == "y":
+			hasStar = True
+		elif hasStar == "n":
+			hasStar = False
 		else:
 			print("You did something wrong")
 			return
