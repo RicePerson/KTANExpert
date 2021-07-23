@@ -1138,6 +1138,49 @@ def compWires():
 		print("LED: " + str(wireLED))
 
 		#Logic
+		if colBlu:
+			if colRed:
+				if wireLED:
+					if hasStar:
+						print("Do not cut")
+					else:
+						print("Last serial even")
+				else:
+					if hasStar:
+						print("If Parallel Port, cut")
+					else:
+						print("Last serial even")
+			else:
+				if wireLED:
+					print("If Parallel Port, cut")
+				else:
+					if hasStar:
+						print("Do not Cut")
+					else:
+						print("If serial even, cut")
+		elif colRed:
+			if wireLED:
+				print("If 2 battery, cut")
+			else:
+				if hasStar:
+					print("Cut")
+				else:
+					print("If serial even, cut")
+		elif wireLED:
+			if hasStar:
+				print("If 2 battery, cut")
+			else:
+				print("Don't cut")
+		elif hasStar:
+			print("Cut")
+		else:
+			print("Cut")
+
+
+			
+
+
+
 
 
 #Logic
@@ -1159,7 +1202,7 @@ else:
 
 #Module Loop
 while isDoing == True:
-	#checking which module you are currently working on
+	#checkin;g which module you are currently working on
 	print(" ")
 	module = input("Module? (w/b/k/s/who/m/mO/cW): ")
 	if module == "w":
