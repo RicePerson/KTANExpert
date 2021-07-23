@@ -1184,6 +1184,11 @@ def compWires():
 		else:
 			pass
 
+#Wire Sequences
+def wireSeq():
+	return
+
+
 #Logic
 #Intro
 if skip == "y":
