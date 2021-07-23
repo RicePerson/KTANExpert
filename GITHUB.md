@@ -23,7 +23,7 @@ Main is the code that functions properly. When a module is completed and fully w
 2. Commit any changes to **that branch you made**
 3. PR, merge w/ **main**, it doesn't really matter yet.
 
-# Version Time
+# Version Numbers
 A version is marked by a Module addition as of right now.
 * Use the Classic v0.#.##
 * A new module marks v0.#+1.0
