@@ -39,7 +39,7 @@ Once you have input the details, the Expert will give you a command. Use the fol
 | Cut     | Cut that Wire |
 | Do not Cut | Do not cut that wire, just move on |
 | If 2 Battery, cut | Cut only if there are 2 or more batteries on the bomb |
-| If Parallel port, cut | If there is a long parallel port on the bom, cut that wire |
+| If Parallel port, cut | If there is a long parallel port on the bomb, cut that wire |
 | If Serial even, cut | If the last digit of the serial number is even, cut that wire |
 
 Once you have recieved a command, the Expert will ask if the wires are done. If not, answer **n**, and continue the module. If you are done, answer **y**, and you will be put back to the Module Selector. 
