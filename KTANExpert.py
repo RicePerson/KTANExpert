@@ -1198,22 +1198,24 @@ def wireSeq():
 		print("Wire: " + str(wire))
 
 		#Logic - Occurences
-		if wire[0] == "Red":
+		if wire[0] == "red":
 			redOcc += 1
 			print("Occur: " + str(redOcc))
-		elif wire[0] == "Blue":
+		elif wire[0] == "blu":
 			bluOcc += 1
 			print("Occur: " + str(bluOcc))
-		elif wire[0] == "Black":
+		elif wire[0] == "bla":
 			blkOcc += 1
 			print("Occur: " + str(blkOcc))
 		else:
-			print("Try Again")
-			pass
+			if wire[0] == "exit":
+				pass
+			else:
+				print("Try Again")
 
 		#Logic - Processing
 		#Red Wire
-		if wire[0] == "Red":
+		if wire[0] == "red":
 			if redOcc == 1:
 				if wire[1] == "C":
 					print("Cut that wire")
@@ -1261,7 +1263,7 @@ def wireSeq():
 					print("Don't cut that wire")
 
 		#Blue Wire
-		elif wire[0] == "Blue":
+		elif wire[0] == "blu":
 			if bluOcc == 1:
 				if wire[1] == "B":
 					print("Cut that wire")
@@ -1309,7 +1311,7 @@ def wireSeq():
 					print("Don't cut that wire")
 
 		#Black Wire			
-		elif wire[0] == "Black":
+		elif wire[0] == "bla":
 			if blkOcc == 1:
 				if wire[1] in ["A", "B", "C"]:
 					print("Cut that wire")
@@ -1357,7 +1359,7 @@ def wireSeq():
 					print("Don't cut that wire")
 
 		#Exit
-		elif wire[0] == "Exit":
+		elif wire[0] == "exit":
 			return
 
 		#If nothing else
