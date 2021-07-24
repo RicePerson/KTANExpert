@@ -1193,7 +1193,7 @@ def wireSeq():
 		#Def Vars
 		print(" ")
 		wire = []
-		wireUn = input("What is the wire color letter?: ")
+		wireUn = input("What is the wire color and letter?: ")
 		wire = wireUn.split()
 		print("Wire: " + str(wire))
 
@@ -1212,6 +1212,7 @@ def wireSeq():
 				pass
 			else:
 				print("Try Again")
+		print(" ")
 
 		#Logic - Processing
 		#Red Wire
