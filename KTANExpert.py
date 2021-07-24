@@ -243,6 +243,7 @@ def keypad():
 	global userKeys
 	userKeys = []
 	print(keys)
+	print(" ")
 
 	for i in range(4):
 		cont = False
