@@ -43,6 +43,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if "r" not in wirelist:
 			print("Cut the Second Wire")
@@ -78,6 +79,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if wirelist.count("r") > 1:
 			serial = int(input("Last Digit of Serial: "))
@@ -115,6 +117,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if wirelist[-1] == "bla":
 			serial = int(input("Last Digit of Serial: "))
@@ -152,6 +155,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if wirelist.count("y") == 0:
 			serial = int(input("Last Digit of Serial: "))
