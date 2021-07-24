@@ -289,7 +289,7 @@ def keypad():
 	print(" ")
 	print("Final: " + str(finalList))
 
-#Old Simon Says (I dont rememeber)
+#Old Simon Says (I dont rememeber, it depricated)
 def simonOld():
 	#original simon module, robust, but bulky
 	vowel = input("Vowel in Serial/ (y/n): ")
@@ -439,6 +439,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -476,6 +477,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -483,6 +485,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -520,6 +523,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -527,6 +531,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -564,6 +569,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -573,6 +579,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -610,6 +617,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -617,6 +625,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -654,6 +663,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -661,6 +671,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -698,6 +709,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
