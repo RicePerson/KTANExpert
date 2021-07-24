@@ -54,3 +54,14 @@ Once you have recieved a command, the Expert will ask if the wires are done. If 
 7. Repeat until module is done. 
 8. Once the module is done, answer **y** to the loop question in the Expert. *Module Complete, move on to the next on.* 
 
+## Wire Sequences
+Again, going one wire at a time, enter the wire color and placement into the Expert, and follow the instructions that it gives you. When you see the module, there will be 4 sections, not all visable yet. **DO NOT PRESS THE ARROW UNTIL YOU ARE DONE WITH THAT SECITON!!!!** Enter the wires into the Expert in numerical order with the numbers on the left. Starting with 1, give the Expert the color (blu, bla, or red) and the letter that wire goes to (A, B, or C). Capitalization matters. Repeat until the module is complete, then type just "exit" as the wire color (leave the letter blank), and you will be returned to the Module Selector.
+
+### Example:
+1. KTANE gives you 2 wires in the first section. A Blue in 1 and B, and a Black in 1 and B.
+2. You enter **blu B** and press enter.
+3. The Expert tells you to Cut the Wire. Cut it
+4. The Expert then asks for the next wire, you enter **bla B**
+5. The Expert tells you to Cut that Wire as well. Do It
+6. Now that the wires on that section have been processed, you click the down arrow to move on.
+7. Repeat until done. Type **exit** as the next input to return to Module Selection. *Module Complete, move on to the next on.* 
