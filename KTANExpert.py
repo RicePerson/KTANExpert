@@ -181,6 +181,7 @@ def button():
 		print("Hold down the button")
 		time.sleep(1)
 		strip = input("Color of strip? (blu/w/y/other): ")
+		print(" ")
 		if strip == "blu":
 			print("Hold until countdown has 4")
 		elif strip == "w":
@@ -199,6 +200,7 @@ def button():
 	indicator = input("Indicator? (CAR/FRK/other): ")
 
 	#Logic
+	print(" ")
 	if ((color == "blu") and (text == "abort")):
 		hold()
 		return
