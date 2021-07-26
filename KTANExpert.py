@@ -822,7 +822,9 @@ def whofirst():
 			if advance == "n":
 				pass
 			elif advance == "y":
+				print(" ")
 				print("Click the word " + str(i))
+				print(" ")
 				done2 = True
 				break
 		if done2 == False:
