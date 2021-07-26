@@ -1047,6 +1047,7 @@ def morse():
 	print("Alpha List: " + str(alphaList))
 
 	#Logic
+	print(" ")
 	if all(elem in shell for elem in alphaList):
 		print("Word was: Shell")
 		print("Input 3.505 MHz")
