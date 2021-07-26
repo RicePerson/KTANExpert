@@ -43,6 +43,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if "r" not in wirelist:
 			print("Cut the Second Wire")
@@ -78,6 +79,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if wirelist.count("r") > 1:
 			serial = int(input("Last Digit of Serial: "))
@@ -115,6 +117,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if wirelist[-1] == "bla":
 			serial = int(input("Last Digit of Serial: "))
@@ -152,6 +155,7 @@ def wires():
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
+		print(" ")
 
 		if wirelist.count("y") == 0:
 			serial = int(input("Last Digit of Serial: "))
@@ -177,6 +181,7 @@ def button():
 		print("Hold down the button")
 		time.sleep(1)
 		strip = input("Color of strip? (blu/w/y/other): ")
+		print(" ")
 		if strip == "blu":
 			print("Hold until countdown has 4")
 		elif strip == "w":
@@ -195,6 +200,7 @@ def button():
 	indicator = input("Indicator? (CAR/FRK/other): ")
 
 	#Logic
+	print(" ")
 	if ((color == "blu") and (text == "abort")):
 		hold()
 		return
@@ -237,6 +243,7 @@ def keypad():
 	global userKeys
 	userKeys = []
 	print(keys)
+	print(" ")
 
 	for i in range(4):
 		cont = False
@@ -282,7 +289,7 @@ def keypad():
 	print(" ")
 	print("Final: " + str(finalList))
 
-#Old Simon Says (I dont rememeber)
+#Old Simon Says (I dont rememeber, it depricated)
 def simonOld():
 	#original simon module, robust, but bulky
 	vowel = input("Vowel in Serial/ (y/n): ")
@@ -432,6 +439,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -469,6 +477,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -476,6 +485,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -513,6 +523,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -520,6 +531,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -557,6 +569,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -566,6 +579,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -603,6 +617,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -610,6 +625,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -647,6 +663,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -654,6 +671,7 @@ def simon():
 				user = []
 				finalSimon = []
 				flash = 1
+				print(" ")
 				while True:
 					userInput = input("What is flash " + str(flash) +
 					                  "? (r/blu/g/y/end/done):")
@@ -691,6 +709,7 @@ def simon():
 					else:
 						print("How?")
 						return
+				print(" ")
 				print("Input: " + str(finalSimon))
 				print(" ")
 
@@ -803,7 +822,9 @@ def whofirst():
 			if advance == "n":
 				pass
 			elif advance == "y":
+				print(" ")
 				print("Click the word " + str(i))
+				print(" ")
 				done2 = True
 				break
 		if done2 == False:
@@ -842,9 +863,11 @@ def memory():
 		else:
 			print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
 			return
-	print("Inputed numbers: " + str(stage1))
+	print("Inputed Display: " + str(stage1[0]))
+	print("Inputed Numbers: " + str(stage1[1:5]))
 
 	#Logic: Stage 1
+	print(" ")
 	if stage1[0] == 1:
 		print("Press the button labeled  " + str(stage1[2]))
 		positions.append(2)
@@ -861,10 +884,8 @@ def memory():
 		print("Press the button labeled  " + str(stage1[4]))
 		positions.append(4)
 		numbers.append(stage1[4])
-	print("Num: " + str(numbers))
-	print("Pos: " + str(positions))
 	print(" ")
-		
+
 
 	#Def Vars: Stage2 - Settings Lists
 	stage2un = input("Stage2 - What are the numbers given?: ")
@@ -876,9 +897,12 @@ def memory():
 		else:
 			print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
 			return
-	print("Inputed numbers: " + str(stage2))
+	print("Inputed Display: " + str(stage2[0]))
+	print("Inputed Numbers: " + str(stage2[1:5]))
+
 
 	#Logic Stage2
+	print(" ")
 	if stage2[0] == 1:
 		print("Press the button labeled  4")
 		index = stage2.index(4, 1, 5)
@@ -896,8 +920,6 @@ def memory():
 		print("Press the button labeled " + str(stage2[positions[0]]))
 		positions.append(positions[0])
 		numbers.append(stage2[positions[0]])
-	print("Num: " + str(numbers))
-	print("Pos: " + str(positions))
 	print(" ")
 
 
@@ -911,9 +933,12 @@ def memory():
 		else:
 			print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
 			return
-	print("Inputed numbers: " + str(stage3))
+	print("Inputed Display: " + str(stage3[0]))
+	print("Inputed Numbers: " + str(stage3[1:5]))
+
 
 	#Logic: Stage 3
+	print(" ")
 	if stage3[0] == 1:
 		print("Press the button labeled  " + str(numbers[1]))
 		index = stage3.index(numbers[1])
@@ -933,8 +958,6 @@ def memory():
 		index = stage3.index(4, 1, 5)
 		positions.append(index)
 		numbers.append(4)
-	print("Num: " + str(numbers))
-	print("Pos: " + str(positions))
 	print(" ")
 
 
@@ -948,9 +971,12 @@ def memory():
 		else:
 			print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
 			return
-	print("Inputed numbers: " + str(stage4))
+	print("Inputed Display: " + str(stage4[0]))
+	print("Inputed Numbers: " + str(stage4[1:5]))
+
 
 	#Logic: Stage 4
+	print(" ")
 	if stage4[0] == 1:
 		print("Press the button labeled " + str(stage4[positions[0]]))
 		positions.append(positions[0])
@@ -967,8 +993,6 @@ def memory():
 		print("Press the button labeled " + str(stage4[positions[1]]))
 		positions.append(positions[1])
 		numbers.append(stage4[positions[1]])
-	print("Num: " + str(numbers))
-	print("Pos: " + str(positions))
 	print(" ")
 
 
@@ -982,9 +1006,12 @@ def memory():
 		else:
 			print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
 			return
-	print("Inputed numbers: " + str(stage5))
+	print("Inputed Display: " + str(stage5[0]))
+	print("Inputed Numbers: " + str(stage5[1:5]))
+
 
 	#Logic: Stage 5
+	print(" ")
 	if stage5[0] == 1:
 		print("Press the button labeled  " + str(numbers[0]))
 		index = stage5.index(numbers[0])
@@ -1005,8 +1032,6 @@ def memory():
 		index = stage5.index(numbers[2])
 		positions.append(index)
 		numbers.append(numbers[2])
-	print("Num: " + str(numbers))
-	print("Pos: " + str(positions))
 	print(" ")
 
 #Morse Code (input -> output)
@@ -1022,6 +1047,7 @@ def morse():
 	print("Alpha List: " + str(alphaList))
 
 	#Logic
+	print(" ")
 	if all(elem in shell for elem in alphaList):
 		print("Word was: Shell")
 		print("Input 3.505 MHz")
