@@ -8,6 +8,8 @@ It's not done yet. As of right now, it only does:
 * Who's On First
 * Memory
 * Morse-Code
+* Complicated Wires
+* Wire Sequences
 
 (For more information on modules, visit bombmanual.com)
 
