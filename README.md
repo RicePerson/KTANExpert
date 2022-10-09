@@ -25,7 +25,8 @@ Every module has a description with basic instructions, as well as an example wi
 For ease of following the plot, the Player is marked by a :red_circle: and the Expert is followed by a :large_blue_circle:.
 Anything that would be typed into the command window or is recieved from the command window with look like `this`.
 
-## Glossary
+### Glossary
+There are some words used in these instructions that may mean something other than what common sense would infer. Here is what those words mean.
 - **KTANE Module:** A module on the bomb in Keep Talking and Nobody Explodes
 - **Expert:large_blue_circle::** The program this README accompanys
 - **Player:red_circle::** You!
@@ -34,6 +35,21 @@ Anything that would be typed into the command window or is recieved from the com
 - **Input(s):** Things the Player will type into the command window, then press ENTER
 - **Output(s):** Things the Expert will tell the Player in the command window
 - **ENTER:** Represents pressing the Enter Key
+
+### Codes
+There are short-hand codes used throughout to make inputs generally faster. Here they are
+| Shorthand | What it means|
+| ----- | ----- |
+| KTANE | Keep Talking and Nobody Explodes |
+| y | Yes |
+| n | No |
+| r | Red |
+| blu | Blue |
+| bla | Black |
+| w | White |
+| y | Yellow |
+| g | Green |
+
 
 
 ## Wires
