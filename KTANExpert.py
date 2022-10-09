@@ -13,8 +13,8 @@ from modules.morseModule import *
 from modules.compWires import *
 from modules.wireSeq import *
 
-from support.morse import *
-from support.who2lists import *
+from modules.support.morse import *
+from modules.support.who2lists import *
 
 
 #Def Vars

@@ -1,4 +1,6 @@
 
+from  support.who2lists import *
+
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():

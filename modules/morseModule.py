@@ -1,4 +1,4 @@
-
+from support.morse import *
 
 #Morse Code (input -> output)
 def morse():
