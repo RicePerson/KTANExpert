@@ -25,10 +25,10 @@ Follow the given instructions.
 
 ### Example:
 1. KTANE gives you a wire module that goes:
--       -
+- Empty -
 -  RED  -
 -  RED  -
--       -
+- Empty -
 -  BLUE -
 - WHITE -
 
@@ -63,11 +63,11 @@ Repeat until the module is complete. To exit the module on the expert, input "do
 ### Example
 *0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing slowly.*
 1) The player selects the simon says expert module
-2) Player~:red_circle:~ inputs `y` then `1`
-3) Player~:red_circle:~ input `r` then `end`
-4) Expert~:blue_circle:~ outputs **Input: ['y']**
-5) Player~:red_circle:~ clicks the yellow button in KTANE
-omega) Repeat until module is complete, then Player~:red_circle:~ inputs **done** into the expert~:blue_circle:~.
+2) Player:red_circle: inputs `y` then `1`
+3) Player:red_circle: input `r` then `end`
+4) Expert:large_blue_circle: outputs **Input: ['y']**
+5) Player:red_circle: clicks the yellow button in KTANE
+omega) Repeat until module is complete, then Player:red_circle: inputs **done** into the expert:large_blue_circle:.
 
 Note: If for some reason, after clicking a colorred button, it markes it as wrong and gives you a strike, 
 enter **done** into the expert and start over, as the current number of strikes affects the module.
