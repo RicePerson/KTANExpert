@@ -13,33 +13,12 @@ from modules.morseModule import *
 from modules.compWires import *
 from modules.wireSeq import *
 
-from support.morse import *
-from support.who2lists import *
-
 
 #Def Vars
 isDoing = True
 explode = False
-skip = input("Skip intro? y/n: ")
 module = "EMPTY"
-
-
-#Logic
-#Intro
-if skip == "y":
-	print("Gotch ya")
-else:
-	print("Welcome to Keep Talking and Nobody Explodes")
-	time.sleep(1)
-	print(
-	    "Currently, the only modules supported are Wires, Button, Keypad, Simon Says, Who's on First, Memory, Complicated Wires, and Wire Sequences")
-	time.sleep(2)
-	print("NOtA = None of the Above")
-	time.sleep(1)
-	print(
-	    "blu is Blue, and bla is Black. Every other color is just the first letter"
-	)
-	time.sleep(3)
+print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
 #Module Loop
 while isDoing == True:

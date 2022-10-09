@@ -16,8 +16,12 @@ def memory():
 	positions = []
 	numbers = []
 	print("Input the numbers starting with Display, and then left to right, seperated by spaces")
+
 	#Def Vars: Stage 1 - Settings Lists
-	stage1un = input("Stage1 - What are the numbers given?: ")
+	stage1un = input("Stage1 - What are the numbers given? (1,2,3,4,r): ")
+	if stage2un == "r":
+		print("Reset detected. Resetting expert...")
+		return
 	stage1 = stage1un.split()
 	for i in range(len(stage1)):
 		stage1[i] = int(stage1[i])
@@ -32,26 +36,29 @@ def memory():
 	#Logic: Stage 1
 	print(" ")
 	if stage1[0] == 1:
-		print("Press the button labeled  " + str(stage1[2]))
+		print("Press the button labeled " + str(stage1[2]))
 		positions.append(2)
 		numbers.append(stage1[2])
 	elif stage1[0] == 2:
-		print("Press the button labeled  " + str(stage1[2]))
+		print("Press the button labeled " + str(stage1[2]))
 		positions.append(2)
 		numbers.append(stage1[2])
 	elif stage1[0] == 3:
-		print("Press the button labeled  " + str(stage1[3]))
+		print("Press the button labeled " + str(stage1[3]))
 		positions.append(3)
 		numbers.append(stage1[3])
 	elif stage1[0] == 4:
-		print("Press the button labeled  " + str(stage1[4]))
+		print("Press the button labeled " + str(stage1[4]))
 		positions.append(4)
 		numbers.append(stage1[4])
 	print(" ")
 
 
 	#Def Vars: Stage2 - Settings Lists
-	stage2un = input("Stage2 - What are the numbers given?: ")
+	stage2un = input("Stage2 - What are the numbers given? (1,2,3,4,r): ")
+	if stage2un == "r":
+		print("Reset detected. Resetting expert...")
+		return
 	stage2 = stage2un.split()
 	for i in range(len(stage2)):
 		stage2[i] = int(stage2[i])
@@ -87,7 +94,10 @@ def memory():
 
 
 	#Def Vars: Stage 3 - Settings Lists
-	stage3un = input("Stage3 - What are the numbers given?: ")
+	stage3un = input("Stage3 - What are the numbers given? (1,2,3,4,r): ")
+	if stage2un == "r":
+		print("Reset detected. Resetting expert...")
+		return
 	stage3 = stage3un.split()
 	for i in range(len(stage3)):
 		stage3[i] = int(stage3[i])
@@ -103,17 +113,17 @@ def memory():
 	#Logic: Stage 3
 	print(" ")
 	if stage3[0] == 1:
-		print("Press the button labeled  " + str(numbers[1]))
+		print("Press the button labeled " + str(numbers[1]))
 		index = stage3.index(numbers[1])
 		positions.append(index)
 		numbers.append(numbers[1])
 	elif stage3[0] == 2:
-		print("Press the button labeled  " + str(numbers[0]))
+		print("Press the button labeled " + str(numbers[0]))
 		index = stage3.index(numbers[0])
 		positions.append(index)
 		numbers.append(numbers[0])
 	elif stage3[0] == 3:
-		print("Press the button labeled  " + str(stage3[3]))
+		print("Press the button labeled " + str(stage3[3]))
 		positions.append(3)
 		numbers.append(stage3[3])
 	elif stage3[0] == 4:
@@ -125,7 +135,10 @@ def memory():
 
 
 	#Def Vars: Stage 4 - Settings Lists
-	stage4un = input("Stage4 - What are the numbers given?: ")
+	stage4un = input("Stage4 - What are the numbers given? (1,2,3,4,r): ")
+	if stage2un == "r":
+		print("Reset detected. Resetting expert...")
+		return
 	stage4 = stage4un.split()
 	for i in range(len(stage4)):
 		stage4[i] = int(stage4[i])
@@ -160,7 +173,10 @@ def memory():
 
 
 	#Def Vars: Stage 5 - Settings Lists
-	stage5un = input("Stage5 - What are the numbers given?: ")
+	stage5un = input("Stage5 - What are the numbers given? (1,2,3,4,r): ")
+	if stage2un == "r":
+		print("Reset detected. Resetting expert...")
+		return
 	stage5 = stage5un.split()
 	for i in range(len(stage5)):
 		stage5[i] = int(stage5[i])
@@ -176,22 +192,22 @@ def memory():
 	#Logic: Stage 5
 	print(" ")
 	if stage5[0] == 1:
-		print("Press the button labeled  " + str(numbers[0]))
+		print("Press the button labeled " + str(numbers[0]))
 		index = stage5.index(numbers[0])
 		positions.append(index)
 		numbers.append(numbers[0])
 	elif stage5[0] == 2:
-		print("Press the button labeled  " + str(numbers[1]))
+		print("Press the button labeled " + str(numbers[1]))
 		index = stage5.index(numbers[1])
 		positions.append(index)
 		numbers.append(numbers[1])
 	elif stage5[0] == 3:
-		print("Press the button labeled  " + str(numbers[3]))
+		print("Press the button labeled " + str(numbers[3]))
 		index = stage5.index(numbers[3])
 		positions.append(index)
 		numbers.append(numbers[3])
 	elif stage5[0] == 4:
-		print("Press the button labeled  " + str(numbers[2]))
+		print("Press the button labeled " + str(numbers[2]))
 		index = stage5.index(numbers[2])
 		positions.append(index)
 		numbers.append(numbers[2])
