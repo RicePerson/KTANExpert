@@ -53,24 +53,24 @@ Repeat until provivded a Final List. Enter these in order to complete the module
 
 ## Simon Says
 This can be considered the worst game of simon says, because you don't repeat it back.
-Once the simon says module is selected in the expert (selected by "s"), it will ask a couple of preliminary questions about the bomb, which will determine which lookup-table it will use.
+Once the simon says module is selected in the expert (selected by `s`), it will ask a couple of preliminary questions about the bomb, which will determine which lookup-table it will use.
 After answering these questions, watch the KTANE module for its ENTIRE flash sequence (the module starts with one flash, then increases by one with every sucessfull button-press)
 The module will flash relatively quickly, and then repeat the sequence after a long pause.
-Enter each flash color IN ORDER with an ENTER between each. Once all colors have been entered, input "end".
+Enter each flash color IN ORDER with an ENTER between each. Once all colors have been entered, input `end`.
 Click the colored buttons in the given order.
-Repeat until the module is complete. To exit the module on the expert, input "done" at any step.
+Repeat until the module is complete. To exit the module on the expert, input `done` at any step.
 
 ### Example
 *0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing slowly.*
 1) The player selects the simon says expert module
 2) Player:red_circle: inputs `y` then `1`
 3) Player:red_circle: input `r` then `end`
-4) Expert:large_blue_circle: outputs **Input: ['y']**
+4) Expert:large_blue_circle: outputs `Input: ['y']`
 5) Player:red_circle: clicks the yellow button in KTANE
-omega) Repeat until module is complete, then Player:red_circle: inputs **done** into the expert:large_blue_circle:.
+omega) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:.
 
 Note: If for some reason, after clicking a colorred button, it markes it as wrong and gives you a strike, 
-enter **done** into the expert and start over, as the current number of strikes affects the module.
+enter `done` into the expert and start over, as the current number of strikes affects the module.
 
 ## Who's on First
 
