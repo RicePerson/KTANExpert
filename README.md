@@ -86,6 +86,18 @@ I specificlly coded this module to make the steps VERY CLEAR because of the natu
 5) The Expert:large_blue_circle: says `Click the word no`. The Player:red_circle: complys. Because this happens to be the 3rd and final repeat of the module, the Player:red_circle: now inputs `n` to the Experts:large_blue_circle: questions, `Are there more steps?`
 6) *Module Complete, move on to the next one.* 
 
+## Memory
+This module consists of a display with a single digit and four buttons with numbers 1-4 on them, in an order that changes after every repeat, of which there are five.
+This is a back-and-forth with the expert:large_blue_circle:, and is fairly straightforward. At every repeat, input the numbers in the order: Display first-button second-button third-button fourth-button
+The expert:large_blue_circle: will then output some debug information, alongside an instruction, in the form of `Press the button labeled  #`. Follow this instruction.
+Repeat until the module is complete. If you ever mess up, the KTANE module will reset back to stage one. To reset the expert:large_blue_circle:, input `r` at any step.
+
+### Example
+*0) The KTANE module starts with the display being 4 and the buttons being, from left to right, 1 3 2 4*
+1) The Expert:large_blue_circle: asks for the stage 1 numbers, which the Player:red_circle: inputs `4 1 3 2 4`
+2) The Expert:large_blue_circle: gives the instruction `Press the button labeled 4`. The Player:red_circle: complys. The numbers on the KTANE module change
+3) Repeat 1 and 2 until the module is complete. *Module Complete, move on to the next one.* 
+
 ## Morse-Code
 Enter the morse code as it is flashed to you in the module. 
 Use period( . ) and minus( - ) with a space between letters to input the morse (represented by a longer space in the flasing module.)
