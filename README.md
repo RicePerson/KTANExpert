@@ -67,7 +67,7 @@ Repeat until the module is complete. To exit the module on the expert, input `do
 3) Player:red_circle: input `r` then `end`
 4) Expert:large_blue_circle: outputs `Input: ['y']`
 5) Player:red_circle: clicks the yellow button in KTANE
-6) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:.
+omega) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:.
 
 Note: If for some reason, after clicking a colorred button, it markes it as wrong and gives you a strike, 
 enter `done` into the expert and start over, as the current number of strikes affects the module.
