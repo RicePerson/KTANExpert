@@ -81,7 +81,10 @@ I specificlly coded this module to make the steps VERY CLEAR because of the natu
 *0) The KTANE module has the word "first" in the display, and more words on the buttons below*
 1) The Expert:large_blue_circle: asks for the word in the display, which the Player:red_circle: inputs `first`
 2) The Expert:large_blue_circle: then asks for the word in the TopRight, which the Player:red_circle: DOES NOT CLICK IT, but inputs `wait`
-3) 
+3) The Expert:large_blue_circle: then starts asking if certain words exist on the buttons. It firsts aks `Is the word uhhh there?`. The Player:red_circle: answers `n`, because it is not there
+4) Now, the Expert:large_blue_circle: asks 'Is the word no there?'. Because "no" is on one of the buttons, the Player:red_circle: answers `y`
+5) The Expert:large_blue_circle: says `Click the word no`. The Player:red_circle: complys. Because this happens to be the 3rd and final repeat of the module, the Player:red_circle: now inputs `n` to the Experts:large_blue_circle: questions, `Are there more steps?`
+6) *Module Complete, move on to the next one.* 
 
 ## Morse-Code
 Enter the morse code as it is flashed to you in the module. 
