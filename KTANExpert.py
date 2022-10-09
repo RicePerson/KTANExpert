@@ -3,8 +3,18 @@ import time
 import math
 
 #External Def Vars
-from who2lists import *
-from morse import *
+from modules.wires import *
+from modules.button import *
+from modules.keypad import *
+from modules.simon import *
+from modules.whofirst import *
+from modules.memory import *
+from modules.morseModule import *
+from modules.compWires import *
+from modules.wireSeq import *
+
+from support.morse import *
+from support.who2lists import *
 
 
 #Def Vars
@@ -14,10 +24,10 @@ skip = input("Skip intro? y/n: ")
 module = "EMPTY"
 
 
-#MODULE FUNCTIONS
+#MODULE FUNCTIONS (All decpricated as they were moved to seperate files in the \modules directory)
 
 #Wires (inputx7(8) -> output)
-def wires():
+def wiresBack():
 	#Def Vars
 	number = input("Number of Wires? (3/4/5/6): ")
 	wirelist = []
@@ -176,7 +186,7 @@ def wires():
 	return
 
 #Button (lots of input -> output)
-def button():
+def buttonBack():
 	def hold():
 		print("Hold down the button")
 		time.sleep(1)
@@ -224,7 +234,7 @@ def button():
 		return
 
 #Keypad (specific inputx4 -> output)
-def keypad():
+def keypadBack():
 	#Def Vars - keyLists
 	keys = [
 	    "lolli", "at", "lambda", "light", "staff", "h", "backC", "mouth",
@@ -425,7 +435,7 @@ def simonOld():
 			return
 
 #New Simon Says (inputx? -> output x#)
-def simon():
+def simonBack():
 	#simon() is the streamlined but DEFINITELY more complicated version...hence the name
 	#Def Vars / Logic (It's a loop)
 	global userInputing
@@ -718,7 +728,7 @@ def simon():
 			return
 
 #Whos on First (input -> output, input -> outputx?)
-def whofirst():
+def whofirstBack():
 	whoWorking = True
 	while whoWorking:
 		#Def Vars: Step 1
@@ -838,7 +848,7 @@ def whofirst():
 			pass
 		
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
-def memory():
+def memoryBack():
 	#Def Vars
 	stage1un = "EMPTY"
 	stage1 = "EMPTY"
@@ -1035,7 +1045,7 @@ def memory():
 	print(" ")
 
 #Morse Code (input -> output)
-def morse():
+def morseBack():
 	#Def Vars
 	userMorseUnsplit = input("What is your Morse Code (see README.md for instructions)?: ")
 	userMorse = userMorseUnsplit.split()
@@ -1117,7 +1127,7 @@ def morse():
 		return
 
 #Complicated Wires (input x4 -> output, loop until complete)
-def compWires():
+def compWiresBack():
 	while True:
 		#Def Vars
 		colBlu = input("Does the wire have Blue coloring? (y/n): ")
@@ -1211,7 +1221,7 @@ def compWires():
 			pass
 
 #Wire Sequences (input x2 -> output, loop until complete)
-def wireSeq():
+def wireSeqBack():
 	redOcc = 0
 	bluOcc = 0
 	blkOcc = 0
