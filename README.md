@@ -25,12 +25,12 @@ Follow the given instructions.
 
 ### Example:
 1. KTANE gives you a wire module that goes:
-- Empty -
--  RED  -
--  RED  -
-- Empty -
--  BLUE -
-- WHITE -
+-- Empty -
+--  RED  -
+--  RED  -
+-- Empty -
+--  BLUE -
+-- WHITE -
 
 2. You input "4" as the wire number, and enter **r** ENTER **r** ENTER **blu** ENTER **w**
 3. The expert then asks you for the last digit of the serial number, which you enter "3"
