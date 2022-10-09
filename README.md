@@ -18,6 +18,23 @@ Download the KTANExpert folder and run KTANExpert.py
 
 
 # Module Instructions
+
+## How to read these instructions
+For every completed module in this Expert, there are accompanying instructions on how to properly input details, and comply with instructions.
+Every module has a description with basic instructions, as well as an example with real-world modules with what the player enters and what the expert outputs
+For ease of following the plot, the Player is marked by a :red_circle: and the Expert is followed by a :large_blue_circle:.
+Anything that would be typed into the command window or is recieved from the command window with look like `this`.
+
+## Glossary
+- **KTANE Module:** A module on the bomb in Keep Talking and Nobody Explodes
+- **Expert:large_blue_circle::** The program this README accompanys
+- **Player:red_circle::** You!
+- **Repeat:** Some modules require that you do the module a few times, each with differing details. Each time you do the module is a Repeat
+- **Command Window:** The window that you enter inputs into
+- **Input(s):** Things the Player will type into the command window, then press ENTER
+- **Output(s):** Things the Expert will tell the Player in the command window
+
+
 ## Wires
 Select the number of wires present in the module (including cut wires from previous attempts).
 Enter each wire color from the top (which is considered the first wire in the expert) to the bottom.
@@ -32,9 +49,9 @@ Follow the given instructions.
 -  BLUE 
 - WHITE 
 
-2. You input "4" as the wire number, and enter **r** ENTER **r** ENTER **blu** ENTER **w**
-3. The expert then asks you for the last digit of the serial number, which you enter "3"
-4. The expert asks you to **Cut the last RED wire**, which prompts you to cut the 3rd wire. *Module Complete, move on to the next one.* 
+2. The Player:red_circle: inputs `4` as the wire number, and the inputs `r` ENTER `r` ENTER `blu` ENTER `w`
+3. The Expert:large_blue_circle: then asks you for the last digit of the serial number, which the player:red_circle: enters `3`
+4. The Expert:large_blue_circle: asks you to `Cut the last RED wire`, which prompts the player:red_circle: to cut the 3rd wire. *Module Complete, move on to the next one.* 
 
 ## Button
 *Module being reworked due to poor design*
@@ -69,7 +86,7 @@ Repeat until the module is complete. To exit the module on the expert, input `do
 5) Player:red_circle: clicks the yellow button in KTANE
 6) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:.
 
-Note: If for some reason, after clicking a colorred button, it markes it as wrong and gives you a strike, 
+Note: If for some reason, after clicking a colored button, it markes it as wrong and gives you a strike, 
 enter `done` into the expert and start over, as the current number of strikes affects the module.
 
 ## Who's on First
