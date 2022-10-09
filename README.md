@@ -73,7 +73,15 @@ Note: If for some reason, after clicking a colorred button, it markes it as wron
 enter `done` into the expert and start over, as the current number of strikes affects the module.
 
 ## Who's on First
+This module includes a display and six buttons. There are TWO seperate steps to this module, so don't go clicking all willy-nilly
+The first part of this module is inputing the display, and inputing the word on the provided button
+I specificlly coded this module to make the steps VERY CLEAR because of the nature of the module. Try the module, and if it still doesn't make sense, check out the example
 
+### Example
+*0) The KTANE module has the word "first" in the display, and more words on the buttons below*
+1) The Expert:large_blue_circle: asks for the word in the display, which the Player:red_circle: inputs `first`
+2) The Expert:large_blue_circle: then asks for the word in the TopRight, which the Player:red_circle: DOES NOT CLICK IT, but inputs `wait`
+3) 
 
 ## Morse-Code
 Enter the morse code as it is flashed to you in the module. 
