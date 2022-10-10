@@ -292,7 +292,6 @@ def keypad():
 	global userKeys
 	userKeys = []
 	print(keys)
-	print(" ")
 
 	for i in range(4):
 		cont = False
@@ -1291,7 +1290,6 @@ def wireSeq():
 	blkOcc = 0
 	while True:
 		#Def Vars
-		print(" ")
 		wire = []
 		wireUn = input("What is the wire color and letter? (r,blu,bla SPACE A,B,C)(input stop to exit): ")
 		if wireUn == "stop":
@@ -1478,26 +1476,36 @@ print("Incase you haven't launched the game before, the verification code as of 
 while isDoing == True:
 	#checking which module you are currently working on
 	print(" ")
-	module = input("Module? (w/b/k/s/who/m/mO/cW/wS/stop): ")
+	module = input("Module? (w/b/k/s/who/m/mO/cW/wS/done): ")
 	if module == "w":
+		print(" ")
 		wires()
 	elif module == "b":
+		print(" ")
 		button()
 	elif module == "k":
+		print(" ")
 		keypad()
 	elif module == "s":
+		print(" ")
 		simon()
 	elif module == "who":
+		print(" ")
 		whofirst()
 	elif module == "m":
+		print(" ")
 		memory()
 	elif module == "mO":
+		print(" ")
 		morse()
 	elif module == "cW":
+		print(" ")
 		compWires()
 	elif module == "wS":
+		print(" ")
 		wireSeq()
-	elif module == "stop":
+	elif module == "done":
+		print(" ")
 		print("Bomb Complete. Congrats Defuser")
 		isDoing = False
 	else:
