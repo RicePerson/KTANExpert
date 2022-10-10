@@ -182,7 +182,7 @@ def wires():
 	#If Not: 
 	return
 
-#Button
+#Button (inputs various -> output)
 def button():
     # Vars
     color = "EMPTY"
@@ -336,7 +336,7 @@ def keypad():
 	print(" ")
 	print("Final: " + str(finalList))
 
-#New Simon Says (inputx? -> output x#)
+#New Simon Says (inputxIndefinite -> output x#)
 def simon():
 	#simon() is the streamlined but DEFINITELY more complicated version...hence the name
 	#Logic (It's a loop)
