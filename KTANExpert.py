@@ -1293,12 +1293,15 @@ def wireSeq():
 		#Def Vars
 		print(" ")
 		wire = []
-		wireUn = input("What is the wire color and letter?: ")
-		wire = wireUn.split()
+		wireUn = input("What is the wire color and letter? (r,blu,bla SPACE A,B,C)(input stop to exit): ")
+		if wireUn == "stop":
+			return
+		else:
+			wire = wireUn.split()
 		print("Wire: " + str(wire))
 
 		#Logic - Occurences
-		if wire[0] == "red":
+		if wire[0] == "r":
 			redOcc += 1
 			print("Occur: " + str(redOcc))
 		elif wire[0] == "blu":
@@ -1316,7 +1319,7 @@ def wireSeq():
 
 		#Logic - Processing
 		#Red Wire
-		if wire[0] == "red":
+		if wire[0] == "r":
 			if redOcc == 1:
 				if wire[1] == "C":
 					print("Cut that wire")
