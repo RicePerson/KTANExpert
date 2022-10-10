@@ -23,6 +23,8 @@ from modules.wireSeq import *
 isDoing = True
 explode = False
 module = "EMPTY"
+serialNum = "EMPTY"
+
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
 #Module Loop
