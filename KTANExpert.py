@@ -27,7 +27,7 @@ module = "EMPTY"
 
 serialNum = "EMPTY"
 batteries = "EMPTY"
-litIndicators = "EMPTY"
+litIndicators = ["EMPTY"]
 
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
