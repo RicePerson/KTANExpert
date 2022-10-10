@@ -1,7 +1,7 @@
 
 
 #Button (lots of input -> output)
-def button():
+def buttonOld():
 	def hold():
 		print("Hold down the button")
 		time.sleep(1)
