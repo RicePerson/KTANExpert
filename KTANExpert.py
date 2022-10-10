@@ -1256,9 +1256,9 @@ def compWires():
 			case ("P"):
 				if parallelPort == "EMPTY":
 					if input("Does the bomb have a parallel port (y/n)?: ") == "y":
-						parallelPort == True
+						parallelPort = True
 					else:
-						parallelPort == False
+						parallelPort = False
 				if parallelPort == True:
 					print("Cut this wire")
 				else:
