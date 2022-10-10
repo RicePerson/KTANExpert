@@ -207,7 +207,7 @@ def button():
 
     #Manual Step 2
     if batteries == "EMPTY":
-        batteries = input("How many batteries are on the bomb?: ")
+        batteries = int(input("How many batteries are on the bomb?: "))
     if batteries > 1:
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
@@ -223,7 +223,7 @@ def button():
 
     #Manual Step 4
     if batteries == "EMPTY":
-        batteries = input("How many batteries are on the bomb?: ")
+        batteries = int(input("How many batteries are on the bomb?: "))
     if batteries > 2:
         if litIndicators == ["EMPTY"]:
             litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
