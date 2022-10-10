@@ -1,5 +1,5 @@
 # KTANExpert
-A Phython BombManual Expert for the game, **Keep Talking and Nobody Explodes**
+A Python BombManual Expert for the game, **Keep Talking and Nobody Explodes**
 It's not done yet. As of right now, it only does:
 * Wires
 * Button*
