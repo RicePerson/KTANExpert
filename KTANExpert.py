@@ -1199,7 +1199,6 @@ def compWires():
 		print("Red: " + str(colRed))
 		print("Star: " + str(hasStar))
 		print("LED: " + str(wireLED))
-		print(" ")
 
 		#Input Logic
 		instruction = "EMPTY"
@@ -1277,6 +1276,7 @@ def compWires():
 				print("Something messed up at somepoint. Please try that wire again")
 
 		#Breaking Loop
+		print(" ")
 		done = input("Are there more wires to process? (y/n): ")
 		if done == "n":
 			return
