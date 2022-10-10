@@ -340,11 +340,10 @@ def keypad():
 #New Simon Says (inputx? -> output x#)
 def simon():
 	#simon() is the streamlined but DEFINITELY more complicated version...hence the name
-	#Def Vars / Logic (It's a loop)
-	global userInputing
-	global finalSimon
+	#Logic (It's a loop)
 	vowel = input("Vowel in Serial? (y/n): ")
 	isDoing = True
+
 	while isDoing == True:
 		if vowel == "y":
 			strikes = input("Number Of Strikes? (0/1/2): ")
