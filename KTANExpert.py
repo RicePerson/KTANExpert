@@ -10,6 +10,7 @@ import math
 #External Module Imports
 from modules.wires import *
 from modules.button import *
+from modules.buttonNew import *
 from modules.keypad import *
 from modules.simon import *
 from modules.whofirst import *
