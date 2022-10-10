@@ -2,7 +2,7 @@
 A Python BombManual Expert for the game, **Keep Talking and Nobody Explodes**
 It's not done yet. As of right now, it only does:
 * Wires
-* Button*
+* Button
 * Keypad
 * Simon Says
 * Who's On First
@@ -72,7 +72,7 @@ Follow the given instructions.
 
 
 ## Button
-*Module being reworked due to poor design*
+*Instructions to come, but the module is fairly straigtforward*
 
 ## Keypad
 Once you enter the keypad module in the expert, it will list all possible keypad symbols, and then ask for the first one.
