@@ -854,7 +854,7 @@ def memory():
 	#Logic Stage2
 	print(" ")
 	if stage2[0] == 1:
-		print("Press the button labeled  4")
+		print("Press the button labeled 4")
 		index = stage2.index(4, 1, 5)
 		positions.append(index)
 		numbers.append(4)
@@ -907,7 +907,7 @@ def memory():
 		positions.append(3)
 		numbers.append(stage3[3])
 	elif stage3[0] == 4:
-		print("Press the button labeled  4")
+		print("Press the button labeled 4")
 		index = stage3.index(4, 1, 5)
 		positions.append(index)
 		numbers.append(4)
