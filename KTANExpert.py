@@ -43,8 +43,7 @@ def wires():
 				pass
 			else:
 				print(
-				    "Error. You didn't do the right thing. Please rerun module"
-				)
+				    "Error. You didn't do the right thing. Please rerun module")
 				return
 			wirelist.append(wirelistadd)
 		print("Your wires are " + str(wirelist))
