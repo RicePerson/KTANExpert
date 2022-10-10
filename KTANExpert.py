@@ -1,3 +1,8 @@
+# Keep Talking and Nobody Explodes Manual "Expert"
+# Created By Reese Ford 07/13/2021
+# https://www.github.com/RicePerson/KTANExpert
+
+
 #Imports
 import time
 import math
@@ -24,7 +29,7 @@ print("Incase you haven't launched the game before, the verification code as of 
 while isDoing == True:
 	#checking which module you are currently working on
 	print(" ")
-	module = input("Module? (w/b/k/s/who/m/mO/cW/wS): ")
+	module = input("Module? (w/b/k/s/who/m/mO/cW/wS/stop): ")
 	if module == "w":
 		wires()
 	elif module == "b":
