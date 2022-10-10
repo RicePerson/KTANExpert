@@ -1160,6 +1160,7 @@ def compWires():
 
 		global serialNum
 		global batteries
+		global parallelPort
 
 		if colBlu== "y":
 			colBlu = True
