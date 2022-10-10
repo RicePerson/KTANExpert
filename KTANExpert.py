@@ -15,6 +15,7 @@ module = "EMPTY"
 serialNum = "EMPTY"
 batteries = "EMPTY"
 litIndicators = ["EMPTY"]
+parallelPort = "EMPTY"
 
 
 # Module Declarations
@@ -1159,6 +1160,9 @@ def compWires():
 		wireLED = input("Is the LED on? (y/n): ")
 		hasStar = input("Does the wire have a star symbol? (y/n): ")
 
+		global serialNum
+		global batteries
+
 		if colBlu== "y":
 			colBlu = True
 		elif colBlu == "n":
@@ -1197,51 +1201,87 @@ def compWires():
 		print("LED: " + str(wireLED))
 		print(" ")
 
-		#Logic
+		#Input Logic
+		instruction = "EMPTY"
+
 		if colBlu:
 			if colRed:
 				if wireLED:
 					if hasStar:
-						print("Do not cut")
+						instruction = "D"
 					else:
-						print("If Serial even, cut")
+						instruction = "S"
 				else:
 					if hasStar:
-						print("If Parallel Port, cut")
+						instruction = "P"
 					else:
-						print("If Serial even, cut")
+						instruction = "S"
 			else:
 				if wireLED:
-					print("If Parallel Port, cut")
+					instruction = "P"
 				else:
 					if hasStar:
-						print("Do not Cut")
+						instruction = "D"
 					else:
-						print("If Serial even, cut")
+						instruction = "S"
 		elif colRed:
 			if wireLED:
-				print("If 2 Battery, cut")
+				instruction = "B"
 			else:
 				if hasStar:
-					print("Cut")
+					instruction = "C"
 				else:
-					print("If Serial even, cut")
+					instruction = "S"
 		elif wireLED:
 			if hasStar:
-				print("If 2 Battery, cut")
+				instruction = "B"
 			else:
-				print("Do not cut")
+				instruction = "D"
 		elif hasStar:
-			print("Cut")
+			instruction = "C"
 		else:
-			print("Cut")
+			instruction = "C"
 		print(" ")
+
+		#Output Logic
+		match (instruction):
+			case ("D"): 
+				print("Do not Cut this wire")
+			case ("C"): 
+				print("Cut this wire")
+			case ("S"): 
+				if serialNum == "EMPTY":
+					serialNum = int(input("What is the last number of the bomb serial number?: "))
+				if serialNum%2 == 0:
+					print("Cut this wire")
+				else:
+					print("Do not cut this wire")
+			case ("P"):
+				if parallelPort == "EMPTY":
+					if input("Does the bomb have a parallel port (y/n)?: ") == "y":
+						parallelPort == True
+					else:
+						parallelPort == False
+				if parallelPort == True:
+					print("Cut this wire")
+				else:
+					print("Do not cut this wire")
+			case ("B"):
+				if batteries == "EMPTY":
+					batteries = int(input("How many batteries are on the bomb?: "))
+				if batteries >= 2:
+					print("Cut this wire")
+				else:
+					print("Do not cut this wire")
+			case other:
+				print("Something messed up at somepoint. Please try that wire again")
 
 		#Breaking Loop
 		done = input("Are there more wires to process? (y/n): ")
 		if done == "n":
 			return
 		else:
+			print(" ")
 			pass
 
 #Wire Sequences (input x2 -> output, loop until complete)
