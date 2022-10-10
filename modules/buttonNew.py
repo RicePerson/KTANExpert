@@ -63,10 +63,10 @@ def button():
         instruction = "hold"
 
     #Releasing a held button
-    if instruction == "hold"
+    if instruction == "hold":
         print(" ")
         strip = input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): ")
-        if strip == "blu"
+        if strip == "blu":
             print(" ")
             print("Release the button when the countdown timer has a 4 in any position")
             return
