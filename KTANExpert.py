@@ -88,9 +88,9 @@ def wires():
 		if wirelist.count("r") > 1:
 			if serialNum == "EMPTY":
 				serialNum = int(input("Last Digit of Serial: "))
-		if ((wirelist.count("r") > 1) and (serialNum % 2)):
-			print("Cut the last RED wire")
-			return
+			if ((wirelist.count("r") > 1) and (serialNum % 2)):
+				print("Cut the last RED wire")
+				return
 		elif ((wirelist[-1] == "y") and (wirelist.count("r") == 0)):
 			print("Cut the First Wire")
 			return
@@ -127,9 +127,9 @@ def wires():
 		if wirelist[-1] == "bla":
 			if serialNum == "EMPTY":
 				serialNum = int(input("Last Digit of Serial: "))
-		if ((wirelist[-1] == "bla") and (serialNum % 2)):
-			print("Cut the Fourth Wire")
-			return
+			if ((wirelist[-1] == "bla") and (serialNum % 2)):
+				print("Cut the Fourth Wire")
+				return
 		elif ((wirelist.count("r") == 1) and (wirelist.count("y") > 1)):
 			print("Cut the First Wire")
 			return
@@ -166,9 +166,9 @@ def wires():
 		if wirelist.count("y") == 0:
 			if serialNum == "EMPTY":
 				serialNum = int(input("Last Digit of Serial: "))
-		if ((wirelist.count("y") == 0) and (serialNum % 2)):
-			print("Cut the Third Wire")
-			return
+			if ((wirelist.count("y") == 0) and (serialNum % 2)):
+				print("Cut the Third Wire")
+				return
 		elif ((wirelist.count("y") == 1) and (wirelist.count("w") > 1)):
 			print("Cut the Fourth Wire")
 			return
