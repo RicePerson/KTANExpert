@@ -3,6 +3,7 @@
 #Wires (inputx7(8) -> output)
 def wires():
 	#Def Vars
+	global serialNum
 	number = input("Number of Wires? (3/4/5/6): ")
 	wirelist = []
 
@@ -66,8 +67,9 @@ def wires():
 		print(" ")
 
 		if wirelist.count("r") > 1:
-			serial = int(input("Last Digit of Serial: "))
-		if ((wirelist.count("r") > 1) and (serial % 2)):
+			if serialNum == "EMPTY":
+				serialNum = int(input("Last Digit of Serial: "))
+		if ((wirelist.count("r") > 1) and (serialNum % 2)):
 			print("Cut the last RED wire")
 			return
 		elif ((wirelist[-1] == "y") and (wirelist.count("r") == 0)):
@@ -104,8 +106,9 @@ def wires():
 		print(" ")
 
 		if wirelist[-1] == "bla":
-			serial = int(input("Last Digit of Serial: "))
-		if ((wirelist[-1] == "bla") and (serial % 2)):
+			if serialNum == "EMPTY":
+				serialNum = int(input("Last Digit of Serial: "))
+		if ((wirelist[-1] == "bla") and (serialNum % 2)):
 			print("Cut the Fourth Wire")
 			return
 		elif ((wirelist.count("r") == 1) and (wirelist.count("y") > 1)):
@@ -142,8 +145,9 @@ def wires():
 		print(" ")
 
 		if wirelist.count("y") == 0:
-			serial = int(input("Last Digit of Serial: "))
-		if ((wirelist.count("y") == 0) and (serial % 2)):
+			if serialNum == "EMPTY":
+				serialNum = int(input("Last Digit of Serial: "))
+		if ((wirelist.count("y") == 0) and (serialNum % 2)):
 			print("Cut the Third Wire")
 			return
 		elif ((wirelist.count("y") == 1) and (wirelist.count("w") > 1)):
