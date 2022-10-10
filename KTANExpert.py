@@ -672,7 +672,7 @@ def whofirst():
 		#Logic: Step 1
 		while step1Work:
 			while spot == "EMPTY":
-				step1 = input("STEP 1 - What does the display read? (lowercase): ")
+				step1 = input("STEP 1 - What does the display read? (lowercase) (If the display has nothing, input *blank*): ")
 				if step1 == "ur":
 					spot = "TopLeft"
 				elif step1 in ("yes", "nothing", "led", "they are"):
