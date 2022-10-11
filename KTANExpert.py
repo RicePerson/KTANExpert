@@ -292,20 +292,8 @@ def keypad():
 	for i in keys:
 		print(i)
 
-	for i in range(4):
-		cont = False
-		while cont == False:
-			keyi = input("KeyButton " + str(i + 1) + "? (see list above): ")
-			if keys.count(keyi) == 1:
-				userKeys.append(keyi)
-				cont = True
-			else:
-				print(
-				    "Error. You typed something wrong. Please enter a valid key."
-				)
-				cont = False
-	print("Your keys are " + str(userKeys))
-	print(" ")
+	userKeys = input("What are the symbols on the keypad seperated by spaces? (See list above): ")
+	userKeys = userKeys.split()
 
 	#Logic
 	answerColumn = []
