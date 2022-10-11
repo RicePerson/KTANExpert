@@ -670,7 +670,7 @@ def whofirst():
 	#Lists of STEP 2 Words
 	#Copy this to make it easier: ", ". So basically WORD CtrlV WORD CtrlV WORD and so on and so forth
 
-	displayList = ["yes", "first", "display", "okay", "says", "nothing", "*blank*", "no", "led", "lead", "read", 
+	displayList = ["yes", "first", "display", "okay", "says", "nothing", "*blank*","blank", "no", "led", "lead", "read", 
 				"red", "reed", "leed", "hold on", "you", "you are", "your", "you're", "ur", "there", "they're", "their", "they are", "see", "c", "cee"]
 
 	ready = ["yes", "okay", "what", "middle", "left", "press", "right", "blank", "ready"]
@@ -723,7 +723,11 @@ def whofirst():
 			if userWords[i] not in totalList:
 				print("Incorrect word " + str(userWords[i])+ ". Resetting")
 				return
-	print("Checks Passed!")
+	
+	# ButtonWord check
+	buttonWord = "EMPTY"
+	displayListPos = [2, 4, 6, 4, 6, 2, 3, 5, "no", "led", "lead", "read", 
+				"red", "reed", "leed", "hold on", "you", "you are", "your", "you're", "ur", "there", "they're", "their", "they are", "see", "c", "cee"]
 
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
