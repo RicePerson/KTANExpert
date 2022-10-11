@@ -153,27 +153,22 @@ Once you have the morse word input (with no duplication), press ENTER, and input
 
 ## Complicated Wires `cW`
 Going one wire at a time, answer the given questions with `y` for Yes and `n` for No. If you make a mistake, the module will be ended, and you will have to re-enter it at the Module Selector.
-Once you have input the details, the Expert will give you an instruction. Use the following table to find out what you have to do to that wire:
+Once you have input the details about a wire, the Expert may ask you for more details about the bomb. For this module, it may ask about the last digit of the serial number, if the bomb has a parallel port *(The long, purple port)*, or how many batteries there are on the bomb. If you have entered any of these details in a earlier module, the expert will use those. Likewise, once you enter the detail in this module, it will be used in all of the others if they require it.
 
-| Instruction | Do to Wire |
-| ------- | ---------- |
-| Cut     | Cut that Wire |
-| Do not Cut | Do not cut that wire, just move on |
-| If 2 Battery, cut | Cut only if there are 2 or more batteries on the bomb |
-| If Parallel port, cut | If there is a long parallel port on the bomb, cut that wire |
-| If Serial even, cut | If the last digit of the serial number is even, cut that wire |
-
-Once you have recieved a command, the Expert will ask if the wires are done. If not, answer `n`, and continue the module. If you are done, answer `y`, and you will be put back to the Module Selector. 
+Once you have recieved an instruction, the Expert will ask if the wires are done. If not, answer `n`, and continue the module. If you are done, answer `y`, and you will be put back to the Module Selector. 
 
 ### Example:
 *0) KTANE gives you a red and blue twisted wire with an LED and no Star.*
-1) Player:red_circle: enters `y` for `Blue? Red? and LED?`
-2) Player:red_circle: enters `n` for `Star?`
-3) The Expert:large_blue_circle: outputs `If Serial even, cut`
-4) Player:red_circle: checks the Serial Number on the Bomb, its last number is 6
-5) Player:red_circle: cuts the wire, and nothing happens
-6) Repeat until module is done. 
-7) Once the module is done, answer `y` to the loop question in the Expert. *Module Complete, move on to the next one.* 
+1) The Player:red_circle: selects the Complicated Wires module with `cW`
+2) The Expert:large_blue_circle: asks the player `Does the wire have blue coloring? (y/n): `
+3) The Player:red_circle: enters `y` because there is blue coloring
+4) The Expert:large_blue_circle: continues asking questions about the wire until it has the details it needs
+5) The Expert:large_blue_circle: then asks `What is the last number of the bomb serial number?: `
+6) The Player:red_circle: checks around the bomb to find that it is 6, so they enter `6`
+7) The Expert:large_blue_circle: tells the player to `Cut this wire`, so the player complys
+8) The Expert:large_blue_circle: asks the player `Are there more wires to process? (y/n): `
+9) Because there are a few more wires, the player:red_circle: answers `y`, and repeats this until the module is complete
+10) *Module Complete, move on to the next one.* 
 
 
 ## Wire Sequences `wS`
