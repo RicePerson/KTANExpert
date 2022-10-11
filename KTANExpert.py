@@ -1300,11 +1300,9 @@ def wireSeq():
 		else:
 			wiresList = wireUn.split(";")
 		uCount = 0
-		for u in wiresList:
+		for u in wiresList: #Reformatting Blanks so that the Logic doesn't explode
 			if u == "blank":
 				wiresList[uCount] = "_>_"
-			else:
-				print("Wire" + str(uCount+1) + ": " + str(u))
 			uCount += 1
 
 		# Splits the wiresList into individual details. 0,2,4 are colors and 1,3,5 are endpoints
@@ -1326,57 +1324,57 @@ def wireSeq():
 						match (wires[dCount + 1]): #Testing endpoint of RED wire
 							case ("A"):
 								if rOcc in [3,4,6,7,8]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("B"):
 								if rOcc in [2,5,7,8,9]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("C"):
 								if rOcc in [1,4,6,7]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 
 					case ("blu"): #Wire is BLUE
 						bluOcc += 1
 						match (wires[dCount + 1]): #Testing endpoint of BLUE wire
 							case ("A"):
 								if bluOcc in [2,4,8,9]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("B"):
 								if bluOcc in [1,3,5,6]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("C"):
 								if bluOcc in [2,6,7,8]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 
 					case ("bla"): #Wire is BLACK
 						blaOcc += 1
 						match (wires[dCount + 1]): #Testing endpoint of BLACK wire
 							case ("A"):
 								if blaOcc in [2,4,8,9]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("B"):
 								if blaOcc in [1,3,5,6]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("C"):
 								if blaOcc in [2,6,7,8]:
-									print("Wire "+str(wCount)+") Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
-									print("Wire "+str(wCount)+") Do NOT Cut")
+									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 					case("_"): #Blank Slot
 						print("Wire " + str(wCount)+") No wire, ignore")
 			dCount += 1
