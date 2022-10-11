@@ -292,8 +292,8 @@ def keypad():
 	for i in keys:
 		print(i)
 
-	userKeys = input("What are the symbols on the keypad seperated by spaces? (See list above): ")
-	userKeys = userKeys.split()
+	userKeys = input("What are the symbols on the keypad seperated by semicolons? (See list above): ")
+	userKeys = userKeys.split(";")
 
 	#Logic
 	answerColumn = []
@@ -670,6 +670,8 @@ def whofirst():
 	#Lists of STEP 2 Words
 	#Copy this to make it easier: ", ". So basically WORD CtrlV WORD CtrlV WORD and so on and so forth
 
+	displayList = ["yes", "first", "display", "okay", "says", "nothing", "*blank*", "no", "led", "lead", "read", "red", "reed", "leed", "hold on", "you", "you are", "your", "you're", "ur", "there", "they're", "their", "they are", "see", "c", "cee"]
+
 	ready = ["yes", "okay", "what", "middle", "left", "press", "right", "blank", "ready"]
 	first = ["left", "okay", "yes", "middle", "no", "right", "nothing", "uhhh", "wait", "ready", "blank", "what", "press", "first"]
 	no = ["blank", "uhhh", "wait", "first", "what", "ready", "right", "yes", "nothing", "left", "press", "okay", "no"]
@@ -698,6 +700,16 @@ def whofirst():
 	hold = ["you are", "u", "done", "uh uh", "you", "ur", "sure", "what?", "you're", "next", "hold"]
 	sure = ["you are", "done", "like", "you're", "you", "hold", "uh huh", "ur", "sure"]
 	like = ["you're", "next", "u", "ur", "hold", "done", "uh uh", "what?", "uh huh", "you", "like"]
+
+	# Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
+	userWords = "EMPTY"
+	userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
+	userWords = userWords.split()
+	#Checks
+	if len(userWords) != 7:
+		print("Error: Incorrect number of words input. Resetting")
+		return
+	if userWords[0] in 
 
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
