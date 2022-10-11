@@ -20,10 +20,10 @@ Download the KTANExpert folder and run KTANExpert.py
 # Module Instructions
 
 ## How to read these instructions
-For every completed module in this Expert, there are accompanying instructions on how to properly input details, and comply with instructions.
+For every completed module in this Expert, there are accompanying instructions on how to properly input details and comply with instructions.
 Every module has a description with basic instructions, as well as an example with real-world modules with what the player enters and what the expert outputs
 For ease of following the plot, the Player is marked by a :red_circle: and the Expert is followed by a :large_blue_circle:.
-Anything that would be typed into the command window or is recieved from the command window with look like `this`.
+Anything that would be typed into the command window or is recieved from the command window with look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (...): `
 
 ### Glossary
 There are some words used in these instructions that may mean something other than what common sense would infer. Here is what those words mean.
@@ -52,7 +52,7 @@ There are short-hand codes used throughout to make inputs generally faster. Here
 
 
 
-## Wires
+## Wires `w`
 Select the number of wires present in the module (including cut wires from previous attempts).
 Enter each wire color from the top (which is considered the first wire in the expert) to the bottom.
 Follow the given instructions.
@@ -71,10 +71,10 @@ Follow the given instructions.
 4) The Expert:large_blue_circle: asks you to `Cut the last RED wire`, which prompts the player:red_circle: to cut the 3rd wire. *Module Complete, move on to the next one.* 
 
 
-## Button
+## Button `b`
 *Instructions to come, but the module is fairly straigtforward*
 
-## Keypad
+## Keypad `k`
 Once you enter the keypad module in the expert, it will list all possible keypad symbols, and then ask for the first one.
 It does not matter what order you input the key's, only that you enter all four, one after another.
 Find the symbol name from the list provided that most-closly matches the symbol in KTANE, and enter it, pressing ENTER after each symbol
@@ -87,7 +87,7 @@ Repeat until provivded a Final List. Enter these in order to complete the module
 3) The Player:red_circle: clicks these inorder in KTANE. *Module Complete, move on to the next one.* 
 
 
-## Simon Says
+## Simon Says `s`
 This can be considered the worst game of simon says, because you don't repeat it back exactly as it is presented to you.
 Once the simon says module is selected in the expert (selected by `s`), it will ask a couple of preliminary questions about the bomb, which will determine which lookup-table it will use.
 After answering these questions, watch the KTANE module for its ENTIRE flash sequence (the module starts with one flash, then increases by one with every sucessfull button-press)
@@ -101,7 +101,7 @@ Repeat until the module is complete. To exit the module on the expert, input `do
 1) The player selects the simon says expert module
 2) Player:red_circle: inputs `y` ENTER `1`
 3) Player:red_circle: inputs `r` ENTER `end`
-4) Expert:large_blue_circle: outputs `Input: ['y']`
+4) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
 5) Player:red_circle: clicks the yellow button in KTANE
 6) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:. *Module Complete, move on to the next one.*
 
@@ -109,9 +109,9 @@ Note: If for some reason, after clicking a colored button, it markes it as wrong
 enter `done` into the expert and start the module over, as the current number of strikes affects the module.
 
 
-## Who's on First
+## Who's on First `who`
 This module includes a display and six buttons. There are TWO seperate steps to this module, so don't go clicking all willy-nilly
-The first part of this module is inputing the display, and inputing the word on the provided button
+The first part of this module is inputing the display *(Note: a possible word for the display is just a blank display with nothing written on it. In this case, enter `*blank*` for the word)*, and inputing the word on the provided button
 I specificlly coded this module to make the steps VERY CLEAR because of the nature of the module. Try the module, and if it still doesn't make sense, check out the example
 
 ### Example
@@ -124,7 +124,7 @@ I specificlly coded this module to make the steps VERY CLEAR because of the natu
 6) *Module Complete, move on to the next one.* 
 
 
-## Memory
+## Memory `m`
 This module consists of a display with a single digit and four buttons with numbers 1-4 on them, in an order that changes after every repeat, of which there are five.
 This is a back-and-forth with the expert:large_blue_circle:, and is fairly straightforward. At every repeat, input the numbers in the order: Display first-button second-button third-button fourth-button
 The expert:large_blue_circle: will then output some debug information, alongside an instruction, in the form of `Press the button labeled  #`. Follow this instruction.
@@ -137,7 +137,7 @@ Repeat until the module is complete. If you ever mess up, the KTANE module will 
 3) Repeat 1 and 2 until the module is complete. *Module Complete, move on to the next one.* 
 
 
-## Morse-Code
+## Morse-Code `mO`
 Enter the morse code as it is flashed to you in the module. 
 Use period( . ) and minus( - ) with a space between letters to input the morse (represented by a longer space in the flasing module.)
 When the module stop flashing the longest and then starts again, it means the word is restarting. 
@@ -151,7 +151,7 @@ Once you have the morse word input (with no duplication), press ENTER, and input
 3) Player:red_circle: sets the frequency to 3.532 MHz in KTANE, and clicks TX. *Module Complete, move on to the next one.* 
 
 
-## Complicated Wires
+## Complicated Wires `cW`
 Going one wire at a time, answer the given questions with `y` for Yes and `n` for No. If you make a mistake, the module will be ended, and you will have to re-enter it at the Module Selector.
 Once you have input the details, the Expert will give you an instruction. Use the following table to find out what you have to do to that wire:
 
@@ -176,7 +176,7 @@ Once you have recieved a command, the Expert will ask if the wires are done. If 
 7) Once the module is done, answer `y` to the loop question in the Expert. *Module Complete, move on to the next one.* 
 
 
-## Wire Sequences
+## Wire Sequences `wS`
 Again, going one wire at a time, enter the wire color and placement into the Expert, and follow the instructions that it gives you. 
 When you see the module, there will be 4 sections, not all visable yet. **DO NOT PRESS THE ARROW UNTIL YOU ARE DONE WITH THAT SECITON!!!!** 
 Enter the wires into the Expert in numerical order with the numbers on the left. 
