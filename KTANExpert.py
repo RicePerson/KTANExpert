@@ -708,7 +708,7 @@ def whofirst():
     totalList = displayWords+ready+first+no+blank+nothing+yes+what+uhhh+left+right+middle+\
         okay+wait+press+you+youare+your+youre+ur+u+uhhuh+uhuh+whatq+done+nextt+hold+sure+like
 
-    for r in range(0,2):
+    while True:
         # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
         userWords = "EMPTY"
         userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
@@ -776,7 +776,9 @@ def whofirst():
         for w in buttonWordsList:
             if w in userWords[1:]:
                 print("Press the button labeled " + str(w))
-                return
+                print(" ")
+                if input("Is the module complete? (y/n): ") == "y":
+                    return
 
         # If none of them match...
         print("Error: No buttons match buttonWordsList. Resetting.")
