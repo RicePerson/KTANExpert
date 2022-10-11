@@ -172,11 +172,12 @@ Once you have recieved an instruction, the Expert will ask if the wires are done
 
 
 ## Wire Sequences `wS`
-Again, going one wire at a time, enter the wire color and placement into the Expert, and follow the instructions that it gives you. 
-When you see the module, there will be 4 sections, not all visable yet. **DO NOT PRESS THE ARROW UNTIL YOU ARE DONE WITH THAT SECITON!!!!** 
-Enter the wires into the Expert in numerical order with the numbers on the left. 
-Starting with 1, give the Expert the color (`blu`, `bla`, or `red`) and the letter that wire goes to (`A`, `B`, or `C`). Capitalization matters. 
-Repeat until the module is complete, then type just `exit` as the wire color (leave the letter blank), and you will be returned to the Module Selector.
+This module consists of four panel repeats, each with up to 3 wires of various color and endpoints. The goal is to cut specific wires based on their occurances and endpoints. Don't worry, the expert has got you covered :)
+After selecting this module, the expert will ask for a "wire code". This is a way to encode the panel so that the expert can process it and give you instructions. Below is a guide for these wire codes:
+
+`(r,blu,bla)>(A,B,C);(r,blu,bla)>(A,B,C);(r,blu,bla)>(A,B,C)`
+
+For each wire, there is a color>endpoint code, with each wire seperated by a `;`. Using the standard shorthand (which can be found at the top of this readme), input the color and endpoint for each wire in the order they appear on the panel (the order of the wires is important, and is determined by the number on the left start point of the wire). If there is no wire for a startpoint (i.e. the startpoint is just a hole), just enter `blank` inplace of the color>endpoint code.
 
 ### Example:
 *0) KTANE gives you 2 wires in the first section. A Blue in 1 and B, and a Black in 3 and B.*
