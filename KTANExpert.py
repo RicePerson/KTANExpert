@@ -774,7 +774,7 @@ def whofirst():
 
         print(" ")
         for w in buttonWordsList:
-            if w in userWords[1:6]:
+            if w in userWords[1:]:
                 print("Press the button labeled " + str(w))
                 return
 
