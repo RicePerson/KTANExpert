@@ -773,8 +773,10 @@ def whofirst():
                 return
 
         print(" ")
+        success = False
         for w in buttonWordsList:
             if w in userWords[1:]:
+                success = True
                 print("Press the button labeled " + str(w))
                 print(" ")
                 if input("Is the module complete? (y/n): ") == "y":
@@ -783,8 +785,9 @@ def whofirst():
                     break
 
         # If none of them match...
-        print("Error: No buttons match buttonWordsList. Resetting.")
-        return
+        if success == False:
+            print("Error: No buttons match buttonWordsList. Resetting.")
+            return
 
 
     
