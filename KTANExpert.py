@@ -716,7 +716,6 @@ def whofirst():
             print("Exit Command Recognized. Exiting.")
             return
         userWords = userWords.split(";")
-        print(userWords)
         #Checks
         if len(userWords) != 7:
             print("Error: Incorrect number of words input. Resetting")
