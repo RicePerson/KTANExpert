@@ -179,10 +179,10 @@ Starting with 1, give the Expert the color (`blu`, `bla`, or `red`) and the lett
 Repeat until the module is complete, then type just `exit` as the wire color (leave the letter blank), and you will be returned to the Module Selector.
 
 ### Example:
-*0) KTANE gives you 2 wires in the first section. A Blue in 1 and B, and a Black in 1 and B.*
-2. Player:red_circle: enters `blu B` ENTER.
-3. The Expert:large_blue_circle: tells you to `Cut the Wire`. Comply
-4. The Expert:large_blue_circle: then asks for the next wire, Player:red_circle: enters `bla B`
-5. The Expert:large_blue_circle: tells you to `Cut that Wire` as well. Do It
-6. Now that the wires on that section have been processed, Player:red_circle: clicks the down arrow in KTANE to move on to the next repeat.
-7. Repeat until done. Type `exit` as the next input to return to Module Selection. *Module Complete, move on to the next one.* 
+*0) KTANE gives you 2 wires in the first section. A Blue in 1 and B, and a Black in 3 and B.*
+1) The Player:red_circle: selects the Wire Sequences module with `wS`
+2) The Expert:large_blue_circle: asks for the wire code (see above for explanation)
+3) The Player:red_circle: enters `blu>B;blank;bla>B`
+4) The Expert:large_blue_circle: tells the player to cut Wire 1 and Wire 3, ignoring wire 2 (because there is no wire 2)
+5) The Player:red_circle: repeats this until all four panels are complete
+6) *Module Complete, move on to the next one.* 
