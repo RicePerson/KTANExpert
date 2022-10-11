@@ -288,9 +288,9 @@ def keypad():
 	c6 = ["6", "mouth", "stitch", "ae", "trident", "headN", "omega"]
 
 	#Def Vars - userLists
-	global userKeys
 	userKeys = []
-	print(keys)
+	for i in keys:
+		print(i)
 
 	for i in range(4):
 		cont = False
@@ -308,33 +308,34 @@ def keypad():
 	print(" ")
 
 	#Logic
-	global answerKeys
-	answerKeys = []
+	answerColumn = []
 	if all(elem in c1 for elem in userKeys):
-		answerKeys = c1
-		print("Collum: " + str(answerKeys))
+		answerColumn = c1
+		#print("Column: " + str(answerKeys))
 	elif all(elem in c2 for elem in userKeys):
-		answerKeys = c2
-		print("Collum: " + str(answerKeys))
+		answerColumn = c2
+		#print("Column: " + str(answerKeys))
 	elif all(elem in c3 for elem in userKeys):
-		answerKeys = c3
-		print("Collum: " + str(answerKeys))
+		answerColumn = c3
+		#print("Column: " + str(answerKeys))
 	elif all(elem in c4 for elem in userKeys):
-		answerKeys = c4
-		print("Collum: " + str(answerKeys))
+		answerColumn = c4
+		#print("Column: " + str(answerKeys))
 	elif all(elem in c5 for elem in userKeys):
-		answerKeys = c5
-		print("Collum: " + str(answerKeys))
+		answerColumn = c5
+		#print("Column: " + str(answerKeys))
 	elif all(elem in c6 for elem in userKeys):
-		answerKeys = c6
-		print("Collum: " + str(answerKeys))
+		answerColumn = c6
+		#print("Column: " + str(answerKeys))
 	else:
 		print("No collum has all of the inputed keys")
 
 	#Final print()
-	finalList = [x for x in answerKeys if x in userKeys]
+	finalList = [x for x in answerColumn if x in userKeys]
 	print(" ")
-	print("Final: " + str(finalList))
+	print("Click these buttons in order: ")
+	for i in range(4):
+		print(str(i+1)+") " + str(finalList[i]))
 
 #New Simon Says (inputxIndefinite -> output x#)
 def simon():
