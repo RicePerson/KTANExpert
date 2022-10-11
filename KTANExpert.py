@@ -708,7 +708,7 @@ def whofirst():
     totalList = displayWords+ready+first+no+blank+nothing+yes+what+uhhh+left+right+middle+\
         okay+wait+press+you+youare+your+youre+ur+u+uhhuh+uhuh+whatq+done+nextt+hold+sure+like
 
-    for i in range(0,2):
+    for r in range(0,2):
         # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
         userWords = "EMPTY"
         userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
