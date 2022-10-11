@@ -1302,7 +1302,7 @@ def wireSeq():
 		uCount = 0
 		for u in wiresList:
 			if u == "blank":
-				wiresList[uCount] = "b>b"
+				wiresList[uCount] = "_>_"
 			else:
 				print("Wire" + str(uCount+1) + ": " + str(u))
 			uCount += 1
@@ -1377,7 +1377,7 @@ def wireSeq():
 									print("Wire "+str(wCount)+") Cut")
 								else:
 									print("Wire "+str(wCount)+") Do NOT Cut")
-					case("b"): #Blank Slot
+					case("_"): #Blank Slot
 						print("Wire " + str(wCount)+") No wire, ignore")
 			dCount += 1
 		print(" ")
