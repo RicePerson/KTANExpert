@@ -4,8 +4,11 @@
 
 
 #Imports
+from doctest import BLANKLINE_MARKER
+from http.client import ResponseNotReady
 import time
 import math
+from tokenize import blank_re
 
 #Def Vars
 isDoing = True
@@ -724,12 +727,48 @@ def whofirst():
                 print("Incorrect word " + str(userWords[i])+ ". Resetting")
                 return
     
-    # ButtonWord check
+    # DisplayWord's Sacred Button, ButtonWord, Logic
     buttonWord = "EMPTY"
     displayWordsButtonIndex = [2, 4, 6, 4, 6, 2, 3, 5, 6, 2, 6, 5, 5, 3, 3, 6, 5, 6, 5, 5, 1, 6, 3, 5, 2, 6, 4, 6]
     #buttonIndex = displayWordsButtonIndex[displayWords.index(userWords[0])]
     buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]]
-    print(buttonWord)
+
+    buttonWordsList=[]
+    match (buttonWord):
+        case"ready":buttonWordsList=ready
+        case"first":buttonWordsList=first
+        case"no":buttonWordsList=no
+        case"blank":buttonWordsList=blank
+        case"nothing":buttonWordsList=nothing
+        case"yes":buttonWordsList=yes
+        case"what":buttonWordsList=what
+        case"uhhh":buttonWordsList=uhhh
+        case"left":buttonWordsList=left
+        case"right":buttonWordsList=right
+        case"middle":buttonWordsList=middle
+        case"okay":buttonWordsList=okay
+        case"wait":buttonWordsList=wait
+        case"press":buttonWordsList=press
+        case"you":buttonWordsList=you
+        case"you are":buttonWordsList=youare
+        case"your":buttonWordsList=your
+        case"you're":buttonWordsList=youre
+        case"ur":buttonWordsList=ur
+        case"u":buttonWordsList=u
+        case"uh huh":buttonWordsList=uhhuh
+        case"uh uh":buttonWordsList=uhuh
+        case"what?":buttonWordsList=whatq
+        case"done":buttonWordsList=done
+        case"next":buttonWordsList=nextt
+        case"hold":buttonWordsList=hold
+        case"sure":buttonWordsList=sure
+        case"like":buttonWordsList=like
+        case other:
+            print("Error: Incorrect button word. Resetting")
+            return
+
+
+
     
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
