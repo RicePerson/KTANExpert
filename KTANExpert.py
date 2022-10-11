@@ -1309,6 +1309,7 @@ def wireSeq():
 
 
 		#Occurance Logic
+		print(" ")
 		dCount = 0
 		wCount = 0
 		for d in wires:
@@ -1316,58 +1317,70 @@ def wireSeq():
 				wCount += 1
 				match (d): #Testing Color of current wire
 					case ("r"): #Wire is RED
+						print("red")
 						rOcc += 1
 						match (wires[dCount + 1]): #Testing endpoint of RED wire
 							case ("A"):
+								print("redA")
 								if rOcc in [3,4,6,7,8]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 							case ("B"):
+								print("redB")
 								if rOcc in [2,5,7,8,9]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 							case ("C"):
+								print("redC")
 								if rOcc in [1,4,6,7]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 
 					case ("blu"): #Wire is BLUE
+						print("blue")
 						bluOcc += 1
 						match (wires[dCount + 1]): #Testing endpoint of BLUE wire
 							case ("A"):
+								print("blueA")
 								if bluOcc in [2,4,8,9]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 							case ("B"):
+								print("blueB")
 								if bluOcc in [1,3,5,6]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 							case ("C"):
+								print("blueC")
 								if bluOcc in [2,6,7,8]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 
 					case ("bla"): #Wire is BLACK
+						print("black")
 						blaOcc += 1
 						match (wires[dCount + 1]): #Testing endpoint of BLACK wire
 							case ("A"):
-								if bluOcc in [2,4,8,9]:
+								print("blackA")
+								if blaOcc in [2,4,8,9]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 							case ("B"):
-								if bluOcc in [1,3,5,6]:
+								print("blackB")
+								if blaOcc in [1,3,5,6]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
 							case ("C"):
-								if bluOcc in [2,6,7,8]:
+								print("blackC")
+								if blaOcc in [2,6,7,8]:
 									print("Cut wire" + str(wCount))
 								else:
 									print("Do not cut wire" + str(wCount))
@@ -1385,7 +1398,7 @@ while isDoing == True:
 	module = input("Module? (w/b/k/s/who/m/mO/cW/wS/done): ")
 	if module == "w":
 		print(" ")
-		wiresList()
+		wires()
 	elif module == "b":
 		print(" ")
 		button()
