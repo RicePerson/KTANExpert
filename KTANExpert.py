@@ -708,74 +708,79 @@ def whofirst():
     totalList = displayWords+ready+first+no+blank+nothing+yes+what+uhhh+left+right+middle+\
         okay+wait+press+you+youare+your+youre+ur+u+uhhuh+uhuh+whatq+done+nextt+hold+sure+like
 
-    # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
-    userWords = "EMPTY"
-    userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
-    userWords = userWords.split(";")
-    print(userWords)
-    #Checks
-    if len(userWords) != 7:
-        print("Error: Incorrect number of words input. Resetting")
-        return
-    else:
-        for i in range(0,6):
-            if i == 0:
-                if userWords[0] not in displayWords:
-                    print("Incorrect display word. Resetting")
+    for i in range(0,2):
+        # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
+        userWords = "EMPTY"
+        userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
+        if "..." in userWords:
+            print("Exit Command Recognized. Exiting.")
+            return
+        userWords = userWords.split(";")
+        print(userWords)
+        #Checks
+        if len(userWords) != 7:
+            print("Error: Incorrect number of words input. Resetting")
+            return
+        else:
+            for i in range(0,6):
+                if i == 0:
+                    if userWords[0] not in displayWords:
+                        print("Incorrect display word. Resetting")
+                        return
+                if userWords[i] not in totalList:
+                    print("Incorrect word " + str(userWords[i])+ ". Resetting")
                     return
-            if userWords[i] not in totalList:
-                print("Incorrect word " + str(userWords[i])+ ". Resetting")
-                return
     
-    # DisplayWord's Sacred Button, ButtonWord, Logic
-    buttonWord = "EMPTY"
-    displayWordsButtonIndex = [2, 4, 6, 4, 6, 2, 3, 5, 6, 2, 6, 5, 5, 3, 3, 6, 5, 6, 5, 5, 1, 6, 3, 5, 2, 6, 4, 6]
-    #buttonIndex = displayWordsButtonIndex[displayWords.index(userWords[0])]
-    buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]]
+        # DisplayWord's Sacred Button, ButtonWord, Logic
+        buttonWord = "EMPTY"
+        displayWordsButtonIndex = [2, 4, 6, 4, 6, 2, 3, 5, 6, 2, 6, 5, 5, 3, 3, 6, 5, 6, 5, 5, 1, 6, 3, 5, 2, 6, 4, 6]
+        #buttonIndex = displayWordsButtonIndex[displayWords.index(userWords[0])]
+        buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]]
 
-    # STEP 2 - Assigning the buttonWord's appropriate list
-    buttonWordsList=[]
-    match (buttonWord):
-        case"ready":buttonWordsList=ready
-        case"first":buttonWordsList=first
-        case"no":buttonWordsList=no
-        case"blank":buttonWordsList=blank
-        case"nothing":buttonWordsList=nothing
-        case"yes":buttonWordsList=yes
-        case"what":buttonWordsList=what
-        case"uhhh":buttonWordsList=uhhh
-        case"left":buttonWordsList=left
-        case"right":buttonWordsList=right
-        case"middle":buttonWordsList=middle
-        case"okay":buttonWordsList=okay
-        case"wait":buttonWordsList=wait
-        case"press":buttonWordsList=press
-        case"you":buttonWordsList=you
-        case"you are":buttonWordsList=youare
-        case"your":buttonWordsList=your
-        case"you're":buttonWordsList=youre
-        case"ur":buttonWordsList=ur
-        case"u":buttonWordsList=u
-        case"uh huh":buttonWordsList=uhhuh
-        case"uh uh":buttonWordsList=uhuh
-        case"what?":buttonWordsList=whatq
-        case"done":buttonWordsList=done
-        case"next":buttonWordsList=nextt
-        case"hold":buttonWordsList=hold
-        case"sure":buttonWordsList=sure
-        case"like":buttonWordsList=like
-        case other:
-            print("Error: Incorrect button word. Resetting")
-            return
+        # STEP 2 - Assigning the buttonWord's appropriate list
+        buttonWordsList=[]
+        match (buttonWord):
+            case"ready":buttonWordsList=ready
+            case"first":buttonWordsList=first
+            case"no":buttonWordsList=no
+            case"blank":buttonWordsList=blank
+            case"nothing":buttonWordsList=nothing
+            case"yes":buttonWordsList=yes
+            case"what":buttonWordsList=what
+            case"uhhh":buttonWordsList=uhhh
+            case"left":buttonWordsList=left
+            case"right":buttonWordsList=right
+            case"middle":buttonWordsList=middle
+            case"okay":buttonWordsList=okay
+            case"wait":buttonWordsList=wait
+            case"press":buttonWordsList=press
+            case"you":buttonWordsList=you
+            case"you are":buttonWordsList=youare
+            case"your":buttonWordsList=your
+            case"you're":buttonWordsList=youre
+            case"ur":buttonWordsList=ur
+            case"u":buttonWordsList=u
+            case"uh huh":buttonWordsList=uhhuh
+            case"uh uh":buttonWordsList=uhuh
+            case"what?":buttonWordsList=whatq
+            case"done":buttonWordsList=done
+            case"next":buttonWordsList=nextt
+            case"hold":buttonWordsList=hold
+            case"sure":buttonWordsList=sure
+            case"like":buttonWordsList=like
+            case other:
+                print("Error: Incorrect button word. Resetting")
+                return
 
-    for w in buttonWordsList:
-        if w in userWords[1,6]:
-            print("Press the button labeled " + str(w))
-            return
+        print(" ")
+        for w in buttonWordsList:
+            if w in userWords[1:6]:
+                print("Press the button labeled " + str(w))
+                return
 
-    # If none of them match...
-    print("Error: No buttons match buttonWordsList. Resetting.")
-    return
+        # If none of them match...
+        print("Error: No buttons match buttonWordsList. Resetting.")
+        return
 
 
     
