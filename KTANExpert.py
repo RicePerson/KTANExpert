@@ -390,7 +390,15 @@ def simon():
 						print("How?")
 						return
 				print(" ")
-				print("Input: " + str(finalSimon))
+				#print("Input: " + str(finalSimon))
+				print("Click these buttons in order:")
+				for f in finalSimon:
+					match f:
+						case "r":print("Red")
+						case "y":print("Yellow")
+						case "g":print("Green")
+						case "blu":print("Blue")
+						case other: return
 				print(" ")
 
 			while strikes == "1":
@@ -436,7 +444,15 @@ def simon():
 						print("How?")
 						return
 				print(" ")
-				print("Input: " + str(finalSimon))
+				#print("Input: " + str(finalSimon))
+				print("Click these buttons in order:")
+				for f in finalSimon:
+					match f:
+						case "r":print("Red")
+						case "y":print("Yellow")
+						case "g":print("Green")
+						case "blu":print("Blue")
+						case other: return
 				print(" ")
 
 			while strikes == "2":
@@ -482,7 +498,15 @@ def simon():
 						print("How?")
 						return
 				print(" ")
-				print("Input: " + str(finalSimon))
+				#print("Input: " + str(finalSimon))
+				print("Click these buttons in order:")
+				for f in finalSimon:
+					match f:
+						case "r":print("Red")
+						case "y":print("Yellow")
+						case "g":print("Green")
+						case "blu":print("Blue")
+						case other: return
 				print(" ")
 
 		elif vowel == "n":
@@ -530,7 +554,15 @@ def simon():
 						print("How?")
 						return
 				print(" ")
-				print("Input: " + str(finalSimon))
+				#print("Input: " + str(finalSimon))
+				print("Click these buttons in order:")
+				for f in finalSimon:
+					match f:
+						case "r":print("Red")
+						case "y":print("Yellow")
+						case "g":print("Green")
+						case "blu":print("Blue")
+						case other: return
 				print(" ")
 
 			while strikes == "1":
@@ -576,7 +608,15 @@ def simon():
 						print("How?")
 						return
 				print(" ")
-				print("Input: " + str(finalSimon))
+				#print("Input: " + str(finalSimon))
+				print("Click these buttons in order:")
+				for f in finalSimon:
+					match f:
+						case "r":print("Red")
+						case "y":print("Yellow")
+						case "g":print("Green")
+						case "blu":print("Blue")
+						case other: return
 				print(" ")
 
 			while strikes == "2":
@@ -622,7 +662,15 @@ def simon():
 						print("How?")
 						return
 				print(" ")
-				print("Input: " + str(finalSimon))
+				#print("Input: " + str(finalSimon))
+				print("Click these buttons in order:")
+				for f in finalSimon:
+					match f:
+						case "r":print("Red")
+						case "y":print("Yellow")
+						case "g":print("Green")
+						case "blu":print("Blue")
+						case other: return
 				print(" ")
 
 		else:
