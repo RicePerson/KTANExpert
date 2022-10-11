@@ -1286,190 +1286,95 @@ def compWires():
 
 #Wire Sequences (input x2 -> output, loop until complete)
 def wireSeq():
-	redOcc = 0
+	rOcc = 0
 	bluOcc = 0
-	blkOcc = 0
-	while True:
+	blaOcc = 0
+	for i in range(0,4):
 		#Def Vars
-		wire = []
-		wireUn = input("What is the wire color and letter? (r,blu,bla SPACE A,B,C)(input stop to exit): ")
+		wiresList = []
+		wires = []
+		wireUn = input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;) : ")
+
 		if wireUn == "stop":
 			return
 		else:
-			wire = wireUn.split()
-		print("Wire: " + str(wire))
+			wiresList = wireUn.split(";")
+		for u in range(0,3):
+			print("Wire" + str(u+1) + ": " + str(wiresList[u]))
 
-		#Logic - Occurences
-		if wire[0] == "r":
-			redOcc += 1
-			print("Occur: " + str(redOcc))
-		elif wire[0] == "blu":
-			bluOcc += 1
-			print("Occur: " + str(bluOcc))
-		elif wire[0] == "bla":
-			blkOcc += 1
-			print("Occur: " + str(blkOcc))
-		else:
-			if wire[0] == "exit":
-				pass
-			else:
-				print("Try Again")
-		print(" ")
-
-		#Logic - Processing
-		#Red Wire
-		if wire[0] == "r":
-			if redOcc == 1:
-				if wire[1] == "C":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 2:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 3:
-				if wire[1] == "A":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 4:
-				if wire[1] in ["A", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 5:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 6:
-				if wire[1] in ["A", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 7:
-				if wire[1] in ["A", "B", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 8:
-				if wire[1] in ["A", "B"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif redOcc == 9:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-
-		#Blue Wire
-		elif wire[0] == "blu":
-			if bluOcc == 1:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 2:
-				if wire[1] in ["A", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 3:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 4:
-				if wire[1] == "A":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 5:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 6:
-				if wire[1] in ["B", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 7:
-				if wire[1] == "C":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 8:
-				if wire[1] in ["A", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif bluOcc == 9:
-				if wire[1] == "A":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-
-		#Black Wire			
-		elif wire[0] == "bla":
-			if blkOcc == 1:
-				if wire[1] in ["A", "B", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 2:
-				if wire[1] in ["A", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 3:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 4:
-				if wire[1] in ["A", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 5:
-				if wire[1] == "B":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 6:
-				if wire[1] in ["B", "C"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 7:
-				if wire[1] in ["A", "B"]:
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 8:
-				if wire[1] == "C":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-			elif blkOcc == 9:
-				if wire[1] == "C":
-					print("Cut that wire")
-				else:
-					print("Don't cut that wire")
-
-		#Exit
-		elif wire[0] == "exit":
-			return
-
-		#If nothing else
-		else:
-			print("Something Happened, try again")
+		# Splits the wiresList into individual details. 0,2,4 are colors and 1,3,5 are endpoints
+		for w in wiresList:
+			wires.append(w.split(">")[0])
+			wires.append(w.split(">")[1])
 
 
+		#Occurance Logic
+		dCount = 0
+		wCount = 0
+		for d in wires:
+			if (dCount%2 == 0): #Evens Colors
+				wCount += 1
+				match (d): #Testing Color of current wire
+					case ("r"): #Wire is RED
+						rOcc += 1
+						match (wires[dCount + 1]): #Testing endpoint of RED wire
+							case ("A"):
+								if rOcc in [3,4,6,7,8]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+							case ("B"):
+								if rOcc in [2,5,7,8,9]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+							case ("C"):
+								if rOcc in [1,4,6,7]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+
+					case ("blu"): #Wire is BLUE
+						bluOcc += 1
+						match (wires[dCount + 1]): #Testing endpoint of BLUE wire
+							case ("A"):
+								if bluOcc in [2,4,8,9]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+							case ("B"):
+								if bluOcc in [1,3,5,6]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+							case ("C"):
+								if bluOcc in [2,6,7,8]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+
+					case ("bla"): #Wire is BLACK
+						blaOcc += 1
+						match (wires[dCount + 1]): #Testing endpoint of BLACK wire
+							case ("A"):
+								if bluOcc in [2,4,8,9]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+							case ("B"):
+								if bluOcc in [1,3,5,6]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+							case ("C"):
+								if bluOcc in [2,6,7,8]:
+									print("Cut wire" + str(wCount))
+								else:
+									print("Do not cut wire" + str(wCount))
+			dCount += 1
+					
+		
+			
 
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
@@ -1480,7 +1385,7 @@ while isDoing == True:
 	module = input("Module? (w/b/k/s/who/m/mO/cW/wS/done): ")
 	if module == "w":
 		print(" ")
-		wires()
+		wiresList()
 	elif module == "b":
 		print(" ")
 		button()
