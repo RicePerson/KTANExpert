@@ -708,7 +708,7 @@ def whofirst():
     totalList = displayWords+ready+first+no+blank+nothing+yes+what+uhhh+left+right+middle+\
         okay+wait+press+you+youare+your+youre+ur+u+uhhuh+uhuh+whatq+done+nextt+hold+sure+like
 
-    # Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
+    # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
     userWords = "EMPTY"
     userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
     userWords = userWords.split(";")
@@ -733,6 +733,7 @@ def whofirst():
     #buttonIndex = displayWordsButtonIndex[displayWords.index(userWords[0])]
     buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]]
 
+    # STEP 2 - Assigning the buttonWord's appropriate list
     buttonWordsList=[]
     match (buttonWord):
         case"ready":buttonWordsList=ready
@@ -767,6 +768,14 @@ def whofirst():
             print("Error: Incorrect button word. Resetting")
             return
 
+    for w in buttonWordsList:
+        if w in userWords[1,6]:
+            print("Press the button labeled " + str(w))
+            return
+
+    # If none of them match...
+    print("Error: No buttons match buttonWordsList. Resetting.")
+    return
 
 
     
