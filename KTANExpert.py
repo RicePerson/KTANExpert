@@ -1284,7 +1284,7 @@ def compWires():
 			print(" ")
 			pass
 
-#Wire Sequences (input x2 -> output, loop until complete)
+#Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
 def wireSeq():
 	rOcc = 0
 	bluOcc = 0
