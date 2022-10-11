@@ -1,7 +1,6 @@
 # Keep Talking and Nobody Explodes Manual "Expert"
 # Created By Reese Ford 07/13/2021
 # https://www.github.com/RicePerson/KTANExpert
-# Adding this line to test project workflow. Feel free to delete.
 
 
 #Imports
