@@ -709,6 +709,7 @@ def whofirst():
 	userWords = "EMPTY"
 	userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
 	userWords = userWords.split(";")
+	print(userWords)
 	#Checks
 	if len(userWords) != 7:
 		print("Error: Incorrect number of words input. Resetting")
@@ -719,8 +720,8 @@ def whofirst():
 				if userWords[0] not in displayList:
 					print("Incorrect display word. Resetting")
 					return
-			if userWords[i] not in displayList:
-				print("Incorrect display word. Resetting")
+			if userWords[i] not in totalList:
+				print("Incorrect word " + str(userWords[i])+ ". Resetting")
 				return
 	print("Checks Passed!")
 
