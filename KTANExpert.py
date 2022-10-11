@@ -670,7 +670,8 @@ def whofirst():
 	#Lists of STEP 2 Words
 	#Copy this to make it easier: ", ". So basically WORD CtrlV WORD CtrlV WORD and so on and so forth
 
-	displayList = ["yes", "first", "display", "okay", "says", "nothing", "*blank*", "no", "led", "lead", "read", "red", "reed", "leed", "hold on", "you", "you are", "your", "you're", "ur", "there", "they're", "their", "they are", "see", "c", "cee"]
+	displayList = ["yes", "first", "display", "okay", "says", "nothing", "*blank*", "no", "led", "lead", "read", 
+				"red", "reed", "leed", "hold on", "you", "you are", "your", "you're", "ur", "there", "they're", "their", "they are", "see", "c", "cee"]
 
 	ready = ["yes", "okay", "what", "middle", "left", "press", "right", "blank", "ready"]
 	first = ["left", "okay", "yes", "middle", "no", "right", "nothing", "uhhh", "wait", "ready", "blank", "what", "press", "first"]
@@ -692,24 +693,36 @@ def whofirst():
 	youre = ["you", "you're"]
 	ur = ["done", "u", "ur"]
 	u = ["uh huh", "sure", "next", "what?", "you're", "ur", "uh uh", "done", "u"]
-	uhhuh = "uh huh"
+	uhhuh = ["uh huh"]
 	uhuh = ["ur", "u", "you are", "you're", "next", "uh uh"]
 	whatq = ["you", "hold", "you're", "your", "u", "done", "uh uh", "like", "you are", "uh huh", "ur", "next", "what?"]
 	done = ["sure", "uh huh", "next", "what?", "your", "ur", "you're", "hold", "like", "you", "u", "you are", "uh uh", "done"]
-	next = ["what?", "uh huh", "uh uh", "your", "hold", "sure", "next"]
+	nextt = ["what?", "uh huh", "uh uh", "your", "hold", "sure", "next"]
 	hold = ["you are", "u", "done", "uh uh", "you", "ur", "sure", "what?", "you're", "next", "hold"]
 	sure = ["you are", "done", "like", "you're", "you", "hold", "uh huh", "ur", "sure"]
 	like = ["you're", "next", "u", "ur", "hold", "done", "uh uh", "what?", "uh huh", "you", "like"]
 
+	totalList = displayList+ready+first+no+blank+nothing+yes+what+uhhh+left+right+middle+\
+		okay+wait+press+you+youare+your+youre+ur+u+uhhuh+uhuh+whatq+done+nextt+hold+sure+like
+
 	# Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
 	userWords = "EMPTY"
 	userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
-	userWords = userWords.split()
+	userWords = userWords.split(";")
 	#Checks
 	if len(userWords) != 7:
 		print("Error: Incorrect number of words input. Resetting")
 		return
-	if userWords[0] in 
+	else:
+		for i in range(0,6):
+			if i == 0:
+				if userWords[0] not in displayList:
+					print("Incorrect display word. Resetting")
+					return
+			if userWords[i] not in displayList:
+				print("Incorrect display word. Resetting")
+				return
+	print("Checks Passed!")
 
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
