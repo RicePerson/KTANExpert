@@ -1409,17 +1409,17 @@ def wireSeq():
 						blaOcc += 1
 						match (wires[dCount + 1]): #Testing endpoint of BLACK wire
 							case ("A"):
-								if blaOcc in [2,4,8,9]:
+								if blaOcc in [1,2,4,7]:
 									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
 									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("B"):
-								if blaOcc in [1,3,5,6]:
+								if blaOcc in [1,3,5,6,7]:
 									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
 									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
 							case ("C"):
-								if blaOcc in [2,6,7,8]:
+								if blaOcc in [1,2,4,6,8,9]:
 									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Cut")
 								else:
 									print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
