@@ -779,6 +779,8 @@ def whofirst():
                 print(" ")
                 if input("Is the module complete? (y/n): ") == "y":
                     return
+                else:
+                    break
 
         # If none of them match...
         print("Error: No buttons match buttonWordsList. Resetting.")
