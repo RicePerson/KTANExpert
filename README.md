@@ -132,13 +132,15 @@ Click the colored buttons in the given order.
 Repeat until the module is complete. To exit the module on the expert, input `done` at any step.
 
 ### Example
-*0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing slowly.*
+*0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing red slowly.*
 1) The Player:red_circle: selects the simon says module with `s`
-2) Player:red_circle: inputs `y` ENTER `1`
-3) Player:red_circle: inputs `r` ENTER `end`
-4) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
-5) Player:red_circle: clicks the yellow button in KTANE
-6) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:. *Module Complete, move on to the next one.*
+2) The Expert:large_blue_circle: asks if there is a vowel in the serial number, and then if there are any strikes
+3) The Player:red_circle: answers `y` ENTER `1`
+4) The Expert:large_blue_circle: asks for button flashes
+5) The Player:red_circle: enters `r` ENTER `end`
+6) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
+7) Player:red_circle: clicks the yellow button in KTANE
+8) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:. *Module Complete, move on to the next one.*
 
 Note: If for some reason, after clicking a colored button, it markes it as wrong and gives you a strike, 
 enter `done` into the expert and start the module over, as the current number of strikes affects the module.
