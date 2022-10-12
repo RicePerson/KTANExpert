@@ -151,7 +151,10 @@ This module consists of seven words, six of them being on buttons. It also has a
 Based on what the display words is, the expert determines the position of the what I'm calling "The display's sacred button word". This word determines what happens in the next step.
 Because this module was designed to make the user click the wrong button if they don't follow both sections of the manual, I have reduced this module down to a single input per repeat.
 You're Welcome. Inputing to this module works by typing each word on the module in a specific order, seperated by a semicolon.
-The order goes like this: `DisplayWord;TopLeft;MiddleLeft;BottomLeft;TopRight;MiddleRight;BottomRight`
+The order goes like this: 
+
+`DisplayWord;TopLeft;MiddleLeft;BottomLeft;TopRight;MiddleRight;BottomRight`
+
 It is imperative that the words are entered in this order, or the module will give you a wrong instruction.
 Also, the display word can sometimes be, well, nothing. The display will be blank. In this case, pretend the word is `*blank*`
 
