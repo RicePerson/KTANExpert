@@ -1195,47 +1195,69 @@ def compWires():
         print("Error. Number of wires inconsistant across inputs. Resetting.")
         return
 
+    # Contents Error Check
+    for i in (blueList+redList+ledList+starList):
+        if i == "1":
+            if i == "0": pass
+            else: 
+                print("Error. Non-binary character in input detected. Resetting.")
+                return
+        else:
+            print("Error. Non-binary character in input detected. Resetting.")
+            return
+
+
     # Determine-Instruction Logic
     instruction = "EMPTY"
-    for i in range()
-    if colBlu:
-        if colRed:
-            if wireLED:
-                if hasStar:
-                    instruction = "D"
+    for i in range(0,len(blueList)-1):
+        colBlu = False
+        colRed = False
+        wireLED = False
+        hasStar = False
+
+        if blueList[i] == "1":
+            colBlue = True
+        if 
+
+
+        if colBlu:
+            if colRed:
+                if wireLED:
+                    if hasStar:
+                         instruction = "D"
+                    else:
+                         instruction = "S"
                 else:
-                    instruction = "S"
+                    if hasStar:
+                         instruction = "P"
+                    else:
+                         instruction = "S"
             else:
-                if hasStar:
+                if wireLED:
                     instruction = "P"
                 else:
-                    instruction = "S"
-        else:
+                    if hasStar:
+                         instruction = "D"
+                    else:
+                         instruction = "S"
+        elif colRed:
             if wireLED:
-                instruction = "P"
+                instruction = "B"
             else:
                 if hasStar:
-                    instruction = "D"
+                    instruction = "C"
                 else:
                     instruction = "S"
-    elif colRed:
-        if wireLED:
-            instruction = "B"
-        else:
+        elif wireLED:
             if hasStar:
-                instruction = "C"
+                instruction = "B"
             else:
-                instruction = "S"
-    elif wireLED:
-        if hasStar:
-            instruction = "B"
+                instruction = "D"
+        elif hasStar:
+            instruction = "C"
         else:
-            instruction = "D"
-    elif hasStar:
-        instruction = "C"
-    else:
-        instruction = "C"
-    print(" ")
+            instruction = "C"
+        print(" ")
 
     #Output Logic
     match (instruction):
