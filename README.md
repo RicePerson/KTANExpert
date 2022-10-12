@@ -147,9 +147,13 @@ enter `done` into the expert and start the module over, as the current number of
 
 
 ## Who's on First `who`
-This module includes a display and six buttons. There are TWO seperate steps to this module, so don't go clicking all willy-nilly
-The first part of this module is inputing the display *(Note: a possible word for the display is just a blank display with nothing written on it. In this case, enter `*blank*` for the word)*, and inputing the word on the provided button
-I specificlly coded this module to make the steps VERY CLEAR because of the nature of the module. Try the module, and if it still doesn't make sense, check out the example
+This module consists of seven words, six of them being on buttons. It also has a indicator with 3 lights telling us there are 3 repeats for this module
+Based on what the display words is, the expert determines the position of the what I'm calling "The display's sacred button word". This word determines what happens in the next step.
+Because this module was designed to make the user click the wrong button if they don't follow both sections of the manual, I have reduced this module down to a single input per repeat.
+You're Welcome. Inputing to this module works by typing each word on the module in a specific order, seperated by a semicolon.
+The order goes like this: `DisplayWord;TopLeft;MiddleLeft;BottomLeft;TopRight;MiddleRight;BottomRight`
+It is imperative that the words are entered in this order, or the module will give you a wrong instruction.
+Also, the display word can sometimes be, well, nothing. The display will be blank. In this case, pretend the word is `*blank*`
 
 ### Example
 *0) The KTANE module looks like this:*
