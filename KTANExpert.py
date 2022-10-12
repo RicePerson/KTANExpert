@@ -1168,16 +1168,36 @@ def compWires():
     global batteries
     global parallelPort
 
-    colBlu = False
-    colRed = False
-    wireLED = False
-    hasStar = False
+    blueList = "EMPTY"
+    redList = "EMPTY"
+    ledList = "EMPTY"
+    starList = "EMPTY"
 
+    # Input Logic
+    blueList = input("What wires have blue coloring? (as a binary list): ")
+    redList = input("What wires have red coloring? (as a binary list): ")
+    ledList = input("What wires have an LED above them? (as a binary list): ")
+    starList = input("What wires have a star beneath them? (as a binary list): ")
 
+    blueList = [x for x in blueList]
+    redList = [x for x in redList]
+    ledList = [x for x in ledList]
+    starList = [x for x in starList]
 
-    #Input Logic
+    # Length Error Check
+    if len(blueList) != len(redList):
+        print("Error. Number of wires inconsistant across inputs. Resetting.")
+        return
+    if len(blueList) != len(ledList):
+        print("Error. Number of wires inconsistant across inputs. Resetting.")
+        return
+    if len(blueList) != len(starList):
+        print("Error. Number of wires inconsistant across inputs. Resetting.")
+        return
+
+    # Determine-Instruction Logic
     instruction = "EMPTY"
-
+    for i in range()
     if colBlu:
         if colRed:
             if wireLED:
