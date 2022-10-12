@@ -75,7 +75,7 @@ Follow the given instructions.
 
 
 ## Button `b`
-*Instructions to come, but the module is fairly straigtforward*
+This module just consists of a large button that has some text on it. To start, don't listen to it's lies. Sometimes you have to just click "hold" or hold down "press". When you enter the module in the expert, it will first ask you for a color. It will always ask this question. Once you enter the color, there are a couple different questions the expert may ask. Things like "What is the last digit of the serial number?" or "What does the button say?". Just answer the question. These bomb-wide details are shared across modules in the expert, so if you do another button, it won't ask you a question you have already answered. If it does, that's because that detail may change between modules, so just answer it. Keep answering the questions until it gives you an instruction. It will either ask you to press and immediately release the button.
 
 ## Keypad `k`
 Once you enter the keypad module in the expert, it will list all possible keypad symbols, and then ask for the first one.
