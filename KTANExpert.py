@@ -1268,17 +1268,21 @@ def compWires():
             #Output Logic
             match (instruction):
                 case ("C"): 
-                    print("Wire " + str(i+1) + ") Cut")
-                case ("D"): 
-                    print("Wire " + str(i+1) + ") Do Not Cut")
+                    if n == 1:
+                        print("Wire " + str(i+1) + ") Cut")
+                case ("D"):
+                    if n == 1:
+                        print("Wire " + str(i+1) + ") Do Not Cut")
                 case ("S"): 
                     if serialNum == "EMPTY":
                         print(" ")
                         serialNum = int(input("What is the last number of the bomb serial number?: "))
                     if serialNum%2 == 0:
-                        print("Wire " + str(i+1) + ") Cut")
+                        if n == 1:
+                            print("Wire " + str(i+1) + ") Cut")
                     else:
-                        print("Wire " + str(i+1) + ") Do Not Cut")
+                        if n == 1:
+                            print("Wire " + str(i+1) + ") Do Not Cut")
                 case ("P"):
                     if parallelPort == "EMPTY":
                         print(" ")
@@ -1287,19 +1291,23 @@ def compWires():
                         else:
                             parallelPort = False
                     if parallelPort == True:
-                        print("Wire " + str(i+1) + ") Cut")
+                        if n == 1:
+                            print("Wire " + str(i+1) + ") Cut")
                     else:
-                        print("Wire " + str(i+1) + ") Do Not Cut")
+                        if n == 1:
+                            print("Wire " + str(i+1) + ") Do Not Cut")
                 case ("B"):
                     if batteries == "EMPTY":
                         print(" ")
                         batteries = int(input("How many batteries are on the bomb?: "))
                     if batteries >= 2:
-                        print("Wire " + str(i+1) + ") Cut")
+                        if n == 1:
+                            print("Wire " + str(i+1) + ") Cut")
                     else:
-                        print("Wire " + str(i+1) + ") Do Not Cut")
+                        if n == 1:
+                            print("Wire " + str(i+1) + ") Do Not Cut")
                 case other:
-                    print("Error: *shrug*. Resetting")
+                    print("Error: Something went so wrong, I don't know what happened. Resetting.")
                     return
 
 
