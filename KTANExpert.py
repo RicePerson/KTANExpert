@@ -192,6 +192,7 @@ def button():
     color = "EMPTY"
     text = "EMPTY"
     instruction = "EMPTY"
+    givenInstruction = False
     strip = "EMPTY"
 
     global batteries
@@ -208,46 +209,53 @@ def button():
             text = input("What does the button say? (all lowercase): ")
         if text == "abort":
             instruction = "hold"
+            givenInstruction = True
 
     #Manual Step 2
-    elif batteries == "EMPTY":
+    if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = int(input("How many batteries are on the bomb?: "))
-    if batteries > 1:
+    if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
         if text == "detonate":
             instruction = "pressRelease"
+            givenInstruction = True
 
     #Manual Step 3
-    elif color == "w":
+    if (givenInstruction == False) and (color == "w"):
         if litIndicators == ["EMPTY"]:
             litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
         if "CAR" in litIndicators:
             instruction = "hold"
+            givenInstruction = True
 
     #Manual Step 4
-    elif batteries == "EMPTY":
+    if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = int(input("How many batteries are on the bomb?: "))
-    if batteries > 2:
+    if (givenInstruction == False) and (batteries > 2):
         if litIndicators == ["EMPTY"]:
             litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
         if "FRK" in litIndicators:
             instruction = "pressRelease"
+            givenInstruction = True
 
     #Manual Step 5
-    elif color == "y":
+    if (givenInstruction == False) and (color == "y"):
         instruction = "hold"
+        givenInstruction = True
 
     #Manual Step 6
-    elif color == "r":
+    if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
         if text == "hold":
             instruction = "pressRelease"
+            givenInstruction = True
 
     #Manual Step 7
-    else:
+    if (givenInstruction == False):
         instruction = "hold"
+        givenInstruction = False
 
     #Releasing a held button
     if instruction == "hold":

@@ -75,7 +75,26 @@ Follow the given instructions.
 
 
 ## Button `b`
-This module just consists of a large button that has some text on it. To start, don't listen to it's lies. Sometimes you have to just click "hold" or hold down "press". When you enter the module in the expert, it will first ask you for a color. It will always ask this question. Once you enter the color, there are a couple different questions the expert may ask. Things like "What is the last digit of the serial number?" or "What does the button say?". Just answer the question. These bomb-wide details are shared across modules in the expert, so if you do another button, it won't ask you a question you have already answered. If it does, that's because that detail may change between modules, so just answer it. Keep answering the questions until it gives you an instruction. It will either ask you to press and immediately release the button.
+This module just consists of a large button that has some text on it. To start, don't listen to it's lies. 
+Sometimes you have to just click "hold" or hold down "press". When you enter the module in the expert, it will first ask you for a color. 
+It will always ask this question. Once you enter the color, there are a couple different questions the expert may ask. 
+Things like "What is the last digit of the serial number?" or "What does the button say?". Just answer the question. 
+These bomb-wide details are shared across modules in the expert, so if you do another button, it won't ask you a question you have already answered. 
+If it does, that's because that detail may change between modules, so just answer it. 
+Keep answering the questions until it gives you an instruction. It will either ask you to press and immediately release the button.
+Or to start holding the button and enter the color of the strip directly to the right of the button. The strip will only light up when holding the button,
+and will light up even if you aren't supposed to hold it, so don't skip ahead. If holding, hold down the button and enter the color into the expert WITHOUT
+letting go of the button. It will then give you an instruction like `Release when the countdown timer has a 4 in any position`. This just means if there is
+a four on the countdown display, release the button. If not, wait.
+
+### Example
+*0) KTANE gives you a blue button with the word detonate on it*
+1) The Player:red_circle: selects the Button module with `b`
+2) The Expert:large_blue_circle: asks `What is the color of the button?`
+3) The Player:red_circle: enters `blu` and presses ENTER.
+4) The Expert:large_blue_circle: asks `What does the button say?`
+5) The Player:red_circle: enters `detonate` and presses ENTER.
+6)
 
 ## Keypad `k`
 Once you enter the keypad module in the expert, it will list all possible keypad symbols, and then ask for the first one.
