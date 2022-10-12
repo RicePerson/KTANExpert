@@ -192,10 +192,19 @@ Repeat until the module is complete. If you ever mess up, the KTANE module will 
 
 ## Morse-Code `mO`
 Enter the morse code as it is flashed to you in the module. 
-Use period( . ) and minus( - ) with a space between letters to input the morse (represented by a longer space in the flasing module.)
-When the module stop flashing the longest and then starts again, it means the word is restarting. 
-The program does NOT require that you start at the beginning of the word, only that you don't duplicate any letters already input.
-Once you have the morse word input (with no duplication), press ENTER, and input the frequency provided.
+If you don't know about Morse-Code, here's a little summary. MorseCode is a standard way of communicating used by the military that can use light or sound.
+
+|MorseCode|Meaning|
+|---|---|
+|.|Dot|
+|-|Dash|
+|Short Space|Space between Morse Characters|
+|Longer Space|Space between Letters|
+|Really Long Space|Space Between Words / Repeating Message|
+
+This module requires that you type the morse code, and then based on what the flashing word is, input a specific frequency and click TX.
+The Expert doesn't care at which point in the word you start entering characters, just that you don't repeat characters. If you think you repeated characters, don't worry.
+When you input the morse, the Expert will tell you what you just entered in english letters, so you can see what you repeated so you can rerun the module and try again.
 
 ### Example:
 *0) KTANE mnodule is flashing .. -.-. -.-   - .-. .. -.-. -.-   - .-. .. -.-. -.-   - .-. .. -.-. -.- repeating indefinitely*
