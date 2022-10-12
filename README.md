@@ -183,6 +183,7 @@ Repeat until the module is complete. If you ever mess up, the KTANE module will 
 
 ### Example
 *0) The KTANE module starts with the display being 4 and the buttons being, from left to right, 1 3 2 4*
+1) The Player:red_circle: enters the memory module with `m`
 1) The Expert:large_blue_circle: asks for the stage 1 numbers 
 2) The Player:red_circle: inputs `4;1;3;2;4`
 3) The Expert:large_blue_circle: gives the instruction `Press the button labeled 4`. The Player:red_circle: complys. The numbers on the KTANE module change
