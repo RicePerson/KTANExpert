@@ -1208,89 +1208,99 @@ def compWires():
 
 
     # Determine-Instruction Logic
-    instruction = "EMPTY"
-    for i in range(0,len(blueList)-1):
-        colBlu = False
-        colRed = False
-        wireLED = False
-        hasStar = False
-
-        if blueList[i] == "1":
-            colBlue = True
-        if 
-
-
-        if colBlu:
-            if colRed:
-                if wireLED:
-                    if hasStar:
-                         instruction = "D"
-                    else:
-                         instruction = "S"
-                else:
-                    if hasStar:
-                         instruction = "P"
-                    else:
-                         instruction = "S"
-            else:
-                if wireLED:
-                    instruction = "P"
-                else:
-                    if hasStar:
-                         instruction = "D"
-                    else:
-                         instruction = "S"
-        elif colRed:
-            if wireLED:
-                instruction = "B"
-            else:
-                if hasStar:
-                    instruction = "C"
-                else:
-                    instruction = "S"
-        elif wireLED:
-            if hasStar:
-                instruction = "B"
-            else:
-                instruction = "D"
-        elif hasStar:
-            instruction = "C"
-        else:
-            instruction = "C"
+    for n in range(0,1): #It runs twice to compensate for mid-loop questions about bomb details
         print(" ")
+        instruction = "EMPTY"
+        for i in range(0,len(blueList)-1):
+            colBlu = False
+            colRed = False
+            wireLED = False
+            hasStar = False
 
-    #Output Logic
-    match (instruction):
-        case ("D"): 
-            print("Do not Cut this wire")
-        case ("C"): 
-            print("Cut this wire")
-        case ("S"): 
-            if serialNum == "EMPTY":
-                serialNum = int(input("What is the last number of the bomb serial number?: "))
-            if serialNum%2 == 0:
-                print("Cut this wire")
-            else:
-                print("Do not cut this wire")
-        case ("P"):
-            if parallelPort == "EMPTY":
-                if input("Does the bomb have a parallel port (y/n)?: ") == "y":
-                    parallelPort = True
+            if blueList[i] == "1":
+                colBlu = True
+            if redList[i] == "1":
+                colRed = True
+            if ledList[i] == "1":
+                wireLED = True
+            if starList[i] == "1":
+                hasStar = True
+
+
+            if colBlu:
+                if colRed:
+                    if wireLED:
+                        if hasStar:
+                             instruction = "D"
+                        else:
+                             instruction = "S"
+                    else:
+                        if hasStar:
+                             instruction = "P"
+                        else:
+                             instruction = "S"
                 else:
-                    parallelPort = False
-            if parallelPort == True:
-                print("Cut this wire")
+                    if wireLED:
+                        instruction = "P"
+                    else:
+                        if hasStar:
+                             instruction = "D"
+                        else:
+                             instruction = "S"
+            elif colRed:
+                if wireLED:
+                    instruction = "B"
+                else:
+                    if hasStar:
+                        instruction = "C"
+                    else:
+                        instruction = "S"
+            elif wireLED:
+                if hasStar:
+                    instruction = "B"
+                else:
+                    instruction = "D"
+            elif hasStar:
+                instruction = "C"
             else:
-                print("Do not cut this wire")
-        case ("B"):
-            if batteries == "EMPTY":
-                batteries = int(input("How many batteries are on the bomb?: "))
-            if batteries >= 2:
-                print("Cut this wire")
-            else:
-                print("Do not cut this wire")
-        case other:
-            print("Something messed up at somepoint. Please try that wire again")
+                instruction = "C"
+
+            #Output Logic
+            match (instruction):
+                case ("D"): 
+                    print("Wire " + str(i+1) + ") Do Not Cut")
+                case ("C"): 
+                    print("Cut this wire")
+                case ("S"): 
+                    if serialNum == "EMPTY":
+                        print(" ")
+                        serialNum = int(input("What is the last number of the bomb serial number?: "))
+                    if serialNum%2 == 0:
+                        print("Cut this wire")
+                    else:
+                        print("Wire " + str(i+1) + ") Do Not Cut")
+                case ("P"):
+                    if parallelPort == "EMPTY":
+                        print(" ")
+                        if input("Does the bomb have a parallel port (y/n)?: ") == "y":
+                            parallelPort = True
+                        else:
+                            parallelPort = False
+                    if parallelPort == True:
+                        print("Cut this wire")
+                    else:
+                        print("Wire " + str(i+1) + ") Do Not Cut")
+                case ("B"):
+                    if batteries == "EMPTY":
+                        print(" ")
+                        batteries = int(input("How many batteries are on the bomb?: "))
+                    if batteries >= 2:
+                        print("Cut this wire")
+                    else:
+                        print("Wire " + str(i+1) + ") Do Not Cut")
+                case other:
+                    print("Error: *shrug*. Resetting")
+                    return
 
 
 
