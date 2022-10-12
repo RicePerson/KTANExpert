@@ -819,7 +819,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage1 = stage1un.split()
+    stage1 = stage1un.split(";")
     for i in range(len(stage1)):
         stage1[i] = int(stage1[i])
         if stage1[i] in (1, 2, 3, 4):
@@ -856,7 +856,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage2 = stage2un.split()
+    stage2 = stage2un.split(";")
     for i in range(len(stage2)):
         stage2[i] = int(stage2[i])
         if stage2[i] in (1, 2, 3, 4):
@@ -895,7 +895,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage3 = stage3un.split()
+    stage3 = stage3un.split(";")
     for i in range(len(stage3)):
         stage3[i] = int(stage3[i])
         if stage3[i] in (1, 2, 3, 4):
@@ -936,7 +936,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage4 = stage4un.split()
+    stage4 = stage4un.split(";")
     for i in range(len(stage4)):
         stage4[i] = int(stage4[i])
         if stage4[i] in (1, 2, 3, 4):
@@ -974,7 +974,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage5 = stage5un.split()
+    stage5 = stage5un.split(";")
     for i in range(len(stage5)):
         stage5[i] = int(stage5[i])
         if stage5[i] in (1, 2, 3, 4):
