@@ -50,6 +50,11 @@ There are short-hand codes used throughout to make inputs generally faster. Here
 | y | Yellow |
 | g | Green |
 
+### Inputing Answers to Questions
+The Expert will ask questions. That's how this game works. When inputting answers, you must follow some rules so that the expert can understand what you are saying.
+1) **Everything is lowercase unless otherwise instructed** *(as of right now, the only uppercase input are the endpoints for the Wire Sequences module)
+2) **Seperate details with a semicolon (;)**. Some modules have multiple inputs (like multiple keys or wires). Seperate these using a semicolon.
+3) **Only use spaces in words with spaces in them**. As of right now, the only module that should have any spaces in them is the Who's on First Module
 
 
 ## Wires `w`
