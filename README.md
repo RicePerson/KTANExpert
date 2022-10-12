@@ -153,7 +153,7 @@ I specificlly coded this module to make the steps VERY CLEAR because of the natu
 
 ### Example
 *0) The KTANE module looks like this:*
-|**First**|
+|**First**| |
 |--- | ---|
 |Okay|Middle|
 |Ready|Blank|
