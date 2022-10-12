@@ -115,9 +115,11 @@ Repeat until provivded a Final List. Enter these in order to complete the module
 
 ### Example
 *0) The module in KTANE has an omega, ae, trident, and squished 6*
-1) The Player:red_circle: inputs 'omega;ae;trident;6`
-2) The Expert:large_blue_circle: will then output `Click these buttons in order: 1)6 2)ae 3)trident 4)omega`
-3) The Player:red_circle: clicks these inorder in KTANE. *Module Complete, move on to the next one.* 
+1) The Player:red_circle: selects the keypad module with `k`
+2) The Expert:large_blue_circle: asks for a list of keys
+3) The Player:red_circle: inputs 'omega;ae;trident;6`
+4) The Expert:large_blue_circle: will then output `Click these buttons in order: 1)6 2)ae 3)trident 4)omega`
+5) The Player:red_circle: clicks these inorder in KTANE. *Module Complete, move on to the next one.* 
 
 
 ## Simon Says `s`
@@ -131,7 +133,7 @@ Repeat until the module is complete. To exit the module on the expert, input `do
 
 ### Example
 *0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing slowly.*
-1) The player selects the simon says expert module
+1) The Player:red_circle: selects the simon says module with `s`
 2) Player:red_circle: inputs `y` ENTER `1`
 3) Player:red_circle: inputs `r` ENTER `end`
 4) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
