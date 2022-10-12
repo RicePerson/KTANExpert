@@ -203,14 +203,14 @@ def button():
     color = input("What is the color of the button? (blu, w, y, r, other): ")
 
     #Manual Step 1
-    if color == "b":
+    if color == "blu":
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
         if text == "abort":
             instruction = "hold"
 
     #Manual Step 2
-    if batteries == "EMPTY":
+    elif batteries == "EMPTY":
         batteries = int(input("How many batteries are on the bomb?: "))
     if batteries > 1:
         if text == "EMPTY":
@@ -219,14 +219,14 @@ def button():
             instruction = "pressRelease"
 
     #Manual Step 3
-    if color == "w":
+    elif color == "w":
         if litIndicators == ["EMPTY"]:
             litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
         if "CAR" in litIndicators:
             instruction = "hold"
 
     #Manual Step 4
-    if batteries == "EMPTY":
+    elif batteries == "EMPTY":
         batteries = int(input("How many batteries are on the bomb?: "))
     if batteries > 2:
         if litIndicators == ["EMPTY"]:
@@ -235,11 +235,11 @@ def button():
             instruction = "pressRelease"
 
     #Manual Step 5
-    if color == "y":
+    elif color == "y":
         instruction = "hold"
 
     #Manual Step 6
-    if color == "r":
+    elif color == "r":
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
         if text == "hold":
