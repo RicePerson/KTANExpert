@@ -94,7 +94,13 @@ a four on the countdown display, release the button. If not, wait.
 3) The Player:red_circle: enters `blu` and presses ENTER.
 4) The Expert:large_blue_circle: asks `What does the button say?`
 5) The Player:red_circle: enters `detonate` and presses ENTER.
-6)
+6) The Expert:large_blue_circle: asks `How many batteries are on the bomb?`
+7) The Player:red_circle:, after looking around the bomb's edge, enters '1'
+8) The Expert:large_blue_circle: instructs the player to `Press and hold the button`
+9) The Player:red_circle: starts holding the button, and sees a red strip directly to the right of it
+10) The Player:red_circle: enters `r` for the strip color
+11) The Expert:large_blue_circle: tells the player to `Release the button when the countdown timer has a 1 in any position`
+12) The Player:red_circle: complys. *Module Complete, move on to the next one.* 
 
 ## Keypad `k`
 Once you enter the keypad module in the expert, it will list all possible keypad symbols, and then ask for the first one.
