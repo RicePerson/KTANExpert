@@ -161,7 +161,11 @@ I specificlly coded this module to make the steps VERY CLEAR because of the natu
 
 1) The Player:red_circle: selects the Who's on First module using `who`
 2) The Expert:large_blue_circle: asks for the words on the current repeat of the module, starting with the display.
-3) The Player:red_circle: enters `
+3) The Player:red_circle: enters `first;okay;ready;next;middle;blank;uhhh`
+4) The Expert:large_blue_circle: tells the player to `Press the button labeled blank` and asks if the module is complete
+5) The Player:red_circle: clicks the button "blank" and answers `n`
+6) The Player:red_circle: repeats this until the module is complete, then answers `y` to the experts exit question
+7) *Module Complete, move on to the next one.*
 
 
 ## Memory `m`
