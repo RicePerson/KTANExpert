@@ -152,13 +152,16 @@ The first part of this module is inputing the display *(Note: a possible word fo
 I specificlly coded this module to make the steps VERY CLEAR because of the nature of the module. Try the module, and if it still doesn't make sense, check out the example
 
 ### Example
-*0) The KTANE module has the word "first" in the display, and more words on the buttons below*
-1) The Expert:large_blue_circle: asks for the word in the display, which the Player:red_circle: inputs `first`
-2) The Expert:large_blue_circle: then asks for the word in the TopRight, which the Player:red_circle: DOES NOT CLICK IT, but inputs `wait`
-3) The Expert:large_blue_circle: then starts asking if certain words exist on the buttons. It firsts aks `Is the word uhhh there?`. The Player:red_circle: answers `n`, because it is not there
-4) Now, the Expert:large_blue_circle: asks 'Is the word no there?'. Because "no" is on one of the buttons, the Player:red_circle: answers `y`
-5) The Expert:large_blue_circle: says `Click the word no`. The Player:red_circle: complys. Because this happens to be the 3rd and final repeat of the module, the Player:red_circle: now inputs `n` to the Experts:large_blue_circle: questions, `Are there more steps?`
-6) *Module Complete, move on to the next one.* 
+*0) The KTANE module looks like this:*
+|**First**|
+|--- | ---|
+|Okay|Middle|
+|Ready|Blank|
+|Next|Uhhh|
+
+1) The Player:red_circle: selects the Who's on First module using `who`
+2) The Expert:large_blue_circle: asks for the words on the current repeat of the module, starting with the display.
+3) The Player:red_circle: enters `
 
 
 ## Memory `m`
