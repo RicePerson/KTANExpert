@@ -1162,137 +1162,95 @@ def morse():
 
 #Complicated Wires (input x4 -> output, loop until complete)
 def compWires():
-    while True:
-        #Def Vars
-        colBlu = input("Does the wire have Blue coloring? (y/n): ")
-        colRed = input("Does the wire have Red coloring? (y/n): ")
-        wireLED = input("Is the LED on? (y/n): ")
-        hasStar = input("Does the wire have a star symbol? (y/n): ")
 
-        global serialNum
-        global batteries
-        global parallelPort
+    #Def Vars
+    global serialNum
+    global batteries
+    global parallelPort
 
-        if colBlu== "y":
-            colBlu = True
-        elif colBlu == "n":
-            colBlu = False
-        else:
-            print("You did something wrong")
-            return
-            
-        if colRed == "y":
-            colRed = True
-        elif colRed == "n":
-            colRed = False
-        else:
-            print("You did something wrong")
-            return
+    colBlu = False
+    colRed = False
+    wireLED = False
+    hasStar = False
 
-        if wireLED == "y":
-            wireLED = True
-        elif wireLED == "n":
-            wireLED = False
-        else:
-            print("You did something wrong")
-            return
 
-        if hasStar == "y":
-            hasStar = True
-        elif hasStar == "n":
-            hasStar = False
-        else:
-            print("You did something wrong")
-            return
 
-        print("Blue: " + str(colBlu))
-        print("Red: " + str(colRed))
-        print("Star: " + str(hasStar))
-        print("LED: " + str(wireLED))
+    #Input Logic
+    instruction = "EMPTY"
 
-        #Input Logic
-        instruction = "EMPTY"
-
-        if colBlu:
-            if colRed:
-                if wireLED:
-                    if hasStar:
-                        instruction = "D"
-                    else:
-                        instruction = "S"
-                else:
-                    if hasStar:
-                        instruction = "P"
-                    else:
-                        instruction = "S"
-            else:
-                if wireLED:
-                    instruction = "P"
-                else:
-                    if hasStar:
-                        instruction = "D"
-                    else:
-                        instruction = "S"
-        elif colRed:
+    if colBlu:
+        if colRed:
             if wireLED:
-                instruction = "B"
-            else:
                 if hasStar:
-                    instruction = "C"
+                    instruction = "D"
                 else:
                     instruction = "S"
-        elif wireLED:
-            if hasStar:
-                instruction = "B"
             else:
-                instruction = "D"
-        elif hasStar:
-            instruction = "C"
+                if hasStar:
+                    instruction = "P"
+                else:
+                    instruction = "S"
         else:
-            instruction = "C"
-        print(" ")
+            if wireLED:
+                instruction = "P"
+            else:
+                if hasStar:
+                    instruction = "D"
+                else:
+                    instruction = "S"
+    elif colRed:
+        if wireLED:
+            instruction = "B"
+        else:
+            if hasStar:
+                instruction = "C"
+            else:
+                instruction = "S"
+    elif wireLED:
+        if hasStar:
+            instruction = "B"
+        else:
+            instruction = "D"
+    elif hasStar:
+        instruction = "C"
+    else:
+        instruction = "C"
+    print(" ")
 
-        #Output Logic
-        match (instruction):
-            case ("D"): 
-                print("Do not Cut this wire")
-            case ("C"): 
+    #Output Logic
+    match (instruction):
+        case ("D"): 
+            print("Do not Cut this wire")
+        case ("C"): 
+            print("Cut this wire")
+        case ("S"): 
+            if serialNum == "EMPTY":
+                serialNum = int(input("What is the last number of the bomb serial number?: "))
+            if serialNum%2 == 0:
                 print("Cut this wire")
-            case ("S"): 
-                if serialNum == "EMPTY":
-                    serialNum = int(input("What is the last number of the bomb serial number?: "))
-                if serialNum%2 == 0:
-                    print("Cut this wire")
+            else:
+                print("Do not cut this wire")
+        case ("P"):
+            if parallelPort == "EMPTY":
+                if input("Does the bomb have a parallel port (y/n)?: ") == "y":
+                    parallelPort = True
                 else:
-                    print("Do not cut this wire")
-            case ("P"):
-                if parallelPort == "EMPTY":
-                    if input("Does the bomb have a parallel port (y/n)?: ") == "y":
-                        parallelPort = True
-                    else:
-                        parallelPort = False
-                if parallelPort == True:
-                    print("Cut this wire")
-                else:
-                    print("Do not cut this wire")
-            case ("B"):
-                if batteries == "EMPTY":
-                    batteries = int(input("How many batteries are on the bomb?: "))
-                if batteries >= 2:
-                    print("Cut this wire")
-                else:
-                    print("Do not cut this wire")
-            case other:
-                print("Something messed up at somepoint. Please try that wire again")
+                    parallelPort = False
+            if parallelPort == True:
+                print("Cut this wire")
+            else:
+                print("Do not cut this wire")
+        case ("B"):
+            if batteries == "EMPTY":
+                batteries = int(input("How many batteries are on the bomb?: "))
+            if batteries >= 2:
+                print("Cut this wire")
+            else:
+                print("Do not cut this wire")
+        case other:
+            print("Something messed up at somepoint. Please try that wire again")
 
-        #Breaking Loop
-        print(" ")
-        done = input("Are there more wires to process? (y/n): ")
-        if done == "n":
-            return
-        else:
-            print(" ")
-            pass
+
 
 #Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
 def wireSeq():
@@ -1391,7 +1349,7 @@ def wireSeq():
         print(" ")
                     
         
-            
+          
 
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
