@@ -9,6 +9,7 @@ from http.client import ResponseNotReady
 import time
 import math
 from tokenize import blank_re
+from urllib.request import proxy_bypass
 
 #Def Vars
 isDoing = True
@@ -1198,12 +1199,11 @@ def compWires():
     # Contents Error Check
     for i in (blueList+redList+ledList+starList):
         if i == "1":
-            if i == "0": pass
-            else: 
-                print("Error. Non-binary character in input detected. Resetting.")
-                return
+            pass
+        elif i == "0":
+            pass
         else:
-            print("Error. Non-binary character in input detected. Resetting.")
+            print("Error. Non-binary input value detected. Resetting.")
             return
 
 
