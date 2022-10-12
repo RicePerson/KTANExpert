@@ -789,9 +789,6 @@ def whofirst():
             print("Error: No buttons match buttonWordsList. Resetting.")
             return
 
-
-    
-
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
 def memory():
     #Def Vars
@@ -1310,8 +1307,6 @@ def compWires():
                 case other:
                     print("Error: Something went so wrong, I don't know what happened. Resetting.")
                     return
-
-
 
 #Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
 def wireSeq():
