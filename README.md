@@ -207,7 +207,7 @@ The Expert doesn't care at which point in the word you start entering characters
 When you input the morse, the Expert will tell you what you just entered in english letters, so you can see what you repeated so you can rerun the module and try again.
 
 ### Example:
-*0) KTANE module is flashing `..`  `-.-.`  `-.-` `   ` `-`  `.-.`  `..`  `-.-.`  `-.-` `   ` `-`  `.-.`  `..`  `-.-.`  `-.-` `   ` `-`  `.-.`  `..`  `-.-.`  `-.-`  repeating indefinitely*
+*0) KTANE module is flashing `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  `..`  `-.-.`  `-.-`  repeating indefinitely*
 1) The Player:red_circle: enters the MorseCode module with `mO`
 3) The Expert:large_blue_circle: asks for the morse code being flashed
 2) The Player:red_circle: inputs `.. -.-. -.- - .-.` ENTER
