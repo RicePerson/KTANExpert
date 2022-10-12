@@ -110,7 +110,7 @@ Repeat until provivded a Final List. Enter these in order to complete the module
 
 ### Example
 *0) The module in KTANE has an omega, ae, trident, and squished 6*
-1) The Player:red_circle: inputs `ae` ENTER `trident` ENTER `omega` ENTER `6`
+1) The Player:red_circle: inputs 'omega;ae;trident;6`
 2) The Expert:large_blue_circle: will then output `Click these buttons in order: 1)6 2)ae 3)trident 4)omega`
 3) The Player:red_circle: clicks these inorder in KTANE. *Module Complete, move on to the next one.* 
 
