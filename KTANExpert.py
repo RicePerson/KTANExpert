@@ -1209,7 +1209,8 @@ def compWires():
 
     # Determine-Instruction Logic
     for n in range(0,2): #It runs twice to compensate for mid-loop questions about bomb details
-        print(" ")
+        if n == 1:
+            print(" ")
         instruction = "EMPTY"
         for i in range(0,len(blueList)):
             colBlu = False
