@@ -1267,16 +1267,16 @@ def compWires():
 
             #Output Logic
             match (instruction):
+                case ("C"): 
+                    print("Wire " + str(i+1) + ") Cut")
                 case ("D"): 
                     print("Wire " + str(i+1) + ") Do Not Cut")
-                case ("C"): 
-                    print("Cut this wire")
                 case ("S"): 
                     if serialNum == "EMPTY":
                         print(" ")
                         serialNum = int(input("What is the last number of the bomb serial number?: "))
                     if serialNum%2 == 0:
-                        print("Cut this wire")
+                        print("Wire " + str(i+1) + ") Cut")
                     else:
                         print("Wire " + str(i+1) + ") Do Not Cut")
                 case ("P"):
@@ -1287,7 +1287,7 @@ def compWires():
                         else:
                             parallelPort = False
                     if parallelPort == True:
-                        print("Cut this wire")
+                        print("Wire " + str(i+1) + ") Cut")
                     else:
                         print("Wire " + str(i+1) + ") Do Not Cut")
                 case ("B"):
@@ -1295,7 +1295,7 @@ def compWires():
                         print(" ")
                         batteries = int(input("How many batteries are on the bomb?: "))
                     if batteries >= 2:
-                        print("Cut this wire")
+                        print("Wire " + str(i+1) + ") Cut")
                     else:
                         print("Wire " + str(i+1) + ") Do Not Cut")
                 case other:
