@@ -739,7 +739,7 @@ def whofirst():
     while True:
         # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
         userWords = "EMPTY"
-        userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
+        userWords = str(input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: "))
         if "..." in userWords:
             print("Exit Command Recognized. Exiting.")
             return
@@ -806,7 +806,7 @@ def whofirst():
                 success = True
                 print("Press the button labeled " + str(w))
                 print(" ")
-                if input("Is the module complete? (y/n): ") == "y":
+                if str(input("Is the module complete? (y/n): ")) == "y":
                     return
                 else:
                     break
