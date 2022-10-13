@@ -747,7 +747,7 @@ def whofirst():
         buttonWord = "EMPTY"
         displayWordsButtonIndex = [2, 4, 6, 4, 6, 2, 3, 5, 6, 2, 6, 5, 5, 3, 3, 6, 5, 6, 5, 5, 1, 6, 3, 5, 2, 6, 4, 6]
         #buttonIndex = displayWordsButtonIndex[displayWords.index(userWords[0])]
-        buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]]
+        buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]] #This line turns the display word in userWords[0] into a corresponding button from userWords
 
         # STEP 2 - Assigning the buttonWord's appropriate list
         buttonWordsList=[]
