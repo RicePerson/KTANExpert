@@ -52,7 +52,7 @@ There are short-hand codes used throughout to make inputs generally faster. Here
 
 ### Inputting Answers to Questions
 The Expert will ask questions. That's how this game works. When inputting answers, you must follow some rules so that the expert can understand what you are saying.
-1) **Everything is lowercase unless otherwise instructed** *(as of right now, the only uppercase input are the endpoints for the Wire Sequences module)
+1) **Everything is lowercase unless otherwise instructed** *(as of right now, the only uppercase inputs are the endpoints for the Wire Sequences module and the lit indicators in the Buttons module)
 2) **Separate details with a semicolon (;)**. Some modules have multiple inputs (like multiple keys or wires). Seperate these using a semicolon, with the exception to Morse-Code, which uses spaces
 3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are separated by spaces)
 

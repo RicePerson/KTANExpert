@@ -28,13 +28,13 @@ parallelPort = "EMPTY"
 def wires():
     #Def Vars
     global serialNum
-    number = input("Number of Wires? (3/4/5/6): ")
+    number = str(input("Number of Wires? (3/4/5/6): "))
     wirelist = []
 
     #Logic - 3 Wires
     if number == "3":
         for i in range(3):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -46,8 +46,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module")
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -69,7 +68,7 @@ def wires():
     #Logic - 4 Wires
     if number == "4":
         for i in range(4):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -81,9 +80,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module"
-                )
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -91,7 +88,12 @@ def wires():
 
         if wirelist.count("r") > 1:
             if serialNum == "EMPTY":
-                serialNum = int(input("Last Digit of Serial: "))
+                serialNum = str(input("Last Digit of Serial: "))
+                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                    serialNum = int(serialNum)
+                else:
+                    print("Error. Incorrect serial digit. Resetting.")
+                    return
             if ((wirelist.count("r") > 1) and (serialNum % 2)):
                 print("Cut the last RED wire")
                 return
@@ -108,7 +110,7 @@ def wires():
     #Logic - 5 Wires
     if number == "5":
         for i in range(5):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -120,9 +122,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module"
-                )
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -130,7 +130,12 @@ def wires():
 
         if wirelist[-1] == "bla":
             if serialNum == "EMPTY":
-                serialNum = int(input("Last Digit of Serial: "))
+                serialNum = str(input("Last Digit of Serial: "))
+                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                    serialNum = int(serialNum)
+                else:
+                    print("Error. Incorrect serial digit. Resetting.")
+                    return
             if ((wirelist[-1] == "bla") and (serialNum % 2)):
                 print("Cut the Fourth Wire")
                 return
@@ -159,9 +164,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module"
-                )
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -169,7 +172,12 @@ def wires():
 
         if wirelist.count("y") == 0:
             if serialNum == "EMPTY":
-                serialNum = int(input("Last Digit of Serial: "))
+                serialNum = str(input("Last Digit of Serial: "))
+                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                    serialNum = int(serialNum)
+                else:
+                    print("Error. Incorrect serial digit. Resetting.")
+                    return
             if ((wirelist.count("y") == 0) and (serialNum % 2)):
                 print("Cut the Third Wire")
                 return
@@ -183,8 +191,9 @@ def wires():
             print("Cut the Fourth Wire")
             return
 
-    #If Not: 
-    return
+    else:
+        print("Error. Incorrect number of wires. Resetting.")
+        return
 
 #Button (inputs various -> output)
 def button():
@@ -201,22 +210,27 @@ def button():
     # Logic
     #Starting Information
 
-    color = input("What is the color of the button? (blu, w, y, r, other): ")
+    color = str(input("What is the color of the button? (blu, w, y, r, other): "))
 
     #Manual Step 1
     if color == "blu":
         if text == "EMPTY":
-            text = input("What does the button say? (all lowercase): ")
+            text = str(input("What does the button say? (all lowercase): "))
         if text == "abort":
             instruction = "hold"
             givenInstruction = True
 
     #Manual Step 2
     if (givenInstruction == False) and (batteries == "EMPTY"):
-        batteries = int(input("How many batteries are on the bomb?: "))
+        batteries = str(input("How many batteries are on the bomb?: "))
+        if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
+            batteries = int(batteries)
+        else:
+            print("Error. Incorrect number of batteries. Resetting")
+            return
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
-            text = input("What does the button say? (all lowercase): ")
+            text = str(input("What does the button say? (all lowercase): "))
         if text == "detonate":
             instruction = "pressRelease"
             givenInstruction = True
@@ -224,17 +238,22 @@ def button():
     #Manual Step 3
     if (givenInstruction == False) and (color == "w"):
         if litIndicators == ["EMPTY"]:
-            litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
+            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
         if "CAR" in litIndicators:
             instruction = "hold"
             givenInstruction = True
 
     #Manual Step 4
     if (givenInstruction == False) and (batteries == "EMPTY"):
-        batteries = int(input("How many batteries are on the bomb?: "))
+        batteries = str(input("How many batteries are on the bomb?: "))
+        if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
+            batteries = int(batteries)
+        else:
+            print("Error. Incorrect number of batteries. Resetting")
+            return
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == ["EMPTY"]:
-            litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
+            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
         if "FRK" in litIndicators:
             instruction = "pressRelease"
             givenInstruction = True
@@ -247,7 +266,7 @@ def button():
     #Manual Step 6
     if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
-            text = input("What does the button say? (all lowercase): ")
+            text = str(input("What does the button say? (all lowercase): "))
         if text == "hold":
             instruction = "pressRelease"
             givenInstruction = True
@@ -260,7 +279,7 @@ def button():
     #Releasing a held button
     if instruction == "hold":
         print(" ")
-        strip = input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): ")
+        strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
         if strip == "blu":
             print(" ")
             print("Release the button when the countdown timer has a 4 in any position")
@@ -281,6 +300,7 @@ def button():
         print("Press and immediately release the button")
         return
     else:
+        print("Error. Something went wrong. Resetting.")
         return
 
 #Keypad (specific inputx4 -> output)
@@ -304,7 +324,7 @@ def keypad():
     for i in keys:
         print(i)
 
-    userKeys = input("What are the symbols on the keypad seperated by semicolons? (See list above): ")
+    userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
     userKeys = userKeys.split(";")
 
     #Logic
@@ -328,7 +348,8 @@ def keypad():
         answerColumn = c6
         #print("Column: " + str(answerKeys))
     else:
-        print("No collum has all of the inputed keys")
+        print("Error. No column has all of the inputed keys. Resetting")
+        return
 
     #Final print()
     finalList = [x for x in answerColumn if x in userKeys]
@@ -341,20 +362,20 @@ def keypad():
 def simon():
     #simon() is the streamlined but DEFINITELY more complicated version...hence the name
     #Logic (It's a loop)
-    vowel = input("Vowel in Serial? (y/n): ")
+    vowel = str(input("Vowel in Serial? (y/n): "))
     isDoing = True
 
     while isDoing == True:
         if vowel == "y":
-            strikes = input("Number Of Strikes? (0/1/2): ")
+            strikes = str(input("Number Of Strikes? (0/1/2): "))
             while strikes == "0":
                 user = []
                 finalSimon = []
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -407,8 +428,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -461,8 +482,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -510,15 +531,15 @@ def simon():
                 print(" ")
 
         elif vowel == "n":
-            strikes = input("Number Of Strikes? (0/1/2): ")
+            strikes = str(input("Number Of Strikes? (0/1/2): "))
             while strikes == "0":
                 user = []
                 finalSimon = []
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -571,8 +592,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -625,8 +646,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -673,9 +694,8 @@ def simon():
                         case other: return
                 print(" ")
 
-        else:
-            print("Error. You input incorrectly. Please try again")
-            return
+    print("Error. You input incorrectly. Please try again")
+    return
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():
@@ -720,7 +740,7 @@ def whofirst():
     while True:
         # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
         userWords = "EMPTY"
-        userWords = input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: ")
+        userWords = str(input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: "))
         if "..." in userWords:
             print("Exit Command Recognized. Exiting.")
             return
@@ -743,7 +763,7 @@ def whofirst():
         buttonWord = "EMPTY"
         displayWordsButtonIndex = [2, 4, 6, 4, 6, 2, 3, 5, 6, 2, 6, 5, 5, 3, 3, 6, 5, 6, 5, 5, 1, 6, 3, 5, 2, 6, 4, 6]
         #buttonIndex = displayWordsButtonIndex[displayWords.index(userWords[0])]
-        buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]]
+        buttonWord = userWords[displayWordsButtonIndex[displayWords.index(userWords[0])]] #This line turns the display word in userWords[0] into a corresponding button from userWords
 
         # STEP 2 - Assigning the buttonWord's appropriate list
         buttonWordsList=[]
@@ -787,7 +807,7 @@ def whofirst():
                 success = True
                 print("Press the button labeled " + str(w))
                 print(" ")
-                if input("Is the module complete? (y/n): ") == "y":
+                if str(input("Is the module complete? (y/n): ")) == "y":
                     return
                 else:
                     break
@@ -815,7 +835,7 @@ def memory():
     print("Input the numbers starting with Display, and then left to right, seperated by spaces")
 
     #Def Vars: Stage 1 - Settings Lists
-    stage1un = input("Stage1 - What are the numbers given? (1,2,3,4,r): ")
+    stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -825,7 +845,7 @@ def memory():
         if stage1[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage1[0]))
     print("Inputed Numbers: " + str(stage1[1:5]))
@@ -852,7 +872,7 @@ def memory():
 
 
     #Def Vars: Stage2 - Settings Lists
-    stage2un = input("Stage2 - What are the numbers given? (1,2,3,4,r): ")
+    stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -862,7 +882,7 @@ def memory():
         if stage2[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage2[0]))
     print("Inputed Numbers: " + str(stage2[1:5]))
@@ -891,7 +911,7 @@ def memory():
 
 
     #Def Vars: Stage 3 - Settings Lists
-    stage3un = input("Stage3 - What are the numbers given? (1,2,3,4,r): ")
+    stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -901,7 +921,7 @@ def memory():
         if stage3[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage3[0]))
     print("Inputed Numbers: " + str(stage3[1:5]))
@@ -932,7 +952,7 @@ def memory():
 
 
     #Def Vars: Stage 4 - Settings Lists
-    stage4un = input("Stage4 - What are the numbers given? (1,2,3,4,r): ")
+    stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -942,7 +962,7 @@ def memory():
         if stage4[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage4[0]))
     print("Inputed Numbers: " + str(stage4[1:5]))
@@ -970,7 +990,7 @@ def memory():
 
 
     #Def Vars: Stage 5 - Settings Lists
-    stage5un = input("Stage5 - What are the numbers given? (1,2,3,4,r): ")
+    stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -980,7 +1000,7 @@ def memory():
         if stage5[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage5[0]))
     print("Inputed Numbers: " + str(stage5[1:5]))
@@ -1065,6 +1085,7 @@ def morseToAlpha(input):
     elif input == "--..":
         return "Z"
     else:
+        print("Error. Incorrect morse detected. Resetting")
         return
 
 shell = ["S", "H", "E", "L", "L"]
@@ -1087,7 +1108,7 @@ beats = ["B", "E", "A", "T", "S"]
 #Morse Code Logic (input -> output)
 def morse():
     #Def Vars
-    userMorseUnsplit = input("What is your Morse Code (see README.md for instructions)?: ")
+    userMorseUnsplit = str(input("What is your Morse Code (see README.md for instructions)?: "))
     userMorse = userMorseUnsplit.split()
     print("Inputed Morse: " + str(userMorse))
     alphaList = []
@@ -1180,10 +1201,10 @@ def compWires():
     starList = "EMPTY"
 
     # Input Logic
-    blueList = input("What wires have blue coloring? (as a binary list): ")
-    redList = input("What wires have red coloring? (as a binary list): ")
-    ledList = input("What wires have an LED above them? (as a binary list): ")
-    starList = input("What wires have a star beneath them? (as a binary list): ")
+    blueList = str(input("What wires have blue coloring? (as a binary list): "))
+    redList = str(input("What wires have red coloring? (as a binary list): "))
+    ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    starList = str(input("What wires have a star beneath them? (as a binary list): "))
 
     blueList = [x for x in blueList]
     redList = [x for x in redList]
@@ -1282,7 +1303,12 @@ def compWires():
                 case ("S"): 
                     if serialNum == "EMPTY":
                         print(" ")
-                        serialNum = int(input("What is the last number of the bomb serial number?: "))
+                        serialNum = str(input("Last Digit of Serial: "))
+                        if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                            serialNum = int(serialNum)
+                        else:
+                            print("Error. Incorrect serial digit. Resetting.")
+                            return
                     if serialNum%2 == 0:
                         if n == 1:
                             print("Wire " + str(i+1) + ") Cut")
@@ -1292,7 +1318,7 @@ def compWires():
                 case ("P"):
                     if parallelPort == "EMPTY":
                         print(" ")
-                        if input("Does the bomb have a parallel port (y/n)?: ") == "y":
+                        if str(input("Does the bomb have a parallel port (y/n)?: ")) == "y":
                             parallelPort = True
                         else:
                             parallelPort = False
@@ -1305,7 +1331,12 @@ def compWires():
                 case ("B"):
                     if batteries == "EMPTY":
                         print(" ")
-                        batteries = int(input("How many batteries are on the bomb?: "))
+                        batteries = str(input("How many batteries are on the bomb?: "))
+                        if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
+                            batteries = int(batteries)
+                        else:
+                            print("Error. Incorrect number of batteries. Resetting")
+                            return
                     if batteries >= 2:
                         if n == 1:
                             print("Wire " + str(i+1) + ") Cut")
@@ -1325,9 +1356,10 @@ def wireSeq():
         #Def Vars
         wiresList = []
         wires = []
-        wireUn = input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : ")
+        wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
 
-        if wireUn == "stop":
+        if wireUn == "...":
+            print("Exit Command Detected. Exiting...")
             return
         else:
             wiresList = wireUn.split(";")
