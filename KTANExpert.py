@@ -29,12 +29,18 @@ def wires():
     #Def Vars
     global serialNum
     number = str(input("Number of Wires? (3/4/5/6): "))
+    if number == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        return
     wirelist = []
 
     #Logic - 3 Wires
     if number == "3":
         for i in range(3):
             wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
+            if wirelistadd == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                return
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -69,6 +75,9 @@ def wires():
     if number == "4":
         for i in range(4):
             wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
+            if wirelistadd == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                return
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -87,8 +96,11 @@ def wires():
         print(" ")
 
         if wirelist.count("r") > 1:
-            if serialNum == "EMPTY":
+            if serialNum == "EMPTY" or serialNum == "...":
                 serialNum = str(input("Last Digit of Serial: "))
+                if serialNum == "...": # Exit Command
+                    print("Exit Command Detected. Exiting...")
+                    return
                 if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                     serialNum = int(serialNum)
                 else:
@@ -111,6 +123,9 @@ def wires():
     if number == "5":
         for i in range(5):
             wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
+            if wirelistadd == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                return
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -129,8 +144,11 @@ def wires():
         print(" ")
 
         if wirelist[-1] == "bla":
-            if serialNum == "EMPTY":
+            if serialNum == "EMPTY" or serialNum == "...":
                 serialNum = str(input("Last Digit of Serial: "))
+                if serialNum == "...": # Exit Command
+                    print("Exit Command Detected. Exiting...")
+                    return
                 if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                     serialNum = int(serialNum)
                 else:
@@ -153,6 +171,9 @@ def wires():
     if number == "6":
         for i in range(6):
             wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            if wirelistadd == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                return
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -171,8 +192,11 @@ def wires():
         print(" ")
 
         if wirelist.count("y") == 0:
-            if serialNum == "EMPTY":
+            if serialNum == "EMPTY" or serialNum == "...":
                 serialNum = str(input("Last Digit of Serial: "))
+                if serialNum == "...": # Exit Command
+                    print("Exit Command Detected. Exiting...")
+                    return
                 if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                     serialNum = int(serialNum)
                 else:
