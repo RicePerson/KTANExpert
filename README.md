@@ -23,12 +23,12 @@ Download the KTANExpert folder and run KTANExpert.py
 For every completed module in this Expert, there are accompanying instructions on how to properly input details and comply with instructions.
 Every module has a description with basic instructions, as well as an example with real-world modules with what the player enters and what the expert outputs
 For ease of following the plot, the Player is marked by a :red_circle: and the Expert is followed by a :large_blue_circle:.
-Anything that would be typed into the command window or is recieved from the command window with look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (...): `
+Anything that would be typed into the command window or is received from the command window with look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (...): `
 
 ### Glossary
 There are some words used in these instructions that may mean something other than what common sense would infer. Here is what those words mean.
 - **KTANE Module:** A module on the bomb in Keep Talking and Nobody Explodes
-- **Expert:large_blue_circle::** The program this README accompanys
+- **Expert:large_blue_circle::** The program this README accompanies
 - **Player:red_circle::** You!
 - **Repeat:** Some modules require that you do the module a few times, each with differing details. Each time you do the module is a Repeat
 - **Command Window:** The window that you enter inputs into
@@ -50,12 +50,11 @@ There are short-hand codes used throughout to make inputs generally faster. Here
 | y | Yellow |
 | g | Green |
 
-### Inputing Answers to Questions
+### Inputting Answers to Questions
 The Expert will ask questions. That's how this game works. When inputting answers, you must follow some rules so that the expert can understand what you are saying.
 1) **Everything is lowercase unless otherwise instructed** *(as of right now, the only uppercase input are the endpoints for the Wire Sequences module)
-2) **Seperate details with a semicolon (;)**. Some modules have multiple inputs (like multiple keys or wires). Seperate these using a semicolon, with the exception to Morse-Code, which uses spaces
-3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are seperated by spaces)
-
+2) **Separate details with a semicolon (;)**. Some modules have multiple inputs (like multiple keys or wires). Seperate these using a semicolon, with the exception to Morse-Code, which uses spaces
+3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are separated by spaces)
 
 ## Wires `w`
 Select the number of wires present in the module (including cut wires from previous attempts).
