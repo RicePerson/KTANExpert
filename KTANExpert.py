@@ -842,8 +842,9 @@ def whofirst():
         # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
         userWords = "EMPTY"
         userWords = str(input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: "))
-        if "..." in userWords:
-            print("Exit Command Recognized. Exiting.")
+        if userWords == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            userWords = "EMPTY"
             return
         userWords = userWords.split(";")
         #Checks
