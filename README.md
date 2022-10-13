@@ -56,6 +56,12 @@ The Expert will ask questions. That's how this game works. When inputting answer
 2) **Separate details with a semicolon (;)**. Some modules have multiple inputs (like multiple keys or wires). Seperate these using a semicolon, with the exception to Morse-Code, which uses spaces
 3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are separated by spaces)
 
+### Resetting
+At any point, `...` can be entered into the expert to reset that module and return to the module selection screen. 
+Doing this will reset all the variables in that module, and will require you to restart that module if you do it later.
+This will not reset bomb-wide variables like the serial number, number of batteries, etc. To reset these, type `resetbomb` into the module selection screen.
+
+
 ## Wires `w`
 Select the number of wires present in the module (including cut wires from previous attempts).
 Enter each wire color from the top (which is considered the first wire in the expert) to the bottom.
