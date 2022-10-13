@@ -1328,9 +1328,25 @@ def compWires():
 
     # Input Logic
     blueList = str(input("What wires have blue coloring? (as a binary list): "))
+    if blueList == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        blueList = "EMPTY"
+        return
     redList = str(input("What wires have red coloring? (as a binary list): "))
+    if redList == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        redlist = "EMPTY"
+        return
     ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    if ledList == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        ledList = "EMPTY"
+        return
     starList = str(input("What wires have a star beneath them? (as a binary list): "))
+    if starList == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        starList = "EMPTY"
+        return
 
     blueList = [x for x in blueList]
     redList = [x for x in redList]
@@ -1430,6 +1446,10 @@ def compWires():
                     if serialNum == "EMPTY":
                         print(" ")
                         serialNum = str(input("Last Digit of Serial: "))
+                        if serialNum == "...": # Exit Command
+                            print("Exit Command Detected. Exiting...")
+                            serialNum = "EMPTY"
+                            return
                         if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                             serialNum = int(serialNum)
                         else:
@@ -1458,6 +1478,10 @@ def compWires():
                     if batteries == "EMPTY":
                         print(" ")
                         batteries = str(input("How many batteries are on the bomb?: "))
+                        if batteries == "...": # Exit Command
+                            print("Exit Command Detected. Exiting...")
+                            batteries = "EMPTY"
+                            return
                         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
                             batteries = int(batteries)
                         else:
