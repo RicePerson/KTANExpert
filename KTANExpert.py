@@ -34,7 +34,7 @@ def wires():
     #Logic - 3 Wires
     if number == "3":
         for i in range(3):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -68,7 +68,7 @@ def wires():
     #Logic - 4 Wires
     if number == "4":
         for i in range(4):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -88,7 +88,12 @@ def wires():
 
         if wirelist.count("r") > 1:
             if serialNum == "EMPTY":
-                serialNum = int(input("Last Digit of Serial: "))
+                serialNum = str(input("Last Digit of Serial: "))
+                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                    serialNum = int(serialNum)
+                else:
+                    print("Error. Incorrect serial digit. Resetting.")
+                    return
             if ((wirelist.count("r") > 1) and (serialNum % 2)):
                 print("Cut the last RED wire")
                 return
@@ -105,7 +110,7 @@ def wires():
     #Logic - 5 Wires
     if number == "5":
         for i in range(5):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
+            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "w":
                 pass
             elif wirelistadd == "y":
@@ -125,7 +130,12 @@ def wires():
 
         if wirelist[-1] == "bla":
             if serialNum == "EMPTY":
-                serialNum = int(input("Last Digit of Serial: "))
+                serialNum = str(input("Last Digit of Serial: "))
+                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                    serialNum = int(serialNum)
+                else:
+                    print("Error. Incorrect serial digit. Resetting.")
+                    return
             if ((wirelist[-1] == "bla") and (serialNum % 2)):
                 print("Cut the Fourth Wire")
                 return
@@ -162,7 +172,12 @@ def wires():
 
         if wirelist.count("y") == 0:
             if serialNum == "EMPTY":
-                serialNum = int(input("Last Digit of Serial: "))
+                serialNum = str(input("Last Digit of Serial: "))
+                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                    serialNum = int(serialNum)
+                else:
+                    print("Error. Incorrect serial digit. Resetting.")
+                    return
             if ((wirelist.count("y") == 0) and (serialNum % 2)):
                 print("Cut the Third Wire")
                 return
