@@ -938,7 +938,11 @@ def memory():
 
     #Def Vars: Stage 1 - Settings Lists
     stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
-    if stage2un == "r":
+    if stage1un == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        stage1un = "EMPTY"
+        return
+    if stage1un == "r":
         print("Reset detected. Resetting expert...")
         return
     stage1 = stage1un.split(";")
@@ -975,6 +979,10 @@ def memory():
 
     #Def Vars: Stage2 - Settings Lists
     stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
+    if stage2un == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        stage2un = "EMPTY"
+        return
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -1014,7 +1022,11 @@ def memory():
 
     #Def Vars: Stage 3 - Settings Lists
     stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
-    if stage2un == "r":
+    if stage3un == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        stage3un = "EMPTY"
+        return
+    if stage3un == "r":
         print("Reset detected. Resetting expert...")
         return
     stage3 = stage3un.split(";")
@@ -1055,7 +1067,11 @@ def memory():
 
     #Def Vars: Stage 4 - Settings Lists
     stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
-    if stage2un == "r":
+    if stage4un == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        stage4un = "EMPTY"
+        return
+    if stage4un == "r":
         print("Reset detected. Resetting expert...")
         return
     stage4 = stage4un.split(";")
@@ -1093,7 +1109,11 @@ def memory():
 
     #Def Vars: Stage 5 - Settings Lists
     stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
-    if stage2un == "r":
+    if stage5un == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        stage5un = "EMPTY"
+        return
+    if stage5un == "r":
         print("Reset detected. Resetting expert...")
         return
     stage5 = stage5un.split(";")
