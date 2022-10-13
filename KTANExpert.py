@@ -194,22 +194,27 @@ def button():
     # Logic
     #Starting Information
 
-    color = input("What is the color of the button? (blu, w, y, r, other): ")
+    color = str(input("What is the color of the button? (blu, w, y, r, other): "))
 
     #Manual Step 1
     if color == "blu":
         if text == "EMPTY":
-            text = input("What does the button say? (all lowercase): ")
+            text = str(input("What does the button say? (all lowercase): "))
         if text == "abort":
             instruction = "hold"
             givenInstruction = True
 
     #Manual Step 2
     if (givenInstruction == False) and (batteries == "EMPTY"):
-        batteries = int(input("How many batteries are on the bomb?: "))
+        batteries = str(input("How many batteries are on the bomb?: "))
+        if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
+            batteries = int(batteries)
+        else:
+            print("Error. Incorrect number of batteries. Resetting")
+            return
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
-            text = input("What does the button say? (all lowercase): ")
+            text = str(input("What does the button say? (all lowercase): "))
         if text == "detonate":
             instruction = "pressRelease"
             givenInstruction = True
@@ -217,17 +222,22 @@ def button():
     #Manual Step 3
     if (givenInstruction == False) and (color == "w"):
         if litIndicators == ["EMPTY"]:
-            litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
+            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
         if "CAR" in litIndicators:
             instruction = "hold"
             givenInstruction = True
 
     #Manual Step 4
     if (givenInstruction == False) and (batteries == "EMPTY"):
-        batteries = int(input("How many batteries are on the bomb?: "))
+        batteries = str(input("How many batteries are on the bomb?: "))
+        if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
+            batteries = int(batteries)
+        else:
+            print("Error. Incorrect number of batteries. Resetting")
+            return
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == ["EMPTY"]:
-            litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
+            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
         if "FRK" in litIndicators:
             instruction = "pressRelease"
             givenInstruction = True
@@ -240,7 +250,7 @@ def button():
     #Manual Step 6
     if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
-            text = input("What does the button say? (all lowercase): ")
+            text = str(input("What does the button say? (all lowercase): "))
         if text == "hold":
             instruction = "pressRelease"
             givenInstruction = True
@@ -253,7 +263,7 @@ def button():
     #Releasing a held button
     if instruction == "hold":
         print(" ")
-        strip = input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): ")
+        strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
         if strip == "blu":
             print(" ")
             print("Release the button when the countdown timer has a 4 in any position")
@@ -274,6 +284,7 @@ def button():
         print("Press and immediately release the button")
         return
     else:
+        print("Error. Something went wrong. Resetting.")
         return
 
 #Keypad (specific inputx4 -> output)
