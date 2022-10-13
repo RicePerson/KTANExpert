@@ -1602,7 +1602,7 @@ print("Incase you haven't launched the game before, the verification code as of 
 while isDoing == True:
     #checking which module you are currently working on
     print(" ")
-    module = input("Module? (w/b/k/s/who/m/mO/cW/wS/done): ")
+    module = input("Module? (w/b/k/s/who/m/mO/cW/wS/resetbomb/done): ")
     if module == "w":
         print(" ")
         wires()
@@ -1630,6 +1630,12 @@ while isDoing == True:
     elif module == "wS":
         print(" ")
         wireSeq()
+    elif module == "resetbomb":
+        serialNum = "EMPTY"
+        batteries = "EMPTY"
+        litIndicators = ["EMPTY"]
+        parallelPort = "EMPTY"
+        print("Bomb Reset. All bomb-wide varaible are now empty")
     elif module == "done":
         print(" ")
         print("Bomb Complete. Congrats Defuser")
