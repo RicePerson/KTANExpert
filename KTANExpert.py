@@ -192,6 +192,7 @@ def button():
     color = "EMPTY"
     text = "EMPTY"
     instruction = "EMPTY"
+    givenInstruction = False
     strip = "EMPTY"
 
     global batteries
@@ -208,46 +209,53 @@ def button():
             text = input("What does the button say? (all lowercase): ")
         if text == "abort":
             instruction = "hold"
+            givenInstruction = True
 
     #Manual Step 2
-    elif batteries == "EMPTY":
+    if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = int(input("How many batteries are on the bomb?: "))
-    if batteries > 1:
+    if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
         if text == "detonate":
             instruction = "pressRelease"
+            givenInstruction = True
 
     #Manual Step 3
-    elif color == "w":
+    if (givenInstruction == False) and (color == "w"):
         if litIndicators == ["EMPTY"]:
             litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
         if "CAR" in litIndicators:
             instruction = "hold"
+            givenInstruction = True
 
     #Manual Step 4
-    elif batteries == "EMPTY":
+    if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = int(input("How many batteries are on the bomb?: "))
-    if batteries > 2:
+    if (givenInstruction == False) and (batteries > 2):
         if litIndicators == ["EMPTY"]:
             litIndicators = input("Please list all the lit indicators (all uppcase with a single space between each one): ").split()
         if "FRK" in litIndicators:
             instruction = "pressRelease"
+            givenInstruction = True
 
     #Manual Step 5
-    elif color == "y":
+    if (givenInstruction == False) and (color == "y"):
         instruction = "hold"
+        givenInstruction = True
 
     #Manual Step 6
-    elif color == "r":
+    if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
             text = input("What does the button say? (all lowercase): ")
         if text == "hold":
             instruction = "pressRelease"
+            givenInstruction = True
 
     #Manual Step 7
-    else:
+    if (givenInstruction == False):
         instruction = "hold"
+        givenInstruction = False
 
     #Releasing a held button
     if instruction == "hold":
@@ -811,7 +819,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage1 = stage1un.split()
+    stage1 = stage1un.split(";")
     for i in range(len(stage1)):
         stage1[i] = int(stage1[i])
         if stage1[i] in (1, 2, 3, 4):
@@ -848,7 +856,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage2 = stage2un.split()
+    stage2 = stage2un.split(";")
     for i in range(len(stage2)):
         stage2[i] = int(stage2[i])
         if stage2[i] in (1, 2, 3, 4):
@@ -887,7 +895,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage3 = stage3un.split()
+    stage3 = stage3un.split(";")
     for i in range(len(stage3)):
         stage3[i] = int(stage3[i])
         if stage3[i] in (1, 2, 3, 4):
@@ -928,7 +936,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage4 = stage4un.split()
+    stage4 = stage4un.split(";")
     for i in range(len(stage4)):
         stage4[i] = int(stage4[i])
         if stage4[i] in (1, 2, 3, 4):
@@ -966,7 +974,7 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage5 = stage5un.split()
+    stage5 = stage5un.split(";")
     for i in range(len(stage5)):
         stage5[i] = int(stage5[i])
         if stage5[i] in (1, 2, 3, 4):
