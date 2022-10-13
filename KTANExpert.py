@@ -347,7 +347,7 @@ def keypad():
         answerColumn = c6
         #print("Column: " + str(answerKeys))
     else:
-        print("Error.No column has all of the inputed keys. Resetting")
+        print("Error. No column has all of the inputed keys. Resetting")
         return
 
     #Final print()
