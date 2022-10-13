@@ -96,10 +96,11 @@ def wires():
         print(" ")
 
         if wirelist.count("r") > 1:
-            if serialNum == "EMPTY" or serialNum == "...":
+            if serialNum == "EMPTY":
                 serialNum = str(input("Last Digit of Serial: "))
                 if serialNum == "...": # Exit Command
                     print("Exit Command Detected. Exiting...")
+                    serialNum = "EMPTY"
                     return
                 if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                     serialNum = int(serialNum)
@@ -144,10 +145,11 @@ def wires():
         print(" ")
 
         if wirelist[-1] == "bla":
-            if serialNum == "EMPTY" or serialNum == "...":
+            if serialNum == "EMPTY":
                 serialNum = str(input("Last Digit of Serial: "))
                 if serialNum == "...": # Exit Command
                     print("Exit Command Detected. Exiting...")
+                    serialNum = "EMPTY"
                     return
                 if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                     serialNum = int(serialNum)
@@ -192,10 +194,11 @@ def wires():
         print(" ")
 
         if wirelist.count("y") == 0:
-            if serialNum == "EMPTY" or serialNum == "...":
+            if serialNum == "EMPTY":
                 serialNum = str(input("Last Digit of Serial: "))
                 if serialNum == "...": # Exit Command
                     print("Exit Command Detected. Exiting...")
+                    serialNum = "EMPTY"
                     return
                 if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                     serialNum = int(serialNum)
@@ -235,11 +238,17 @@ def button():
     #Starting Information
 
     color = str(input("What is the color of the button? (blu, w, y, r, other): "))
+    if color == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        return
 
     #Manual Step 1
     if color == "blu":
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
+            if text == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                return
         if text == "abort":
             instruction = "hold"
             givenInstruction = True
@@ -247,6 +256,10 @@ def button():
     #Manual Step 2
     if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = str(input("How many batteries are on the bomb?: "))
+        if batteries == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            batteries = "EMPTY"
+            return
         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
             batteries = int(batteries)
         else:
