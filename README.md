@@ -23,12 +23,12 @@ Download the KTANExpert folder and run KTANExpert.py
 For every completed module in this Expert, there are accompanying instructions on how to properly input details and comply with instructions.
 Every module has a description with basic instructions, as well as an example with real-world modules with what the player enters and what the expert outputs
 For ease of following the plot, the Player is marked by a :red_circle: and the Expert is followed by a :large_blue_circle:.
-Anything that would be typed into the command window or is recieved from the command window with look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (...): `
+Anything that would be typed into the command window or is received from the command window with look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (...): `
 
 ### Glossary
 There are some words used in these instructions that may mean something other than what common sense would infer. Here is what those words mean.
 - **KTANE Module:** A module on the bomb in Keep Talking and Nobody Explodes
-- **Expert:large_blue_circle::** The program this README accompanys
+- **Expert:large_blue_circle::** The program this README accompanies
 - **Player:red_circle::** You!
 - **Repeat:** Some modules require that you do the module a few times, each with differing details. Each time you do the module is a Repeat
 - **Command Window:** The window that you enter inputs into
@@ -50,7 +50,11 @@ There are short-hand codes used throughout to make inputs generally faster. Here
 | y | Yellow |
 | g | Green |
 
-
+### Inputting Answers to Questions
+The Expert will ask questions. That's how this game works. When inputting answers, you must follow some rules so that the expert can understand what you are saying.
+1) **Everything is lowercase unless otherwise instructed** *(as of right now, the only uppercase input are the endpoints for the Wire Sequences module)
+2) **Separate details with a semicolon (;)**. Some modules have multiple inputs (like multiple keys or wires). Seperate these using a semicolon, with the exception to Morse-Code, which uses spaces
+3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are separated by spaces)
 
 ## Wires `w`
 Select the number of wires present in the module (including cut wires from previous attempts).
@@ -58,21 +62,49 @@ Enter each wire color from the top (which is considered the first wire in the ex
 Follow the given instructions.
 
 ### Example:
-1) KTANE gives you a wire module that goes:
-- Empty 
--  RED  
--  RED  
-- Empty 
--  BLUE 
-- WHITE 
+*0) KTANE gives you a wire module that goes:*
+- *Empty* 
+-  *RED*  
+-  *RED*  
+- *Empty* 
+-  *BLUE* 
+- *WHITE* 
 
-2) The Player:red_circle: inputs `4` as the wire number, and the inputs `r` ENTER `r` ENTER `blu` ENTER `w`
-3) The Expert:large_blue_circle: then asks you for the last digit of the serial number, which the player:red_circle: enters `3`
-4) The Expert:large_blue_circle: asks you to `Cut the last RED wire`, which prompts the player:red_circle: to cut the 3rd wire. *Module Complete, move on to the next one.* 
+1) The Player:red_circle: inputs `4` as the wire number, 
+2) The Expert:large_blue_circle: asks `Wire 1? (r/y/blu/bla/r): `
+3) The Player:red_circle: then inputs `r` ENTER `r` ENTER `blu` ENTER `w`
+4) The Expert:large_blue_circle: then asks `Last Digit of Serial: `
+5) The Player:red_circle: checks the bomb for a serial number sticker, then inputs what the last digit is, which in the case of this example, is `3`
+6) The Expert:large_blue_circle: asks you to `Cut the last RED wire`, which prompts the player to cut the 3rd wire. *Module Complete, move on to the next one.* 
 
 
 ## Button `b`
-*Instructions to come, but the module is fairly straigtforward*
+This module just consists of a large button that has some text on it. To start, don't listen to it's lies. 
+Sometimes you have to just click "hold" or hold down "press". When you enter the module in the expert, it will first ask you for a color. 
+It will always ask this question. Once you enter the color, there are a couple different questions the expert may ask. 
+Things like "What is the last digit of the serial number?" or "What does the button say?". Just answer the question. 
+These bomb-wide details are shared across modules in the expert, so if you do another button, it won't ask you a question you have already answered. 
+If it does, that's because that detail may change between modules, so just answer it. 
+Keep answering the questions until it gives you an instruction. It will either ask you to press and immediately release the button.
+Or to start holding the button and enter the color of the strip directly to the right of the button. The strip will only light up when holding the button,
+and will light up even if you aren't supposed to hold it, so don't skip ahead. If holding, hold down the button and enter the color into the expert WITHOUT
+letting go of the button. It will then give you an instruction like `Release when the countdown timer has a 4 in any position`. This just means if there is
+a four on the countdown display, release the button. If not, wait.
+
+### Example
+*0) KTANE gives you a blue button with the word detonate on it*
+1) The Player:red_circle: selects the Button module with `b`
+2) The Expert:large_blue_circle: asks `What is the color of the button?`
+3) The Player:red_circle: enters `blu` and presses ENTER.
+4) The Expert:large_blue_circle: asks `What does the button say?`
+5) The Player:red_circle: enters `detonate` and presses ENTER.
+6) The Expert:large_blue_circle: asks `How many batteries are on the bomb?`
+7) The Player:red_circle:, after looking around the bomb's edge, enters '1'
+8) The Expert:large_blue_circle: instructs the player to `Press and hold the button`
+9) The Player:red_circle: starts holding the button, and sees a red strip directly to the right of it
+10) The Player:red_circle: enters `r` for the strip color
+11) The Expert:large_blue_circle: tells the player to `Release the button when the countdown timer has a 1 in any position`
+12) The Player:red_circle: complys. *Module Complete, move on to the next one.* 
 
 ## Keypad `k`
 Once you enter the keypad module in the expert, it will list all possible keypad symbols, and then ask for the first one.
@@ -82,9 +114,11 @@ Repeat until provivded a Final List. Enter these in order to complete the module
 
 ### Example
 *0) The module in KTANE has an omega, ae, trident, and squished 6*
-1) The Player:red_circle: inputs `ae` ENTER `trident` ENTER `omega` ENTER `6`
-2) The Expert:large_blue_circle: will then output `Click these buttons in order: 1)6 2)ae 3)trident 4)omega`
-3) The Player:red_circle: clicks these inorder in KTANE. *Module Complete, move on to the next one.* 
+1) The Player:red_circle: selects the keypad module with `k`
+2) The Expert:large_blue_circle: asks for a list of keys
+3) The Player:red_circle: inputs 'omega;ae;trident;6`
+4) The Expert:large_blue_circle: will then output `Click these buttons in order: 1)6 2)ae 3)trident 4)omega`
+5) The Player:red_circle: clicks these inorder in KTANE. *Module Complete, move on to the next one.* 
 
 
 ## Simon Says `s`
@@ -97,31 +131,47 @@ Click the colored buttons in the given order.
 Repeat until the module is complete. To exit the module on the expert, input `done` at any step.
 
 ### Example
-*0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing slowly.*
-1) The player selects the simon says expert module
-2) Player:red_circle: inputs `y` ENTER `1`
-3) Player:red_circle: inputs `r` ENTER `end`
-4) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
-5) Player:red_circle: clicks the yellow button in KTANE
-6) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:. *Module Complete, move on to the next one.*
+*0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing red slowly.*
+1) The Player:red_circle: selects the simon says module with `s`
+2) The Expert:large_blue_circle: asks if there is a vowel in the serial number, and then if there are any strikes
+3) The Player:red_circle: answers `y` ENTER `1`
+4) The Expert:large_blue_circle: asks for button flashes
+5) The Player:red_circle: enters `r` ENTER `end`
+6) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
+7) Player:red_circle: clicks the yellow button in KTANE
+8) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:. *Module Complete, move on to the next one.*
 
 Note: If for some reason, after clicking a colored button, it markes it as wrong and gives you a strike, 
 enter `done` into the expert and start the module over, as the current number of strikes affects the module.
 
 
 ## Who's on First `who`
-This module includes a display and six buttons. There are TWO seperate steps to this module, so don't go clicking all willy-nilly
-The first part of this module is inputing the display *(Note: a possible word for the display is just a blank display with nothing written on it. In this case, enter `*blank*` for the word)*, and inputing the word on the provided button
-I specificlly coded this module to make the steps VERY CLEAR because of the nature of the module. Try the module, and if it still doesn't make sense, check out the example
+This module consists of seven words, six of them being on buttons. It also has a indicator with 3 lights telling us there are 3 repeats for this module
+Based on what the display words is, the expert determines the position of the what I'm calling "The display's sacred button word". This word determines what happens in the next step.
+Because this module was designed to make the user click the wrong button if they don't follow both sections of the manual, I have reduced this module down to a single input per repeat.
+You're Welcome. Inputing to this module works by typing each word on the module in a specific order, seperated by a semicolon.
+The order goes like this: 
+
+`DisplayWord;TopLeft;MiddleLeft;BottomLeft;TopRight;MiddleRight;BottomRight`
+
+It is imperative that the words are entered in this order, or the module will give you a wrong instruction.
+Also, the display word can sometimes be, well, nothing. The display will be blank. In this case, pretend the word is `*blank*`
 
 ### Example
-*0) The KTANE module has the word "first" in the display, and more words on the buttons below*
-1) The Expert:large_blue_circle: asks for the word in the display, which the Player:red_circle: inputs `first`
-2) The Expert:large_blue_circle: then asks for the word in the TopRight, which the Player:red_circle: DOES NOT CLICK IT, but inputs `wait`
-3) The Expert:large_blue_circle: then starts asking if certain words exist on the buttons. It firsts aks `Is the word uhhh there?`. The Player:red_circle: answers `n`, because it is not there
-4) Now, the Expert:large_blue_circle: asks 'Is the word no there?'. Because "no" is on one of the buttons, the Player:red_circle: answers `y`
-5) The Expert:large_blue_circle: says `Click the word no`. The Player:red_circle: complys. Because this happens to be the 3rd and final repeat of the module, the Player:red_circle: now inputs `n` to the Experts:large_blue_circle: questions, `Are there more steps?`
-6) *Module Complete, move on to the next one.* 
+*0) The KTANE module looks like this:*
+|**First**|*<- Display*|
+|--- | ---|
+|Okay|Middle|
+|Ready|Blank|
+|Next|Uhhh|
+
+1) The Player:red_circle: selects the Who's on First module using `who`
+2) The Expert:large_blue_circle: asks for the words on the current repeat of the module, starting with the display.
+3) The Player:red_circle: enters `first;okay;ready;next;middle;blank;uhhh`
+4) The Expert:large_blue_circle: tells the player to `Press the button labeled blank` and asks if the module is complete
+5) The Player:red_circle: clicks the button "blank" and answers `n`
+6) The Player:red_circle: repeats this until the module is complete, then answers `y` to the experts exit question
+7) *Module Complete, move on to the next one.*
 
 
 ## Memory `m`
@@ -132,21 +182,34 @@ Repeat until the module is complete. If you ever mess up, the KTANE module will 
 
 ### Example
 *0) The KTANE module starts with the display being 4 and the buttons being, from left to right, 1 3 2 4*
-1) The Expert:large_blue_circle: asks for the stage 1 numbers, which the Player:red_circle: inputs `4 1 3 2 4`
-2) The Expert:large_blue_circle: gives the instruction `Press the button labeled 4`. The Player:red_circle: complys. The numbers on the KTANE module change
-3) Repeat 1 and 2 until the module is complete. *Module Complete, move on to the next one.* 
+1) The Player:red_circle: enters the memory module with `m`
+1) The Expert:large_blue_circle: asks for the stage 1 numbers 
+2) The Player:red_circle: inputs `4;1;3;2;4`
+3) The Expert:large_blue_circle: gives the instruction `Press the button labeled 4`. The Player:red_circle: complys. The numbers on the KTANE module change
+4) Repeat 1 and 2 until the module is complete. *Module Complete, move on to the next one.* 
 
 
 ## Morse-Code `mO`
 Enter the morse code as it is flashed to you in the module. 
-Use period( . ) and minus( - ) with a space between letters to input the morse (represented by a longer space in the flasing module.)
-When the module stop flashing the longest and then starts again, it means the word is restarting. 
-The program does NOT require that you start at the beginning of the word, only that you don't duplicate any letters already input.
-Once you have the morse word input (with no duplication), press ENTER, and input the frequency provided.
+If you don't know about Morse-Code, here's a little summary. MorseCode is a standard way of communicating used by the military that can use light or sound.
+
+|MorseCode|Meaning|
+|---|---|
+|.|Dot|
+|-|Dash|
+|Short Space|Space between Morse Characters|
+|Longer Space|Space between Letters|
+|Really Long Space|Space Between Words / Repeating Message|
+
+This module requires that you type the morse code, and then based on what the flashing word is, input a specific frequency and click TX.
+The Expert doesn't care at which point in the word you start entering characters, just that you don't repeat characters. If you think you repeated characters, don't worry.
+When you input the morse, the Expert will tell you what you just entered in english letters, so you can see what you repeated so you can rerun the module and try again.
 
 ### Example:
-*0) KTANE mnodule is flashing .. -.-. -.-   - .-. .. -.-. -.-   - .-. .. -.-. -.-   - .-. .. -.-. -.- repeating indefinitely*
-1) The Player:red_circle: inputs `.. -.-. -.- - .-. ENTER`
+*0) KTANE module is flashing `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  **`..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`**  `..`  `-.-.`  `-.-`  repeating indefinitely*
+1) The Player:red_circle: enters the MorseCode module with `mO`
+3) The Expert:large_blue_circle: asks for the morse code being flashed
+2) The Player:red_circle: inputs `.. -.-. -.- - .-.` ENTER
 2) The Expert:large_blue_circle: outputs `Word was: Trick    Input 3.532 MHz`
 3) Player:red_circle: sets the frequency to 3.532 MHz in KTANE, and clicks TX. *Module Complete, move on to the next one.* 
 
