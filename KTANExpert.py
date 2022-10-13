@@ -834,7 +834,7 @@ def memory():
     print("Input the numbers starting with Display, and then left to right, seperated by spaces")
 
     #Def Vars: Stage 1 - Settings Lists
-    stage1un = input("Stage1 - What are the numbers given? (1,2,3,4,r): ")
+    stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -844,7 +844,7 @@ def memory():
         if stage1[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage1[0]))
     print("Inputed Numbers: " + str(stage1[1:5]))
@@ -871,7 +871,7 @@ def memory():
 
 
     #Def Vars: Stage2 - Settings Lists
-    stage2un = input("Stage2 - What are the numbers given? (1,2,3,4,r): ")
+    stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -881,7 +881,7 @@ def memory():
         if stage2[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage2[0]))
     print("Inputed Numbers: " + str(stage2[1:5]))
@@ -910,7 +910,7 @@ def memory():
 
 
     #Def Vars: Stage 3 - Settings Lists
-    stage3un = input("Stage3 - What are the numbers given? (1,2,3,4,r): ")
+    stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -920,7 +920,7 @@ def memory():
         if stage3[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage3[0]))
     print("Inputed Numbers: " + str(stage3[1:5]))
@@ -951,7 +951,7 @@ def memory():
 
 
     #Def Vars: Stage 4 - Settings Lists
-    stage4un = input("Stage4 - What are the numbers given? (1,2,3,4,r): ")
+    stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -961,7 +961,7 @@ def memory():
         if stage4[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage4[0]))
     print("Inputed Numbers: " + str(stage4[1:5]))
@@ -989,7 +989,7 @@ def memory():
 
 
     #Def Vars: Stage 5 - Settings Lists
-    stage5un = input("Stage5 - What are the numbers given? (1,2,3,4,r): ")
+    stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
@@ -999,7 +999,7 @@ def memory():
         if stage5[i] in (1, 2, 3, 4):
             pass
         else:
-            print("Error. You inputed wrong numbers, please press a button to restart the module in KTANE")
+            print("Error. Incorrect numbers. Resetting")
             return
     print("Inputed Display: " + str(stage5[0]))
     print("Inputed Numbers: " + str(stage5[1:5]))
