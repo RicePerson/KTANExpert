@@ -430,7 +430,6 @@ def keypad():
 
 #New Simon Says (inputxIndefinite -> output x#)
 def simon():
-    #simon() is the streamlined but DEFINITELY more complicated version...hence the name
     #Logic (It's a loop)
     vowel = str(input("Vowel in Serial? (y/n): "))
     isDoing = True
@@ -438,6 +437,10 @@ def simon():
     while isDoing == True:
         if vowel == "y":
             strikes = str(input("Number Of Strikes? (0/1/2): "))
+            if strikes == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                strikes = "EMPTY"
+                return
             while strikes == "0":
                 user = []
                 finalSimon = []
@@ -446,6 +449,10 @@ def simon():
                 while True:
                     userInput = str(input("What is flash " + str(flash) +
                                       "? (r/blu/g/y/end/done):"))
+                    if userInput == "...": # Exit Command
+                        print("Exit Command Detected. Exiting...")
+                        userInput = "EMPTY"
+                        return
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -500,6 +507,10 @@ def simon():
                 while True:
                     userInput = str(input("What is flash " + str(flash) +
                                       "? (r/blu/g/y/end/done):"))
+                    if userInput == "...": # Exit Command
+                        print("Exit Command Detected. Exiting...")
+                        userInput = "EMPTY"
+                        return
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -554,6 +565,10 @@ def simon():
                 while True:
                     userInput = str(input("What is flash " + str(flash) +
                                       "? (r/blu/g/y/end/done):"))
+                    if userInput == "...": # Exit Command
+                        print("Exit Command Detected. Exiting...")
+                        userInput = "EMPTY"
+                        return
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -602,6 +617,10 @@ def simon():
 
         elif vowel == "n":
             strikes = str(input("Number Of Strikes? (0/1/2): "))
+            if strikes == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                strikes = "EMPTY"
+                return
             while strikes == "0":
                 user = []
                 finalSimon = []
@@ -610,6 +629,10 @@ def simon():
                 while True:
                     userInput = str(input("What is flash " + str(flash) +
                                       "? (r/blu/g/y/end/done):"))
+                    if userInput == "...": # Exit Command
+                        print("Exit Command Detected. Exiting...")
+                        userInput = "EMPTY"
+                        return
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -664,6 +687,10 @@ def simon():
                 while True:
                     userInput = str(input("What is flash " + str(flash) +
                                       "? (r/blu/g/y/end/done):"))
+                    if userInput == "...": # Exit Command
+                        print("Exit Command Detected. Exiting...")
+                        userInput = "EMPTY"
+                        return
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -718,6 +745,10 @@ def simon():
                 while True:
                     userInput = str(input("What is flash " + str(flash) +
                                       "? (r/blu/g/y/end/done):"))
+                    if userInput == "...": # Exit Command
+                        print("Exit Command Detected. Exiting...")
+                        userInput = "EMPTY"
+                        return
                     if userInput == "r":
                         user.append("r")
                         flash += 1
