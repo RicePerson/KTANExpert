@@ -1231,6 +1231,10 @@ beats = ["B", "E", "A", "T", "S"]
 def morse():
     #Def Vars
     userMorseUnsplit = str(input("What is your Morse Code (see README.md for instructions)?: "))
+    if userMorseUnsplit == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        userMorseUnsplit = "EMPTY"
+        return
     userMorse = userMorseUnsplit.split()
     print("Inputed Morse: " + str(userMorse))
     alphaList = []
