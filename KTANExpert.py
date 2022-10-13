@@ -346,20 +346,20 @@ def keypad():
 def simon():
     #simon() is the streamlined but DEFINITELY more complicated version...hence the name
     #Logic (It's a loop)
-    vowel = input("Vowel in Serial? (y/n): ")
+    vowel = str(input("Vowel in Serial? (y/n): "))
     isDoing = True
 
     while isDoing == True:
         if vowel == "y":
-            strikes = input("Number Of Strikes? (0/1/2): ")
+            strikes = str(input("Number Of Strikes? (0/1/2): "))
             while strikes == "0":
                 user = []
                 finalSimon = []
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -412,8 +412,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -466,8 +466,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -515,15 +515,15 @@ def simon():
                 print(" ")
 
         elif vowel == "n":
-            strikes = input("Number Of Strikes? (0/1/2): ")
+            strikes = str(input("Number Of Strikes? (0/1/2): "))
             while strikes == "0":
                 user = []
                 finalSimon = []
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -576,8 +576,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -630,8 +630,8 @@ def simon():
                 flash = 1
                 print(" ")
                 while True:
-                    userInput = input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):")
+                    userInput = str(input("What is flash " + str(flash) +
+                                      "? (r/blu/g/y/end/done):"))
                     if userInput == "r":
                         user.append("r")
                         flash += 1
@@ -678,9 +678,8 @@ def simon():
                         case other: return
                 print(" ")
 
-        else:
-            print("Error. You input incorrectly. Please try again")
-            return
+    print("Error. You input incorrectly. Please try again")
+    return
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():
