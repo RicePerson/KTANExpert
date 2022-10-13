@@ -1084,6 +1084,7 @@ def morseToAlpha(input):
     elif input == "--..":
         return "Z"
     else:
+        print("Error. Incorrect morse detected. Resetting")
         return
 
 shell = ["S", "H", "E", "L", "L"]
@@ -1106,7 +1107,7 @@ beats = ["B", "E", "A", "T", "S"]
 #Morse Code Logic (input -> output)
 def morse():
     #Def Vars
-    userMorseUnsplit = input("What is your Morse Code (see README.md for instructions)?: ")
+    userMorseUnsplit = str(input("What is your Morse Code (see README.md for instructions)?: "))
     userMorse = userMorseUnsplit.split()
     print("Inputed Morse: " + str(userMorse))
     alphaList = []
