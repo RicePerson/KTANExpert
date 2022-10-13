@@ -1200,10 +1200,10 @@ def compWires():
     starList = "EMPTY"
 
     # Input Logic
-    blueList = input("What wires have blue coloring? (as a binary list): ")
-    redList = input("What wires have red coloring? (as a binary list): ")
-    ledList = input("What wires have an LED above them? (as a binary list): ")
-    starList = input("What wires have a star beneath them? (as a binary list): ")
+    blueList = str(input("What wires have blue coloring? (as a binary list): "))
+    redList = str(input("What wires have red coloring? (as a binary list): "))
+    ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    starList = str(input("What wires have a star beneath them? (as a binary list): "))
 
     blueList = [x for x in blueList]
     redList = [x for x in redList]
@@ -1302,7 +1302,12 @@ def compWires():
                 case ("S"): 
                     if serialNum == "EMPTY":
                         print(" ")
-                        serialNum = int(input("What is the last number of the bomb serial number?: "))
+                        serialNum = str(input("Last Digit of Serial: "))
+                        if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
+                            serialNum = int(serialNum)
+                        else:
+                            print("Error. Incorrect serial digit. Resetting.")
+                            return
                     if serialNum%2 == 0:
                         if n == 1:
                             print("Wire " + str(i+1) + ") Cut")
@@ -1312,7 +1317,7 @@ def compWires():
                 case ("P"):
                     if parallelPort == "EMPTY":
                         print(" ")
-                        if input("Does the bomb have a parallel port (y/n)?: ") == "y":
+                        if str(input("Does the bomb have a parallel port (y/n)?: ")) == "y":
                             parallelPort = True
                         else:
                             parallelPort = False
@@ -1325,7 +1330,12 @@ def compWires():
                 case ("B"):
                     if batteries == "EMPTY":
                         print(" ")
-                        batteries = int(input("How many batteries are on the bomb?: "))
+                        batteries = str(input("How many batteries are on the bomb?: "))
+                        if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
+                            batteries = int(batteries)
+                        else:
+                            print("Error. Incorrect number of batteries. Resetting")
+                            return
                     if batteries >= 2:
                         if n == 1:
                             print("Wire " + str(i+1) + ") Cut")
