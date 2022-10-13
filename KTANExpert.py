@@ -391,6 +391,10 @@ def keypad():
         print(i)
 
     userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
+    if userKeys == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        userKeys = "EMPTY"
+        return
     userKeys = userKeys.split(";")
 
     #Logic
