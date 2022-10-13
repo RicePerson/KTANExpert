@@ -191,8 +191,9 @@ def wires():
             print("Cut the Fourth Wire")
             return
 
-    #All else fails: 
-    return
+    else:
+        print("Error. Incorrect number of wires. Resetting.")
+        return
 
 #Button (inputs various -> output)
 def button():
