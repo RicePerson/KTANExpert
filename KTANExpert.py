@@ -308,7 +308,7 @@ def keypad():
     for i in keys:
         print(i)
 
-    userKeys = input("What are the symbols on the keypad seperated by semicolons? (See list above): ")
+    userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
     userKeys = userKeys.split(";")
 
     #Logic
@@ -332,7 +332,7 @@ def keypad():
         answerColumn = c6
         #print("Column: " + str(answerKeys))
     else:
-        print("No collum has all of the inputed keys")
+        print("No column has all of the inputed keys")
 
     #Final print()
     finalList = [x for x in answerColumn if x in userKeys]
