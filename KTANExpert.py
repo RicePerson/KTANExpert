@@ -268,6 +268,10 @@ def button():
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
+            if text == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                text = "EMPTY"
+                return
         if text == "detonate":
             instruction = "pressRelease"
             givenInstruction = True
@@ -276,6 +280,10 @@ def button():
     if (givenInstruction == False) and (color == "w"):
         if litIndicators == ["EMPTY"]:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
+            if litIndicators == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                litIndicators = "EMPTY"
+                return
         if "CAR" in litIndicators:
             instruction = "hold"
             givenInstruction = True
@@ -283,6 +291,10 @@ def button():
     #Manual Step 4
     if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = str(input("How many batteries are on the bomb?: "))
+        if batteries == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            batteries = "EMPTY"
+            return
         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
             batteries = int(batteries)
         else:
@@ -291,6 +303,10 @@ def button():
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == ["EMPTY"]:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
+            if litIndicators == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                litIndicators = "EMPTY"
+                return
         if "FRK" in litIndicators:
             instruction = "pressRelease"
             givenInstruction = True
@@ -304,6 +320,10 @@ def button():
     if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
+            if text == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                text = "EMPTY"
+                return
         if text == "hold":
             instruction = "pressRelease"
             givenInstruction = True
@@ -317,6 +337,10 @@ def button():
     if instruction == "hold":
         print(" ")
         strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
+        if strip == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            strip = "EMPTY"
+            return
         if strip == "blu":
             print(" ")
             print("Release the button when the countdown timer has a 4 in any position")
