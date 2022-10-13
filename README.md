@@ -23,7 +23,7 @@ Download the KTANExpert folder and run KTANExpert.py
 For every completed module in this Expert, there are accompanying instructions on how to properly input details and comply with instructions.
 Every module has a description with basic instructions, as well as an example with real-world modules with what the player enters and what the expert outputs
 For ease of following the plot, the Player is marked by a :red_circle: and the Expert is followed by a :large_blue_circle:.
-Anything that would be typed into the command window or is received from the command window with look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (*possible things to enter*): `
+Anything that would be typed into the command window or is received from the command window will look like `this`. To enter a module, type the module code that follows the name in these instructions when the expert asks `Module? (*possible things to enter*): `
 
 ### Glossary
 There are some words used in these instructions that may mean something other than what common sense would infer. Here is what those words mean.
