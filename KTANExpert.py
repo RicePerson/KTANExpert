@@ -28,7 +28,7 @@ parallelPort = "EMPTY"
 def wires():
     #Def Vars
     global serialNum
-    number = input("Number of Wires? (3/4/5/6): ")
+    number = str(input("Number of Wires? (3/4/5/6): "))
     wirelist = []
 
     #Logic - 3 Wires
@@ -46,8 +46,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module")
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -81,9 +80,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module"
-                )
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -120,9 +117,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module"
-                )
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -159,9 +154,7 @@ def wires():
             elif wirelistadd == "r":
                 pass
             else:
-                print(
-                    "Error. You didn't do the right thing. Please rerun module"
-                )
+                print("Error. Incorrect color code. Resetting.")
                 return
             wirelist.append(wirelistadd)
         print("Your wires are " + str(wirelist))
@@ -183,7 +176,7 @@ def wires():
             print("Cut the Fourth Wire")
             return
 
-    #If Not: 
+    #All else fails: 
     return
 
 #Button (inputs various -> output)
