@@ -31,6 +31,7 @@ def wires():
     number = str(input("Number of Wires? (3/4/5/6): "))
     if number == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
+        number = "EMPTY"
         return
     wirelist = []
 
@@ -40,6 +41,7 @@ def wires():
             wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
+                wirelistadd = "EMPTY"
                 return
             if wirelistadd == "w":
                 pass
@@ -77,6 +79,7 @@ def wires():
             wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
+                wirelistadd = "EMPTY"
                 return
             if wirelistadd == "w":
                 pass
@@ -126,6 +129,7 @@ def wires():
             wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
             if wirelistadd == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
+                wirelistadd = "EMPTY"
                 return
             if wirelistadd == "w":
                 pass
@@ -175,6 +179,7 @@ def wires():
             wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
             if wirelistadd == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
+                wirelistadd = "EMPTY"
                 return
             if wirelistadd == "w":
                 pass
