@@ -1603,10 +1603,15 @@ def password():
                 "spell","still","study","their","there",
                 "these","thing","think","three","water",
                 "where","which","world","would","write"]
+    removedWords = []
     possibleWords = allWords
 
     #Testing letters in each display
     for d in [0,1,2,3,4]:
+        if len(possibleWords) == 1:
+                print("Input the word " + str(possibleWords) + " into the module")
+                return
+
         testLetters = "EMPTY"
         testLetters = str(input("Please list all the possible letters in display " + str(d+1) + ": "))
         if testLetters == "...":
@@ -1614,11 +1619,23 @@ def password():
             testLetters = "EMPTY"
             return
         testLetters = [x for x in testLetters]
-        testWord = "EMPTY"
-        for testWord in possibleWords:
-            testWordList = [x for x in testWord]
-            if testWordList[d] not in testLetters[d]:
-                possibleWords.remove(testWord)
+
+        testingWord = "EMPTY"
+        for testingWord in possibleWords:
+            testingWordLetters = [x for x in testingWord]
+
+            if testingWordLetters[d] in testLetters:
+                pass
+            else:
+                removedWords.append(testingWord)
+                
+            if len(possibleWords) == 1:
+                print(possibleWords)
+                return
+        for r in removedWords:
+            possibleWords.remove(r)
+        removedWords = []
+
         
                     
         
