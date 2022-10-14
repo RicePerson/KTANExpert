@@ -1596,13 +1596,30 @@ def wireSeq():
 #Passwords
 def password():
     #Defining Possible Word Vars
-    possibleWords = ["about","after","again","below","could",
-                     "every","first","found","great","house",
-                     "large","learn","never","other","place",
-                     "plant","point","right","small","sound",
-                     "spell","still","study","their","there",
-                     "these","thing","think","three","water",
-                     "where","which","world","would","write"]
+    allWords = ["about","after","again","below","could",
+                "every","first","found","great","house",
+                "large","learn","never","other","place",
+                "plant","point","right","small","sound",
+                "spell","still","study","their","there",
+                "these","thing","think","three","water",
+                "where","which","world","would","write"]
+    possibleWords = allWords
+
+    #Testing letters in each display
+    for d in [0,1,2,3,4]:
+        testLetters = "EMPTY"
+        testLetters = str(input("Please list all the possible letters in display " + str(d+1) + ": "))
+        if testLetters == "...":
+            print("Exit Command Detected. Exiting")
+            testLetters = "EMPTY"
+            return
+        testLetters = [x for x in testLetters]
+        testWord = "EMPTY"
+        for testWord in possibleWords:
+            testWordList = [x for x in testWord]
+            if testWordList[d] not in testLetters[d]:
+                possibleWords.remove(testWord)
+        
                     
         
           
@@ -1641,6 +1658,9 @@ while isDoing == True:
     elif module == "wS":
         print(" ")
         wireSeq()
+    elif module == "p":
+        print(" ")
+        password()
     elif module == "resetbomb":
         serialNum = "EMPTY"
         batteries = "EMPTY"
