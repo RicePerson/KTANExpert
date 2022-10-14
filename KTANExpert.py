@@ -1595,23 +1595,24 @@ def wireSeq():
 
 #Passwords
 def password():
-    #Defining Possible Word Vars
+    #Defining List Vars
     allWords = ["about","after","again","below","could",
                 "every","first","found","great","house",
                 "large","learn","never","other","place",
                 "plant","point","right","small","sound",
                 "spell","still","study","their","there",
                 "these","thing","think","three","water",
-                "where","which","world","would","write"]
-    removedWords = []
-    possibleWords = allWords
+                "where","which","world","would","write"] #Every word that the module is aware of
+    removedWords = [] #Any words that are impossible to input (reset after each display)
+    possibleWords = allWords #Any words that are currently possible to try (reduced after each display)
 
     #Testing letters in each display
     for d in [0,1,2,3,4]:
-        if len(possibleWords) == 1:
+        if len(possibleWords) == 1: #If there is one possible words left, print it
                 print("Input the word " + str(possibleWords) + " into the module")
                 return
 
+        #Getting the possible letters for display d
         testLetters = "EMPTY"
         testLetters = str(input("Please list all the possible letters in display " + str(d+1) + ": "))
         if testLetters == "...":
@@ -1620,6 +1621,7 @@ def password():
             return
         testLetters = [x for x in testLetters]
 
+        #Testing the letters possible against the possible words remaining
         testingWord = "EMPTY"
         for testingWord in possibleWords:
             testingWordLetters = [x for x in testingWord]
@@ -1628,10 +1630,8 @@ def password():
                 pass
             else:
                 removedWords.append(testingWord)
-                
-            if len(possibleWords) == 1:
-                print(possibleWords)
-                return
+
+        #Removing any impossible words from the list of test words
         for r in removedWords:
             possibleWords.remove(r)
         removedWords = []
