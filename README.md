@@ -256,3 +256,20 @@ For each wire, there is a color>endpoint code, with each wire seperated by a `;`
 4) The Expert:large_blue_circle: tells the player to cut Wire 1 and Wire 3, ignoring wire 2 (because there is no wire 2)
 5) The Player:red_circle: repeats this until all four panels are complete
 6) *Module Complete, move on to the next one.* 
+
+
+## Passwords `p`
+This module consists of 5 displays, each with varying letters. The letters for each display can be cycled with the up and down arrows. In the regular manual, there is a list of words. Using the provided letters in the moddule, one of these words can be "typed" into the module. Thankfully, the expert can do all of that for you. After entering the module, the expert asks for all of the provided letters in the first column. Enter these letters with no seperation. The order does not matter, just that you enter ALL of the letters in a given display. The expert will continues to ask for the letters in each display, until only one word from the list can be made, in which the expert will give you that word after about 2 or 3 displays, but it is able to ask for all five in the case of a particularlly annoying module. 
+
+### Example
+1) The Player:red_circle: enters the passwords module with `p`
+2) The Expert:large_blue_circle: asks for the possible letters in the first display
+2) The Player:red_circle:, after scrolling through the display, sees the letters A, D, O, B, and G
+3) The Player:red_circle: inputs `adobg`
+4) The Expert:large_blue_circle: asks for the next display
+5) The Player:red_circle: inputs `uobei`
+6) The Expert:large_blue_circle: asks for the third display
+7) The Player:red_circle: inputs `ojdke`
+8) The Expert:large_blue_circle: tells the player to input the word `about` into the module
+9) The Player:red_circle: scrolls through the displays until ABOUT appears, and presses SUBMIT
+10) *Module Complete, move on to the next one.*

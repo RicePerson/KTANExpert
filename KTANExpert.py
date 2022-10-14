@@ -1592,9 +1592,54 @@ def wireSeq():
                         print("Wire " + str(wCount)+") No wire, ignore")
             dCount += 1
         print(" ")
-                    
-        
-          
+
+#Passwords
+def password():
+    #Defining List Vars
+    allWords = ["about","after","again","below","could",
+                "every","first","found","great","house",
+                "large","learn","never","other","place",
+                "plant","point","right","small","sound",
+                "spell","still","study","their","there",
+                "these","thing","think","three","water",
+                "where","which","world","would","write"] #Every word that the module is aware of
+    removedWords = [] #Any words that are impossible to input (reset after each display)
+    possibleWords = allWords #Any words that are currently possible to try (reduced after each display)
+
+    #Testing letters in each display
+    for d in [0,1,2,3,4]:
+        if len(possibleWords) == 1: #If there is one possible words left, print it
+                print("Input the word " + str(possibleWords) + " into the module")
+                return
+
+        #Getting the possible letters for display d
+        testLetters = "EMPTY"
+        testLetters = str(input("Please list all the possible letters in display " + str(d+1) + ": "))
+        if testLetters == "...":
+            print("Exit Command Detected. Exiting")
+            testLetters = "EMPTY"
+            return
+        testLetters = [x for x in testLetters]
+
+        #Testing the letters possible against the possible words remaining
+        testingWord = "EMPTY"
+        for testingWord in possibleWords:
+            testingWordLetters = [x for x in testingWord]
+
+            if testingWordLetters[d] in testLetters:
+                pass
+            else:
+                removedWords.append(testingWord)
+
+        #Removing any impossible words from the list of test words
+        for r in removedWords:
+            possibleWords.remove(r)
+        removedWords = []
+    
+    #No words matched the list
+    print("Error. No words possible from inputs. Please try again. Resetting")
+    return
+
 
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
@@ -1630,6 +1675,9 @@ while isDoing == True:
     elif module == "wS":
         print(" ")
         wireSeq()
+    elif module == "p":
+        print(" ")
+        password()
     elif module == "resetbomb":
         serialNum = "EMPTY"
         batteries = "EMPTY"
