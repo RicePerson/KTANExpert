@@ -1592,6 +1592,10 @@ def wireSeq():
                         print("Wire " + str(wCount)+") No wire, ignore")
             dCount += 1
         print(" ")
+
+#Passwords
+def password():
+
                     
         
           
