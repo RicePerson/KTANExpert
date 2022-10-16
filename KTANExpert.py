@@ -1,15 +1,25 @@
+
+# /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$$                                           /$$    
+#| $$  /$$/|__  $$__//$$__  $$| $$$ | $$| $$_____/                                          | $$    
+#| $$ /$$/    | $$  | $$  \ $$| $$$$| $$| $$       /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  
+#| $$$$$/     | $$  | $$$$$$$$| $$ $$ $$| $$$$$   |  $$ /$$/ /$$__  $$ /$$__  $$ /$$__  $$|_  $$_/  
+#| $$  $$     | $$  | $$__  $$| $$  $$$$| $$__/    \  $$$$/ | $$  \ $$| $$$$$$$$| $$  \__/  | $$    
+#| $$\  $$    | $$  | $$  | $$| $$\  $$$| $$        >$$  $$ | $$  | $$| $$_____/| $$        | $$ /$$
+#| $$ \  $$   | $$  | $$  | $$| $$ \  $$| $$$$$$$$ /$$/\  $$| $$$$$$$/|  $$$$$$$| $$        |  $$$$/
+#|__/  \__/   |__/  |__/  |__/|__/  \__/|________/|__/  \__/| $$____/  \_______/|__/         \___/  
+#                                                           | $$                                    
+#                                                           | $$                                    
+#                                                           |__/                                    
+
 # Keep Talking and Nobody Explodes Manual "Expert"
 # Created By Reese Ford 07/13/2021
 # https://www.github.com/RicePerson/KTANExpert
 
 
 #Imports
-from doctest import BLANKLINE_MARKER
-from http.client import ResponseNotReady
+from os import system
 import time
 import math
-from tokenize import blank_re
-from urllib.request import proxy_bypass
 
 #Def Vars
 isDoing = True
@@ -21,6 +31,8 @@ batteries = "EMPTY"
 litIndicators = ["EMPTY"]
 parallelPort = "EMPTY"
 
+#Application Window
+system("title "+ "KTANExpert by Reese Ford")
 
 # Module Declarations
 
