@@ -1652,7 +1652,23 @@ def password():
     print("Error. No words possible from inputs. Please try again. Resetting")
     return
 
+#Intro
+print(" ")
+print(" /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$$                                           /$$    ")
+print("| $$  /$$/|__  $$__//$$__  $$| $$$ | $$| $$_____/                                          | $$    ")
+print("| $$ /$$/    | $$  | $$  \ $$| $$$$| $$| $$       /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  ")
+print("| $$$$$/     | $$  | $$$$$$$$| $$ $$ $$| $$$$$   |  $$ /$$/ /$$__  $$ /$$__  $$ /$$__  $$|_  $$_/  ")
+print("| $$  $$     | $$  | $$__  $$| $$  $$$$| $$__/    \  $$$$/ | $$  \ $$| $$$$$$$$| $$  \__/  | $$    ")
+print("| $$\  $$    | $$  | $$  | $$| $$\  $$$| $$        >$$  $$ | $$  | $$| $$_____/| $$        | $$ /$$")
+print("| $$ \  $$   | $$  | $$  | $$| $$ \  $$| $$$$$$$$ /$$/\  $$| $$$$$$$/|  $$$$$$$| $$        |  $$$$/")
+print("|__/  \__/   |__/  |__/  |__/|__/  \__/|________/|__/  \__/| $$____/  \_______/|__/         \___/  ")
+print("                                                           | $$                                    ")
+print("                                                           | $$                                    ")
+print("                                                           |__/                                    ")
+print(" ")
 
+print("KTANExpert by Reese Ford")
+print("For specific instructions, visit https://github.com/RicePerson/KTANExpert#readme")
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
 #Module Loop
