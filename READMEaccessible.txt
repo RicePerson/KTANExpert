@@ -112,7 +112,7 @@ and will light up even if you aren't supposed to hold it, so don't skip ahead. I
 letting go of the button. It will then give you an instruction like `Release when the countdown timer has a 4 in any position`. This just means if there is
 a four on the countdown display, release the button. If not, wait.
 
-### Example
+### Example:
 0) KTANE gives you a blue button with the word detonate on it
 1) The Player selects the Button module with `b`
 2) The Expert asks `What is the color of the button?`
@@ -133,7 +133,7 @@ It does not matter what order you input the key's, only that you enter all four,
 Find the symbol name from the list provided that most-closly matches the symbol in KTANE, and enter it, pressing ENTER after each symbol
 Repeat until provivded a Final List. Enter these in order to complete the module
 
-### Example
+### Example:
 0) The module in KTANE has an omega, ae, trident, and squished 6
 1) The Player selects the keypad module with `k`
 2) The Expert asks for a list of keys
@@ -151,7 +151,7 @@ Enter each flash color IN ORDER with an ENTER between each. Once all colors have
 Click the colored buttons in the given order.
 Repeat until the module is complete. To exit the module on the expert, input `done` at any step.
 
-### Example
+### Example:
 0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing red slowly.
 1) The Player selects the simon says module with `s`
 2) The Expert asks if there is a vowel in the serial number, and then if there are any strikes
@@ -178,7 +178,7 @@ The order goes like this:
 It is imperative that the words are entered in this order, or the module will give you a wrong instruction.
 Also, the display word can sometimes be, well, nothing. The display will be blank. In this case, pretend the word is `*blank*`
 
-### Example
+### Example:
 *0) The KTANE module looks like this:*
 |First|<- Display|
 |-----|----------|
@@ -201,7 +201,7 @@ This is a back-and-forth with the expert, and is fairly straightforward. At ever
 The expert will then output some debug information, alongside an instruction, in the form of `Press the button labeled  #`. Follow this instruction.
 Repeat until the module is complete. If you ever mess up, the KTANE module will reset back to stage one. To reset the expert, input `r` at any step.
 
-### Example
+### Example:
 0) The KTANE module starts with the display being 4 and the buttons being, from left to right, 1 3 2 4
 1) The Player enters the memory module with `m`
 1) The Expert asks for the stage 1 numbers 
@@ -292,7 +292,7 @@ The expert will continues to ask for the letters in each display, until only one
 in which the expert will give you that word after about 2 or 3 displays, but it is able to ask for all five in the case of a particularlly 
 annoying module. 
 
-### Example
+### Example:
 1) The Player enters the passwords module with `p`
 2) The Expert asks for the possible letters in the first display
 2) The Player, after scrolling through the display, sees the letters A, D, O, B, and G

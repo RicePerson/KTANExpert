@@ -136,7 +136,7 @@ It does not matter what order you input the key's, only that you enter all four,
 Find the symbol name from the list provided that most-closly matches the symbol in KTANE, and enter it, pressing ENTER after each symbol
 Repeat until provivded a Final List. Enter these in order to complete the module
 
-### Example
+### Example:
 *0) The module in KTANE has an omega, ae, trident, and squished 6*
 1) The Player:red_circle: selects the keypad module with `k`
 2) The Expert:large_blue_circle: asks for a list of keys
@@ -154,7 +154,7 @@ Enter each flash color IN ORDER with an ENTER between each. Once all colors have
 Click the colored buttons in the given order.
 Repeat until the module is complete. To exit the module on the expert, input `done` at any step.
 
-### Example
+### Example:
 *0) The bomb has a vowel, and is sitting at one strike. The red button is currently flashing red slowly.*
 1) The Player:red_circle: selects the simon says module with `s`
 2) The Expert:large_blue_circle: asks if there is a vowel in the serial number, and then if there are any strikes
@@ -181,7 +181,7 @@ The order goes like this:
 It is imperative that the words are entered in this order, or the module will give you a wrong instruction.
 Also, the display word can sometimes be, well, nothing. The display will be blank. In this case, pretend the word is `*blank*`
 
-### Example
+### Example:
 *0) The KTANE module looks like this:*
 |**First**|*<- Display*|
 |--- | ---|
@@ -204,7 +204,7 @@ This is a back-and-forth with the expert:large_blue_circle:, and is fairly strai
 The expert:large_blue_circle: will then output some debug information, alongside an instruction, in the form of `Press the button labeled  #`. Follow this instruction.
 Repeat until the module is complete. If you ever mess up, the KTANE module will reset back to stage one. To reset the expert:large_blue_circle:, input `r` at any step.
 
-### Example
+### Example:
 *0) The KTANE module starts with the display being 4 and the buttons being, from left to right, 1 3 2 4*
 1) The Player:red_circle: enters the memory module with `m`
 1) The Expert:large_blue_circle: asks for the stage 1 numbers 
@@ -279,7 +279,7 @@ For each wire, there is a color>endpoint code, with each wire seperated by a `;`
 ## Passwords `p`
 This module consists of 5 displays, each with varying letters. The letters for each display can be cycled with the up and down arrows. In the regular manual, there is a list of words. Using the provided letters in the moddule, one of these words can be "typed" into the module. Thankfully, the expert can do all of that for you. After entering the module, the expert asks for all of the provided letters in the first column. Enter these letters with no seperation. The order does not matter, just that you enter ALL of the letters in a given display. The expert will continues to ask for the letters in each display, until only one word from the list can be made, in which the expert will give you that word after about 2 or 3 displays, but it is able to ask for all five in the case of a particularlly annoying module. 
 
-### Example
+### Example:
 1) The Player:red_circle: enters the passwords module with `p`
 2) The Expert:large_blue_circle: asks for the possible letters in the first display
 2) The Player:red_circle:, after scrolling through the display, sees the letters A, D, O, B, and G
