@@ -27,6 +27,7 @@ It's not done yet. As of right now, it only does:
 * Morse-Code
 * Complicated Wires
 * Wire Sequences
+* Passwords
 
 (For more information on modules, visit bombmanual.com)
 
