@@ -1,3 +1,6 @@
+<!-- If you can read this, that means the text viewer that you are using does not support MarkDown. For the most accessible view of these instructions, check out READMEaccessable.txt-->
+
+
 ```
  /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$$                                           /$$    
 | $$  /$$/|__  $$__//$$__  $$| $$$ | $$| $$_____/                                          | $$    
@@ -42,7 +45,7 @@ Anything that would be typed into the command window or is received from the com
 ### Glossary
 There are some words used in these instructions that may mean something other than what common sense would infer. Here is what those words mean.
 - **KTANE Module:** A module on the bomb in Keep Talking and Nobody Explodes
-- **Expert:large_blue_circle::** The program this README accompanies
+- **The Expert:large_blue_circle::** The program this README accompanies
 - **Player:red_circle::** You!
 - **Repeat:** Some modules require that you do the module a few times, each with differing details. Each time you do the module is a Repeat
 - **Command Window:** The window that you enter inputs into
