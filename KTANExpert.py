@@ -18,6 +18,7 @@
 
 #Imports
 from os import system
+import os
 import time
 import math
 
@@ -1672,6 +1673,7 @@ print("For specific instructions, visit https://github.com/RicePerson/KTANExpert
 print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
 #Module Loop
+os.startfile("needymodules.py")
 while isDoing == True:
     #checking which module you are currently working on
     print(" ")
