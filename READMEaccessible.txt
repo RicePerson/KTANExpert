@@ -304,3 +304,32 @@ annoying module.
 8) The Expert tells the player to input the word `about` into the module
 9) The Player scrolls through the displays until ABOUT appears, and presses SUBMIT
 10) *Module Complete, move on to the next one.*
+
+# Needy Modules
+Later in KTANE, there are modules that must be attended to regularly and in a timely manner. These are the Needy Modules (can you guess why)
+There a 3 needy modules currently in the game. These are Venting Gas, Capacitor Discharge, and Knobs
+Both Venting Gas and Capacitor Discharge do not require any input from the Expert, and are very simple to complete:
+
+*Venting Gas: Follow the prompts on the screen with the express purpose of venting gas
+*Cap Discharge: Pump the lever to keep the power meter from reaching the top. If it reaches the top, the cap will explode and you will recieve a strike
+
+## Knobs
+Knobs is a bit more complicated.
+The knobs needy module consists of 12 leds and a knob with 4 possible positions.
+Depending on which leds are lit, and the possition of the "UP", you will move the arrow to the appropriate position.
+Unlike most of the other modules, there is no "OKAY" or "SUBMIT" button, rather, the module submits your answer at the end of its little timer.
+When you launch KTANExpert.py, two windows will open (or one and a program selector from Windows). One of the windows, titled "KTANExpert by Reese Ford" is the regular module expert
+The window titled "NeedyModule Sub-Expert" is the sub-expert that handles the needy modules. These were split up so that you can jump back and forth between regular and needy modules.
+Because knobs is the only needy module requiring input, the Sub-Expert automatically selects it. 
+To use this module, enter the leds in binary form from topleft across to topright, then bottomleft across to bottomright without any seperators.
+Then the module will ask for the position of the "UP" in cardinal directions. If you happen to live under a rock, North is the top with East South and West going around counter-clockwise.
+Once you enter the position of "UP", the module will tell you what position to put the arrow in. For this, IGNORE THE UP. Inputting the "UP" position allows the module to compensate. Just pretend the up isn't even there when moving the arrow to the given position
+
+### Example:
+0) After doing one module, KTANE lights up the Knobs needy module with only 3 leds lit, and the "UP" on the bottom of the dial
+1) The Player enters `000010000110` into the Sub-Expert
+2) The Sub-Expert asks for the position of "UP"
+3) The Player enters `south`
+4) The Sub-Expert tells the player to `Turn the knob to the east position`
+5) The Player moves the arrow until it is facing left and continues on with whatever regular module they were working on.
+6) The Knobs module starts beeping with 3 seconds left, and then stops beeping, because the arrow was in the correct location at the end of the timer.
