@@ -33,6 +33,10 @@ It's not done yet. As of right now, it only does:
 
 # TO INSTALL:
 Download the KTANExpert folder and run KTANExpert.py
+Two windows will open, one titled **KTANExpert by Reese Ford**
+And one titled **NeedyModule Sub-Expert**
+The KTANExpert handles regular modules, while the Sub-Expert handles needy modules
+Needy Modules have little timers at the top of them, and are covered at the bottom of this ReadMe, or at [This page](https://github.com/RicePerson/KTANExpert/wiki/Needy-Modules)
 
 
 # Module Instructions
