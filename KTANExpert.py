@@ -1330,6 +1330,11 @@ def compWires():
     starList = "EMPTY"
 
     # Input Logic
+    ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    if ledList == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        ledList = "EMPTY"
+        return
     blueList = str(input("What wires have blue coloring? (as a binary list): "))
     if blueList == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
@@ -1339,11 +1344,6 @@ def compWires():
     if redList == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
         redlist = "EMPTY"
-        return
-    ledList = str(input("What wires have an LED above them? (as a binary list): "))
-    if ledList == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
-        ledList = "EMPTY"
         return
     starList = str(input("What wires have a star beneath them? (as a binary list): "))
     if starList == "...": # Exit Command
