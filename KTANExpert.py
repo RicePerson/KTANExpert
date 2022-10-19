@@ -1592,7 +1592,7 @@ def wireSeq():
                                 else:
                                     print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
                     case("_"): #Blank Slot
-                        print("Wire " + str(wCount)+") No wire, ignore")
+                        print("Wire " + str(wCount)+": No wire, ignore")
             dCount += 1
         print(" ")
 
