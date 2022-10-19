@@ -17,7 +17,7 @@
 
 # KTANExpert
 A Python BombManual Expert for the game, **Keep Talking and Nobody Explodes**
-It's not done yet. As of right now, it only does:
+As of 10/19/2022, the expert can process these modules:
 * Wires
 * Button
 * Keypad
@@ -28,6 +28,9 @@ It's not done yet. As of right now, it only does:
 * Complicated Wires
 * Wire Sequences
 * Passwords
+* Needy: Knobs
+
+(Due to a limitation in my knowledge of Python, this expert cannot process Mazes)
 
 (For more information on modules, visit bombmanual.com)
 
