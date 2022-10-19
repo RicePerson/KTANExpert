@@ -925,6 +925,7 @@ def whofirst():
                 if str(input("Is the module complete? (y/n): ")) == "y":
                     return
                 else:
+                    print(" ")
                     break
 
         # If none of them match...
