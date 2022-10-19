@@ -411,6 +411,17 @@ def keypad():
         userKeys = "EMPTY"
         return
     userKeys = userKeys.split(";")
+    for k in userKeys:
+        if k in keys:
+            pass
+        else:
+            print("Error. Incorrect Key Detected. Resetting")
+            userKeys = "EMPTY"
+            return
+    if len(userKeys) != 4:
+        print("Error. Incorrect Number of Keys")
+        userKeys = "EMPTY"
+        return
 
     #Logic
     answerColumn = []
