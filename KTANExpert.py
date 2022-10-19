@@ -21,6 +21,7 @@ from os import system
 import os
 import time
 import math
+from typing import final
 
 #Def Vars
 isDoing = True
@@ -31,6 +32,7 @@ serialNum = "EMPTY"
 batteries = "EMPTY"
 litIndicators = ["EMPTY"]
 parallelPort = "EMPTY"
+vowel = "EMPTY"
 
 #Application Window
 system("title "+ "KTANExpert by Reese Ford")
@@ -455,51 +457,34 @@ def simon():
                 strikes = "EMPTY"
                 return
             while strikes == "0":
-                user = []
+                user = "EMPTY"
+                flashSeq = []
                 finalSimon = []
                 flash = 1
                 print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
                 
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("blu")
-                    elif i == "blu":
-                        finalSimon.append("r")
-                    elif i == "g":
-                        finalSimon.append("y")
-                    elif i == "y":
-                        finalSimon.append("g")
-                    elif i == "end":
+                inputSuccess = False
+                user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g): "))
+                match user:
+                    case("r"): 
+                        flashSeq.append("r")
+                        inputSuccess = True
+                    case("blu"): 
+                        flashSeq.append("blu")
+                        inputSuccess = True
+                    case("y"): 
+                        flashSeq.append("y")
+                        inputSuccess = True
+                    case("g"): 
+                        flashSeq.append("g")
+                        inputSuccess = True
+                    case other: 
+                        print("Error. Invalid color. Please try again")
+                        inputSuccess = False
                         pass
-                    else:
-                        print("How?")
-                        return
+                    
+                for i in flashSeq:
+                    case("r")
                 print(" ")
                 #print("Input: " + str(finalSimon))
                 print("Click these buttons in order:")
@@ -809,7 +794,142 @@ def simon():
                 print(" ")
 
     print("Error. You input incorrectly. Please try again")
-    return
+    return #Pre Issue 80
+def newnewSimon():
+    flash = 1
+    flashSeq = []
+    global vowel
+    strikes = "EMPTY"
+
+    if vowel == "EMPTY":
+        vowel = str(input("Is there a vowel in the serial number? (y/n): "))
+        match vowel:
+            case("y"): vowel = True
+            case("n"): vowel = False
+            case("..."):
+                print("Exit Command Detected. Exiting")
+                return
+            case other:
+                print("Error. Incorrect response. Resetting")
+                vowel = "EMPTY"
+                return
+    
+    strikes = str(input("How many strikes are currently on the bomb? (0/1/2): "))
+    match strikes:
+        case("0"):strikes = 0
+        case("1"):strikes = 1
+        case("2"):strikes = 2
+        case("..."):
+            print("Exit Command Detected. Exiting")
+            return
+        case other:
+            print("Error. Incorrect number of strikes detected. Resetting")
+            strikes = "EMPTY"
+            return
+
+
+    while True:
+        finalSimon = []
+        inputSuccess = False
+        user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g/done): "))
+        match user:
+            case("r"): 
+                flashSeq.append("r")
+                inputSuccess = True
+            case("blu"): 
+                flashSeq.append("blu")
+                inputSuccess = True
+            case("y"): 
+                flashSeq.append("y")
+                inputSuccess = True
+            case("g"): 
+                flashSeq.append("g")
+                inputSuccess = True
+            case("..."):
+                print("Exit Command Detected. Exitting")
+                return
+            case("done"):
+                return
+            case other: 
+                print("Error. Invalid color. Please try again")
+                inputSuccess = False
+                pass
+
+        if inputSuccess == True:
+            for f in flashSeq:
+                if vowel == True:
+                    match strikes:
+                        case 0: 
+                            match f: #Vowel, No Strikes
+                                case("r"):finalSimon.append("blu")
+                                case("blu"):finalSimon.append("r")
+                                case("g"):finalSimon.append("y")
+                                case("y"):finalSimon.append("g")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 1:
+                            match f: #Vowel, One Strike
+                                case("r"):finalSimon.append("y")
+                                case("blu"):finalSimon.append("g")
+                                case("g"):finalSimon.append("blu")
+                                case("y"):finalSimon.append("r")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 2:
+                            match f: #Vowel, Two Strikes
+                                case("r"):finalSimon.append("g")
+                                case("blu"):finalSimon.append("r")
+                                case("g"):finalSimon.append("y")
+                                case("y"):finalSimon.append("blu")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                elif vowel == False:
+                    match strikes:
+                        case 0: 
+                            match f: #No Vowel, No Strikes
+                                case("r"):finalSimon.append("blu")
+                                case("blu"):finalSimon.append("y")
+                                case("g"):finalSimon.append("g")
+                                case("y"):finalSimon.append("r")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 1:
+                            match f: #No Vowel, One Strike
+                                case("r"):finalSimon.append("r")
+                                case("blu"):finalSimon.append("blu")
+                                case("g"):finalSimon.append("y")
+                                case("y"):finalSimon.append("g")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 2:
+                            match f: #No Vowel, Two Strikes
+                                case("r"):finalSimon.append("y")
+                                case("blu"):finalSimon.append("g")
+                                case("g"):finalSimon.append("blu")
+                                case("y"):finalSimon.append("r")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+
+        print(" ")
+        print("Click these buttons in order: ")
+        for s in finalSimon:
+            match s:
+                case("r"):print("Red")
+                case("blu"):print("Blue")
+                case("y"):print("Yellow")
+                case("g"):print("Green")
+                case other:
+                    print("Something went wrong. Resetting")
+                    return
+        print(" ")
+        flash = flash + 1
+
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():
@@ -1680,7 +1800,7 @@ while isDoing == True:
         keypad()
     elif module == "s":
         print(" ")
-        simon()
+        newnewSimon()
     elif module == "who":
         print(" ")
         whofirst()
