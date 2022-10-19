@@ -966,8 +966,6 @@ def memory():
         else:
             print("Error. Incorrect numbers. Resetting")
             return
-    print("Inputed Display: " + str(stage1[0]))
-    print("Inputed Numbers: " + str(stage1[1:5]))
 
     #Logic: Stage 1
     print(" ")
@@ -1007,8 +1005,6 @@ def memory():
         else:
             print("Error. Incorrect numbers. Resetting")
             return
-    print("Inputed Display: " + str(stage2[0]))
-    print("Inputed Numbers: " + str(stage2[1:5]))
 
 
     #Logic Stage2
@@ -1050,8 +1046,6 @@ def memory():
         else:
             print("Error. Incorrect numbers. Resetting")
             return
-    print("Inputed Display: " + str(stage3[0]))
-    print("Inputed Numbers: " + str(stage3[1:5]))
 
 
     #Logic: Stage 3
@@ -1095,8 +1089,6 @@ def memory():
         else:
             print("Error. Incorrect numbers. Resetting")
             return
-    print("Inputed Display: " + str(stage4[0]))
-    print("Inputed Numbers: " + str(stage4[1:5]))
 
 
     #Logic: Stage 4
@@ -1137,8 +1129,6 @@ def memory():
         else:
             print("Error. Incorrect numbers. Resetting")
             return
-    print("Inputed Display: " + str(stage5[0]))
-    print("Inputed Numbers: " + str(stage5[1:5]))
 
 
     #Logic: Stage 5
