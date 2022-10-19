@@ -959,10 +959,10 @@ def memory():
     if stage1un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage1 = stage1un.split(";")
+    stage1 = [x for x in stage1un]
     for i in range(len(stage1)):
-        stage1[i] = int(stage1[i])
-        if stage1[i] in (1, 2, 3, 4):
+        if stage1[i] in ["1","2","3","4"]:
+            stage1[i]=int(stage1[i])
             pass
         else:
             print("Error. Incorrect numbers. Resetting")
@@ -998,10 +998,10 @@ def memory():
     if stage2un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage2 = stage2un.split(";")
+    stage2 = [x for x in stage2un]
     for i in range(len(stage2)):
-        stage2[i] = int(stage2[i])
-        if stage2[i] in (1, 2, 3, 4):
+        if stage2[i] in ["1","2","3","4"]:
+            stage2[i]=int(stage2[i])
             pass
         else:
             print("Error. Incorrect numbers. Resetting")
@@ -1039,10 +1039,10 @@ def memory():
     if stage3un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage3 = stage3un.split(";")
+    stage3 = [x for x in stage3un]
     for i in range(len(stage3)):
-        stage3[i] = int(stage3[i])
-        if stage3[i] in (1, 2, 3, 4):
+        if stage3[i] in ["1","2","3","4"]:
+            stage3[i]=int(stage3[i])
             pass
         else:
             print("Error. Incorrect numbers. Resetting")
@@ -1082,10 +1082,10 @@ def memory():
     if stage4un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage4 = stage4un.split(";")
+    stage4 = [x for x in stage4un]
     for i in range(len(stage4)):
-        stage4[i] = int(stage4[i])
-        if stage4[i] in (1, 2, 3, 4):
+        if stage4[i] in ["1","2","3","4"]:
+            stage4[i]=int(stage4[i])
             pass
         else:
             print("Error. Incorrect numbers. Resetting")
@@ -1122,10 +1122,10 @@ def memory():
     if stage5un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage5 = stage5un.split(";")
+    stage5 = [x for x in stage5un]
     for i in range(len(stage5)):
-        stage5[i] = int(stage5[i])
-        if stage5[i] in (1, 2, 3, 4):
+        if stage5[i] in ["1","2","3","4"]:
+            stage5[i]=int(stage5[i])
             pass
         else:
             print("Error. Incorrect numbers. Resetting")
