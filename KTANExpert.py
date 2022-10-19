@@ -794,7 +794,8 @@ def simon():
                 print(" ")
 
     print("Error. You input incorrectly. Please try again")
-    return #Pre Issue 80
+    return #Pre Issue 80 / Not used anymore
+
 def newnewSimon():
     flash = 1
     flashSeq = []
