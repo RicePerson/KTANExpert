@@ -1001,21 +1001,13 @@ def whofirst():
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
 def memory():
     #Def Vars
-    stage1un = "EMPTY"
-    stage1 = "EMPTY"
-    stage2un = "EMPTY"
-    stage2 = "EMPTY"
-    stage3un = "EMPTY"
-    stage3 = "EMPTY"
-    stage4un = "EMPTY"
-    stage4 = "EMPTY"
-    stage5un = "EMPTY"
-    stage5 = "EMPTY"
     positions = []
     numbers = []
     print("Input the numbers starting with Display, and then left to right, seperated by spaces")
 
     #Def Vars: Stage 1 - Settings Lists
+    stage1un = "EMPTY"
+    stage1 = "EMPTY"
     stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
     if stage1un == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
@@ -1055,171 +1047,194 @@ def memory():
 
 
     #Def Vars: Stage2 - Settings Lists
-    stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
-    if stage2un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage2complete = False
+    while stage2complete == False:
         stage2un = "EMPTY"
-        return
-    if stage2un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage2 = [x for x in stage2un]
-    for i in range(len(stage2)):
-        if stage2[i] in ["1","2","3","4"]:
-            stage2[i]=int(stage2[i])
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage2 = "EMPTY"
+        stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
+        if stage2un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage2un = "EMPTY"
             return
+        if stage2un == "r":
+            print("Reset detected. Resetting expert...")
+            return
+        stage2 = [x for x in stage2un]
+        for i in range(len(stage2)):
+            if stage2[i] in ["1","2","3","4"]:
+                stage2[i]=int(stage2[i])
+                pass
+            else:
+                print("Error. Incorrect numbers. Please Try Again")
 
 
-    #Logic Stage2
-    print(" ")
-    if stage2[0] == 1:
-        print("Press the button labeled 4")
-        index = stage2.index(4, 1, 5)
-        positions.append(index)
-        numbers.append(4)
-    elif stage2[0] == 2:
-        print("Press the button labeled " + str(stage2[positions[0]]))
-        positions.append(positions[0])
-        numbers.append(stage2[positions[0]])
-    elif stage2[0] == 3:
-        print("Press the button labeled " + str(stage2[1]))
-        positions.append(1)
-        numbers.append(stage2[1])
-    elif stage2[0] == 4:
-        print("Press the button labeled " + str(stage2[positions[0]]))
-        positions.append(positions[0])
-        numbers.append(stage2[positions[0]])
-    print(" ")
+        #Logic Stage2
+        print(" ")
+        if stage2[0] == 1:
+            print("Press the button labeled 4")
+            index = stage2.index(4, 1, 5)
+            positions.append(index)
+            numbers.append(4)
+            stage2complete = True
+        elif stage2[0] == 2:
+            print("Press the button labeled " + str(stage2[positions[0]]))
+            positions.append(positions[0])
+            numbers.append(stage2[positions[0]])
+            stage2complete = True
+        elif stage2[0] == 3:
+            print("Press the button labeled " + str(stage2[1]))
+            positions.append(1)
+            numbers.append(stage2[1])
+            stage2complete = True
+        elif stage2[0] == 4:
+            print("Press the button labeled " + str(stage2[positions[0]]))
+            positions.append(positions[0])
+            numbers.append(stage2[positions[0]])
+            stage2complete = True
+        print(" ")
 
 
     #Def Vars: Stage 3 - Settings Lists
-    stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
-    if stage3un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage3complete = False
+    while stage3complete == False:
         stage3un = "EMPTY"
-        return
-    if stage3un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage3 = [x for x in stage3un]
-    for i in range(len(stage3)):
-        if stage3[i] in ["1","2","3","4"]:
-            stage3[i]=int(stage3[i])
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage3 = "EMPTY"
+        stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
+        if stage3un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage3un = "EMPTY"
             return
+        if stage3un == "r":
+            print("Reset detected. Resetting expert...")
+            return
+        stage3 = [x for x in stage3un]
+        for i in range(len(stage3)):
+            if stage3[i] in ["1","2","3","4"]:
+                stage3[i]=int(stage3[i])
+                pass
+            else:
+                print("Error. Incorrect numbers. Resetting")
+                return
 
 
-    #Logic: Stage 3
-    print(" ")
-    if stage3[0] == 1:
-        print("Press the button labeled " + str(numbers[1]))
-        index = stage3.index(numbers[1])
-        positions.append(index)
-        numbers.append(numbers[1])
-    elif stage3[0] == 2:
-        print("Press the button labeled " + str(numbers[0]))
-        index = stage3.index(numbers[0])
-        positions.append(index)
-        numbers.append(numbers[0])
-    elif stage3[0] == 3:
-        print("Press the button labeled " + str(stage3[3]))
-        positions.append(3)
-        numbers.append(stage3[3])
-    elif stage3[0] == 4:
-        print("Press the button labeled 4")
-        index = stage3.index(4, 1, 5)
-        positions.append(index)
-        numbers.append(4)
-    print(" ")
+        #Logic: Stage 3
+        print(" ")
+        if stage3[0] == 1:
+            print("Press the button labeled " + str(numbers[1]))
+            index = stage3.index(numbers[1])
+            positions.append(index)
+            numbers.append(numbers[1])
+            stage3complete = True
+        elif stage3[0] == 2:
+            print("Press the button labeled " + str(numbers[0]))
+            index = stage3.index(numbers[0])
+            positions.append(index)
+            numbers.append(numbers[0])
+            stage3complete = True
+        elif stage3[0] == 3:
+            print("Press the button labeled " + str(stage3[3]))
+            positions.append(3)
+            numbers.append(stage3[3])
+            stage3complete = True
+        elif stage3[0] == 4:
+            print("Press the button labeled 4")
+            index = stage3.index(4, 1, 5)
+            positions.append(index)
+            numbers.append(4)
+            stage3complete = True
+        print(" ")
 
 
     #Def Vars: Stage 4 - Settings Lists
-    stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
-    if stage4un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage4complete = False
+    while stage4complete == False:
         stage4un = "EMPTY"
-        return
-    if stage4un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage4 = [x for x in stage4un]
-    for i in range(len(stage4)):
-        if stage4[i] in ["1","2","3","4"]:
-            stage4[i]=int(stage4[i])
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage4 = "EMPTY"
+        stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
+        if stage4un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage4un = "EMPTY"
             return
+        if stage4un == "r":
+            print("Reset detected. Resetting expert...")
+            return
+        stage4 = [x for x in stage4un]
+        for i in range(len(stage4)):
+            if stage4[i] in ["1","2","3","4"]:
+                stage4[i]=int(stage4[i])
+                pass
+            else:
+                print("Error. Incorrect numbers. Resetting")
+                return
 
 
-    #Logic: Stage 4
-    print(" ")
-    if stage4[0] == 1:
-        print("Press the button labeled " + str(stage4[positions[0]]))
-        positions.append(positions[0])
-        numbers.append(stage4[positions[0]])
-    elif stage4[0] == 2:
-        print("Press the button labeled " + str(stage4[1]))
-        positions.append(1)
-        numbers.append(stage4[1])
-    elif stage4[0] == 3:
-        print("Press the button labeled " + str(stage4[positions[1]]))
-        positions.append(positions[1])
-        numbers.append(stage4[positions[1]])
-    elif stage4[0] == 4:
-        print("Press the button labeled " + str(stage4[positions[1]]))
-        positions.append(positions[1])
-        numbers.append(stage4[positions[1]])
-    print(" ")
+        #Logic: Stage 4
+        print(" ")
+        if stage4[0] == 1:
+            print("Press the button labeled " + str(stage4[positions[0]]))
+            positions.append(positions[0])
+            numbers.append(stage4[positions[0]])
+        elif stage4[0] == 2:
+            print("Press the button labeled " + str(stage4[1]))
+            positions.append(1)
+            numbers.append(stage4[1])
+        elif stage4[0] == 3:
+            print("Press the button labeled " + str(stage4[positions[1]]))
+            positions.append(positions[1])
+            numbers.append(stage4[positions[1]])
+        elif stage4[0] == 4:
+            print("Press the button labeled " + str(stage4[positions[1]]))
+            positions.append(positions[1])
+            numbers.append(stage4[positions[1]])
+        print(" ")
 
 
     #Def Vars: Stage 5 - Settings Lists
-    stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
-    if stage5un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage5complete = False
+    while stage5complete == False:
         stage5un = "EMPTY"
-        return
-    if stage5un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage5 = [x for x in stage5un]
-    for i in range(len(stage5)):
-        if stage5[i] in ["1","2","3","4"]:
-            stage5[i]=int(stage5[i])
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage5 = "EMPTY"
+        stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
+        if stage5un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage5un = "EMPTY"
             return
+        if stage5un == "r":
+            print("Reset detected. Resetting expert...")
+            return
+        stage5 = [x for x in stage5un]
+        for i in range(len(stage5)):
+            if stage5[i] in ["1","2","3","4"]:
+                stage5[i]=int(stage5[i])
+                pass
+            else:
+                print("Error. Incorrect numbers. Resetting")
+                return
 
 
-    #Logic: Stage 5
-    print(" ")
-    if stage5[0] == 1:
-        print("Press the button labeled " + str(numbers[0]))
-        index = stage5.index(numbers[0])
-        positions.append(index)
-        numbers.append(numbers[0])
-    elif stage5[0] == 2:
-        print("Press the button labeled " + str(numbers[1]))
-        index = stage5.index(numbers[1])
-        positions.append(index)
-        numbers.append(numbers[1])
-    elif stage5[0] == 3:
-        print("Press the button labeled " + str(numbers[3]))
-        index = stage5.index(numbers[3])
-        positions.append(index)
-        numbers.append(numbers[3])
-    elif stage5[0] == 4:
-        print("Press the button labeled " + str(numbers[2]))
-        index = stage5.index(numbers[2])
-        positions.append(index)
-        numbers.append(numbers[2])
-    print(" ")
+        #Logic: Stage 5
+        print(" ")
+        if stage5[0] == 1:
+            print("Press the button labeled " + str(numbers[0]))
+            index = stage5.index(numbers[0])
+            positions.append(index)
+            numbers.append(numbers[0])
+        elif stage5[0] == 2:
+            print("Press the button labeled " + str(numbers[1]))
+            index = stage5.index(numbers[1])
+            positions.append(index)
+            numbers.append(numbers[1])
+        elif stage5[0] == 3:
+            print("Press the button labeled " + str(numbers[3]))
+            index = stage5.index(numbers[3])
+            positions.append(index)
+            numbers.append(numbers[3])
+        elif stage5[0] == 4:
+            print("Press the button labeled " + str(numbers[2]))
+            index = stage5.index(numbers[2])
+            positions.append(index)
+            numbers.append(numbers[2])
+        print(" ")
 
 #The Morse -> Letter
 def morseToAlpha(input):
