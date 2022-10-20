@@ -17,13 +17,10 @@
 
 
 #Imports
-from ast import Pass
 from os import system
 import os
 import time
 import math
-from typing import final
-from urllib.request import proxy_bypass
 
 #Def Vars
 isDoing = True
@@ -43,7 +40,138 @@ system("title "+ "KTANExpert by Reese Ford")
 
 #Wires (inputx7(8) -> output)
 def wires():
-    
+    #Def Vars
+    global serialNum
+    wireList = []
+    instruction = "EMPTY"
+
+    number = str(input("How many wires do you have? (3/4/5/6): "))
+    if number == "...":
+        print("Exit Command Detected. Exitting")
+        return
+    if number not in ["3","4","5","6"]:
+        print("Error. Invalid number. Resetting")
+        return
+    else:
+        number = int(number)
+
+    #Assigning Wires
+    wireList = str(input("What are the " + str(number) + " wire colors from top to bottom? (w/y/r/blu/bla): "))
+    if wireList == "...":
+        print("Exit Command Detected. Exitting")
+        return
+    wireList = wireList.split(";")
+    if len(wireList) != number:
+        print("Error. Invalid number of wires. Resetting")
+        return
+
+    for c in wireList:
+        if c not in ["w","y","r","blu","bla"]:
+            print("Error. Invalid color. Resetting")
+            return
+
+    #Logic - 3 Wires
+    if number == 3:
+        if "r" not in wireList:
+            instruction = "cutwire2"
+        elif wireList[number-1] == "w":
+            instruction = "cutwirelast"
+        elif wireList.count("blu") > 1:
+            instruction = "cutwirelastblue"
+        else:
+            instruction = "cutwirelast"
+
+    #Logic - 4 Wires
+    elif number == 4:
+        if wireList.count("r") > 1 and (serialNum == "EMPTY" or serialNum%2 == 1):
+            if serialNum == "EMPTY":
+                serialNum = str(input("What is the last digit of the serial number?: "))
+                if serialNum not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    print("Error. Invalid serial num. Resetting")
+                    return
+                else:
+                    serialNum = int(serialNum)
+            if serialNum%2 == 1:
+                instruction = "cutwirelastred"
+        if instruction == "EMPTY" and wireList[number-1] == "y" and wireList.count("r") == 0:
+            instruction = "cutwirefirst"
+        if instruction == "EMPTY" and wireList.count("blu") == 1:
+            instruction = "cutwirefirst"
+        if instruction == "EMPTY" and wireList.count("y") > 1:
+            instruction = "cutwirelast"
+        if instruction == "EMPTY":
+            instruction = "cutwiresecond"
+
+    #Logic - 5 Wires
+    elif number == 5:
+        if wireList[number-1] == "bla" and (serialNum == "EMPTY" or serialNum%2 == 1):
+            if serialNum == "EMPTY":
+                serialNum = str(input("What is the last digit of the serial number?: "))
+                if serialNum not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    print("Error. Invalid serial num. Resetting")
+                    return
+                else:
+                    serialNum = int(serialNum)
+            if serialNum%2 == 1:
+                instruction = "cutwirefourth"
+        elif instruction == "EMPTY" and wireList.count("r") == 1 and wireList.count("y") > 1:
+            instruction = "cutwirefirst"
+        elif instruction == "EMPTY" and wireList.count("bla") == 0:
+            instruction = "cutwiresecond"
+        elif instruction == "EMPTY":
+            instruction = "cutwirefirst"
+
+    #Logic - 6 Wires
+    elif number == 6:
+        if wireList.count("y") == 0 and (serialNum == "EMPTY" or serialNum%2 == 1):
+            if serialNum == "EMPTY":
+                serialNum = str(input("What is the last digit of the serial number?: "))
+                if serialNum not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    print("Error. Invalid serial num. Resetting")
+                    return
+                else:
+                    serialNum = int(serialNum)
+            if serialNum%2 == 1:
+                instruction = "cutwirefirst"
+        elif instruction == "EMPTY" and wireList.count("y") == 1 and wireList.count("w") > 1:
+            instruction = "cutwirefourth"
+        elif instruction == "EMPTY" and wireList.count("r") == 0:
+            instruction = "cutwirelast"
+        elif instruction == "EMPTY":
+            instruction = "cutwirefourth"
+
+    else:
+        print("Something went wrong with the wire logic. Please try again")
+        return
+
+    #Instruction Output
+    print(" ")
+    match instruction:
+        case("cutwirefirst"):
+            print("Cut the first wire")
+            return
+        case("cutwiresecond"):
+            print("Cut the second wire")
+            return
+        case("cutwirethird"):
+            print("Cut the third wire")
+            return
+        case("cutwirefourth"):
+            print("Cut the fourth wire")
+            return
+        case("cutwirelastblue"):
+            print("Cut the last BLUE wire")
+            return
+        case("cutwirelastred"):
+            print("Cut the last RED wire")
+            return
+        case("cutwirelast"):
+            print("Cut the last wire")
+            return
+        case other:
+            print("Something went wrong. Please try again")
+            return
+
 #Button (inputs various -> output)
 def button():
     # Vars
