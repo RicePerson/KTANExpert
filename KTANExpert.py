@@ -17,11 +17,13 @@
 
 
 #Imports
+from ast import Pass
 from os import system
 import os
 import time
 import math
 from typing import final
+from urllib.request import proxy_bypass
 
 #Def Vars
 isDoing = True
@@ -1640,20 +1642,44 @@ def wireSeq():
     blaOcc = 0
     for i in range(0,4):
         #Def Vars
-        wiresList = []
-        wires = []
-        wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
-        if wireUn == "...": # Exit Command
-            print("Exit Command Detected. Exiting...")
-            wireUn = "EMPTY"
-            return
-        wiresList = wireUn.split(";")
-        uCount = 0
-        for u in wiresList: #Reformatting Blanks so that the Logic doesn't explode
-            if u == "blank":
-                wiresList[uCount] = "_>_"
-            uCount += 1
+        inputSuccess = [False, False]
+        while False in inputSuccess:
+            wiresList = []
+            wires = []
+            wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
+            if wireUn == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                wireUn = "EMPTY"
+                return
+            wiresList = wireUn.split(";")
 
+            if len(wiresList) != 3: #Testing length
+                print("Error. Invalid number of inputs. Try Again")
+                print(" ")
+                continue
+
+            for u in wiresList: #Testing each "color>endpoint"
+                testList = []
+                if u == "blank":
+                    continue
+                testList = u.split(">")
+
+                match testList[0]: #Testing color
+                    case("r"): inputSuccess[0] = True
+                    case("blu"): inputSuccess[0] = True
+                    case("bla"): inputSuccess[0] = True
+                    case other:
+                        print("Error. Invalid color detected. Try again")
+                        print(" ")
+                match testList[1]: #Testing Endpoint
+                    case("A"): inputSuccess[1] = True
+                    case("B"): inputSuccess[1] = True
+                    case("C"): inputSuccess[1] = True
+                    case other:
+                        print("Error. Incorrect Endpoint Detected. Try again")
+                        print(" ")
+
+        wiresList[wiresList.index("blank")] = "_>_"
         # Splits the wiresList into individual details. 0,2,4 are colors and 1,3,5 are endpoints
         for w in wiresList:
             wires.append(w.split(">")[0])
