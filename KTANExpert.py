@@ -1003,7 +1003,7 @@ def memory():
     #Def Vars
     positions = []
     numbers = []
-    print("Input the numbers starting with Display, and then left to right, seperated by spaces")
+    print("Input the numbers starting with Display, and then left to right")
 
     #Def Vars: Stage 1 - Settings Lists
     stage1un = "EMPTY"
@@ -1022,8 +1022,7 @@ def memory():
             stage1[i]=int(stage1[i])
             pass
         else:
-            print("Error. Incorrect numbers. Resetting")
-            return
+            print("Error. Incorrect numbers. Please Try Again")
 
     #Logic: Stage 1
     print(" ")
@@ -1113,8 +1112,7 @@ def memory():
                 stage3[i]=int(stage3[i])
                 pass
             else:
-                print("Error. Incorrect numbers. Resetting")
-                return
+                print("Error. Incorrect numbers. Please Try Again")
 
 
         #Logic: Stage 3
@@ -1164,8 +1162,7 @@ def memory():
                 stage4[i]=int(stage4[i])
                 pass
             else:
-                print("Error. Incorrect numbers. Resetting")
-                return
+                print("Error. Incorrect numbers. Please Try Again")
 
 
         #Logic: Stage 4
@@ -1208,8 +1205,7 @@ def memory():
                 stage5[i]=int(stage5[i])
                 pass
             else:
-                print("Error. Incorrect numbers. Resetting")
-                return
+                print("Error. Incorrect numbers. Please Try Again")
 
 
         #Logic: Stage 5
