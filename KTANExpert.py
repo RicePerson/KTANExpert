@@ -1642,8 +1642,9 @@ def wireSeq():
     blaOcc = 0
     for i in range(0,4):
         #Def Vars
-        inputSuccess = [False, False]
-        while False in inputSuccess:
+        inputSuccess = [False, False, False]
+        while (False in inputSuccess):
+            inputSuccess = [False, False, False]
             wiresList = []
             wires = []
             wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
@@ -1658,26 +1659,36 @@ def wireSeq():
                 print(" ")
                 continue
 
-            for u in wiresList: #Testing each "color>endpoint"
+            uCount = -1
+            for u in wiresList: #Testing each "color>endpoint"S
+                uCount = uCount + 1
+
                 testList = []
                 if u == "blank":
+                    inputSuccess[uCount] = True
                     continue
                 testList = u.split(">")
 
+                colorSuccess = False
+                endpointSuccess = False
                 match testList[0]: #Testing color
-                    case("r"): inputSuccess[0] = True
-                    case("blu"): inputSuccess[0] = True
-                    case("bla"): inputSuccess[0] = True
+                    case("r"): colorSuccess = True
+                    case("blu"): colorSuccess = True
+                    case("bla"): colorSuccess = True
                     case other:
                         print("Error. Invalid color detected. Try again")
                         print(" ")
                 match testList[1]: #Testing Endpoint
-                    case("A"): inputSuccess[1] = True
-                    case("B"): inputSuccess[1] = True
-                    case("C"): inputSuccess[1] = True
+                    case("A"): endpointSuccess = True
+                    case("B"): endpointSuccess = True
+                    case("C"): endpointSuccess = True
                     case other:
                         print("Error. Incorrect Endpoint Detected. Try again")
                         print(" ")
+
+                if colorSuccess and endpointSuccess: #Are both Color and Endpoint good?
+                    inputSuccess[uCount] = True
+
 
         wiresList[wiresList.index("blank")] = "_>_"
         # Splits the wiresList into individual details. 0,2,4 are colors and 1,3,5 are endpoints
