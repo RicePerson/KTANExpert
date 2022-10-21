@@ -1492,7 +1492,7 @@ os.startfile("needymodules.py")
 while isDoing:
     #checking which module you are currently working on
     print(" ")
-    module = input("Module? (w/b/k/s/who/m/mO/cW/wS/resetbomb/done): ")
+    module = input("Module? (w/b/k/s/who/m/mO/cW/wS/p/resetbomb/done): ")
     match module:
         case "w":
             print(" ")
