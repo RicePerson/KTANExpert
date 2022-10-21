@@ -1314,7 +1314,7 @@ def wireSeq():
             wiresList = wireUn.split(";")
 
             if len(wiresList) != 3: #Testing length
-                print("Error. Invalid number of inputs. Try Again")
+                print("Error. Invalid number of inputs, '" + str(len(wiresList)) + "'. Try Again")
                 print(" ")
                 continue
 
@@ -1335,14 +1335,14 @@ def wireSeq():
                     case("blu"): colorSuccess = True
                     case("bla"): colorSuccess = True
                     case other:
-                        print("Error. Invalid color detected. Try again")
+                        print("Error. Invalid color, '" + str(testList[0]) + "'. Try again")
                         print(" ")
                 match testList[1]: #Testing Endpoint
                     case("A"): endpointSuccess = True
                     case("B"): endpointSuccess = True
                     case("C"): endpointSuccess = True
                     case other:
-                        print("Error. Incorrect Endpoint Detected. Try again")
+                        print("Error. Invalid Endpoint, '" + str(testList[1]) + "'. Try again")
                         print(" ")
 
                 if colorSuccess and endpointSuccess: #Are both Color and Endpoint good?
