@@ -1493,49 +1493,50 @@ while isDoing == True:
     #checking which module you are currently working on
     print(" ")
     module = input("Module? (w/b/k/s/who/m/mO/cW/wS/resetbomb/done): ")
-    if module == "w":
-        print(" ")
-        wires()
-    elif module == "b":
-        print(" ")
-        button()
-    elif module == "k":
-        print(" ")
-        keypad()
-    elif module == "s":
-        print(" ")
-        newnewSimon()
-    elif module == "who":
-        print(" ")
-        whofirst()
-    elif module == "m":
-        print(" ")
-        memory()
-    elif module == "mO":
-        print(" ")
-        morse()
-    elif module == "cW":
-        print(" ")
-        compWires()
-    elif module == "wS":
-        print(" ")
-        wireSeq()
-    elif module == "p":
-        print(" ")
-        password()
-    elif module == "resetbomb":
-        serialNum = "EMPTY"
-        batteries = "EMPTY"
-        litIndicators = ["EMPTY"]
-        parallelPort = "EMPTY"
-        print("Bomb Reset. All bomb-wide varaible are now empty")
-    elif module == "done":
-        print(" ")
-        print("Bomb Complete. Congrats Defuser")
-        isDoing = False
-    else:
-        print("Please enter a valid module")
-        isDoing = True
+    match module:
+        case "w":
+            print(" ")
+            wires()
+        case "b":
+            print(" ")
+            button()
+        case "k":
+            print(" ")
+            keypad()
+        case "s":
+            print(" ")
+            newnewSimon()
+        case "who":
+            print(" ")
+            whofirst()
+        case "m":
+            print(" ")
+            memory()
+        case "mO":
+            print(" ")
+            morse()
+        case "cW":
+            print(" ")
+            compWires()
+        case "wS":
+            print(" ")
+            wireSeq()
+        case "p":
+            print(" ")
+            password()
+        case "resetbomb":
+            serialNum = "EMPTY"
+            batteries = "EMPTY"
+            litIndicators = ["EMPTY"]
+            parallelPort = "EMPTY"
+            print("Bomb Reset. All bomb-wide varaible are now empty")
+        case "done":
+            print(" ")
+            print("Bomb Complete. Congrats Defuser")
+            isDoing = False
+        case other:
+            print("Please enter a valid module")
+            isDoing = True
 
 
 
