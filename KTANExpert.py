@@ -1003,8 +1003,8 @@ def morseToAlpha(morseIn):
         case "-.--": return "Y"
         case "--..": return "Z"
         case other:
-            print("Error. Incorrect morse detected. Resetting")
-            return
+            print("Error. Invaild morse, '" + str(morseIn) + "'. Resetting")
+            return "ERROR"
 
 shell = ["S", "H", "E", "L", "L"]
 halls = ["H", "A", "L", "L", "S"]
@@ -1106,7 +1106,7 @@ def morse():
         print("Input 3.600 MHz")
         return
     else:
-        print("You did something wrong. Try again.")
+        print("Error. Invalid/Incomplete morse input. Resetting")
         return
 
 #Complicated Wires (input x4 -> output, loop until complete)
