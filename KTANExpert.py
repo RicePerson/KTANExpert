@@ -1167,7 +1167,7 @@ def compWires():
         elif i == "0":
             pass
         else:
-            print("Error. Non-binary input value detected. Resetting.")
+            print("Error. Invalid binary input ,'" + str(i) + "'. Resetting.")
             return
 
 
@@ -1249,7 +1249,8 @@ def compWires():
                         if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                             serialNum = int(serialNum)
                         else:
-                            print("Error. Incorrect serial digit. Resetting.")
+                            print("Error. Invalid serial digit, '" + str(serialNum) + "'. Resetting.")
+                            serialNum = "EMPTY"
                             return
                     if serialNum%2 == 0:
                         if n == 1:
@@ -1281,7 +1282,7 @@ def compWires():
                         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
                             batteries = int(batteries)
                         else:
-                            print("Error. Incorrect number of batteries. Resetting")
+                            print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
                             return
                     if batteries >= 2:
                         if n == 1:
@@ -1290,7 +1291,7 @@ def compWires():
                         if n == 1:
                             print("Wire " + str(i+1) + ") Do Not Cut")
                 case other:
-                    print("Error: Something went so wrong, I don't know what happened. Resetting.")
+                    print("Error. Something went so wrong, I don't know what happened. Resetting.")
                     return
 
 #Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
