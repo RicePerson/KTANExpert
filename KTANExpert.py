@@ -353,11 +353,11 @@ def keypad():
         if k in keys:
             pass
         else:
-            print("Error. Incorrect Key Detected. Resetting")
+            print("Error. Invlaid Key, '" + str(k) + "'. Resetting")
             userKeys = "EMPTY"
             return
     if len(userKeys) != 4:
-        print("Error. Incorrect Number of Keys")
+        print("Error. Invalid Number of Keys, '" + str(len(userKeys)) + "'. Resetting")
         userKeys = "EMPTY"
         return
 
