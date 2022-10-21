@@ -190,7 +190,10 @@ def button():
     # Logic
     #Starting Information
 
-    color = str(input("What is the color of the button? (blu, w, y, r, other): "))
+    color = str(input("What is the color of the button? (blu, w, y, r): "))
+    if color not in ["blu","w","y","r"]: #Testing color
+        print("Error. Invalid color, '" + str(color) + "'. Resetting")
+        return
     if color == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
         return
@@ -251,7 +254,7 @@ def button():
         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
             batteries = int(batteries)
         else:
-            print("Error. Incorrect number of batteries. Resetting")
+            print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
             return
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == ["EMPTY"]:
