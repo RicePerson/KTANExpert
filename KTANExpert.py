@@ -579,16 +579,16 @@ def whofirst():
         userWords = userWords.split(";")
         #Checks
         if len(userWords) != 7:
-            print("Error: Incorrect number of words input. Resetting")
+            print("Error. Invalid number of words, '" + str(len(userWords)) + "'. Resetting")
             return
         else:
             for i in range(0,6):
                 if i == 0:
                     if userWords[0] not in displayWords:
-                        print("Incorrect display word. Resetting")
+                        print("Error. Invalid display word ,'" + str(userWords[0]) + "'. Resetting")
                         return
                 if userWords[i] not in totalList:
-                    print("Incorrect word " + str(userWords[i])+ ". Resetting")
+                    print("Error. Invalid word .'" + str(userWords[i])+ "'. Resetting")
                     return
     
         # DisplayWord's Sacred Button, ButtonWord, Logic
@@ -629,7 +629,7 @@ def whofirst():
             case"sure":buttonWordsList=sure
             case"like":buttonWordsList=like
             case other:
-                print("Error: Incorrect button word. Resetting")
+                print("Error. Invalid button word, '" + str(buttonWord) + "'. Resetting")
                 return
 
         print(" ")
@@ -647,7 +647,7 @@ def whofirst():
 
         # If none of them match...
         if success == False:
-            print("Error: No buttons match buttonWordsList. Resetting.")
+            print("Error. No buttons match buttonWordsList. Resetting.")
             return
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
