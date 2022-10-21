@@ -287,35 +287,37 @@ def button():
         givenInstruction = False
 
     #Releasing a held button
-    if instruction == "hold":
-        print(" ")
-        strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
-        if strip == "...": # Exit Command
-            print("Exit Command Detected. Exiting...")
-            strip = "EMPTY"
-            return
-        if strip == "blu":
+    match instruction:
+        case "hold":
             print(" ")
-            print("Release the button when the countdown timer has a 4 in any position")
-            return
-        elif strip == "w":
+            strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
+            match strip:
+                case "...":
+                    print("Exit Command Detected. Exiting...")
+                    strip = "EMPTY"
+                    return
+                case "blu":
+                    print(" ")
+                    print("Release the button when the countdown timer has a 4 in any position")
+                    return
+                case "w":
+                    print(" ")
+                    print("Release the button when the countdown timer has a 1 in any position")
+                    return
+                case "y":
+                    print(" ")
+                    print("Release the button when the countdown timer has a 5 in any position")
+                    return
+                case other:
+                    print(" ")
+                    print("Release the button when the countdown timer has a 1 in any position")
+        case "pressRelease":
             print(" ")
-            print("Release the button when the countdown timer has a 1 in any position")
+            print("Press and immediately release the button")
             return
-        elif strip == "y":
-            print(" ")
-            print("Release the button when the countdown timer has a 5 in any position")
+        case other:
+            print("Error. Something went wrong. Resetting.")
             return
-        else:
-            print(" ")
-            print("Release the button when the countdown timer has a 1 in any position")
-    elif instruction == "pressRelease":
-        print(" ")
-        print("Press and immediately release the button")
-        return
-    else:
-        print("Error. Something went wrong. Resetting.")
-        return
 
 #Keypad (specific inputx4 -> output)
 def keypad():
