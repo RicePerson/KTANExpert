@@ -390,358 +390,6 @@ def keypad():
         print(str(i+1)+") " + str(finalList[i]))
 
 #New Simon Says (inputxIndefinite -> output x#)
-def simon():
-    #Logic (It's a loop)
-    vowel = str(input("Vowel in Serial? (y/n): "))
-    isDoing = True
-
-    while isDoing == True:
-        if vowel == "y":
-            strikes = str(input("Number Of Strikes? (0/1/2): "))
-            if strikes == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                strikes = "EMPTY"
-                return
-            while strikes == "0":
-                user = "EMPTY"
-                flashSeq = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                
-                inputSuccess = False
-                user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g): "))
-                match user:
-                    case("r"): 
-                        flashSeq.append("r")
-                        inputSuccess = True
-                    case("blu"): 
-                        flashSeq.append("blu")
-                        inputSuccess = True
-                    case("y"): 
-                        flashSeq.append("y")
-                        inputSuccess = True
-                    case("g"): 
-                        flashSeq.append("g")
-                        inputSuccess = True
-                    case other: 
-                        print("Error. Invalid color. Please try again")
-                        inputSuccess = False
-                        pass
-                    
-                for i in flashSeq:
-                    case("r")
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-            while strikes == "1":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("y")
-                    elif i == "blu":
-                        finalSimon.append("g")
-                    elif i == "g":
-                        finalSimon.append("blu")
-                    elif i == "y":
-                        finalSimon.append("r")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-            while strikes == "2":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("g")
-                    elif i == "blu":
-                        finalSimon.append("r")
-                    elif i == "g":
-                        finalSimon.append("y")
-                    elif i == "y":
-                        finalSimon.append("blu")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-        elif vowel == "n":
-            strikes = str(input("Number Of Strikes? (0/1/2): "))
-            if strikes == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                strikes = "EMPTY"
-                return
-            while strikes == "0":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("blu")
-                    elif i == "blu":
-                        finalSimon.append("y")
-                    elif i == "g":
-                        finalSimon.append("g")
-                    elif i == "y":
-                        finalSimon.append("r")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-            while strikes == "1":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("r")
-                    elif i == "blu":
-                        finalSimon.append("blu")
-                    elif i == "g":
-                        finalSimon.append("y")
-                    elif i == "y":
-                        finalSimon.append("g")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-            while strikes == "2":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("y")
-                    elif i == "blu":
-                        finalSimon.append("g")
-                    elif i == "g":
-                        finalSimon.append("blu")
-                    elif i == "y":
-                        finalSimon.append("r")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-    print("Error. You input incorrectly. Please try again")
-    return #Pre Issue 80 / Not used anymore
-
 def newnewSimon():
     flash = 1
     flashSeq = []
@@ -1913,3 +1561,359 @@ while isDoing == True:
     else:
         print("Please enter a valid module")
         isDoing = True
+
+
+
+# The wasteland (A place for commented out code that could be usefull later...)
+
+#def simon():
+#    #Logic (It's a loop)
+#    vowel = str(input("Vowel in Serial? (y/n): "))
+#    isDoing = True
+
+#    while isDoing == True:
+#        if vowel == "y":
+#            strikes = str(input("Number Of Strikes? (0/1/2): "))
+#            if strikes == "...": # Exit Command
+#                print("Exit Command Detected. Exiting...")
+#                strikes = "EMPTY"
+#                return
+#            while strikes == "0":
+#                user = "EMPTY"
+#                flashSeq = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+                
+#                inputSuccess = False
+#                user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g): "))
+#                match user:
+#                    case("r"): 
+#                        flashSeq.append("r")
+#                        inputSuccess = True
+#                    case("blu"): 
+#                        flashSeq.append("blu")
+#                        inputSuccess = True
+#                    case("y"): 
+#                        flashSeq.append("y")
+#                        inputSuccess = True
+#                    case("g"): 
+#                        flashSeq.append("g")
+#                        inputSuccess = True
+#                    case other: 
+#                        print("Error. Invalid color. Please try again")
+#                        inputSuccess = False
+#                        pass
+                    
+#                for i in flashSeq:
+#                    case("r")
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "1":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("y")
+#                    elif i == "blu":
+#                        finalSimon.append("g")
+#                    elif i == "g":
+#                        finalSimon.append("blu")
+#                    elif i == "y":
+#                        finalSimon.append("r")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "2":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("g")
+#                    elif i == "blu":
+#                        finalSimon.append("r")
+#                    elif i == "g":
+#                        finalSimon.append("y")
+#                    elif i == "y":
+#                        finalSimon.append("blu")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#        elif vowel == "n":
+#            strikes = str(input("Number Of Strikes? (0/1/2): "))
+#            if strikes == "...": # Exit Command
+#                print("Exit Command Detected. Exiting...")
+#                strikes = "EMPTY"
+#                return
+#            while strikes == "0":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("blu")
+#                    elif i == "blu":
+#                        finalSimon.append("y")
+#                    elif i == "g":
+#                        finalSimon.append("g")
+#                    elif i == "y":
+#                        finalSimon.append("r")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "1":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("r")
+#                    elif i == "blu":
+#                        finalSimon.append("blu")
+#                    elif i == "g":
+#                        finalSimon.append("y")
+#                    elif i == "y":
+#                        finalSimon.append("g")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "2":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("y")
+#                    elif i == "blu":
+#                        finalSimon.append("g")
+#                    elif i == "g":
+#                        finalSimon.append("blu")
+#                    elif i == "y":
+#                        finalSimon.append("r")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#    print("Error. You input incorrectly. Please try again")
+#    return #Pre Issue 80 / Not used anymore
