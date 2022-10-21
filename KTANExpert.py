@@ -1489,7 +1489,7 @@ print("Incase you haven't launched the game before, the verification code as of 
 
 #Module Loop
 os.startfile("needymodules.py")
-while isDoing == True:
+while isDoing:
     #checking which module you are currently working on
     print(" ")
     module = input("Module? (w/b/k/s/who/m/mO/cW/wS/resetbomb/done): ")

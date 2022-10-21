@@ -90,6 +90,7 @@ def knobs():
 #Starting Text
 print("Needy Modules Sub-Expert")
 print("Created by Reese Ford")
+print(" ")
 
 print("Needy Modules are pretty simple. There are only 3 possible ones.")
 print("There is Venting Gas, Capacitor Discharge, and Knobs")
