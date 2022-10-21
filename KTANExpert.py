@@ -971,62 +971,37 @@ def memory():
         print(" ")
 
 #The Morse -> Letter
-def morseToAlpha(input):
-    if input == ".-":
-        return "A"
-    elif input == "-...":
-        return "B"
-    elif input == "-.-.":
-        return "C"
-    elif input == "-..":
-        return "D"
-    elif input == ".":
-        return "E"
-    elif input == "..-.":
-        return "F"
-    elif input == "--.":
-        return "G"
-    elif input == "....":
-        return "H"
-    elif input == "..":
-        return "I"
-    elif input == ".---":
-        return "J"
-    elif input == "-.-":
-        return "K"
-    elif input == ".-..":
-        return "L"
-    elif input == "--":
-        return "M"
-    elif input == "-.":
-        return "N"
-    elif input == "---":
-        return "O"
-    elif input == ".--.":
-        return "P"
-    elif input == "--.-":
-        return "Q"
-    elif input == ".-.":
-        return "R"
-    elif input == "...":
-        return "S"
-    elif input == "-":
-        return "T"
-    elif input == "..-":
-        return "U"
-    elif input == "...-":
-        return "V"
-    elif input == ".--":
-        return "W"
-    elif input == "-..-":
-        return "X"
-    elif input == "-.--":
-        return "Y"
-    elif input == "--..":
-        return "Z"
-    else:
-        print("Error. Incorrect morse detected. Resetting")
-        return
+def morseToAlpha(morseIn):
+    match morseIn:
+        case ".-": return "A"
+        case "-...": return "B"
+        case "-.-.": return "C"
+        case "-..": return "D"
+        case ".": return "E"
+        case "..-.": return "F"
+        case "--.": return "G"
+        case "....": return "H"
+        case "..": return "I"
+        case ".---": return "J"
+        case "-.-": return "K"
+        case ".-..": return "L"
+        case "--": return "M"
+        case "-.": return "N"
+        case "---": return "O"
+        case ".--.": return "P"
+        case "--.-": return "Q"
+        case ".-.": return "R"
+        case "...": return "S"
+        case "-": return "T"
+        case "..-": return "U"
+        case "...-": return "V"
+        case ".--": return "W"
+        case "-..-": return "X"
+        case "-.--": return "Y"
+        case "--..": return "Z"
+        case other:
+            print("Error. Incorrect morse detected. Resetting")
+            return
 
 shell = ["S", "H", "E", "L", "L"]
 halls = ["H", "A", "L", "L", "S"]
