@@ -408,7 +408,7 @@ def newnewSimon():
                 print("Exit Command Detected. Exiting")
                 return
             case other:
-                print("Error. Incorrect response. Resetting")
+                print("Error. Invalid response, '" + str(vowel) + "'. Resetting")
                 vowel = "EMPTY"
                 return
     
@@ -421,7 +421,7 @@ def newnewSimon():
             print("Exit Command Detected. Exiting")
             return
         case other:
-            print("Error. Incorrect number of strikes detected. Resetting")
+            print("Error. Invalid number of strikes, '" + str(strikes) + "'. Resetting")
             strikes = "EMPTY"
             return
 
@@ -449,7 +449,7 @@ def newnewSimon():
             case("done"):
                 return
             case other: 
-                print("Error. Invalid color. Please try again")
+                print("Error. Invalid color, '" + str(user) + "'. Please try again")
                 inputSuccess = False
                 pass
 
