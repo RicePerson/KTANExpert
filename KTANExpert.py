@@ -1469,7 +1469,7 @@ def password():
         removedWords = []
     
     #No words matched the list
-    print("Error. No words possible from inputs. Please try again. Resetting")
+    print("Error. No words possible from inputs. Resetting")
     return
 
 #Intro
