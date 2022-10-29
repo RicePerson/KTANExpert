@@ -218,6 +218,7 @@ def button():
             batteries = int(batteries)
         else:
             print("Error. Incorrect number of batteries. Resetting")
+            batteries = "EMPTY"
             return
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
@@ -253,6 +254,7 @@ def button():
             batteries = int(batteries)
         else:
             print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
+            batteries = "EMPTY"
             return
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == []:
@@ -1283,6 +1285,7 @@ def compWires():
                             batteries = int(batteries)
                         else:
                             print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
+                            batteries = "EMPTY"
                             return
                     if batteries >= 2:
                         if n == 1:
