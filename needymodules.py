@@ -2,10 +2,7 @@
 # Created by Reese Ford 10/17/2022
 # https://www.github.com/RicePerson/KTANExpert
 
-import time
-import math
 from os import system
-import os
 
 system("title " + "NeedyModule Sub-Expert")
 

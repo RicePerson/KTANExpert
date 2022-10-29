@@ -19,8 +19,6 @@
 #Imports
 from os import system
 import os
-import time
-import math
 
 #Def Vars
 isDoing = True
