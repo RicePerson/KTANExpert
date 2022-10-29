@@ -133,7 +133,7 @@ def wires():
                 else:
                     serialNum = int(serialNum)
             if serialNum%2 == 1:
-                instruction = "cutwirefirst"
+                instruction = "cutwirethird"
         elif (instruction == "EMPTY") and (wireList.count("y") == 1) and (wireList.count("w") > 1):
             instruction = "cutwirefourth"
         elif (instruction == "EMPTY") and ("r" not in wireList):
@@ -1311,7 +1311,7 @@ def wireSeq():
                 uCount = uCount + 1
 
                 testList = []
-                if u == "blank":
+                if u == "blank":s
                     inputSuccess[uCount] = True
                     continue
                 testList = u.split(">")
