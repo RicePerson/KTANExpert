@@ -821,20 +821,24 @@ def memory():
                     index = stage3.index(numbers[1])
                     positions.append(index)
                     numbers.append(numbers[1])
+                    stage3complete = True
                 case 2:
                     print("Press the button labeled " + str(numbers[0]))
                     index = stage3.index(numbers[0])
                     positions.append(index)
                     numbers.append(numbers[0])
+                    stage3complete = True
                 case 3:
                     print("Press the button labeled " + str(stage3[3]))
                     positions.append(3)
                     numbers.append(stage3[3])
+                    stage3complete = True
                 case 4:
                     print("Press the button labeled 4")
                     index = stage3.index(4, 1, 5)
                     positions.append(index)
                     numbers.append(4)
+                    stage3complete = True
             print(" ")
 
 
@@ -883,18 +887,22 @@ def memory():
                     print("Press the button labeled " + str(stage4[positions[0]]))
                     positions.append(positions[0])
                     numbers.append(stage4[positions[0]])
+                    stage4complete = True
                 case 2:
                     print("Press the button labeled " + str(stage4[1]))
                     positions.append(1)
                     numbers.append(stage4[1])
+                    stage4complete = True
                 case 3:
                     print("Press the button labeled " + str(stage4[positions[1]]))
                     positions.append(positions[1])
                     numbers.append(stage4[positions[1]])
+                    stage4complete = True
                 case 4:
                     print("Press the button labeled " + str(stage4[positions[1]]))
                     positions.append(positions[1])
                     numbers.append(stage4[positions[1]])
+                    stage4complete = True
             print(" ")
 
 
@@ -944,21 +952,25 @@ def memory():
                     index = stage5.index(numbers[0])
                     positions.append(index)
                     numbers.append(numbers[0])
+                    stage5complete = True
                 case 2:
                     print("Press the button labeled " + str(numbers[1]))
                     index = stage5.index(numbers[1])
                     positions.append(index)
                     numbers.append(numbers[1])
+                    stage4complete = True
                 case 3:
                     print("Press the button labeled " + str(numbers[3]))
                     index = stage5.index(numbers[3])
                     positions.append(index)
                     numbers.append(numbers[3])
+                    stage4complete = True
                 case 4:
                     print("Press the button labeled " + str(numbers[2]))
                     index = stage5.index(numbers[2])
                     positions.append(index)
                     numbers.append(numbers[2])
+                    stage4complete = True
             print(" ")
 
 #The Morse -> Letter
