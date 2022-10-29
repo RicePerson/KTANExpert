@@ -1439,17 +1439,26 @@ def password():
     #Testing letters in each display
     for d in [0,1,2,3,4]:
         if len(possibleWords) == 1: #If there is one possible words left, print it
+                print(" ")
                 print("Input the word " + str(possibleWords) + " into the module")
                 return
 
         #Getting the possible letters for display d
         testLetters = "EMPTY"
-        testLetters = str(input("Please list all the possible letters in display " + str(d+1) + ": "))
+        testLetters = str(input("Please list all 6 possible letters in display " + str(d+1) + ": "))
         if testLetters == "...":
             print("Exit Command Detected. Exiting")
             testLetters = "EMPTY"
             return
+
         testLetters = [x for x in testLetters]
+        if len(testLetters) != 6:
+            print("Error. Invalid number of letters ,'" + str(len(testLetters)) + "'. Resetting")
+            return
+        for t in testLetters:
+            if t not in ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]:
+                print("Error. Invalid letter, '" + str(t) + "'. Resetting")
+                return
 
         #Testing the letters possible against the possible words remaining
         testingWord = "EMPTY"
@@ -1465,6 +1474,7 @@ def password():
         for r in removedWords:
             possibleWords.remove(r)
         removedWords = []
+        print("Number of possible words remaining: " + str(len(possibleWords)))
     
     #No words matched the list
     print("Error. No words possible from inputs. Resetting")
@@ -1487,7 +1497,7 @@ print(" ")
 
 print("KTANExpert by Reese Ford")
 print("For specific instructions, visit https://github.com/RicePerson/KTANExpert#readme")
-print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
+print("In case you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
 #Module Loop
 os.startfile("needymodules.py")
