@@ -244,6 +244,7 @@ Once you have input the details about a wire, the Expert may ask you for more de
 For this module, it may ask about the last digit of the serial number, if the bomb has a parallel port *(The long, purple port)*, 
 or how many batteries there are on the bomb. If you have entered any of these details in a earlier module, the expert will use those. 
 Likewise, once you enter the detail in this module, it will be used in all of the others if they require it.
+If a slot is blank, as in there are less than 6 wires, treat the blank slot as a wire with no led, blue, red, or star.
 
 Once you have recieved an instruction, the Expert will ask if the wires are done. If not, answer `n`, and continue the module. If you are done, answer `y`, and you will be put back to the Module Selector. 
 
