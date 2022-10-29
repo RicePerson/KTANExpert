@@ -1348,12 +1348,16 @@ def wireSeq():
                 if colorSuccess and endpointSuccess: #Are both Color and Endpoint good?
                     inputSuccess[uCount] = True
 
-        if "blank" in wiresList:
-            wiresList[wiresList.index("blank")] = "_>_"
+            # wiresList[wiresList.index("blank")] = "_>_"
         # Splits the wiresList into individual details. 0,2,4 are colors and 1,3,5 are endpoints
         for w in wiresList:
-            wires.append(w.split(">")[0])
-            wires.append(w.split(">")[1])
+            workingList = []
+            if w == "blank":
+                workingList = ["_","_"]
+            else:
+                workingList = w.split(">")
+            wires = wires + workingList
+            
 
 
         #Occurance Logic
