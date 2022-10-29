@@ -958,19 +958,19 @@ def memory():
                     index = stage5.index(numbers[1])
                     positions.append(index)
                     numbers.append(numbers[1])
-                    stage4complete = True
+                    stage5complete = True
                 case 3:
                     print("Press the button labeled " + str(numbers[3]))
                     index = stage5.index(numbers[3])
                     positions.append(index)
                     numbers.append(numbers[3])
-                    stage4complete = True
+                    stage5complete = True
                 case 4:
                     print("Press the button labeled " + str(numbers[2]))
                     index = stage5.index(numbers[2])
                     positions.append(index)
                     numbers.append(numbers[2])
-                    stage4complete = True
+                    stage5complete = True
             print(" ")
 
 #The Morse -> Letter
