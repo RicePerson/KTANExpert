@@ -1311,7 +1311,7 @@ def wireSeq():
                 uCount = uCount + 1
 
                 testList = []
-                if u == "blank":s
+                if u == "blank":
                     inputSuccess[uCount] = True
                     continue
                 testList = u.split(">")
