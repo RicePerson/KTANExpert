@@ -27,7 +27,7 @@ module = "EMPTY"
 
 serialNum = "EMPTY"
 batteries = "EMPTY"
-litIndicators = ["EMPTY"]
+litIndicators = []
 parallelPort = "EMPTY"
 vowel = "EMPTY"
 
@@ -232,7 +232,7 @@ def button():
 
     #Manual Step 3
     if (givenInstruction == False) and (color == "w"):
-        if litIndicators == ["EMPTY"]:
+        if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
             if litIndicators == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
@@ -255,7 +255,7 @@ def button():
             print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
             return
     if (givenInstruction == False) and (batteries > 2):
-        if litIndicators == ["EMPTY"]:
+        if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
             if litIndicators == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
@@ -1529,7 +1529,7 @@ while isDoing:
         case "resetbomb":
             serialNum = "EMPTY"
             batteries = "EMPTY"
-            litIndicators = ["EMPTY"]
+            litIndicators = []
             parallelPort = "EMPTY"
             print("Bomb Reset. All bomb-wide varaible are now empty")
         case "done":
