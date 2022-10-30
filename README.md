@@ -17,7 +17,7 @@
 
 # KTANExpert
 A Python BombManual Expert for the game, **Keep Talking and Nobody Explodes**
-It's not done yet. As of right now, it only does:
+As of 10/19/2022, the expert can process these modules:
 * Wires
 * Button
 * Keypad
@@ -28,6 +28,9 @@ It's not done yet. As of right now, it only does:
 * Complicated Wires
 * Wire Sequences
 * Passwords
+* Needy: Knobs
+
+(Due to a limitation in my knowledge of Python, this expert cannot process Mazes)
 
 (For more information on modules, visit bombmanual.com)
 
@@ -152,10 +155,9 @@ Repeat until provivded a Final List. Enter these in order to complete the module
 ## Simon Says `s`
 This can be considered the worst game of simon says, because you don't repeat it back exactly as it is presented to you.
 Once the simon says module is selected in the expert (selected by `s`), it will ask a couple of preliminary questions about the bomb, which will determine which lookup-table it will use.
-After answering these questions, watch the KTANE module for its ENTIRE flash sequence (the module starts with one flash, then increases by one with every sucessfull button-press)
-The module will flash relatively quickly, and then repeat the sequence after a long pause.
-Enter each flash color IN ORDER with an ENTER between each. Once all colors have been entered, input `end`.
-Click the colored buttons in the given order.
+After answering these questions, watch the KTANE module for its flash sequence. The module will flash relatively quickly, and then repeat the sequence after a long pause.
+When the expert asks for the flash color, only enter the last flash. The expert will remember the previous flashes. 
+At every stage, the expert will output the full sequence to click. Click the colored buttons in the given order.
 Repeat until the module is complete. To exit the module on the expert, input `done` at any step.
 
 ### Example:
@@ -163,8 +165,8 @@ Repeat until the module is complete. To exit the module on the expert, input `do
 1) The Player:red_circle: selects the simon says module with `s`
 2) The Expert:large_blue_circle: asks if there is a vowel in the serial number, and then if there are any strikes
 3) The Player:red_circle: answers `y` ENTER `1`
-4) The Expert:large_blue_circle: asks for button flashes
-5) The Player:red_circle: enters `r` ENTER `end`
+4) The Expert:large_blue_circle: asks for button flash
+5) The Player:red_circle: enters `r`
 6) Expert:large_blue_circle: outputs `Click these buttons in order: Yellow`
 7) Player:red_circle: clicks the yellow button in KTANE
 8) Repeat until module is complete, then Player:red_circle: inputs `done` into the expert:large_blue_circle:. *Module Complete, move on to the next one.*
@@ -245,6 +247,7 @@ When you input the morse, the Expert will tell you what you just entered in engl
 ## Complicated Wires `cW`
 Going one wire at a time, answer the given questions with `y` for Yes and `n` for No. If you make a mistake, the module will be ended, and you will have to re-enter it at the Module Selector.
 Once you have input the details about a wire, the Expert may ask you for more details about the bomb. For this module, it may ask about the last digit of the serial number, if the bomb has a parallel port *(The long, purple port)*, or how many batteries there are on the bomb. If you have entered any of these details in a earlier module, the expert will use those. Likewise, once you enter the detail in this module, it will be used in all of the others if they require it.
+If a slot is blank, as in there are less than 6 wires, treat the blank slot as a wire with no led, blue, red, or star.
 
 Once you have recieved an instruction, the Expert will ask if the wires are done. If not, answer `n`, and continue the module. If you are done, answer `y`, and you will be put back to the Module Selector. 
 

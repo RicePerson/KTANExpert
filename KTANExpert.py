@@ -19,8 +19,6 @@
 #Imports
 from os import system
 import os
-import time
-import math
 
 #Def Vars
 isDoing = True
@@ -29,8 +27,9 @@ module = "EMPTY"
 
 serialNum = "EMPTY"
 batteries = "EMPTY"
-litIndicators = ["EMPTY"]
+litIndicators = []
 parallelPort = "EMPTY"
+vowel = "EMPTY"
 
 #Application Window
 system("title "+ "KTANExpert by Reese Ford")
@@ -41,204 +40,138 @@ system("title "+ "KTANExpert by Reese Ford")
 def wires():
     #Def Vars
     global serialNum
-    number = str(input("Number of Wires? (3/4/5/6): "))
-    if number == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
-        number = "EMPTY"
+    wireList = []
+    instruction = "EMPTY"
+
+    number = str(input("How many wires do you have? (3/4/5/6): "))
+    if number == "...":
+        print("Exit Command Detected. Exitting")
         return
-    wirelist = []
+    if number not in ["3","4","5","6"]:
+        print("Error. Invalid number, '" + str(number) + "'. Resetting")
+        return
+    else:
+        number = int(number)
+
+    #Assigning Wires
+    wireList = str(input("What are the " + str(number) + " wire colors from top to bottom? (w/y/r/blu/bla): "))
+    if wireList == "...":
+        print("Exit Command Detected. Exitting")
+        return
+    wireList = wireList.split(";")
+    if len(wireList) != number:
+        print("Error. Invalid number of wires, '" + str(len(wireList)) + "'. Resetting")
+        return
+
+    for c in wireList:
+        if c not in ["w","y","r","blu","bla"]:
+            print("Error. Invalid color, '" + str(c) + "'. Resetting")
+            return
 
     #Logic - 3 Wires
-    if number == "3":
-        for i in range(3):
-            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
-            if wirelistadd == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                wirelistadd = "EMPTY"
-                return
-            if wirelistadd == "w":
-                pass
-            elif wirelistadd == "y":
-                pass
-            elif wirelistadd == "blu":
-                pass
-            elif wirelistadd == "bla":
-                pass
-            elif wirelistadd == "r":
-                pass
-            else:
-                print("Error. Incorrect color code. Resetting.")
-                return
-            wirelist.append(wirelistadd)
-        print("Your wires are " + str(wirelist))
-        print(" ")
-
-        if "r" not in wirelist:
-            print("Cut the Second Wire")
-            return
-        elif wirelist[-1] == "w":
-            print("Cut the Last Wire")
-            return
-        elif wirelist.count("blu") > 2:
-            print("Cut last BLUE wire")
-            return
+    if number == 3:
+        if "r" not in wireList:
+            instruction = "cutwire2"
+        elif wireList[number-1] == "w":
+            instruction = "cutwirelast"
+        elif wireList.count("blu") > 1:
+            instruction = "cutwirelastblue"
         else:
-            print("Cut last wire")
-            return
+            instruction = "cutwirelast"
 
     #Logic - 4 Wires
-    if number == "4":
-        for i in range(4):
-            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
-            if wirelistadd == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                wirelistadd = "EMPTY"
-                return
-            if wirelistadd == "w":
-                pass
-            elif wirelistadd == "y":
-                pass
-            elif wirelistadd == "blu":
-                pass
-            elif wirelistadd == "bla":
-                pass
-            elif wirelistadd == "r":
-                pass
-            else:
-                print("Error. Incorrect color code. Resetting.")
-                return
-            wirelist.append(wirelistadd)
-        print("Your wires are " + str(wirelist))
-        print(" ")
-
-        if wirelist.count("r") > 1:
+    elif number == 4:
+        if (wireList.count("r") > 1) and (serialNum == "EMPTY" or serialNum%2 == 1):
             if serialNum == "EMPTY":
-                serialNum = str(input("Last Digit of Serial: "))
-                if serialNum == "...": # Exit Command
-                    print("Exit Command Detected. Exiting...")
+                serialNum = str(input("What is the last digit of the serial number?: "))
+                if serialNum not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    print("Error. Invalid serial num, '" + str(serialNum) + "'. Resetting")
                     serialNum = "EMPTY"
                     return
-                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
-                    serialNum = int(serialNum)
                 else:
-                    print("Error. Incorrect serial digit. Resetting.")
-                    return
-            if ((wirelist.count("r") > 1) and (serialNum % 2)):
-                print("Cut the last RED wire")
-                return
-        elif ((wirelist[-1] == "y") and (wirelist.count("r") == 0)):
-            print("Cut the First Wire")
-            return
-        elif wirelist.count("blu") == 1:
-            print("Cut the First Wire")
-            return
-        else:
-            print("Cut the Second Wire")
-            return
+                    serialNum = int(serialNum)
+            if serialNum%2 == 1:
+                instruction = "cutwirelastred"
+        if (instruction == "EMPTY") and (wireList[number-1] == "y") and ("r" not in wireList):
+            instruction = "cutwirefirst"
+        if (instruction == "EMPTY") and (wireList.count("blu") == 1):
+            instruction = "cutwirefirst"
+        if (instruction == "EMPTY") and (wireList.count("y") > 1):
+            instruction = "cutwirelast"
+        if instruction == "EMPTY":
+            instruction = "cutwiresecond"
 
     #Logic - 5 Wires
-    if number == "5":
-        for i in range(5):
-            wirelistadd = str(input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): "))
-            if wirelistadd == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                wirelistadd = "EMPTY"
-                return
-            if wirelistadd == "w":
-                pass
-            elif wirelistadd == "y":
-                pass
-            elif wirelistadd == "blu":
-                pass
-            elif wirelistadd == "bla":
-                pass
-            elif wirelistadd == "r":
-                pass
-            else:
-                print("Error. Incorrect color code. Resetting.")
-                return
-            wirelist.append(wirelistadd)
-        print("Your wires are " + str(wirelist))
-        print(" ")
-
-        if wirelist[-1] == "bla":
+    elif number == 5:
+        if (wireList[number-1] == "bla") and (serialNum == "EMPTY" or serialNum%2 == 1):
             if serialNum == "EMPTY":
-                serialNum = str(input("Last Digit of Serial: "))
-                if serialNum == "...": # Exit Command
-                    print("Exit Command Detected. Exiting...")
+                serialNum = str(input("What is the last digit of the serial number?: "))
+                if serialNum not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    print("Error. Invalid serial num, '" + str(serialNum) + "'. Resetting")
                     serialNum = "EMPTY"
                     return
-                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
-                    serialNum = int(serialNum)
                 else:
-                    print("Error. Incorrect serial digit. Resetting.")
-                    return
-            if ((wirelist[-1] == "bla") and (serialNum % 2)):
-                print("Cut the Fourth Wire")
-                return
-        elif ((wirelist.count("r") == 1) and (wirelist.count("y") > 1)):
-            print("Cut the First Wire")
-            return
-        elif wirelist.count("bla") == 0:
-            print("Cut the Second Wire")
-            return
-        else:
-            print("Cut the First Wire")
-            return
+                    serialNum = int(serialNum)
+            if serialNum%2 == 1:
+                instruction = "cutwirefourth"
+        elif (instruction == "EMPTY") and (wireList.count("r") == 1) and (wireList.count("y") > 1):
+            instruction = "cutwirefirst"
+        elif (instruction == "EMPTY") and ("bla" not in wireList):
+            instruction = "cutwiresecond"
+        elif instruction == "EMPTY":
+            instruction = "cutwirefirst"
 
     #Logic - 6 Wires
-    if number == "6":
-        for i in range(6):
-            wirelistadd = input("Wire " + str(i + 1) + "? (w/y/blu/bla/r): ")
-            if wirelistadd == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                wirelistadd = "EMPTY"
-                return
-            if wirelistadd == "w":
-                pass
-            elif wirelistadd == "y":
-                pass
-            elif wirelistadd == "blu":
-                pass
-            elif wirelistadd == "bla":
-                pass
-            elif wirelistadd == "r":
-                pass
-            else:
-                print("Error. Incorrect color code. Resetting.")
-                return
-            wirelist.append(wirelistadd)
-        print("Your wires are " + str(wirelist))
-        print(" ")
-
-        if wirelist.count("y") == 0:
+    elif number == 6:
+        if (wireList.count("y") == 0) and (serialNum == "EMPTY" or serialNum%2 == 1):
             if serialNum == "EMPTY":
-                serialNum = str(input("Last Digit of Serial: "))
-                if serialNum == "...": # Exit Command
-                    print("Exit Command Detected. Exiting...")
+                serialNum = str(input("What is the last digit of the serial number?: "))
+                if serialNum not in ["1","2","3","4","5","6","7","8","9","0"]:
+                    print("Error. Invalid serial num, '" + str(serialNum) + "'. Resetting")
                     serialNum = "EMPTY"
                     return
-                if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
-                    serialNum = int(serialNum)
                 else:
-                    print("Error. Incorrect serial digit. Resetting.")
-                    return
-            if ((wirelist.count("y") == 0) and (serialNum % 2)):
-                print("Cut the Third Wire")
-                return
-        elif ((wirelist.count("y") == 1) and (wirelist.count("w") > 1)):
-            print("Cut the Fourth Wire")
-            return
-        elif wirelist.count("r") == 0:
-            print("Cut the Last Wire")
-            return
-        else:
-            print("Cut the Fourth Wire")
-            return
+                    serialNum = int(serialNum)
+            if serialNum%2 == 1:
+                instruction = "cutwirethird"
+        elif (instruction == "EMPTY") and (wireList.count("y") == 1) and (wireList.count("w") > 1):
+            instruction = "cutwirefourth"
+        elif (instruction == "EMPTY") and ("r" not in wireList):
+            instruction = "cutwirelast"
+        elif instruction == "EMPTY":
+            instruction = "cutwirefourth"
 
     else:
-        print("Error. Incorrect number of wires. Resetting.")
+        print("Something went wrong with the wire logic. Please try again")
         return
+
+    #Instruction Output
+    print(" ")
+    match instruction:
+        case("cutwirefirst"):
+            print("Cut the first wire")
+            return
+        case("cutwiresecond"):
+            print("Cut the second wire")
+            return
+        case("cutwirethird"):
+            print("Cut the third wire")
+            return
+        case("cutwirefourth"):
+            print("Cut the fourth wire")
+            return
+        case("cutwirelastblue"):
+            print("Cut the last BLUE wire")
+            return
+        case("cutwirelastred"):
+            print("Cut the last RED wire")
+            return
+        case("cutwirelast"):
+            print("Cut the last wire")
+            return
+        case other:
+            print("Something went wrong with the instruction logic. Please try again")
+            return
 
 #Button (inputs various -> output)
 def button():
@@ -255,7 +188,10 @@ def button():
     # Logic
     #Starting Information
 
-    color = str(input("What is the color of the button? (blu, w, y, r, other): "))
+    color = str(input("What is the color of the button? (blu, w, y, r): "))
+    if color not in ["blu","w","y","r"]: #Testing color
+        print("Error. Invalid color, '" + str(color) + "'. Resetting")
+        return
     if color == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
         return
@@ -282,6 +218,7 @@ def button():
             batteries = int(batteries)
         else:
             print("Error. Incorrect number of batteries. Resetting")
+            batteries = "EMPTY"
             return
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
@@ -296,7 +233,7 @@ def button():
 
     #Manual Step 3
     if (givenInstruction == False) and (color == "w"):
-        if litIndicators == ["EMPTY"]:
+        if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
             if litIndicators == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
@@ -316,10 +253,11 @@ def button():
         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
             batteries = int(batteries)
         else:
-            print("Error. Incorrect number of batteries. Resetting")
+            print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
+            batteries = "EMPTY"
             return
     if (givenInstruction == False) and (batteries > 2):
-        if litIndicators == ["EMPTY"]:
+        if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
             if litIndicators == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
@@ -352,35 +290,37 @@ def button():
         givenInstruction = False
 
     #Releasing a held button
-    if instruction == "hold":
-        print(" ")
-        strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
-        if strip == "...": # Exit Command
-            print("Exit Command Detected. Exiting...")
-            strip = "EMPTY"
-            return
-        if strip == "blu":
+    match instruction:
+        case "hold":
             print(" ")
-            print("Release the button when the countdown timer has a 4 in any position")
-            return
-        elif strip == "w":
+            strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
+            match strip:
+                case "...":
+                    print("Exit Command Detected. Exiting...")
+                    strip = "EMPTY"
+                    return
+                case "blu":
+                    print(" ")
+                    print("Release the button when the countdown timer has a 4 in any position")
+                    return
+                case "w":
+                    print(" ")
+                    print("Release the button when the countdown timer has a 1 in any position")
+                    return
+                case "y":
+                    print(" ")
+                    print("Release the button when the countdown timer has a 5 in any position")
+                    return
+                case other:
+                    print(" ")
+                    print("Release the button when the countdown timer has a 1 in any position")
+        case "pressRelease":
             print(" ")
-            print("Release the button when the countdown timer has a 1 in any position")
+            print("Press and immediately release the button")
             return
-        elif strip == "y":
-            print(" ")
-            print("Release the button when the countdown timer has a 5 in any position")
+        case other:
+            print("Error. Something went wrong. Resetting.")
             return
-        else:
-            print(" ")
-            print("Release the button when the countdown timer has a 1 in any position")
-    elif instruction == "pressRelease":
-        print(" ")
-        print("Press and immediately release the button")
-        return
-    else:
-        print("Error. Something went wrong. Resetting.")
-        return
 
 #Keypad (specific inputx4 -> output)
 def keypad():
@@ -409,6 +349,17 @@ def keypad():
         userKeys = "EMPTY"
         return
     userKeys = userKeys.split(";")
+    for k in userKeys:
+        if k in keys:
+            pass
+        else:
+            print("Error. Invlaid Key, '" + str(k) + "'. Resetting")
+            userKeys = "EMPTY"
+            return
+    if len(userKeys) != 4:
+        print("Error. Invalid Number of Keys, '" + str(len(userKeys)) + "'. Resetting")
+        userKeys = "EMPTY"
+        return
 
     #Logic
     answerColumn = []
@@ -442,374 +393,140 @@ def keypad():
         print(str(i+1)+") " + str(finalList[i]))
 
 #New Simon Says (inputxIndefinite -> output x#)
-def simon():
-    #Logic (It's a loop)
-    vowel = str(input("Vowel in Serial? (y/n): "))
-    isDoing = True
+def newnewSimon():
+    flash = 1
+    flashSeq = []
+    global vowel
+    strikes = "EMPTY"
 
-    while isDoing == True:
-        if vowel == "y":
-            strikes = str(input("Number Of Strikes? (0/1/2): "))
-            if strikes == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                strikes = "EMPTY"
+    if vowel == "EMPTY":
+        vowel = str(input("Is there a vowel in the serial number? (y/n): "))
+        match vowel:
+            case("y"): vowel = True
+            case("n"): vowel = False
+            case("..."):
+                print("Exit Command Detected. Exiting")
                 return
-            while strikes == "0":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("blu")
-                    elif i == "blu":
-                        finalSimon.append("r")
-                    elif i == "g":
-                        finalSimon.append("y")
-                    elif i == "y":
-                        finalSimon.append("g")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-            while strikes == "1":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("y")
-                    elif i == "blu":
-                        finalSimon.append("g")
-                    elif i == "g":
-                        finalSimon.append("blu")
-                    elif i == "y":
-                        finalSimon.append("r")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-            while strikes == "2":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("g")
-                    elif i == "blu":
-                        finalSimon.append("r")
-                    elif i == "g":
-                        finalSimon.append("y")
-                    elif i == "y":
-                        finalSimon.append("blu")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-        elif vowel == "n":
-            strikes = str(input("Number Of Strikes? (0/1/2): "))
-            if strikes == "...": # Exit Command
-                print("Exit Command Detected. Exiting...")
-                strikes = "EMPTY"
+            case other:
+                print("Error. Invalid response, '" + str(vowel) + "'. Resetting")
+                vowel = "EMPTY"
                 return
-            while strikes == "0":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
+    
+    strikes = str(input("How many strikes are currently on the bomb? (0/1/2): "))
+    match strikes:
+        case("0"):strikes = 0
+        case("1"):strikes = 1
+        case("2"):strikes = 2
+        case("..."):
+            print("Exit Command Detected. Exiting")
+            return
+        case other:
+            print("Error. Invalid number of strikes, '" + str(strikes) + "'. Resetting")
+            strikes = "EMPTY"
+            return
 
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("blu")
-                    elif i == "blu":
-                        finalSimon.append("y")
-                    elif i == "g":
-                        finalSimon.append("g")
-                    elif i == "y":
-                        finalSimon.append("r")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
 
-            while strikes == "1":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
+    while True:
+        finalSimon = []
+        inputSuccess = False
+        user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g/done): "))
+        match user:
+            case("r"): 
+                flashSeq.append("r")
+                inputSuccess = True
+            case("blu"): 
+                flashSeq.append("blu")
+                inputSuccess = True
+            case("y"): 
+                flashSeq.append("y")
+                inputSuccess = True
+            case("g"): 
+                flashSeq.append("g")
+                inputSuccess = True
+            case("..."):
+                print("Exit Command Detected. Exitting")
+                return
+            case("done"):
+                return
+            case other: 
+                print("Error. Invalid color, '" + str(user) + "'. Please try again")
+                inputSuccess = False
+                pass
 
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("r")
-                    elif i == "blu":
-                        finalSimon.append("blu")
-                    elif i == "g":
-                        finalSimon.append("y")
-                    elif i == "y":
-                        finalSimon.append("g")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
+        if inputSuccess == True:
+            for f in flashSeq:
+                if vowel == True:
+                    match strikes:
+                        case 0: 
+                            match f: #Vowel, No Strikes
+                                case("r"):finalSimon.append("blu")
+                                case("blu"):finalSimon.append("r")
+                                case("g"):finalSimon.append("y")
+                                case("y"):finalSimon.append("g")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 1:
+                            match f: #Vowel, One Strike
+                                case("r"):finalSimon.append("y")
+                                case("blu"):finalSimon.append("g")
+                                case("g"):finalSimon.append("blu")
+                                case("y"):finalSimon.append("r")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 2:
+                            match f: #Vowel, Two Strikes
+                                case("r"):finalSimon.append("g")
+                                case("blu"):finalSimon.append("r")
+                                case("g"):finalSimon.append("y")
+                                case("y"):finalSimon.append("blu")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                elif vowel == False:
+                    match strikes:
+                        case 0: 
+                            match f: #No Vowel, No Strikes
+                                case("r"):finalSimon.append("blu")
+                                case("blu"):finalSimon.append("y")
+                                case("g"):finalSimon.append("g")
+                                case("y"):finalSimon.append("r")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 1:
+                            match f: #No Vowel, One Strike
+                                case("r"):finalSimon.append("r")
+                                case("blu"):finalSimon.append("blu")
+                                case("g"):finalSimon.append("y")
+                                case("y"):finalSimon.append("g")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
+                        case 2:
+                            match f: #No Vowel, Two Strikes
+                                case("r"):finalSimon.append("y")
+                                case("blu"):finalSimon.append("g")
+                                case("g"):finalSimon.append("blu")
+                                case("y"):finalSimon.append("r")
+                                case other:
+                                    print("Something went wrong. Resetting")
+                                    return
 
-            while strikes == "2":
-                user = []
-                finalSimon = []
-                flash = 1
-                print(" ")
-                while True:
-                    userInput = str(input("What is flash " + str(flash) +
-                                      "? (r/blu/g/y/end/done):"))
-                    if userInput == "...": # Exit Command
-                        print("Exit Command Detected. Exiting...")
-                        userInput = "EMPTY"
-                        return
-                    if userInput == "r":
-                        user.append("r")
-                        flash += 1
-                    elif userInput == "blu":
-                        user.append("blu")
-                        flash += 1
-                    elif userInput == "g":
-                        user.append("g")
-                        flash += 1
-                    elif userInput == "y":
-                        user.append("y")
-                        flash += 1
-                    elif userInput == "done":
-                        isDoing = False
-                        return
-
-                    if userInput == "end":
-                        print("Currently flashing: " + str(user))
-                        break
-                
-                for i in user:
-                    if i == "r":
-                        finalSimon.append("y")
-                    elif i == "blu":
-                        finalSimon.append("g")
-                    elif i == "g":
-                        finalSimon.append("blu")
-                    elif i == "y":
-                        finalSimon.append("r")
-                    elif i == "end":
-                        pass
-                    else:
-                        print("How?")
-                        return
-                print(" ")
-                #print("Input: " + str(finalSimon))
-                print("Click these buttons in order:")
-                for f in finalSimon:
-                    match f:
-                        case "r":print("Red")
-                        case "y":print("Yellow")
-                        case "g":print("Green")
-                        case "blu":print("Blue")
-                        case other: return
-                print(" ")
-
-    print("Error. You input incorrectly. Please try again")
-    return
+        print(" ")
+        print("Click these buttons in order: ")
+        for s in finalSimon:
+            match s:
+                case("r"):print("Red")
+                case("blu"):print("Blue")
+                case("y"):print("Yellow")
+                case("g"):print("Green")
+                case other:
+                    print("Something went wrong. Resetting")
+                    return
+        print(" ")
+        flash = flash + 1
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():
@@ -862,16 +579,16 @@ def whofirst():
         userWords = userWords.split(";")
         #Checks
         if len(userWords) != 7:
-            print("Error: Incorrect number of words input. Resetting")
+            print("Error. Invalid number of words, '" + str(len(userWords)) + "'. Resetting")
             return
         else:
             for i in range(0,6):
                 if i == 0:
                     if userWords[0] not in displayWords:
-                        print("Incorrect display word. Resetting")
+                        print("Error. Invalid display word ,'" + str(userWords[0]) + "'. Resetting")
                         return
                 if userWords[i] not in totalList:
-                    print("Incorrect word " + str(userWords[i])+ ". Resetting")
+                    print("Error. Invalid word .'" + str(userWords[i])+ "'. Resetting")
                     return
     
         # DisplayWord's Sacred Button, ButtonWord, Logic
@@ -912,7 +629,7 @@ def whofirst():
             case"sure":buttonWordsList=sure
             case"like":buttonWordsList=like
             case other:
-                print("Error: Incorrect button word. Resetting")
+                print("Error. Invalid button word, '" + str(buttonWord) + "'. Resetting")
                 return
 
         print(" ")
@@ -925,31 +642,24 @@ def whofirst():
                 if str(input("Is the module complete? (y/n): ")) == "y":
                     return
                 else:
+                    print(" ")
                     break
 
         # If none of them match...
         if success == False:
-            print("Error: No buttons match buttonWordsList. Resetting.")
+            print("Error. No buttons match buttonWordsList. Resetting.")
             return
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
 def memory():
     #Def Vars
-    stage1un = "EMPTY"
-    stage1 = "EMPTY"
-    stage2un = "EMPTY"
-    stage2 = "EMPTY"
-    stage3un = "EMPTY"
-    stage3 = "EMPTY"
-    stage4un = "EMPTY"
-    stage4 = "EMPTY"
-    stage5un = "EMPTY"
-    stage5 = "EMPTY"
     positions = []
     numbers = []
-    print("Input the numbers starting with Display, and then left to right, seperated by spaces")
+    print("Input the numbers starting with Display, and then left to right")
 
     #Def Vars: Stage 1 - Settings Lists
+    stage1un = "EMPTY"
+    stage1 = "EMPTY"
     stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
     if stage1un == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
@@ -958,290 +668,365 @@ def memory():
     if stage1un == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage1 = stage1un.split(";")
+    stage1 = [x for x in stage1un]
+
+    if len(stage1) != 5:
+        print("Error. Incorrect length, '" + str(len(stage1)) + "'. Please Try Again")
+        return
     for i in range(len(stage1)):
-        stage1[i] = int(stage1[i])
-        if stage1[i] in (1, 2, 3, 4):
+        if stage1[i] in ["1","2","3","4"]:
+            stage1[i]=int(stage1[i])
             pass
         else:
-            print("Error. Incorrect numbers. Resetting")
+            print("Error. Incorrect number, '" + str(stage1[i]) + "'. Please Try Again")
             return
-    print("Inputed Display: " + str(stage1[0]))
-    print("Inputed Numbers: " + str(stage1[1:5]))
+    existing = []
+    for i in stage1[1:]:
+        if i in existing:
+            print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
+            return
+        else:
+            existing.append(i)
 
     #Logic: Stage 1
     print(" ")
-    if stage1[0] == 1:
-        print("Press the button labeled " + str(stage1[2]))
-        positions.append(2)
-        numbers.append(stage1[2])
-    elif stage1[0] == 2:
-        print("Press the button labeled " + str(stage1[2]))
-        positions.append(2)
-        numbers.append(stage1[2])
-    elif stage1[0] == 3:
-        print("Press the button labeled " + str(stage1[3]))
-        positions.append(3)
-        numbers.append(stage1[3])
-    elif stage1[0] == 4:
-        print("Press the button labeled " + str(stage1[4]))
-        positions.append(4)
-        numbers.append(stage1[4])
+    match stage1[0]:
+        case 1:
+            print("Press the button labeled " + str(stage1[2]))
+            positions.append(2)
+            numbers.append(stage1[2])
+        case 2:
+            print("Press the button labeled " + str(stage1[2]))
+            positions.append(2)
+            numbers.append(stage1[2])
+        case 3:
+            print("Press the button labeled " + str(stage1[3]))
+            positions.append(3)
+            numbers.append(stage1[3])
+        case 4:
+            print("Press the button labeled " + str(stage1[4]))
+            positions.append(4)
+            numbers.append(stage1[4])
     print(" ")
 
 
-    #Def Vars: Stage2 - Settings Lists
-    stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
-    if stage2un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    #Def Vars: Stage3 - Settings Lists
+    stage2complete = False
+    while stage2complete == False:
         stage2un = "EMPTY"
-        return
-    if stage2un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage2 = stage2un.split(";")
-    for i in range(len(stage2)):
-        stage2[i] = int(stage2[i])
-        if stage2[i] in (1, 2, 3, 4):
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage2 = "EMPTY"
+        stage2error = False
+        stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
+        if stage2un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage2un = "EMPTY"
             return
-    print("Inputed Display: " + str(stage2[0]))
-    print("Inputed Numbers: " + str(stage2[1:5]))
+        if stage2un == "r": # Reset Command
+            print("Reset detected. Resetting expert...")
+            return
+        stage2 = [x for x in stage2un]
 
+        if len(stage2) != 5: # Is the number of inputs correct? No...
+            print("Error. Incorrect length, '" + str(len(stage2)) + "'. Please Try Again")
+            stage2error = True
+        for i in range(len(stage2)):
+            if stage2[i] in ["1","2","3","4"]: # Are the inputs numbers?
+                stage2[i]=int(stage2[i])
+            else: # No...
+                print("Error. Incorrect number, '" + str(stage2[i]) + "'. Please Try Again")
+                stage2error = True
+                break
+        existing = []
+        for i in stage2[1:]:
+            if i in existing:
+                print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
+                stage2error = True
+                break
+            else:
+                existing.append(i)
 
-    #Logic Stage2
-    print(" ")
-    if stage2[0] == 1:
-        print("Press the button labeled 4")
-        index = stage2.index(4, 1, 5)
-        positions.append(index)
-        numbers.append(4)
-    elif stage2[0] == 2:
-        print("Press the button labeled " + str(stage2[positions[0]]))
-        positions.append(positions[0])
-        numbers.append(stage2[positions[0]])
-    elif stage2[0] == 3:
-        print("Press the button labeled " + str(stage2[1]))
-        positions.append(1)
-        numbers.append(stage2[1])
-    elif stage2[0] == 4:
-        print("Press the button labeled " + str(stage2[positions[0]]))
-        positions.append(positions[0])
-        numbers.append(stage2[positions[0]])
-    print(" ")
+        if stage2error:
+            continue
+        else:
+            #Logic Stage2
+            print(" ")
+            match stage2[0]:
+                case 1:
+                    print("Press the button labeled 4")
+                    index = stage2.index(4, 1, 5)
+                    positions.append(index)
+                    numbers.append(4)
+                    stage2complete = True
+                case 2:
+                    print("Press the button labeled " + str(stage2[positions[0]]))
+                    positions.append(positions[0])
+                    numbers.append(stage2[positions[0]])
+                    stage2complete = True
+                case 3:
+                    print("Press the button labeled " + str(stage2[1]))
+                    positions.append(1)
+                    numbers.append(stage2[1])
+                    stage2complete = True
+                case 4:
+                    print("Press the button labeled " + str(stage2[positions[0]]))
+                    positions.append(positions[0])
+                    numbers.append(stage2[positions[0]])
+                    stage2complete = True
+                case other:
+                    print("Error. Something went wrong. Please Try Again")
+            print(" ")
 
 
     #Def Vars: Stage 3 - Settings Lists
-    stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
-    if stage3un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage3complete = False
+    while stage3complete == False:
         stage3un = "EMPTY"
-        return
-    if stage3un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage3 = stage3un.split(";")
-    for i in range(len(stage3)):
-        stage3[i] = int(stage3[i])
-        if stage3[i] in (1, 2, 3, 4):
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage3 = "EMPTY"
+        stage3error = False
+        stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
+        if stage3un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage3un = "EMPTY"
             return
-    print("Inputed Display: " + str(stage3[0]))
-    print("Inputed Numbers: " + str(stage3[1:5]))
+        if stage3un == "r": # Reset Command
+            print("Reset detected. Resetting expert...")
+            return
+        stage3 = [x for x in stage3un]
 
+        if len(stage3) != 5: # Is the number of inputs correct? No...
+            print("Error. Incorrect length, '" + str(len(stage3)) + "'. Please Try Again")
+            stage3error = True
+        for i in range(len(stage3)):
+            if stage3[i] in ["1","2","3","4"]: # Are the inputs numbers?
+                stage3[i]=int(stage3[i])
+            else: # No...
+                print("Error. Incorrect number, '" + str(stage3[i]) + "'. Please Try Again")
+                stage3error = True
+                break
+        existing = []
+        for i in stage3[1:]:
+            if i in existing:
+                print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
+                stage3error = True
+                break
+            else:
+                existing.append(i)
 
-    #Logic: Stage 3
-    print(" ")
-    if stage3[0] == 1:
-        print("Press the button labeled " + str(numbers[1]))
-        index = stage3.index(numbers[1])
-        positions.append(index)
-        numbers.append(numbers[1])
-    elif stage3[0] == 2:
-        print("Press the button labeled " + str(numbers[0]))
-        index = stage3.index(numbers[0])
-        positions.append(index)
-        numbers.append(numbers[0])
-    elif stage3[0] == 3:
-        print("Press the button labeled " + str(stage3[3]))
-        positions.append(3)
-        numbers.append(stage3[3])
-    elif stage3[0] == 4:
-        print("Press the button labeled 4")
-        index = stage3.index(4, 1, 5)
-        positions.append(index)
-        numbers.append(4)
-    print(" ")
+        if stage3error:
+            continue
+        else:
+            #Logic: Stage 3
+            print(" ")
+            match stage3[0]:
+                case 1:
+                    print("Press the button labeled " + str(numbers[1]))
+                    index = stage3.index(numbers[1])
+                    positions.append(index)
+                    numbers.append(numbers[1])
+                    stage3complete = True
+                case 2:
+                    print("Press the button labeled " + str(numbers[0]))
+                    index = stage3.index(numbers[0])
+                    positions.append(index)
+                    numbers.append(numbers[0])
+                    stage3complete = True
+                case 3:
+                    print("Press the button labeled " + str(stage3[3]))
+                    positions.append(3)
+                    numbers.append(stage3[3])
+                    stage3complete = True
+                case 4:
+                    print("Press the button labeled 4")
+                    index = stage3.index(4, 1, 5)
+                    positions.append(index)
+                    numbers.append(4)
+                    stage3complete = True
+            print(" ")
 
 
     #Def Vars: Stage 4 - Settings Lists
-    stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
-    if stage4un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage4complete = False
+    while stage4complete == False:
         stage4un = "EMPTY"
-        return
-    if stage4un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage4 = stage4un.split(";")
-    for i in range(len(stage4)):
-        stage4[i] = int(stage4[i])
-        if stage4[i] in (1, 2, 3, 4):
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage4 = "EMPTY"
+        stage4error = False
+        stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
+        if stage4un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage4un = "EMPTY"
             return
-    print("Inputed Display: " + str(stage4[0]))
-    print("Inputed Numbers: " + str(stage4[1:5]))
+        if stage4un == "r": # Reset Command
+            print("Reset detected. Resetting expert...")
+            return
+        stage4 = [x for x in stage4un]
 
+        if len(stage4) != 5: # Is the number of inputs correct? No...
+            print("Error. Incorrect length, '" + str(len(stage4)) + "'. Please Try Again")
+            stage4error = True
+        for i in range(len(stage4)):
+            if stage4[i] in ["1","2","3","4"]: # Are the inputs numbers?
+                stage4[i]=int(stage4[i])
+            else: # No...
+                print("Error. Incorrect number, '" + str(stage4[i]) + "'. Please Try Again")
+                stage4error = True
+                break
+        existing = []
+        for i in stage4[1:]:
+            if i in existing:
+                print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
+                stage4error = True
+                break
+            else:
+                existing.append(i)
 
-    #Logic: Stage 4
-    print(" ")
-    if stage4[0] == 1:
-        print("Press the button labeled " + str(stage4[positions[0]]))
-        positions.append(positions[0])
-        numbers.append(stage4[positions[0]])
-    elif stage4[0] == 2:
-        print("Press the button labeled " + str(stage4[1]))
-        positions.append(1)
-        numbers.append(stage4[1])
-    elif stage4[0] == 3:
-        print("Press the button labeled " + str(stage4[positions[1]]))
-        positions.append(positions[1])
-        numbers.append(stage4[positions[1]])
-    elif stage4[0] == 4:
-        print("Press the button labeled " + str(stage4[positions[1]]))
-        positions.append(positions[1])
-        numbers.append(stage4[positions[1]])
-    print(" ")
+        if stage4error:
+            continue
+        else:
+            #Logic: Stage 4
+            print(" ")
+            match stage4[0]:
+                case 1:
+                    print("Press the button labeled " + str(stage4[positions[0]]))
+                    positions.append(positions[0])
+                    numbers.append(stage4[positions[0]])
+                    stage4complete = True
+                case 2:
+                    print("Press the button labeled " + str(stage4[1]))
+                    positions.append(1)
+                    numbers.append(stage4[1])
+                    stage4complete = True
+                case 3:
+                    print("Press the button labeled " + str(stage4[positions[1]]))
+                    positions.append(positions[1])
+                    numbers.append(stage4[positions[1]])
+                    stage4complete = True
+                case 4:
+                    print("Press the button labeled " + str(stage4[positions[1]]))
+                    positions.append(positions[1])
+                    numbers.append(stage4[positions[1]])
+                    stage4complete = True
+            print(" ")
 
 
     #Def Vars: Stage 5 - Settings Lists
-    stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
-    if stage5un == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
+    stage5complete = False
+    while stage5complete == False:
         stage5un = "EMPTY"
-        return
-    if stage5un == "r":
-        print("Reset detected. Resetting expert...")
-        return
-    stage5 = stage5un.split(";")
-    for i in range(len(stage5)):
-        stage5[i] = int(stage5[i])
-        if stage5[i] in (1, 2, 3, 4):
-            pass
-        else:
-            print("Error. Incorrect numbers. Resetting")
+        stage5 = "EMPTY"
+        stage5error = False
+        stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
+        if stage5un == "...": # Exit Command
+            print("Exit Command Detected. Exiting...")
+            stage5un = "EMPTY"
             return
-    print("Inputed Display: " + str(stage5[0]))
-    print("Inputed Numbers: " + str(stage5[1:5]))
+        if stage5un == "r": # Reset Command
+            print("Reset detected. Resetting expert...")
+            return
+        stage5 = [x for x in stage5un]
 
+        if len(stage5) != 5: # Is the number of inputs correct? No...
+            print("Error. Incorrect length, '" + str(len(stage5)) + "'. Please Try Again")
+            stage5error = True
+        for i in range(len(stage5)):
+            if stage5[i] in ["1","2","3","4"]: # Are the inputs numbers?
+                stage5[i]=int(stage5[i])
+            else: # No...
+                print("Error. Incorrect number, '" + str(stage5[i]) + "'. Please Try Again")
+                stage5error = True
+                break
+        existing = []
+        for i in stage5[1:]:
+            if i in existing:
+                print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
+                stage5error = True
+                break
+            else:
+                existing.append(i)
 
-    #Logic: Stage 5
-    print(" ")
-    if stage5[0] == 1:
-        print("Press the button labeled " + str(numbers[0]))
-        index = stage5.index(numbers[0])
-        positions.append(index)
-        numbers.append(numbers[0])
-    elif stage5[0] == 2:
-        print("Press the button labeled " + str(numbers[1]))
-        index = stage5.index(numbers[1])
-        positions.append(index)
-        numbers.append(numbers[1])
-    elif stage5[0] == 3:
-        print("Press the button labeled " + str(numbers[3]))
-        index = stage5.index(numbers[3])
-        positions.append(index)
-        numbers.append(numbers[3])
-    elif stage5[0] == 4:
-        print("Press the button labeled " + str(numbers[2]))
-        index = stage5.index(numbers[2])
-        positions.append(index)
-        numbers.append(numbers[2])
-    print(" ")
+        if stage5error:
+            continue
+        else:
+            #Logic: Stage 5
+            print(" ")
+            match stage5[0]:
+                case 1:
+                    print("Press the button labeled " + str(numbers[0]))
+                    index = stage5.index(numbers[0])
+                    positions.append(index)
+                    numbers.append(numbers[0])
+                    stage5complete = True
+                case 2:
+                    print("Press the button labeled " + str(numbers[1]))
+                    index = stage5.index(numbers[1])
+                    positions.append(index)
+                    numbers.append(numbers[1])
+                    stage5complete = True
+                case 3:
+                    print("Press the button labeled " + str(numbers[3]))
+                    index = stage5.index(numbers[3])
+                    positions.append(index)
+                    numbers.append(numbers[3])
+                    stage5complete = True
+                case 4:
+                    print("Press the button labeled " + str(numbers[2]))
+                    index = stage5.index(numbers[2])
+                    positions.append(index)
+                    numbers.append(numbers[2])
+                    stage5complete = True
+            print(" ")
 
 #The Morse -> Letter
-def morseToAlpha(input):
-    if input == ".-":
-        return "A"
-    elif input == "-...":
-        return "B"
-    elif input == "-.-.":
-        return "C"
-    elif input == "-..":
-        return "D"
-    elif input == ".":
-        return "E"
-    elif input == "..-.":
-        return "F"
-    elif input == "--.":
-        return "G"
-    elif input == "....":
-        return "H"
-    elif input == "..":
-        return "I"
-    elif input == ".---":
-        return "J"
-    elif input == "-.-":
-        return "K"
-    elif input == ".-..":
-        return "L"
-    elif input == "--":
-        return "M"
-    elif input == "-.":
-        return "N"
-    elif input == "---":
-        return "O"
-    elif input == ".--.":
-        return "P"
-    elif input == "--.-":
-        return "Q"
-    elif input == ".-.":
-        return "R"
-    elif input == "...":
-        return "S"
-    elif input == "-":
-        return "T"
-    elif input == "..-":
-        return "U"
-    elif input == "...-":
-        return "V"
-    elif input == ".--":
-        return "W"
-    elif input == "-..-":
-        return "X"
-    elif input == "-.--":
-        return "Y"
-    elif input == "--..":
-        return "Z"
-    else:
-        print("Error. Incorrect morse detected. Resetting")
-        return
-
-shell = ["S", "H", "E", "L", "L"]
-halls = ["H", "A", "L", "L", "S"]
-slick = ["S", "L", "I", "C", "K"]
-trick = ["T", "R", "I", "C", "K"]
-boxes = ["B", "O", "X", "E", "S"]
-leaks = ["L", "E", "A", "K", "S"]
-strobe = ["S", "T", "R", "O", "B", "E"]
-bistro = ["B", "I", "S", "T", "R", "O"]
-flick = ["F", "L", "I", "C", "K"]
-bombs = ["B", "O", "M", "B", "S"]
-bbreak = ["B", "R", "E", "A", "K"]
-brick = ["B", "R", "I", "C", "K"]
-steak = ["S", "T", "E", "A", "K"]
-sting = ["S", "T", "I", "N", "G"]
-vector = ["V", "E", "C", "T", "O", "R"]
-beats = ["B", "E", "A", "T", "S"] 
+def morseToAlpha(morseIn):
+    match morseIn:
+        case ".-": return "A"
+        case "-...": return "B"
+        case "-.-.": return "C"
+        case "-..": return "D"
+        case ".": return "E"
+        case "..-.": return "F"
+        case "--.": return "G"
+        case "....": return "H"
+        case "..": return "I"
+        case ".---": return "J"
+        case "-.-": return "K"
+        case ".-..": return "L"
+        case "--": return "M"
+        case "-.": return "N"
+        case "---": return "O"
+        case ".--.": return "P"
+        case "--.-": return "Q"
+        case ".-.": return "R"
+        case "...": return "S"
+        case "-": return "T"
+        case "..-": return "U"
+        case "...-": return "V"
+        case ".--": return "W"
+        case "-..-": return "X"
+        case "-.--": return "Y"
+        case "--..": return "Z"
+        case other:
+            print("Error. Invaild morse, '" + str(morseIn) + "'. Resetting")
+            return "ERROR"
 
 #Morse Code Logic (input -> output)
 def morse():
+    shell = ["S", "H", "E", "L", "L"]
+    halls = ["H", "A", "L", "L", "S"]
+    slick = ["S", "L", "I", "C", "K"]
+    trick = ["T", "R", "I", "C", "K"]
+    boxes = ["B", "O", "X", "E", "S"]
+    leaks = ["L", "E", "A", "K", "S"]
+    strobe = ["S", "T", "R", "O", "B", "E"]
+    bistro = ["B", "I", "S", "T", "R", "O"]
+    flick = ["F", "L", "I", "C", "K"]
+    bombs = ["B", "O", "M", "B", "S"]
+    bbreak = ["B", "R", "E", "A", "K"]
+    brick = ["B", "R", "I", "C", "K"]
+    steak = ["S", "T", "E", "A", "K"]
+    sting = ["S", "T", "I", "N", "G"]
+    vector = ["V", "E", "C", "T", "O", "R"]
+    beats = ["B", "E", "A", "T", "S"] 
+
     #Def Vars
     userMorseUnsplit = str(input("What is your Morse Code (see README.md for instructions)?: "))
     if userMorseUnsplit == "...": # Exit Command
@@ -1323,7 +1108,7 @@ def morse():
         print("Input 3.600 MHz")
         return
     else:
-        print("You did something wrong. Try again.")
+        print("Error. Invalid/Incomplete morse input. Resetting")
         return
 
 #Complicated Wires (input x4 -> output, loop until complete)
@@ -1340,6 +1125,11 @@ def compWires():
     starList = "EMPTY"
 
     # Input Logic
+    ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    if ledList == "...": # Exit Command
+        print("Exit Command Detected. Exiting...")
+        ledList = "EMPTY"
+        return
     blueList = str(input("What wires have blue coloring? (as a binary list): "))
     if blueList == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
@@ -1349,11 +1139,6 @@ def compWires():
     if redList == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
         redlist = "EMPTY"
-        return
-    ledList = str(input("What wires have an LED above them? (as a binary list): "))
-    if ledList == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
-        ledList = "EMPTY"
         return
     starList = str(input("What wires have a star beneath them? (as a binary list): "))
     if starList == "...": # Exit Command
@@ -1384,7 +1169,7 @@ def compWires():
         elif i == "0":
             pass
         else:
-            print("Error. Non-binary input value detected. Resetting.")
+            print("Error. Invalid binary input ,'" + str(i) + "'. Resetting.")
             return
 
 
@@ -1466,7 +1251,8 @@ def compWires():
                         if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                             serialNum = int(serialNum)
                         else:
-                            print("Error. Incorrect serial digit. Resetting.")
+                            print("Error. Invalid serial digit, '" + str(serialNum) + "'. Resetting.")
+                            serialNum = "EMPTY"
                             return
                     if serialNum%2 == 0:
                         if n == 1:
@@ -1498,7 +1284,8 @@ def compWires():
                         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
                             batteries = int(batteries)
                         else:
-                            print("Error. Incorrect number of batteries. Resetting")
+                            print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
+                            batteries = "EMPTY"
                             return
                     if batteries >= 2:
                         if n == 1:
@@ -1507,7 +1294,7 @@ def compWires():
                         if n == 1:
                             print("Wire " + str(i+1) + ") Do Not Cut")
                 case other:
-                    print("Error: Something went so wrong, I don't know what happened. Resetting.")
+                    print("Error. Something went so wrong, I don't know what happened. Resetting.")
                     return
 
 #Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
@@ -1517,24 +1304,63 @@ def wireSeq():
     blaOcc = 0
     for i in range(0,4):
         #Def Vars
-        wiresList = []
-        wires = []
-        wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
-        if wireUn == "...": # Exit Command
-            print("Exit Command Detected. Exiting...")
-            wireUn = "EMPTY"
-            return
-        wiresList = wireUn.split(";")
-        uCount = 0
-        for u in wiresList: #Reformatting Blanks so that the Logic doesn't explode
-            if u == "blank":
-                wiresList[uCount] = "_>_"
-            uCount += 1
+        inputSuccess = [False, False, False]
+        while (False in inputSuccess):
+            inputSuccess = [False, False, False]
+            wiresList = []
+            wires = []
+            wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
+            if wireUn == "...": # Exit Command
+                print("Exit Command Detected. Exiting...")
+                wireUn = "EMPTY"
+                return
+            wiresList = wireUn.split(";")
 
+            if len(wiresList) != 3: #Testing length
+                print("Error. Invalid number of inputs, '" + str(len(wiresList)) + "'. Try Again")
+                print(" ")
+                continue
+
+            uCount = -1
+            for u in wiresList: #Testing each "color>endpoint"S
+                uCount = uCount + 1
+
+                testList = []
+                if u == "blank":
+                    inputSuccess[uCount] = True
+                    continue
+                testList = u.split(">")
+
+                colorSuccess = False
+                endpointSuccess = False
+                match testList[0]: #Testing color
+                    case("r"): colorSuccess = True
+                    case("blu"): colorSuccess = True
+                    case("bla"): colorSuccess = True
+                    case other:
+                        print("Error. Invalid color, '" + str(testList[0]) + "'. Try again")
+                        print(" ")
+                match testList[1]: #Testing Endpoint
+                    case("A"): endpointSuccess = True
+                    case("B"): endpointSuccess = True
+                    case("C"): endpointSuccess = True
+                    case other:
+                        print("Error. Invalid Endpoint, '" + str(testList[1]) + "'. Try again")
+                        print(" ")
+
+                if colorSuccess and endpointSuccess: #Are both Color and Endpoint good?
+                    inputSuccess[uCount] = True
+
+            # wiresList[wiresList.index("blank")] = "_>_"
         # Splits the wiresList into individual details. 0,2,4 are colors and 1,3,5 are endpoints
         for w in wiresList:
-            wires.append(w.split(">")[0])
-            wires.append(w.split(">")[1])
+            workingList = []
+            if w == "blank":
+                workingList = ["_","_"]
+            else:
+                workingList = w.split(">")
+            wires = wires + workingList
+            
 
 
         #Occurance Logic
@@ -1602,7 +1428,7 @@ def wireSeq():
                                 else:
                                     print("Wire "+str(wCount) + ": "+str(wiresList[wCount-1]) + ") Do NOT Cut")
                     case("_"): #Blank Slot
-                        print("Wire " + str(wCount)+") No wire, ignore")
+                        print("Wire " + str(wCount)+": No wire, ignore")
             dCount += 1
         print(" ")
 
@@ -1622,17 +1448,26 @@ def password():
     #Testing letters in each display
     for d in [0,1,2,3,4]:
         if len(possibleWords) == 1: #If there is one possible words left, print it
+                print(" ")
                 print("Input the word " + str(possibleWords) + " into the module")
                 return
 
         #Getting the possible letters for display d
         testLetters = "EMPTY"
-        testLetters = str(input("Please list all the possible letters in display " + str(d+1) + ": "))
+        testLetters = str(input("Please list all 6 possible letters in display " + str(d+1) + ": "))
         if testLetters == "...":
             print("Exit Command Detected. Exiting")
             testLetters = "EMPTY"
             return
+
         testLetters = [x for x in testLetters]
+        if len(testLetters) != 6:
+            print("Error. Invalid number of letters ,'" + str(len(testLetters)) + "'. Resetting")
+            return
+        for t in testLetters:
+            if t not in ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]:
+                print("Error. Invalid letter, '" + str(t) + "'. Resetting")
+                return
 
         #Testing the letters possible against the possible words remaining
         testingWord = "EMPTY"
@@ -1648,9 +1483,10 @@ def password():
         for r in removedWords:
             possibleWords.remove(r)
         removedWords = []
+        print("Number of possible words remaining: " + str(len(possibleWords)))
     
     #No words matched the list
-    print("Error. No words possible from inputs. Please try again. Resetting")
+    print("Error. No words possible from inputs. Resetting")
     return
 
 #Intro
@@ -1670,54 +1506,411 @@ print(" ")
 
 print("KTANExpert by Reese Ford")
 print("For specific instructions, visit https://github.com/RicePerson/KTANExpert#readme")
-print("Incase you haven't launched the game before, the verification code as of 10/9/2022 is 241")
+print("In case you haven't launched the game before, the verification code as of 10/9/2022 is 241")
 
 #Module Loop
 os.startfile("needymodules.py")
-while isDoing == True:
+while isDoing:
     #checking which module you are currently working on
     print(" ")
-    module = input("Module? (w/b/k/s/who/m/mO/cW/wS/resetbomb/done): ")
-    if module == "w":
-        print(" ")
-        wires()
-    elif module == "b":
-        print(" ")
-        button()
-    elif module == "k":
-        print(" ")
-        keypad()
-    elif module == "s":
-        print(" ")
-        simon()
-    elif module == "who":
-        print(" ")
-        whofirst()
-    elif module == "m":
-        print(" ")
-        memory()
-    elif module == "mO":
-        print(" ")
-        morse()
-    elif module == "cW":
-        print(" ")
-        compWires()
-    elif module == "wS":
-        print(" ")
-        wireSeq()
-    elif module == "p":
-        print(" ")
-        password()
-    elif module == "resetbomb":
-        serialNum = "EMPTY"
-        batteries = "EMPTY"
-        litIndicators = ["EMPTY"]
-        parallelPort = "EMPTY"
-        print("Bomb Reset. All bomb-wide varaible are now empty")
-    elif module == "done":
-        print(" ")
-        print("Bomb Complete. Congrats Defuser")
-        isDoing = False
-    else:
-        print("Please enter a valid module")
-        isDoing = True
+    module = input("Module? (w/b/k/s/who/m/mO/cW/wS/p/resetbomb/done): ")
+    match module:
+        case "w":
+            print(" ")
+            wires()
+        case "b":
+            print(" ")
+            button()
+        case "k":
+            print(" ")
+            keypad()
+        case "s":
+            print(" ")
+            newnewSimon()
+        case "who":
+            print(" ")
+            whofirst()
+        case "m":
+            print(" ")
+            memory()
+        case "mO":
+            print(" ")
+            morse()
+        case "cW":
+            print(" ")
+            compWires()
+        case "wS":
+            print(" ")
+            wireSeq()
+        case "p":
+            print(" ")
+            password()
+        case "resetbomb":
+            serialNum = "EMPTY"
+            batteries = "EMPTY"
+            litIndicators = []
+            parallelPort = "EMPTY"
+            print("Bomb Reset. All bomb-wide varaible are now empty")
+        case "done":
+            print(" ")
+            print("Bomb Complete. Congrats Defuser")
+            isDoing = False
+        case other:
+            print("Please enter a valid module")
+            isDoing = True
+
+
+
+# The wasteland (A place for commented out code that could be usefull later...)
+
+#def simon():
+#    #Logic (It's a loop)
+#    vowel = str(input("Vowel in Serial? (y/n): "))
+#    isDoing = True
+
+#    while isDoing == True:
+#        if vowel == "y":
+#            strikes = str(input("Number Of Strikes? (0/1/2): "))
+#            if strikes == "...": # Exit Command
+#                print("Exit Command Detected. Exiting...")
+#                strikes = "EMPTY"
+#                return
+#            while strikes == "0":
+#                user = "EMPTY"
+#                flashSeq = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+                
+#                inputSuccess = False
+#                user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g): "))
+#                match user:
+#                    case("r"): 
+#                        flashSeq.append("r")
+#                        inputSuccess = True
+#                    case("blu"): 
+#                        flashSeq.append("blu")
+#                        inputSuccess = True
+#                    case("y"): 
+#                        flashSeq.append("y")
+#                        inputSuccess = True
+#                    case("g"): 
+#                        flashSeq.append("g")
+#                        inputSuccess = True
+#                    case other: 
+#                        print("Error. Invalid color. Please try again")
+#                        inputSuccess = False
+#                        pass
+                    
+#                for i in flashSeq:
+#                    case("r")
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "1":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("y")
+#                    elif i == "blu":
+#                        finalSimon.append("g")
+#                    elif i == "g":
+#                        finalSimon.append("blu")
+#                    elif i == "y":
+#                        finalSimon.append("r")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "2":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("g")
+#                    elif i == "blu":
+#                        finalSimon.append("r")
+#                    elif i == "g":
+#                        finalSimon.append("y")
+#                    elif i == "y":
+#                        finalSimon.append("blu")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#        elif vowel == "n":
+#            strikes = str(input("Number Of Strikes? (0/1/2): "))
+#            if strikes == "...": # Exit Command
+#                print("Exit Command Detected. Exiting...")
+#                strikes = "EMPTY"
+#                return
+#            while strikes == "0":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("blu")
+#                    elif i == "blu":
+#                        finalSimon.append("y")
+#                    elif i == "g":
+#                        finalSimon.append("g")
+#                    elif i == "y":
+#                        finalSimon.append("r")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "1":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("r")
+#                    elif i == "blu":
+#                        finalSimon.append("blu")
+#                    elif i == "g":
+#                        finalSimon.append("y")
+#                    elif i == "y":
+#                        finalSimon.append("g")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#            while strikes == "2":
+#                user = []
+#                finalSimon = []
+#                flash = 1
+#                print(" ")
+#                while True:
+#                    userInput = str(input("What is flash " + str(flash) +
+#                                      "? (r/blu/g/y/end/done):"))
+#                    if userInput == "...": # Exit Command
+#                        print("Exit Command Detected. Exiting...")
+#                        userInput = "EMPTY"
+#                        return
+#                    if userInput == "r":
+#                        user.append("r")
+#                        flash += 1
+#                    elif userInput == "blu":
+#                        user.append("blu")
+#                        flash += 1
+#                    elif userInput == "g":
+#                        user.append("g")
+#                        flash += 1
+#                    elif userInput == "y":
+#                        user.append("y")
+#                        flash += 1
+#                    elif userInput == "done":
+#                        isDoing = False
+#                        return
+
+#                    if userInput == "end":
+#                        print("Currently flashing: " + str(user))
+#                        break
+                
+#                for i in user:
+#                    if i == "r":
+#                        finalSimon.append("y")
+#                    elif i == "blu":
+#                        finalSimon.append("g")
+#                    elif i == "g":
+#                        finalSimon.append("blu")
+#                    elif i == "y":
+#                        finalSimon.append("r")
+#                    elif i == "end":
+#                        pass
+#                    else:
+#                        print("How?")
+#                        return
+#                print(" ")
+#                #print("Input: " + str(finalSimon))
+#                print("Click these buttons in order:")
+#                for f in finalSimon:
+#                    match f:
+#                        case "r":print("Red")
+#                        case "y":print("Yellow")
+#                        case "g":print("Green")
+#                        case "blu":print("Blue")
+#                        case other: return
+#                print(" ")
+
+#    print("Error. You input incorrectly. Please try again")
+#    return #Pre Issue 80 / Not used anymore

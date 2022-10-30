@@ -2,10 +2,7 @@
 # Created by Reese Ford 10/17/2022
 # https://www.github.com/RicePerson/KTANExpert
 
-import time
-import math
 from os import system
-import os
 
 system("title " + "NeedyModule Sub-Expert")
 
@@ -90,6 +87,7 @@ def knobs():
 #Starting Text
 print("Needy Modules Sub-Expert")
 print("Created by Reese Ford")
+print(" ")
 
 print("Needy Modules are pretty simple. There are only 3 possible ones.")
 print("There is Venting Gas, Capacitor Discharge, and Knobs")
