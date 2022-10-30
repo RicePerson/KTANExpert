@@ -272,6 +272,9 @@
   ('tracemalloc',
    'C:\\Users\\reese\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
    'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\reese\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
+   'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\reese\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_py_abc.py',
    'PYMODULE'),
@@ -304,7 +307,4 @@
    'PYMODULE'),
   ('http.client',
    'C:\\Users\\reese\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\http\\client.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Users\\reese\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
    'PYMODULE')])
