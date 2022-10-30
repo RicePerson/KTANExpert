@@ -28,7 +28,7 @@ It's not done yet. As of right now, it only does:
 (For more information on modules, visit bombmanual.com)
 
 # TO INSTALL:
-Download the KTANExpert folder and run KTANExpert.py
+Download the KTANExpertV1.0 archive, extract both executables in the archive, and run KTANExpert.exe
 Two windows will open, one titled "KTANExpert by Reese Ford"
 And one titled "NeedyModule Sub-Expert"
 The KTANExpert handles regular modules, while the Sub-Expert handles needy modules
