@@ -790,7 +790,7 @@ def memory():
             return
         if stage3un == "r": # Reset Command
             print("Reset detected. Resetting expert...")
-            return
+            return #RF
         stage3 = [x for x in stage3un]
 
         if len(stage3) != 5: # Is the number of inputs correct? No...
@@ -1914,3 +1914,4 @@ while isDoing:
 
 #    print("Error. You input incorrectly. Please try again")
 #    return #Pre Issue 80 / Not used anymore
+# Reese Ford
