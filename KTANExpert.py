@@ -1550,6 +1550,7 @@ while isDoing:
             batteries = "EMPTY"
             litIndicators = []
             parallelPort = "EMPTY"
+            vowel = "EMPTY"
             print("Bomb Reset. All bomb-wide varaible are now empty")
         case "done":
             print(" ")
