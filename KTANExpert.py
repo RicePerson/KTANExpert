@@ -71,7 +71,7 @@ def wires():
     #Logic - 3 Wires
     if number == 3:
         if "r" not in wireList:
-            instruction = "cutwire2"
+            instruction = "cutwiresecond"
         elif wireList[number-1] == "w":
             instruction = "cutwirelast"
         elif wireList.count("blu") > 1:
