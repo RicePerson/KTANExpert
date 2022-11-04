@@ -188,7 +188,7 @@ def button():
     # Logic
     #Starting Information
 
-    color = str(input("What is the color of the button? (blu, w, y, r): "))
+    color = str(input("What is the color of the button? (blu,w,y,r): "))
     if color not in ["blu","w","y","r"]: #Testing color
         print("Error. Invalid color, '" + str(color) + "'. Resetting")
         return
