@@ -114,11 +114,11 @@ def wires():
                     serialNum = int(serialNum)
             if serialNum%2 == 1:
                 instruction = "cutwirefourth"
-        elif (instruction == "EMPTY") and (wireList.count("r") == 1) and (wireList.count("y") > 1):
+        if (instruction == "EMPTY") and (wireList.count("r") == 1) and (wireList.count("y") > 1):
             instruction = "cutwirefirst"
-        elif (instruction == "EMPTY") and ("bla" not in wireList):
+        if (instruction == "EMPTY") and ("bla" not in wireList):
             instruction = "cutwiresecond"
-        elif instruction == "EMPTY":
+        if instruction == "EMPTY":
             instruction = "cutwirefirst"
 
     #Logic - 6 Wires
@@ -134,11 +134,11 @@ def wires():
                     serialNum = int(serialNum)
             if serialNum%2 == 1:
                 instruction = "cutwirethird"
-        elif (instruction == "EMPTY") and (wireList.count("y") == 1) and (wireList.count("w") > 1):
+        if (instruction == "EMPTY") and (wireList.count("y") == 1) and (wireList.count("w") > 1):
             instruction = "cutwirefourth"
-        elif (instruction == "EMPTY") and ("r" not in wireList):
+        if (instruction == "EMPTY") and ("r" not in wireList):
             instruction = "cutwirelast"
-        elif instruction == "EMPTY":
+        if instruction == "EMPTY":
             instruction = "cutwirefourth"
 
     else:
