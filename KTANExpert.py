@@ -589,7 +589,7 @@ def whofirst():
                         print("Error. Invalid display word ,'" + str(userWords[0]) + "'. Resetting")
                         return
                 if userWords[i] not in totalList:
-                    print("Error. Invalid word .'" + str(userWords[i])+ "'. Resetting")
+                    print("Error. Invalid word ,'" + str(userWords[i])+ "'. Resetting")
                     return
     
         # DisplayWord's Sacred Button, ButtonWord, Logic
