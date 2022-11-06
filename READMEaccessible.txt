@@ -81,25 +81,25 @@ This will not reset bomb-wide variables like the serial number, number of batter
 
 
 ## Wires `w`
-Select the number of wires present in the module (including cut wires from previous attempts).
 Enter each wire color from the top (which is considered the first wire in the expert) to the bottom.
+Seperate the colors with semicolons, and ignore empty slots
 Follow the given instructions.
 
 ### Example:
 0) KTANE gives you a wire module that goes:
-- Empty
-- RED 
-- RED  
-- Empty 
-- BLUE 
-- WHITE 
+- *Empty* 
+-  *RED*  
+-  *RED*  
+- *Empty* 
+-  *BLUE* 
+- *WHITE* 
 
-1) The Player inputs `4` as the wire number, 
-2) The Expert asks `Wire 1? (r/y/blu/bla/r): `
-3) The Player then inputs `r` ENTER `r` ENTER `blu` ENTER `w`
+2) The Expert asks `What are the wire colors from top to bottom? (w/y/r/blu/bla): `
+3) The Player then inputs `r;r;blu;w`
 4) The Expert then asks `Last Digit of Serial: `
 5) The Player checks the bomb for a serial number sticker, then inputs what the last digit is, which in the case of this example, is `3`
 6) The Expert asks you to `Cut the last RED wire`, which prompts the player to cut the 3rd wire. *Module Complete, move on to the next one.* 
+
 
 
 ## Button `b`
