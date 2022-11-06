@@ -1551,6 +1551,7 @@ while isDoing:
             litIndicators = []
             parallelPort = "EMPTY"
             vowel = "EMPTY"
+            os.system("cls")
             print("Bomb Reset. All bomb-wide varaible are now empty")
         case "done":
             print(" ")
