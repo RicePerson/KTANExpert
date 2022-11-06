@@ -88,8 +88,8 @@ This will not reset bomb-wide variables like the serial number, number of batter
 
 
 ## Wires `w`
-Select the number of wires present in the module (including cut wires from previous attempts).
 Enter each wire color from the top (which is considered the first wire in the expert) to the bottom.
+Seperate the colors with semicolons, and ignore empty slots
 Follow the given instructions.
 
 ### Example:
@@ -101,9 +101,8 @@ Follow the given instructions.
 -  *BLUE* 
 - *WHITE* 
 
-1) The Player:red_circle: inputs `4` as the wire number, 
-2) The Expert:large_blue_circle: asks `Wire 1? (r/y/blu/bla/r): `
-3) The Player:red_circle: then inputs `r` ENTER `r` ENTER `blu` ENTER `w`
+2) The Expert:large_blue_circle: asks `What are the wire colors from top to bottom? (w/y/r/blu/bla): `
+3) The Player:red_circle: then inputs `r;r;blu;w`
 4) The Expert:large_blue_circle: then asks `Last Digit of Serial: `
 5) The Player:red_circle: checks the bomb for a serial number sticker, then inputs what the last digit is, which in the case of this example, is `3`
 6) The Expert:large_blue_circle: asks you to `Cut the last RED wire`, which prompts the player to cut the 3rd wire. *Module Complete, move on to the next one.* 
