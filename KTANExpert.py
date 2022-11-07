@@ -38,6 +38,8 @@ system("title "+ "KTANExpert by Reese Ford")
 
 #Wires (inputx7(8) -> output)
 def wires():
+    system("title "+ "Wires")
+
     #Def Vars
     global serialNum
     wireList = []
@@ -176,6 +178,8 @@ def wires():
 
 #Button (inputs various -> output)
 def button():
+    system("title "+ "Button")
+
     # Vars
     color = "EMPTY"
     text = "EMPTY"
@@ -325,6 +329,8 @@ def button():
 
 #Keypad (specific inputx4 -> output)
 def keypad():
+    system("title "+ "Keypad")
+
     #Def Vars - keyLists
     keys = [
         "lolli", "at", "lambda", "light", "staff", "h", "backC", "mouth",
@@ -395,6 +401,8 @@ def keypad():
 
 #New Simon Says (inputxIndefinite -> output x#)
 def newnewSimon():
+    system("title "+ "Simon Says")
+
     flash = 1
     flashSeq = []
     global vowel
@@ -531,6 +539,8 @@ def newnewSimon():
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():
+    system("title "+ "Who's On First")
+
     #Lists of STEP 2 Words
     #Copy this to make it easier: ", ". So basically WORD CtrlV WORD CtrlV WORD and so on and so forth
 
@@ -653,6 +663,8 @@ def whofirst():
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
 def memory():
+    system("title "+ "Memory")
+
     #Def Vars
     positions = []
     numbers = []
@@ -1011,6 +1023,8 @@ def morseToAlpha(morseIn):
 
 #Morse Code Logic (input -> output)
 def morse():
+    system("title "+ "Morse Code")
+
     shell = ["S", "H", "E", "L", "L"]
     halls = ["H", "A", "L", "L", "S"]
     slick = ["S", "L", "I", "C", "K"]
@@ -1114,6 +1128,7 @@ def morse():
 
 #Complicated Wires (input x4 -> output, loop until complete)
 def compWires():
+    system("title "+ "Complicated Wires")
 
     #Def Vars
     global serialNum
@@ -1300,6 +1315,8 @@ def compWires():
 
 #Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
 def wireSeq():
+    system("title "+ "Wire Sequence")
+
     rOcc = 0
     bluOcc = 0
     blaOcc = 0
@@ -1435,6 +1452,8 @@ def wireSeq():
 
 #Passwords
 def password():
+    system("title "+ "Passwords")
+
     #Defining List Vars
     allWords = ["about","after","again","below","could",
                 "every","first","found","great","house",
@@ -1514,6 +1533,7 @@ os.startfile("needymodules.exe")
 while isDoing:
     #checking which module you are currently working on
     print(" ")
+    system("title "+ "KTANExpert by Reese Ford")
     module = input("Module? (w/b/k/s/who/m/mO/cW/wS/p/resetbomb/done): ")
     match module:
         case "w":
