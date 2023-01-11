@@ -35,7 +35,7 @@ As of 10/19/2022, the expert can process these modules:
 (For more information on modules, visit bombmanual.com)
 
 # TO INSTALL:
-Download the KTANExpertV1.0 archive, extract both executables in the archive, and run KTANExpert.exe\
+Download the most recent archive from the Releases tab, extract the contents, and run KTANExpert.exe\
 Two windows will open, one titled **KTANExpert by Reese Ford**\
 And one titled **NeedyModule Sub-Expert**\
 The KTANExpert handles regular modules, while the Sub-Expert handles needy modules\
