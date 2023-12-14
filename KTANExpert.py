@@ -37,29 +37,32 @@ system("title "+ "KTANExpert by Reese Ford")
 
 #Wires (inputx7(8) -> output)
 def wires():
+    system("title "+ "Wires")
+
     #Def Vars
     global serialNum
     wireList = []
     instruction = "EMPTY"
 
-    number = str(input("How many wires do you have? (3/4/5/6): "))
-    if number == "...":
-        print("Exit Command Detected. Exitting")
-        return
-    if number not in ["3","4","5","6"]:
-        print("Error. Invalid number, '" + str(number) + "'. Resetting")
-        return
-    else:
-        number = int(number)
+    #number = str(input("How many wires do you have? (3/4/5/6): "))
+    #if number == "...":
+    #    print("Exit Command Detected. Exitting")
+    #    return
+    #if number not in ["3","4","5","6"]:
+    #    print("Error. Invalid number, '" + str(number) + "'. Resetting")
+    #    return
+    #else:
+    #    number = int(number)
 
     #Assigning Wires
-    wireList = str(input("What are the " + str(number) + " wire colors from top to bottom? (w/y/r/blu/bla): "))
+    wireList = str(input("What are the wire colors from top to bottom? (w/y/r/blu/bla): "))
     if wireList == "...":
         print("Exit Command Detected. Exitting")
         return
     wireList = wireList.split(";")
-    if len(wireList) != number:
-        print("Error. Invalid number of wires, '" + str(len(wireList)) + "'. Resetting")
+    number = len(wireList)
+    if number not in [3,4,5,6]:
+        print("Error. Invalid number of wires, '" + str(number) + "'. Resetting")
         return
 
     for c in wireList:
@@ -70,7 +73,7 @@ def wires():
     #Logic - 3 Wires
     if number == 3:
         if "r" not in wireList:
-            instruction = "cutwire2"
+            instruction = "cutwiresecond"
         elif wireList[number-1] == "w":
             instruction = "cutwirelast"
         elif wireList.count("blu") > 1:
@@ -174,6 +177,8 @@ def wires():
 
 #Button (inputs various -> output)
 def button():
+    system("title "+ "Button")
+
     # Vars
     color = "EMPTY"
     text = "EMPTY"
@@ -187,7 +192,7 @@ def button():
     # Logic
     #Starting Information
 
-    color = str(input("What is the color of the button? (blu, w, y, r): "))
+    color = str(input("What is the color of the button? (blu,w,y,r): "))
     if color not in ["blu","w","y","r"]: #Testing color
         print("Error. Invalid color, '" + str(color) + "'. Resetting")
         return
@@ -323,6 +328,8 @@ def button():
 
 #Keypad (specific inputx4 -> output)
 def keypad():
+    system("title "+ "Keypad")
+
     #Def Vars - keyLists
     keys = [
         "lolli", "at", "lambda", "light", "staff", "h", "backC", "mouth",
@@ -393,6 +400,8 @@ def keypad():
 
 #New Simon Says (inputxIndefinite -> output x#)
 def newnewSimon():
+    system("title "+ "Simon Says")
+
     flash = 1
     flashSeq = []
     global vowel
@@ -529,6 +538,8 @@ def newnewSimon():
 
 #Whos on First (input -> output, input -> outputx?)
 def whofirst():
+    system("title "+ "Who's On First")
+
     #Lists of STEP 2 Words
     #Copy this to make it easier: ", ". So basically WORD CtrlV WORD CtrlV WORD and so on and so forth
 
@@ -587,7 +598,7 @@ def whofirst():
                         print("Error. Invalid display word ,'" + str(userWords[0]) + "'. Resetting")
                         return
                 if userWords[i] not in totalList:
-                    print("Error. Invalid word .'" + str(userWords[i])+ "'. Resetting")
+                    print("Error. Invalid word ,'" + str(userWords[i])+ "'. Resetting")
                     return
     
         # DisplayWord's Sacred Button, ButtonWord, Logic
@@ -651,6 +662,8 @@ def whofirst():
 
 #Memory (input -> output x5) (This is as simple as I want in terms of input and output)
 def memory():
+    system("title "+ "Memory")
+
     #Def Vars
     positions = []
     numbers = []
@@ -1009,6 +1022,8 @@ def morseToAlpha(morseIn):
 
 #Morse Code Logic (input -> output)
 def morse():
+    system("title "+ "Morse Code")
+
     shell = ["S", "H", "E", "L", "L"]
     halls = ["H", "A", "L", "L", "S"]
     slick = ["S", "L", "I", "C", "K"]
@@ -1112,6 +1127,7 @@ def morse():
 
 #Complicated Wires (input x4 -> output, loop until complete)
 def compWires():
+    system("title "+ "Complicated Wires")
 
     #Def Vars
     global serialNum
@@ -1298,6 +1314,8 @@ def compWires():
 
 #Wire Sequences (inputx1 -> outputx1, loop 4 repeats)
 def wireSeq():
+    system("title "+ "Wire Sequence")
+
     rOcc = 0
     bluOcc = 0
     blaOcc = 0
@@ -1433,6 +1451,8 @@ def wireSeq():
 
 #Passwords
 def password():
+    system("title "+ "Passwords")
+
     #Defining List Vars
     allWords = ["about","after","again","below","could",
                 "every","first","found","great","house",
@@ -1512,6 +1532,7 @@ os.startfile("needymodules.exe")
 while isDoing:
     #checking which module you are currently working on
     print(" ")
+    system("title "+ "KTANExpert by Reese Ford")
     module = input("Module? (w/b/k/s/who/m/mO/cW/wS/p/resetbomb/done): ")
     match module:
         case "w":
@@ -1550,6 +1571,7 @@ while isDoing:
             litIndicators = []
             parallelPort = "EMPTY"
             vowel = "EMPTY"
+            os.system("cls")
             print("Bomb Reset. All bomb-wide varaible are now empty")
         case "done":
             print(" ")

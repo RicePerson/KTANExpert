@@ -8,12 +8,18 @@ system("title " + "NeedyModule Sub-Expert")
 
 # Knobs
 def knobs():
+    global isDoing
     leds = "EMPTY"
     leds = str(input("What is the led pattern?: "))
-    if leds == "...": #Exit Command
-        print("Exit Command Detected. Exitting")
-        leds = "EMPTY"
-        return
+    match leds:
+        case "...":
+            print("Exit Command Detected. Exitting")
+            leds = "EMPTY"
+            return
+        case "done":
+            print("Bomb Complete.")
+            isDoing = False
+            return
     ledsList = [x for x in leds]
     for l in ledsList: #Checking for non-binaries
         if l == "1" or l == "0":
@@ -94,7 +100,8 @@ print("There is Venting Gas, Capacitor Discharge, and Knobs")
 print("For Venting Gas, just follow the prompts on the screen with the goal to vent gas")
 print("For Cap Discharge, pull down the lever to discharge the capacitor before it explodes")
 print("For Knobs, follow the instructions below:")
-while True:
+isDoing = True
+while isDoing == True:
     print(" ")
     knobs()
 
