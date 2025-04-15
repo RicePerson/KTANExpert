@@ -206,7 +206,7 @@ def button():
     if color == "blu":
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
-            if text == "...": # Exit Command
+            if text == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
         if text == "abort":
@@ -216,7 +216,7 @@ def button():
     #Manual Step 2
     if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = str(input("How many batteries are on the bomb?: "))
-        if batteries == "...": # Exit Command
+        if batteries == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             batteries = "EMPTY"
             return
@@ -229,7 +229,7 @@ def button():
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
-            if text == "...": # Exit Command
+            if text == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
         if text == "detonate":
@@ -240,7 +240,7 @@ def button():
     if (givenInstruction == False) and (color == "w"):
         if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
-            if litIndicators == "...": # Exit Command
+            if litIndicators == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = "EMPTY"
                 return
@@ -251,7 +251,7 @@ def button():
     #Manual Step 4
     if (givenInstruction == False) and (batteries == "EMPTY"):
         batteries = str(input("How many batteries are on the bomb?: "))
-        if batteries == "...": # Exit Command
+        if batteries == "...": #EXIT 
             print("Exit Command Detected. Exiting...")
             batteries = "EMPTY"
             return
@@ -264,7 +264,7 @@ def button():
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
-            if litIndicators == "...": # Exit Command
+            if litIndicators == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = "EMPTY"
                 return
@@ -281,7 +281,7 @@ def button():
     if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
-            if text == "...": # Exit Command
+            if text == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
         if text == "hold":
