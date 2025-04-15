@@ -1,4 +1,3 @@
-
 # /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$$                                           /$$    
 #| $$  /$$/|__  $$__//$$__  $$| $$$ | $$| $$_____/                                          | $$    
 #| $$ /$$/    | $$  | $$  \ $$| $$$$| $$| $$       /$$   /$$  /$$$$$$   /$$$$$$   /$$$$$$  /$$$$$$  
@@ -11,7 +10,7 @@
 #                                                           | $$                                    
 #                                                           |__/                                    
 
-# Keep Talking and Nobody Explodes Manual "Expert"
+# Keep Talking and Nobody Explodes Manual Expert
 # Created By Reese Ford 07/13/2021
 # https://www.github.com/RicePerson/KTANExpert
 

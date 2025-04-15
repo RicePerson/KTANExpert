@@ -1,5 +1,4 @@
-<!-- If you can read this, that means the text viewer that you are using does not support MarkDown. For the most accessible view of these instructions, check out READMEaccessable.txt-->
-
+<!-- If you can read this, that means the text viewer that you are using does not support MarkDown. For the most accessible view of these instructions, check out READMEaccessable.txt -->
 
 ```
  /$$   /$$ /$$$$$$$$ /$$$$$$  /$$   /$$ /$$$$$$$$                                           /$$    
