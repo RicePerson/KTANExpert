@@ -1468,10 +1468,10 @@ def password():
 
     #Testing letters in each display
     for d in [0,1,2,3,4]:
-        if len(possibleWords) == 1: #If there is one possible words left, print it
-                print(" ")
-                print("Input the word " + str(possibleWords) + " into the module")
-                return
+        if len(possibleWords) == 1: #If there is one possible word left, print it
+            print(" ")
+            print("Input the word *" + possibleWords[0] + "* into the module")
+            return
 
         #Getting the possible letters for display d
         testLetters = "EMPTY"
@@ -1507,7 +1507,12 @@ def password():
         print("Number of possible words remaining: " + str(len(possibleWords)))
     
     #No words matched the list
-    print("Error. No words possible from inputs. Resetting")
+    if len(possibleWords) == 1:
+        print(" ")
+        print("Input the word *" + possibleWords[0] + "* into the module")
+        return
+    else:
+        print("Error. No words possible from inputs. Resetting")
     return
 
 #Intro
