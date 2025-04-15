@@ -538,6 +538,9 @@ def newnewSimon():
         flash = flash + 1
 
 #Whos on First (input -> output, input -> outputx?)
+
+# TODO: Start Verifing Exits HERE
+
 def whofirst():
     system("title "+ "Who's On First")
 
