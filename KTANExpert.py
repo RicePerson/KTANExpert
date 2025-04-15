@@ -46,16 +46,6 @@ def wires():
     wireList = []
     instruction = "EMPTY"
 
-    #number = str(input("How many wires do you have? (3/4/5/6): "))
-    #if number == "...":
-    #    print("Exit Command Detected. Exitting")
-    #    return
-    #if number not in ["3","4","5","6"]:
-    #    print("Error. Invalid number, '" + str(number) + "'. Resetting")
-    #    return
-    #else:
-    #    number = int(number)
-
     #Assigning Wires
     wireList = str(input("What are the wire colors from top to bottom? (w/y/r/blu/bla): "))
     if wireList == "...":
