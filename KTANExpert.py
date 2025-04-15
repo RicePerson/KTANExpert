@@ -1507,7 +1507,12 @@ def password():
         print("Number of possible words remaining: " + str(len(possibleWords)))
     
     #No words matched the list
-    print("Error. No words possible from inputs. Resetting")
+    if len(possibleWords) == 1:
+        print(" ")
+        print("Input the word *" + possibleWords[0] + "* into the module")
+        return
+    else:
+        print("Error. No words possible from inputs. Resetting")
     return
 
 #Intro
