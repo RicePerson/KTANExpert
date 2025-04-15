@@ -1470,7 +1470,7 @@ def password():
     for d in [0,1,2,3,4]:
         if len(possibleWords) == 1: #If there is one possible word left, print it
             print(" ")
-            print("Input the word " + str(possibleWords) + " into the module")
+            print("Input the word *" + possibleWords[0] + "* into the module")
             return
 
         #Getting the possible letters for display d
