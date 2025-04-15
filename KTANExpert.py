@@ -307,14 +307,14 @@ def button():
                     print(" ")
                     print("Release the button when the countdown timer has a 5 in any position")
                     return
-                case other:
+                case _:
                     print(" ")
                     print("Release the button when the countdown timer has a 1 in any position")
         case "pressRelease":
             print(" ")
             print("Press and immediately release the button")
             return
-        case other:
+        case _:
             print("Error. Something went wrong. Resetting.")
             return
 
