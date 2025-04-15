@@ -230,11 +230,12 @@ def button():
 
     #Manual Step 3
     if (givenInstruction == False) and (color == "w"):
+        old_litIndicators = litIndicators
         if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
             if litIndicators == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
-                litIndicators = "EMPTY"
+                litIndicators = old_litIndicators
                 return
         if "CAR" in litIndicators:
             instruction = "hold"
@@ -255,11 +256,12 @@ def button():
             batteries = old_batteries
             return
     if (givenInstruction == False) and (batteries > 2):
+        old_litIndicators = litIndicators
         if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
             if litIndicators == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
-                litIndicators = "EMPTY"
+                litIndicators = old_litIndicators
                 return
         if "FRK" in litIndicators:
             instruction = "pressRelease"
