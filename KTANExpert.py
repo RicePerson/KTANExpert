@@ -58,8 +58,8 @@ def wires():
 
     #Assigning Wires
     wireList = str(input("What are the wire colors from top to bottom? (w/y/r/blu/bla): "))
-    if wireList == "...":
-        print("Exit Command Detected. Exitting")
+    if wireList == "...": #EXIT
+        print("Exit Command Detected. Exiting...")
         return
     wireList = wireList.split(";")
     number = len(wireList)
