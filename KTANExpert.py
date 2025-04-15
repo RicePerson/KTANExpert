@@ -195,11 +195,11 @@ def button():
     #Starting Information
 
     color = str(input("What is the color of the button? (blu,w,y,r): "))
+    if color == "...": #EXIT
+        print("Exit Command Detected. Exiting...")
+        return
     if color not in ["blu","w","y","r"]: #Testing color
         print("Error. Invalid color, '" + str(color) + "'. Resetting")
-        return
-    if color == "...": # Exit Command
-        print("Exit Command Detected. Exiting...")
         return
 
     #Manual Step 1
