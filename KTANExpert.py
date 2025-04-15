@@ -231,7 +231,6 @@ def button():
             text = str(input("What does the button say? (all lowercase): "))
             if text == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
-                text = "EMPTY"
                 return
         if text == "detonate":
             instruction = "pressRelease"
@@ -284,7 +283,6 @@ def button():
             text = str(input("What does the button say? (all lowercase): "))
             if text == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
-                text = "EMPTY"
                 return
         if text == "hold":
             instruction = "pressRelease"
