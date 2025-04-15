@@ -298,11 +298,10 @@ def button():
         case "hold":
             print(" ")
             strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
+            if strip == "...": #EXIT
+                print("Exit Command Detected. Exiting...")
+                return
             match strip:
-                case "...":
-                    print("Exit Command Detected. Exiting...")
-                    strip = "EMPTY"
-                    return
                 case "blu":
                     print(" ")
                     print("Release the button when the countdown timer has a 4 in any position")
