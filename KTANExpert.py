@@ -410,25 +410,25 @@ def newnewSimon():
 
     if vowel == "EMPTY":
         vowel = str(input("Is there a vowel in the serial number? (y/n): "))
+        if vowel == "...": #EXIT
+            print("Exit Command Detected. Exiting...")
+            return
         match vowel:
             case("y"): vowel = True
             case("n"): vowel = False
-            case("..."):
-                print("Exit Command Detected. Exiting")
-                return
             case other:
                 print("Error. Invalid response, '" + str(vowel) + "'. Resetting")
                 vowel = "EMPTY"
                 return
     
     strikes = str(input("How many strikes are currently on the bomb? (0/1/2): "))
+    if strikes == "...": #EXIT
+        print("Exit Command Detected. Exiting")
+        return
     match strikes:
         case("0"):strikes = 0
         case("1"):strikes = 1
         case("2"):strikes = 2
-        case("..."):
-            print("Exit Command Detected. Exiting")
-            return
         case other:
             print("Error. Invalid number of strikes, '" + str(strikes) + "'. Resetting")
             strikes = "EMPTY"
@@ -439,6 +439,9 @@ def newnewSimon():
         finalSimon = []
         inputSuccess = False
         user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g/done): "))
+        if user == "...": #EXIT
+            print("Exit Command Detected. Exiting...")
+            return
         match user:
             case("r"): 
                 flashSeq.append("r")
@@ -452,9 +455,6 @@ def newnewSimon():
             case("g"): 
                 flashSeq.append("g")
                 inputSuccess = True
-            case("..."):
-                print("Exit Command Detected. Exitting")
-                return
             case("done"):
                 return
             case other: 
