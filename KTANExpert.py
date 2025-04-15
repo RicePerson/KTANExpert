@@ -329,6 +329,9 @@ def button():
 def keypad():
     system("title "+ "Keypad")
 
+    #Def Vars - Logic
+    userKeys = "EMPTY"
+
     #Def Vars - keyLists
     keys = [
         "lolli", "at", "lambda", "light", "staff", "h", "backC", "mouth",
@@ -351,7 +354,6 @@ def keypad():
     userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
     if userKeys == "...": #EXIT
         print("Exit Command Detected. Exiting...")
-        userKeys = "EMPTY"
         return
     userKeys = userKeys.split(";")
     for k in userKeys:
