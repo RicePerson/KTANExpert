@@ -205,16 +205,17 @@ def button():
 
     #Manual Step 2
     if (givenInstruction == False) and (batteries == "EMPTY"):
+        old_batteries = batteries
         batteries = str(input("How many batteries are on the bomb?: "))
         if batteries == "...": # Exit Command
             print("Exit Command Detected. Exiting...")
-            batteries = "EMPTY"
+            batteries = old_batteries
             return
         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
             batteries = int(batteries)
         else:
             print("Error. Incorrect number of batteries. Resetting")
-            batteries = "EMPTY"
+            batteries = old_batteries
             return
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
@@ -241,16 +242,17 @@ def button():
 
     #Manual Step 4
     if (givenInstruction == False) and (batteries == "EMPTY"):
+        old_batteries = batteries
         batteries = str(input("How many batteries are on the bomb?: "))
         if batteries == "...": # Exit Command
             print("Exit Command Detected. Exiting...")
-            batteries = "EMPTY"
+            batteries = old_batteries
             return
         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
             batteries = int(batteries)
         else:
             print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
-            batteries = "EMPTY"
+            batteries = old_batteries
             return
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == []:
