@@ -686,7 +686,7 @@ def memory():
         return
     for i in range(len(stage1)):
         if stage1[i] in ["1","2","3","4"]:
-            stage1[i]=int(stage1[i])
+            stage1[i] = int(stage1[i])
             pass
         else:
             print("Error. Incorrect number, '" + str(stage1[i]) + "'. Please Try Again")
@@ -742,7 +742,7 @@ def memory():
             stage2_error = True
         for i in range(len(stage2)):
             if stage2[i] in ["1","2","3","4"]: # Are the inputs numbers?
-                stage2[i]=int(stage2[i])
+                stage2[i] = int(stage2[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage2[i]) + "'. Please Try Again")
                 stage2_error = True
@@ -809,7 +809,7 @@ def memory():
             stage3_error = True
         for i in range(len(stage3)):
             if stage3[i] in ["1","2","3","4"]: # Are the inputs numbers?
-                stage3[i]=int(stage3[i])
+                stage3[i] = int(stage3[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage3[i]) + "'. Please Try Again")
                 stage3_error = True
@@ -876,7 +876,7 @@ def memory():
             stage4_error = True
         for i in range(len(stage4)):
             if stage4[i] in ["1","2","3","4"]: # Are the inputs numbers?
-                stage4[i]=int(stage4[i])
+                stage4[i] = int(stage4[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage4[i]) + "'. Please Try Again")
                 stage4_error = True
@@ -940,7 +940,7 @@ def memory():
             stage5_error = True
         for i in range(len(stage5)):
             if stage5[i] in ["1","2","3","4"]: # Are the inputs numbers?
-                stage5[i]=int(stage5[i])
+                stage5[i] = int(stage5[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage5[i]) + "'. Please Try Again")
                 stage5_error = True
