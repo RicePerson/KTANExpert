@@ -13,7 +13,7 @@
 # Keep Talking and Nobody Explodes Manual Expert
 # Created By Reese Ford 07/13/2021
 # Last Modified by Reese Ford 04/16/2025
-# Last Commit: 3119f3970e8947cc6f84095cb285ba0ec58b391c
+# Last Commit: 53e1a6aa1e87c34d1582bb70df5e34c3ae893813
 # https://www.github.com/RicePerson/KTANExpert
 
 
