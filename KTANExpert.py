@@ -1050,7 +1050,7 @@ def morse():
     if userMorseUnsplit == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    userMorse = userMorseUnsplit.split()
+    userMorse = userMorseUnsplit.split(";")
     print("Inputed Morse: " + str(userMorse))
     alphaList = []
     for i in userMorse:
