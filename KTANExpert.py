@@ -684,7 +684,10 @@ def memory():
     if stage1un == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    stage1 = [x for x in stage1un]
+    if ";" in stage1un:
+        stage1 = stage1.split(";")
+    else:
+        stage1 = [x for x in stage1un]
 
     if len(stage1) != 5:
         print("Error. Incorrect length, '" + str(len(stage1)) + "'. Please Try Again")
@@ -736,7 +739,10 @@ def memory():
         if stage2un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage2 = [x for x in stage2un]
+        if ";" in stage2un:
+            stage2 = stage2.split(";")
+        else:
+            stage2 = [x for x in stage2un]
 
         if len(stage2) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage2)) + "'. Please Try Again")
@@ -799,7 +805,10 @@ def memory():
         if stage3un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage3 = [x for x in stage3un]
+        if ";" in stage3un:
+            stage3 = stage3.split(";")
+        else:
+            stage3 = [x for x in stage3un]
 
         if len(stage3) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage3)) + "'. Please Try Again")
@@ -862,7 +871,10 @@ def memory():
         if stage4un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage4 = [x for x in stage4un]
+        if ";" in stage4un:
+            stage4 = stage4.split(";")
+        else:
+            stage4 = [x for x in stage4un]
 
         if len(stage4) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage4)) + "'. Please Try Again")
@@ -922,7 +934,10 @@ def memory():
         if stage5un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage5 = [x for x in stage5un]
+        if ";" in stage5un:
+            stage5 = stage5.split(";")
+        else:
+            stage5 = [x for x in stage5un]
 
         if len(stage5) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage5)) + "'. Please Try Again")
