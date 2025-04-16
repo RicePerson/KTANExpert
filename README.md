@@ -81,7 +81,7 @@ The Expert will ask questions. That's how this game works. When inputting answer
 3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are separated by spaces)
 
 ### Resetting
-At any point, `...` can be entered into the expert to reset that module and return to the module selection screen. 
+At any point, `exit` can be entered into the expert to reset that module and return to the module selection screen. 
 Doing this will reset all the variables in that module, and will require you to restart that module if you do it later.
 This will not reset bomb-wide variables like the serial number, number of batteries, etc. To reset these, type `resetbomb` into the module selection screen.
 
