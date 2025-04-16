@@ -684,7 +684,10 @@ def memory():
     if stage1un == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    stage1 = [x for x in stage1un]
+    if ";" in stage1un:
+        stage1 = stage1.split(";")
+    else:
+        stage1 = [x for x in stage1un]
 
     if len(stage1) != 5:
         print("Error. Incorrect length, '" + str(len(stage1)) + "'. Please Try Again")
