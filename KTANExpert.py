@@ -1126,25 +1126,25 @@ def compWires():
     starList = "EMPTY"
 
     # Input Logic
+    ledList = "EMPTY"
     ledList = str(input("What wires have an LED above them? (as a binary list): "))
-    if ledList == "...": # Exit Command
+    if ledList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
-        ledList = "EMPTY"
         return
+    blueList = "EMPTY"
     blueList = str(input("What wires have blue coloring? (as a binary list): "))
-    if blueList == "...": # Exit Command
+    if blueList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
-        blueList = "EMPTY"
         return
+    redlist = "EMPTY"
     redList = str(input("What wires have red coloring? (as a binary list): "))
-    if redList == "...": # Exit Command
+    if redList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
-        redlist = "EMPTY"
         return
+    starList = "EMPTY"
     starList = str(input("What wires have a star beneath them? (as a binary list): "))
-    if starList == "...": # Exit Command
+    if starList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
-        starList = "EMPTY"
         return
 
     blueList = [x for x in blueList]
@@ -1244,10 +1244,11 @@ def compWires():
                 case ("S"): 
                     if serialNum == "EMPTY":
                         print(" ")
+                        old_serialNum = serialNum
                         serialNum = str(input("Last Digit of Serial: "))
-                        if serialNum == "...": # Exit Command
+                        if serialNum == "...": #EXIT
                             print("Exit Command Detected. Exiting...")
-                            serialNum = "EMPTY"
+                            serialNum = old_serialNum
                             return
                         if serialNum in ["0","1","2","3","4","5","6","7","8","9"]:
                             serialNum = int(serialNum)
@@ -1264,7 +1265,13 @@ def compWires():
                 case ("P"):
                     if parallelPort == "EMPTY":
                         print(" ")
-                        if str(input("Does the bomb have a parallel port (y/n)?: ")) == "y":
+                        old_parallelPort = parallelPort
+                        parallelPort_input = str(input("Does the bomb have a parallel port (y/n)?: "))
+                        if parallelPort_input == "...": #EXIT
+                            print("Exit Command Detected. Exiting...")
+                            parallelPort = old_parallelPort
+                            return
+                        if parallelPort_input == "y":
                             parallelPort = True
                         else:
                             parallelPort = False
@@ -1277,16 +1284,17 @@ def compWires():
                 case ("B"):
                     if batteries == "EMPTY":
                         print(" ")
+                        old_batteries = batteries
                         batteries = str(input("How many batteries are on the bomb?: "))
-                        if batteries == "...": # Exit Command
+                        if batteries == "...": #EXIT
                             print("Exit Command Detected. Exiting...")
-                            batteries = "EMPTY"
+                            batteries = old_batteries
                             return
                         if batteries in ["0","1","2","3","4","5","6","7","8","9","10"]:
                             batteries = int(batteries)
                         else:
                             print("Error. Invalid number of batteries, '" + str(batteries) + "'. Resetting")
-                            batteries = "EMPTY"
+                            batteries = old_batteries
                             return
                     if batteries >= 2:
                         if n == 1:
