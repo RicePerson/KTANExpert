@@ -1325,12 +1325,12 @@ def wireSeq():
             inputSuccess = [False, False, False]
             wiresList = []
             wires = []
-            wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use 'blank') : "))
-            if wireUn == "...": # Exit Command
+            wires_input = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use 'blank') : "))
+            if wires_input == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
-                wireUn = "EMPTY"
+                wires_input = "EMPTY"
                 return
-            wiresList = wireUn.split(";")
+            wiresList = wires_input.split(";")
 
             if len(wiresList) != 3: #Testing length
                 print("Error. Invalid number of inputs, '" + str(len(wiresList)) + "'. Try Again")
