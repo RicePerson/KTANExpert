@@ -796,7 +796,6 @@ def memory():
         stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4): "))
         if stage3un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
-            stage3un = "EMPTY"
             return
         stage3 = [x for x in stage3un]
 
