@@ -81,7 +81,7 @@ The Expert will ask questions. That's how this game works. When inputting answer
 3) **Only use spaces in words with spaces in them**. As of right now, the only modules to use spaces are Who's on First (some words have spaces in them) and Morse-Code (the letters are separated by spaces)
 
 ### Resetting
-At any point, `...` can be entered into the expert to reset that module and return to the module selection screen. 
+At any point, `exit` can be entered into the expert to reset that module and return to the module selection screen. 
 Doing this will reset all the variables in that module, and will require you to restart that module if you do it later.
 This will not reset bomb-wide variables like the serial number, number of batteries, etc. To reset these, type `resetbomb` into the module selection screen.
 
@@ -242,7 +242,7 @@ When you input the morse, the Expert will tell you what you just entered in engl
 3) Player:red_circle: sets the frequency to 3.532 MHz in KTANE, and clicks TX. *Module Complete, move on to the next one.* 
 
 
-## Complicated Wires `cW`
+## OUTDATED: FIX ME - Complicated Wires `cW`
 Going one wire at a time, answer the given questions with `y` for Yes and `n` for No. If you make a mistake, the module will be ended, and you will have to re-enter it at the Module Selector.
 Once you have input the details about a wire, the Expert may ask you for more details about the bomb. For this module, it may ask about the last digit of the serial number, if the bomb has a parallel port *(The long, purple port)*, or how many batteries there are on the bomb. If you have entered any of these details in a earlier module, the expert will use those. Likewise, once you enter the detail in this module, it will be used in all of the others if they require it.
 If a slot is blank, as in there are less than 6 wires, treat the blank slot as a wire with no led, blue, red, or star.
