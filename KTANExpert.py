@@ -353,7 +353,7 @@ def keypad():
     for i in keys:
         print(i)
 
-    userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
+    userKeys = str(input("What are the symbols on the keypad? (See list above): "))
     if userKeys == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
