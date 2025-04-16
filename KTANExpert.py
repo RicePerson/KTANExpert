@@ -1488,8 +1488,10 @@ def password():
         if testLetters == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-
-        testLetters = [x for x in testLetters]
+        if ";" in testLetters:
+            testLetters = testLetters.split(";")
+        else:
+            testLetters = [x for x in testLetters]
         if len(testLetters) != 6:
             print("Error. Invalid number of letters ,'" + str(len(testLetters)) + "'. Resetting")
             return
