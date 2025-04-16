@@ -1468,9 +1468,8 @@ def password():
         #Getting the possible letters for display d
         testLetters = "EMPTY"
         testLetters = str(input("Please list all 6 possible letters in display " + str(d+1) + ": "))
-        if testLetters == "...":
-            print("Exit Command Detected. Exiting")
-            testLetters = "EMPTY"
+        if testLetters == "...": #EXIT
+            print("Exit Command Detected. Exiting...")
             return
 
         testLetters = [x for x in testLetters]
