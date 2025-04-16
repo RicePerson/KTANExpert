@@ -666,7 +666,7 @@ def memory():
     #Def Vars
     positions = []
     numbers = []
-    print("Input the numbers starting with Display, and then left to right")
+    print("For each Stage, input the numbers starting with Display, and then Left to Right")
 
     #Def Vars: Stage 1 - Settings Lists
     stage1un = "EMPTY"
