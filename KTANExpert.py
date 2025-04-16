@@ -239,11 +239,12 @@ def button():
     #Manual Step 3
     if (givenInstruction == False) and (color == "w"):
         if litIndicators == []:
-            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
+            litIndicators = str(input("Please list all the lit indicators (all uppercase): "))
             if litIndicators == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = "EMPTY"
                 return
+        litIndicators = litIndicators.split(";")
         if "CAR" in litIndicators:
             instruction = "hold"
             givenInstruction = True
@@ -263,11 +264,12 @@ def button():
             return
     if (givenInstruction == False) and (batteries > 2):
         if litIndicators == []:
-            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
+            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): "))
             if litIndicators == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = "EMPTY"
                 return
+            litIndicators = litIndicators.split(";")
         if "FRK" in litIndicators:
             instruction = "pressRelease"
             givenInstruction = True
@@ -351,7 +353,7 @@ def keypad():
     for i in keys:
         print(i)
 
-    userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
+    userKeys = str(input("What are the symbols on the keypad? (See list above): "))
     if userKeys == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
@@ -682,7 +684,10 @@ def memory():
     if stage1un == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    stage1 = [x for x in stage1un]
+    if ";" in stage1un:
+        stage1 = stage1.split(";")
+    else:
+        stage1 = [x for x in stage1un]
 
     if len(stage1) != 5:
         print("Error. Incorrect length, '" + str(len(stage1)) + "'. Please Try Again")
@@ -734,7 +739,10 @@ def memory():
         if stage2un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage2 = [x for x in stage2un]
+        if ";" in stage2un:
+            stage2 = stage2.split(";")
+        else:
+            stage2 = [x for x in stage2un]
 
         if len(stage2) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage2)) + "'. Please Try Again")
@@ -797,7 +805,10 @@ def memory():
         if stage3un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage3 = [x for x in stage3un]
+        if ";" in stage3un:
+            stage3 = stage3.split(";")
+        else:
+            stage3 = [x for x in stage3un]
 
         if len(stage3) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage3)) + "'. Please Try Again")
@@ -860,7 +871,10 @@ def memory():
         if stage4un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage4 = [x for x in stage4un]
+        if ";" in stage4un:
+            stage4 = stage4.split(";")
+        else:
+            stage4 = [x for x in stage4un]
 
         if len(stage4) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage4)) + "'. Please Try Again")
@@ -920,7 +934,10 @@ def memory():
         if stage5un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage5 = [x for x in stage5un]
+        if ";" in stage5un:
+            stage5 = stage5.split(";")
+        else:
+            stage5 = [x for x in stage5un]
 
         if len(stage5) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage5)) + "'. Please Try Again")
@@ -1033,7 +1050,7 @@ def morse():
     if userMorseUnsplit == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    userMorse = userMorseUnsplit.split()
+    userMorse = userMorseUnsplit.split(";")
     print("Inputed Morse: " + str(userMorse))
     alphaList = []
     for i in userMorse:
@@ -1127,22 +1144,22 @@ def compWires():
 
     # Input Logic
     ledList = "EMPTY"
-    ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    ledList = str(input("What wires have an LED above them? (as a binary list without semicolons): "))
     if ledList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     blueList = "EMPTY"
-    blueList = str(input("What wires have blue coloring? (as a binary list): "))
+    blueList = str(input("What wires have blue coloring? (as a binary list without semicolons): "))
     if blueList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     redlist = "EMPTY"
-    redList = str(input("What wires have red coloring? (as a binary list): "))
+    redList = str(input("What wires have red coloring? (as a binary list without semicolons): "))
     if redList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     starList = "EMPTY"
-    starList = str(input("What wires have a star beneath them? (as a binary list): "))
+    starList = str(input("What wires have a star beneath them? (as a binary list without semicolons): "))
     if starList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
@@ -1471,8 +1488,10 @@ def password():
         if testLetters == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-
-        testLetters = [x for x in testLetters]
+        if ";" in testLetters:
+            testLetters = testLetters.split(";")
+        else:
+            testLetters = [x for x in testLetters]
         if len(testLetters) != 6:
             print("Error. Invalid number of letters ,'" + str(len(testLetters)) + "'. Resetting")
             return
