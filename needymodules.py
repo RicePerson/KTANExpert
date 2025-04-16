@@ -12,8 +12,8 @@ def knobs():
     leds = "EMPTY"
     leds = str(input("What is the led pattern?: "))
     match leds:
-        case "...":
-            print("Exit Command Detected. Exitting")
+        case "exit":
+            print("Exit Command Detected. Exiting...")
             leds = "EMPTY"
             return
         case "done":
