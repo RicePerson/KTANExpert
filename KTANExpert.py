@@ -668,18 +668,18 @@ def memory():
     numbers = []
     print("For each Stage, input the numbers starting with Display, and then Left to Right")
 
-    #Def Vars: Stage 1 - Settings Lists
-    stage1un = "EMPTY"
+    #Def Vars: Stage 1 - Setting Lists
+    stage1_input = "EMPTY"
     stage1 = "EMPTY"
-    stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
-    if stage1un == "...": # Exit Command
+    stage1_input = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
+    if stage1_input == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
-        stage1un = "EMPTY"
+        stage1_input = "EMPTY"
         return
-    if stage1un == "r":
+    if stage1_input == "r":
         print("Reset detected. Resetting expert...")
         return
-    stage1 = [x for x in stage1un]
+    stage1 = [x for x in stage1_input]
 
     if len(stage1) != 5:
         print("Error. Incorrect length, '" + str(len(stage1)) + "'. Please Try Again")
@@ -721,42 +721,42 @@ def memory():
     print(" ")
 
 
-    #Def Vars: Stage3 - Settings Lists
-    stage2complete = False
-    while stage2complete == False:
-        stage2un = "EMPTY"
+    #Def Vars: Stage 2 - Setting Lists
+    stage2_complete = False
+    while stage2_complete == False:
+        stage2_input = "EMPTY"
         stage2 = "EMPTY"
-        stage2error = False
-        stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
-        if stage2un == "...": # Exit Command
+        stage2_error = False
+        stage2_input = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
+        if stage2_input == "...": # Exit Command
             print("Exit Command Detected. Exiting...")
-            stage2un = "EMPTY"
+            stage2_input = "EMPTY"
             return
-        if stage2un == "r": # Reset Command
+        if stage2_input == "r": # Reset Command
             print("Reset detected. Resetting expert...")
             return
-        stage2 = [x for x in stage2un]
+        stage2 = [x for x in stage2_input]
 
         if len(stage2) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage2)) + "'. Please Try Again")
-            stage2error = True
+            stage2_error = True
         for i in range(len(stage2)):
             if stage2[i] in ["1","2","3","4"]: # Are the inputs numbers?
                 stage2[i]=int(stage2[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage2[i]) + "'. Please Try Again")
-                stage2error = True
+                stage2_error = True
                 break
         existing = []
         for i in stage2[1:]:
             if i in existing:
                 print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
-                stage2error = True
+                stage2_error = True
                 break
             else:
                 existing.append(i)
 
-        if stage2error:
+        if stage2_error:
             continue
         else:
             #Logic Stage2
@@ -767,63 +767,63 @@ def memory():
                     index = stage2.index(4, 1, 5)
                     positions.append(index)
                     numbers.append(4)
-                    stage2complete = True
+                    stage2_complete = True
                 case 2:
                     print("Press the button labeled " + str(stage2[positions[0]]))
                     positions.append(positions[0])
                     numbers.append(stage2[positions[0]])
-                    stage2complete = True
+                    stage2_complete = True
                 case 3:
                     print("Press the button labeled " + str(stage2[1]))
                     positions.append(1)
                     numbers.append(stage2[1])
-                    stage2complete = True
+                    stage2_complete = True
                 case 4:
                     print("Press the button labeled " + str(stage2[positions[0]]))
                     positions.append(positions[0])
                     numbers.append(stage2[positions[0]])
-                    stage2complete = True
+                    stage2_complete = True
                 case other:
                     print("Error. Something went wrong. Please Try Again")
             print(" ")
 
 
-    #Def Vars: Stage 3 - Settings Lists
-    stage3complete = False
-    while stage3complete == False:
-        stage3un = "EMPTY"
+    #Def Vars: Stage 3 - Setting Lists
+    stage3_complete = False
+    while stage3_complete == False:
+        stage3_input = "EMPTY"
         stage3 = "EMPTY"
-        stage3error = False
-        stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
-        if stage3un == "...": # Exit Command
+        stage3_error = False
+        stage3_input = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
+        if stage3_input == "...": # Exit Command
             print("Exit Command Detected. Exiting...")
-            stage3un = "EMPTY"
+            stage3_input = "EMPTY"
             return
-        if stage3un == "r": # Reset Command
+        if stage3_input == "r": # Reset Command
             print("Reset detected. Resetting expert...")
             return #RF
-        stage3 = [x for x in stage3un]
+        stage3 = [x for x in stage3_input]
 
         if len(stage3) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage3)) + "'. Please Try Again")
-            stage3error = True
+            stage3_error = True
         for i in range(len(stage3)):
             if stage3[i] in ["1","2","3","4"]: # Are the inputs numbers?
                 stage3[i]=int(stage3[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage3[i]) + "'. Please Try Again")
-                stage3error = True
+                stage3_error = True
                 break
         existing = []
         for i in stage3[1:]:
             if i in existing:
                 print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
-                stage3error = True
+                stage3_error = True
                 break
             else:
                 existing.append(i)
 
-        if stage3error:
+        if stage3_error:
             continue
         else:
             #Logic: Stage 3
@@ -834,63 +834,63 @@ def memory():
                     index = stage3.index(numbers[1])
                     positions.append(index)
                     numbers.append(numbers[1])
-                    stage3complete = True
+                    stage3_complete = True
                 case 2:
                     print("Press the button labeled " + str(numbers[0]))
                     index = stage3.index(numbers[0])
                     positions.append(index)
                     numbers.append(numbers[0])
-                    stage3complete = True
+                    stage3_complete = True
                 case 3:
                     print("Press the button labeled " + str(stage3[3]))
                     positions.append(3)
                     numbers.append(stage3[3])
-                    stage3complete = True
+                    stage3_complete = True
                 case 4:
                     print("Press the button labeled 4")
                     index = stage3.index(4, 1, 5)
                     positions.append(index)
                     numbers.append(4)
-                    stage3complete = True
+                    stage3_complete = True
             print(" ")
 
 
-    #Def Vars: Stage 4 - Settings Lists
-    stage4complete = False
-    while stage4complete == False:
-        stage4un = "EMPTY"
+    #Def Vars: Stage 4 - Setting Lists
+    stage4_complete = False
+    while stage4_complete == False:
+        stage4_input = "EMPTY"
         stage4 = "EMPTY"
-        stage4error = False
-        stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
-        if stage4un == "...": # Exit Command
+        stage4_error = False
+        stage4_input = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
+        if stage4_input == "...": # Exit Command
             print("Exit Command Detected. Exiting...")
-            stage4un = "EMPTY"
+            stage4_input = "EMPTY"
             return
-        if stage4un == "r": # Reset Command
+        if stage4_input == "r": # Reset Command
             print("Reset detected. Resetting expert...")
             return
-        stage4 = [x for x in stage4un]
+        stage4 = [x for x in stage4_input]
 
         if len(stage4) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage4)) + "'. Please Try Again")
-            stage4error = True
+            stage4_error = True
         for i in range(len(stage4)):
             if stage4[i] in ["1","2","3","4"]: # Are the inputs numbers?
                 stage4[i]=int(stage4[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage4[i]) + "'. Please Try Again")
-                stage4error = True
+                stage4_error = True
                 break
         existing = []
         for i in stage4[1:]:
             if i in existing:
                 print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
-                stage4error = True
+                stage4_error = True
                 break
             else:
                 existing.append(i)
 
-        if stage4error:
+        if stage4_error:
             continue
         else:
             #Logic: Stage 4
@@ -900,61 +900,61 @@ def memory():
                     print("Press the button labeled " + str(stage4[positions[0]]))
                     positions.append(positions[0])
                     numbers.append(stage4[positions[0]])
-                    stage4complete = True
+                    stage4_complete = True
                 case 2:
                     print("Press the button labeled " + str(stage4[1]))
                     positions.append(1)
                     numbers.append(stage4[1])
-                    stage4complete = True
+                    stage4_complete = True
                 case 3:
                     print("Press the button labeled " + str(stage4[positions[1]]))
                     positions.append(positions[1])
                     numbers.append(stage4[positions[1]])
-                    stage4complete = True
+                    stage4_complete = True
                 case 4:
                     print("Press the button labeled " + str(stage4[positions[1]]))
                     positions.append(positions[1])
                     numbers.append(stage4[positions[1]])
-                    stage4complete = True
+                    stage4_complete = True
             print(" ")
 
 
     #Def Vars: Stage 5 - Settings Lists
-    stage5complete = False
-    while stage5complete == False:
-        stage5un = "EMPTY"
+    stage5_complete = False
+    while stage5_complete == False:
+        stage5_input = "EMPTY"
         stage5 = "EMPTY"
-        stage5error = False
-        stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
-        if stage5un == "...": # Exit Command
+        stage5_error = False
+        stage5_input = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
+        if stage5_input == "...": # Exit Command
             print("Exit Command Detected. Exiting...")
-            stage5un = "EMPTY"
+            stage5_input = "EMPTY"
             return
-        if stage5un == "r": # Reset Command
+        if stage5_input == "r": # Reset Command
             print("Reset detected. Resetting expert...")
             return
-        stage5 = [x for x in stage5un]
+        stage5 = [x for x in stage5_input]
 
         if len(stage5) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage5)) + "'. Please Try Again")
-            stage5error = True
+            stage5_error = True
         for i in range(len(stage5)):
             if stage5[i] in ["1","2","3","4"]: # Are the inputs numbers?
                 stage5[i]=int(stage5[i])
             else: # No...
                 print("Error. Incorrect number, '" + str(stage5[i]) + "'. Please Try Again")
-                stage5error = True
+                stage5_error = True
                 break
         existing = []
         for i in stage5[1:]:
             if i in existing:
                 print("Error. Duplicate button number ,'" + str(i) + "'. Please Try Again")
-                stage5error = True
+                stage5_error = True
                 break
             else:
                 existing.append(i)
 
-        if stage5error:
+        if stage5_error:
             continue
         else:
             #Logic: Stage 5
@@ -965,25 +965,25 @@ def memory():
                     index = stage5.index(numbers[0])
                     positions.append(index)
                     numbers.append(numbers[0])
-                    stage5complete = True
+                    stage5_complete = True
                 case 2:
                     print("Press the button labeled " + str(numbers[1]))
                     index = stage5.index(numbers[1])
                     positions.append(index)
                     numbers.append(numbers[1])
-                    stage5complete = True
+                    stage5_complete = True
                 case 3:
                     print("Press the button labeled " + str(numbers[3]))
                     index = stage5.index(numbers[3])
                     positions.append(index)
                     numbers.append(numbers[3])
-                    stage5complete = True
+                    stage5_complete = True
                 case 4:
                     print("Press the button labeled " + str(numbers[2]))
                     index = stage5.index(numbers[2])
                     positions.append(index)
                     numbers.append(numbers[2])
-                    stage5complete = True
+                    stage5_complete = True
             print(" ")
 
 #The Morse -> Letter
