@@ -354,7 +354,7 @@ def keypad():
         if k in keys:
             pass
         else:
-            print("Error. Invlaid Key, '" + str(k) + "'. Resetting")
+            print("Error. Invalid Key, '" + str(k) + "'. Resetting")
             userKeys = "EMPTY"
             return
     if len(userKeys) != 4:
