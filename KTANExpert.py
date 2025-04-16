@@ -678,13 +678,9 @@ def memory():
     #Def Vars: Stage 1 - Settings Lists
     stage1un = "EMPTY"
     stage1 = "EMPTY"
-    stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4,r): "))
-    if stage1un == "...": # Exit Command
+    stage1un = str(input("Stage1 - What are the numbers given? (1,2,3,4): "))
+    if stage1un == "...": #EXIT
         print("Exit Command Detected. Exiting...")
-        stage1un = "EMPTY"
-        return
-    if stage1un == "r":
-        print("Reset detected. Resetting expert...")
         return
     stage1 = [x for x in stage1un]
 
@@ -734,13 +730,9 @@ def memory():
         stage2un = "EMPTY"
         stage2 = "EMPTY"
         stage2error = False
-        stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4,r): "))
-        if stage2un == "...": # Exit Command
+        stage2un = str(input("Stage2 - What are the numbers given? (1,2,3,4): "))
+        if stage2un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
-            stage2un = "EMPTY"
-            return
-        if stage2un == "r": # Reset Command
-            print("Reset detected. Resetting expert...")
             return
         stage2 = [x for x in stage2un]
 
@@ -801,14 +793,11 @@ def memory():
         stage3un = "EMPTY"
         stage3 = "EMPTY"
         stage3error = False
-        stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4,r): "))
-        if stage3un == "...": # Exit Command
+        stage3un = str(input("Stage3 - What are the numbers given? (1,2,3,4): "))
+        if stage3un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             stage3un = "EMPTY"
             return
-        if stage3un == "r": # Reset Command
-            print("Reset detected. Resetting expert...")
-            return #RF
         stage3 = [x for x in stage3un]
 
         if len(stage3) != 5: # Is the number of inputs correct? No...
@@ -868,13 +857,9 @@ def memory():
         stage4un = "EMPTY"
         stage4 = "EMPTY"
         stage4error = False
-        stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4,r): "))
-        if stage4un == "...": # Exit Command
+        stage4un = str(input("Stage4 - What are the numbers given? (1,2,3,4): "))
+        if stage4un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
-            stage4un = "EMPTY"
-            return
-        if stage4un == "r": # Reset Command
-            print("Reset detected. Resetting expert...")
             return
         stage4 = [x for x in stage4un]
 
@@ -932,13 +917,9 @@ def memory():
         stage5un = "EMPTY"
         stage5 = "EMPTY"
         stage5error = False
-        stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4,r): "))
-        if stage5un == "...": # Exit Command
+        stage5un = str(input("Stage5 - What are the numbers given? (1,2,3,4): "))
+        if stage5un == "...": #EXIT
             print("Exit Command Detected. Exiting...")
-            stage5un = "EMPTY"
-            return
-        if stage5un == "r": # Reset Command
-            print("Reset detected. Resetting expert...")
             return
         stage5 = [x for x in stage5un]
 
