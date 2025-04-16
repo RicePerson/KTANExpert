@@ -1041,7 +1041,7 @@ def morse():
     beats = ["B", "E", "A", "T", "S"] 
 
     #Def Vars
-    userMorseUnsplit = str(input("What is your Morse Code (see README.md for instructions)?: "))
+    userMorseUnsplit = str(input("What is your Morse Code?: "))
     if userMorseUnsplit == "...": # Exit Command
         print("Exit Command Detected. Exiting...")
         userMorseUnsplit = "EMPTY"
