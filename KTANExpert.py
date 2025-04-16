@@ -585,6 +585,7 @@ def whofirst():
             userWords = "EMPTY"
             return
         userWords = userWords.split(";")
+        
         #Checks
         if len(userWords) != 7:
             print("Error. Invalid number of words, '" + str(len(userWords)) + "'. Resetting")
