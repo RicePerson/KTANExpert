@@ -525,7 +525,7 @@ def newnewSimon():
                 case("blu"):print("Blue")
                 case("y"):print("Yellow")
                 case("g"):print("Green")
-                case other:
+                case _:
                     print("Something went wrong. Resetting")
                     return
         print(" ")
