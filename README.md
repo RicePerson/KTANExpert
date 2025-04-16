@@ -237,7 +237,7 @@ When you input the morse, the Expert will tell you what you just entered in engl
 *0) KTANE module is flashing `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  `..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`  **`..`  `-.-.`  `-.-` `LongSpace` `-`  `.-.`**  `..`  `-.-.`  `-.-`  repeating indefinitely*
 1) The Player:red_circle: enters the MorseCode module with `mO`
 3) The Expert:large_blue_circle: asks for the morse code being flashed
-2) The Player:red_circle: inputs `.. -.-. -.- - .-.` ENTER
+2) The Player:red_circle: inputs `..;-.-.;-.-;-;.-.` ENTER
 2) The Expert:large_blue_circle: outputs `Word was: Trick    Input 3.532 MHz`
 3) Player:red_circle: sets the frequency to 3.532 MHz in KTANE, and clicks TX. *Module Complete, move on to the next one.* 
 

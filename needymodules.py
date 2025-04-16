@@ -20,7 +20,10 @@ def knobs():
             print("Bomb Complete.")
             isDoing = False
             return
-    ledsList = [x for x in leds]
+    if ";" in leds:
+        ledsList = leds.split(";")
+    else:
+        ledsList = [x for x in leds]
     for l in ledsList: #Checking for non-binaries
         if l == "1" or l == "0":
             pass

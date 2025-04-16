@@ -1045,7 +1045,7 @@ def morse():
     if userMorseUnsplit == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    userMorse = userMorseUnsplit.split()
+    userMorse = userMorseUnsplit.split(";")
     print("Inputed Morse: " + str(userMorse))
     alphaList = []
     for i in userMorse:
@@ -1139,22 +1139,22 @@ def compWires():
 
     # Input Logic
     ledList = "EMPTY"
-    ledList = str(input("What wires have an LED above them? (as a binary list): "))
+    ledList = str(input("What wires have an LED above them? (as a binary list without semicolons): "))
     if ledList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     blueList = "EMPTY"
-    blueList = str(input("What wires have blue coloring? (as a binary list): "))
+    blueList = str(input("What wires have blue coloring? (as a binary list without semicolons): "))
     if blueList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     redlist = "EMPTY"
-    redList = str(input("What wires have red coloring? (as a binary list): "))
+    redList = str(input("What wires have red coloring? (as a binary list without semicolons): "))
     if redList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     starList = "EMPTY"
-    starList = str(input("What wires have a star beneath them? (as a binary list): "))
+    starList = str(input("What wires have a star beneath them? (as a binary list without semicolons): "))
     if starList == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
@@ -1483,8 +1483,10 @@ def password():
         if testLetters == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-
-        testLetters = [x for x in testLetters]
+        if ";" in testLetters:
+            testLetters = testLetters.split(";")
+        else:
+            testLetters = [x for x in testLetters]
         if len(testLetters) != 6:
             print("Error. Invalid number of letters ,'" + str(len(testLetters)) + "'. Resetting")
             return
