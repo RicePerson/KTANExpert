@@ -1325,7 +1325,7 @@ def wireSeq():
             inputSuccess = [False, False, False]
             wiresList = []
             wires = []
-            wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use blank) : "))
+            wireUn = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use 'blank') : "))
             if wireUn == "...": # Exit Command
                 print("Exit Command Detected. Exiting...")
                 wireUn = "EMPTY"
