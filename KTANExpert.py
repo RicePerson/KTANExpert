@@ -48,7 +48,7 @@ def wires():
 
     #Assigning Wires
     wireList = str(input("What are the wire colors from top to bottom? (w/y/r/blu/bla): "))
-    if wireList == "...": #EXIT
+    if wireList == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     wireList = wireList.split(";")
@@ -185,7 +185,7 @@ def button():
     #Starting Information
 
     color = str(input("What is the color of the button? (blu,w,y,r): "))
-    if color == "...": #EXIT
+    if color == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     if color not in ["blu","w","y","r"]: #Testing color
@@ -196,7 +196,7 @@ def button():
     if color == "blu":
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
-            if text == "...": #EXIT
+            if text == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
         if text == "abort":
@@ -207,7 +207,7 @@ def button():
     if (givenInstruction == False) and (batteries == "EMPTY"):
         old_batteries = batteries
         batteries = str(input("How many batteries are on the bomb?: "))
-        if batteries == "...": #EXIT
+        if batteries == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             batteries = old_batteries
             return
@@ -220,7 +220,7 @@ def button():
     if (givenInstruction == False) and (batteries > 1):
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
-            if text == "...": #EXIT
+            if text == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
         if text == "detonate":
@@ -232,7 +232,7 @@ def button():
         old_litIndicators = litIndicators
         if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase): "))
-            if litIndicators == "...": #EXIT
+            if litIndicators == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = old_litIndicators
                 return
@@ -245,7 +245,7 @@ def button():
     if (givenInstruction == False) and (batteries == "EMPTY"):
         old_batteries = batteries
         batteries = str(input("How many batteries are on the bomb?: "))
-        if batteries == "...": #EXIT 
+        if batteries == "exit": #EXIT 
             print("Exit Command Detected. Exiting...")
             batteries = old_batteries
             return
@@ -259,7 +259,7 @@ def button():
         old_litIndicators = litIndicators
         if litIndicators == []:
             litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): "))
-            if litIndicators == "...": #EXIT
+            if litIndicators == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = old_litIndicators
                 return
@@ -277,7 +277,7 @@ def button():
     if (givenInstruction == False) and (color == "r"):
         if text == "EMPTY":
             text = str(input("What does the button say? (all lowercase): "))
-            if text == "...": #EXIT
+            if text == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
         if text == "hold":
@@ -294,7 +294,7 @@ def button():
         case "hold":
             print(" ")
             strip = str(input("Press and hold the button. While holding, input the color of the strip immediately to the right of the button (blu, w, y, other): "))
-            if strip == "...": #EXIT
+            if strip == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
             match strip:
@@ -348,7 +348,7 @@ def keypad():
         print(i)
 
     userKeys = str(input("What are the symbols on the keypad? (See list above): "))
-    if userKeys == "...": #EXIT
+    if userKeys == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     userKeys = userKeys.split(";")
@@ -406,7 +406,7 @@ def newnewSimon():
 
     if vowel == "EMPTY":
         vowel = str(input("Is there a vowel in the serial number? (y/n): "))
-        if vowel == "...": #EXIT
+        if vowel == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         match vowel:
@@ -418,7 +418,7 @@ def newnewSimon():
                 return
     
     strikes = str(input("How many strikes are currently on the bomb? (0/1/2): "))
-    if strikes == "...": #EXIT
+    if strikes == "exit": #EXIT
         print("Exit Command Detected. Exiting")
         return
     match strikes:
@@ -435,7 +435,7 @@ def newnewSimon():
         finalSimon = []
         inputSuccess = False
         user = str(input("What color is flash " + str(flash) +"? (r/blu/y/g/done): "))
-        if user == "...": #EXIT
+        if user == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         match user:
@@ -580,7 +580,7 @@ def whofirst():
         # STEP 1 - Player Input (0:Display 1,2,3:TopLeft-to-BottomLeft 4,5,6:TopRight-to-BottomRight)
         userWords = "EMPTY"
         userWords = str(input("What are the words on the module, starting with display, then topleft to bottomleft, then topright to bottomright?: "))
-        if userWords == "...": #EXIT
+        if userWords == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         userWords = userWords.split(";")
@@ -649,7 +649,7 @@ def whofirst():
                 print(" ")
                 complete = "EMPTY"
                 complete = str(input("Is the module complete? (y/n): "))
-                if complete == "...": #EXIT
+                if complete == "exit": #EXIT
                     print("Exit Command Detected. Exiting...")
                     return
                 if complete == "y":
@@ -676,7 +676,7 @@ def memory():
     stage1_input = "EMPTY"
     stage1 = "EMPTY"
     stage1_input = str(input("Stage1 - What are the numbers given? (1,2,3,4): "))
-    if stage1_input == "...": #EXIT
+    if stage1_input == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     if ";" in stage1_input:
@@ -731,7 +731,7 @@ def memory():
         stage2 = "EMPTY"
         stage2_error = False
         stage2_input = str(input("Stage2 - What are the numbers given? (1,2,3,4): "))
-        if stage2_input == "...": #EXIT
+        if stage2_input == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         if ";" in stage2_input:
@@ -797,7 +797,7 @@ def memory():
         stage3 = "EMPTY"
         stage3_error = False
         stage3_input = str(input("Stage3 - What are the numbers given? (1,2,3,4): "))
-        if stage3_input == "...": #EXIT
+        if stage3_input == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         if ";" in stage3_input:
@@ -863,7 +863,7 @@ def memory():
         stage4 = "EMPTY"
         stage4_error = False
         stage4_input = str(input("Stage4 - What are the numbers given? (1,2,3,4): "))
-        if stage4_input == "...": #EXIT
+        if stage4_input == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         if ";" in stage4_input:
@@ -926,7 +926,7 @@ def memory():
         stage5 = "EMPTY"
         stage5_error = False
         stage5_input = str(input("Stage5 - What are the numbers given? (1,2,3,4): "))
-        if stage5_input == "...": #EXIT
+        if stage5_input == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         if ";" in stage5_input:
@@ -1042,7 +1042,7 @@ def morse():
     #Def Vars
     userMorseUnsplit = "EMPTY"
     userMorseUnsplit = str(input("What is your Morse Code?: "))
-    if userMorseUnsplit == "...": #EXIT
+    if userMorseUnsplit == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     userMorse = userMorseUnsplit.split(";")
@@ -1140,22 +1140,22 @@ def compWires():
     # Input Logic
     ledList = "EMPTY"
     ledList = str(input("What wires have an LED above them? (as a binary list without semicolons): "))
-    if ledList == "...": #EXIT
+    if ledList == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     blueList = "EMPTY"
     blueList = str(input("What wires have blue coloring? (as a binary list without semicolons): "))
-    if blueList == "...": #EXIT
+    if blueList == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     redlist = "EMPTY"
     redList = str(input("What wires have red coloring? (as a binary list without semicolons): "))
-    if redList == "...": #EXIT
+    if redList == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
     starList = "EMPTY"
     starList = str(input("What wires have a star beneath them? (as a binary list without semicolons): "))
-    if starList == "...": #EXIT
+    if starList == "exit": #EXIT
         print("Exit Command Detected. Exiting...")
         return
 
@@ -1258,7 +1258,7 @@ def compWires():
                         print(" ")
                         old_serialNum = serialNum
                         serialNum = str(input("Last Digit of Serial: "))
-                        if serialNum == "...": #EXIT
+                        if serialNum == "exit": #EXIT
                             print("Exit Command Detected. Exiting...")
                             serialNum = old_serialNum
                             return
@@ -1279,7 +1279,7 @@ def compWires():
                         print(" ")
                         old_parallelPort = parallelPort
                         parallelPort_input = str(input("Does the bomb have a parallel port (y/n)?: "))
-                        if parallelPort_input == "...": #EXIT
+                        if parallelPort_input == "exit": #EXIT
                             print("Exit Command Detected. Exiting...")
                             parallelPort = old_parallelPort
                             return
@@ -1298,7 +1298,7 @@ def compWires():
                         print(" ")
                         old_batteries = batteries
                         batteries = str(input("How many batteries are on the bomb?: "))
-                        if batteries == "...": #EXIT
+                        if batteries == "exit": #EXIT
                             print("Exit Command Detected. Exiting...")
                             batteries = old_batteries
                             return
@@ -1334,7 +1334,7 @@ def wireSeq():
             wires = []
             wires_input = "EMPTY"
             wires_input = str(input("What is the wire color and letter of each wire on panel " + str(i+1) + " from top to bottom? (r,blu,bla>A,B,C;)(if there is no wire in a slot, use 'blank') : "))
-            if wires_input == "...": #EXIT
+            if wires_input == "exit": #EXIT
                 print("Exit Command Detected. Exiting...")
                 return
             wiresList = wires_input.split(";")
@@ -1480,7 +1480,7 @@ def password():
         #Getting the possible letters for display d
         testLetters = "EMPTY"
         testLetters = str(input("Please list all 6 possible letters in display " + str(d+1) + ": "))
-        if testLetters == "...": #EXIT
+        if testLetters == "exit": #EXIT
             print("Exit Command Detected. Exiting...")
             return
         if ";" in testLetters:
@@ -1591,7 +1591,7 @@ while isDoing:
 #    while isDoing == True:
 #        if vowel == "y":
 #            strikes = str(input("Number Of Strikes? (0/1/2): "))
-#            if strikes == "...": # Exit Command
+#            if strikes == "exit": # Exit Command
 #                print("Exit Command Detected. Exiting...")
 #                strikes = "EMPTY"
 #                return
@@ -1644,7 +1644,7 @@ while isDoing:
 #                while True:
 #                    userInput = str(input("What is flash " + str(flash) +
 #                                      "? (r/blu/g/y/end/done):"))
-#                    if userInput == "...": # Exit Command
+#                    if userInput == "exit": # Exit Command
 #                        print("Exit Command Detected. Exiting...")
 #                        userInput = "EMPTY"
 #                        return
@@ -1702,7 +1702,7 @@ while isDoing:
 #                while True:
 #                    userInput = str(input("What is flash " + str(flash) +
 #                                      "? (r/blu/g/y/end/done):"))
-#                    if userInput == "...": # Exit Command
+#                    if userInput == "exit": # Exit Command
 #                        print("Exit Command Detected. Exiting...")
 #                        userInput = "EMPTY"
 #                        return
@@ -1754,7 +1754,7 @@ while isDoing:
 
 #        elif vowel == "n":
 #            strikes = str(input("Number Of Strikes? (0/1/2): "))
-#            if strikes == "...": # Exit Command
+#            if strikes == "exit": # Exit Command
 #                print("Exit Command Detected. Exiting...")
 #                strikes = "EMPTY"
 #                return
@@ -1766,7 +1766,7 @@ while isDoing:
 #                while True:
 #                    userInput = str(input("What is flash " + str(flash) +
 #                                      "? (r/blu/g/y/end/done):"))
-#                    if userInput == "...": # Exit Command
+#                    if userInput == "exit": # Exit Command
 #                        print("Exit Command Detected. Exiting...")
 #                        userInput = "EMPTY"
 #                        return
@@ -1824,7 +1824,7 @@ while isDoing:
 #                while True:
 #                    userInput = str(input("What is flash " + str(flash) +
 #                                      "? (r/blu/g/y/end/done):"))
-#                    if userInput == "...": # Exit Command
+#                    if userInput == "exit": # Exit Command
 #                        print("Exit Command Detected. Exiting...")
 #                        userInput = "EMPTY"
 #                        return
@@ -1882,7 +1882,7 @@ while isDoing:
 #                while True:
 #                    userInput = str(input("What is flash " + str(flash) +
 #                                      "? (r/blu/g/y/end/done):"))
-#                    if userInput == "...": # Exit Command
+#                    if userInput == "exit": # Exit Command
 #                        print("Exit Command Detected. Exiting...")
 #                        userInput = "EMPTY"
 #                        return
