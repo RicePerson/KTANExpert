@@ -206,7 +206,7 @@ Also, the display word can sometimes be, well, nothing. The display will be blan
 This module consists of a display with a single digit and four buttons with numbers 1-4 on them, in an order that changes after every repeat, of which there are five.
 This is a back-and-forth with the expert:large_blue_circle:, and is fairly straightforward. At every repeat, input the numbers in the order: Display first-button second-button third-button fourth-button
 The expert:large_blue_circle: will then output some debug information, alongside an instruction, in the form of `Press the button labeled  #`. Follow this instruction.
-Repeat until the module is complete. If you ever mess up, the KTANE module will reset back to stage one. To reset the expert:large_blue_circle:, input `r` at any step.
+Repeat until the module is complete. If you ever mess up, the KTANE module will reset back to stage one.
 
 ### Example:
 *0) The KTANE module starts with the display being 4 and the buttons being, from left to right, 1 3 2 4*
