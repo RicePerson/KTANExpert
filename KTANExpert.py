@@ -734,7 +734,10 @@ def memory():
         if stage2_input == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage2 = [x for x in stage2_input]
+        if ";" in stage2_input:
+            stage2 = stage2.split(";")
+        else:
+            stage2 = [x for x in stage2_input]
 
         if len(stage2) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage2)) + "'. Please Try Again")
@@ -797,7 +800,10 @@ def memory():
         if stage3_input == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage3 = [x for x in stage3_input]
+        if ";" in stage3_input:
+            stage3 = stage3.split(";")
+        else:
+            stage3 = [x for x in stage3_input]
         
         if len(stage3) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage3)) + "'. Please Try Again")
@@ -860,7 +866,10 @@ def memory():
         if stage4_input == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage4 = [x for x in stage4_input]
+        if ";" in stage4_input:
+            stage4 = stage4.split(";")
+        else:
+            stage4 = [x for x in stage4_input]
 
         if len(stage4) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage4)) + "'. Please Try Again")
@@ -920,7 +929,10 @@ def memory():
         if stage5_input == "...": #EXIT
             print("Exit Command Detected. Exiting...")
             return
-        stage5 = [x for x in stage5_input]
+        if ";" in stage5_input:
+            stage5 = stage5.split(";")
+        else:
+            stage5 = [x for x in stage5_input]
 
         if len(stage5) != 5: # Is the number of inputs correct? No...
             print("Error. Incorrect length, '" + str(len(stage5)) + "'. Please Try Again")
