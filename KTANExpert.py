@@ -1307,7 +1307,7 @@ def compWires():
                     else:
                         if n == 1:
                             print("Wire " + str(i+1) + ") Do Not Cut")
-                case other:
+                case _:
                     print("Error. Something went so wrong, I don't know what happened. Resetting.")
                     return
 
