@@ -651,7 +651,12 @@ def whofirst():
                 success = True
                 print("Press the button labeled " + str(w))
                 print(" ")
-                if str(input("Is the module complete? (y/n): ")) == "y":
+                complete = "EMPTY"
+                complete = str(input("Is the module complete? (y/n): "))
+                if complete == "...": #EXIT
+                    print("Exit Command Detected. Exiting...")
+                    return
+                if complete == "y":
                     return
                 else:
                     print(" ")
