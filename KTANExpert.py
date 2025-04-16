@@ -231,11 +231,12 @@ def button():
     if (givenInstruction == False) and (color == "w"):
         old_litIndicators = litIndicators
         if litIndicators == []:
-            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
+            litIndicators = str(input("Please list all the lit indicators (all uppercase): "))
             if litIndicators == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = old_litIndicators
                 return
+        litIndicators = litIndicators.split(";")
         if "CAR" in litIndicators:
             instruction = "hold"
             givenInstruction = True
@@ -257,11 +258,12 @@ def button():
     if (givenInstruction == False) and (batteries > 2):
         old_litIndicators = litIndicators
         if litIndicators == []:
-            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): ")).split(";")
+            litIndicators = str(input("Please list all the lit indicators (all uppercase with a semicolon between each one): "))
             if litIndicators == "...": #EXIT
                 print("Exit Command Detected. Exiting...")
                 litIndicators = old_litIndicators
                 return
+            litIndicators = litIndicators.split(";")
         if "FRK" in litIndicators:
             instruction = "pressRelease"
             givenInstruction = True
@@ -345,7 +347,7 @@ def keypad():
     for i in keys:
         print(i)
 
-    userKeys = str(input("What are the symbols on the keypad seperated by semicolons? (See list above): "))
+    userKeys = str(input("What are the symbols on the keypad? (See list above): "))
     if userKeys == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
@@ -677,7 +679,10 @@ def memory():
     if stage1_input == "...": #EXIT
         print("Exit Command Detected. Exiting...")
         return
-    stage1 = [x for x in stage1_input]
+    if ";" in stage1_input:
+        stage1 = stage1.split(";")
+    else:
+        stage1 = [x for x in stage1_input]
 
     if len(stage1) != 5:
         print("Error. Incorrect length, '" + str(len(stage1)) + "'. Please Try Again")
